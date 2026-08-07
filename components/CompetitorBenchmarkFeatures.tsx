@@ -1,86 +1,130 @@
 'use client';
 
 import { useSiteContext } from '@/lib/context';
-import { t, Lang } from '@/lib/i18n';
+import { Lang } from '@/lib/i18n';
 
 export default function CompetitorBenchmarkFeatures() {
   const { lang } = useSiteContext();
 
-  const features = [
-    {
-      title: t(lang as Lang, 'competitor.f1.title'),
-      desc: t(lang as Lang, 'competitor.f1.desc'),
-      icon: '💉',
-      badge: 'ComfortIn Injection System',
-      spec: 'Painless Pressure Delivery'
-    },
-    {
-      title: t(lang as Lang, 'competitor.f2.title'),
-      desc: t(lang as Lang, 'competitor.f2.desc'),
-      icon: '🔬',
-      badge: 'HypoThermosol ATP Solution',
-      spec: '98%+ Follicle Survival'
-    },
-    {
-      title: t(lang as Lang, 'competitor.f3.title'),
-      desc: t(lang as Lang, 'competitor.f3.desc'),
-      icon: '🩸',
-      badge: 'PRP & Hyperbaric Therapy',
-      spec: 'Accelerated Tissue Healing'
-    },
-    {
-      title: t(lang as Lang, 'competitor.f4.title'),
-      desc: t(lang as Lang, 'competitor.f4.desc'),
-      icon: '🔍',
-      badge: 'Trichological Analysis',
-      spec: 'Microscopic Graft Mapping'
-    }
-  ];
+  const title = {
+    en: 'Gold Medical Standards & Technology',
+    fr: 'Normes Médicales et Technologie de Pointe',
+    tr: 'Gold Medikal Standartlarımız ve Teknolojimiz',
+  }[lang as Lang] || 'Gold Medical Standards & Technology';
+
+  const subtitle = {
+    en: 'Why DHI Choi Implanter technology delivers 3x natural density and zero scarring.',
+    fr: 'Pourquoi la technologie DHI Choi offre une densité 3x supérieure sans cicatrice.',
+    tr: 'Neden Choi Pen DHI tekniği 3 kat fazla doğal yoğunluk ve dikişsiz hızlı iyileşme sağlar.',
+  }[lang as Lang] || 'Why DHI Choi Implanter technology delivers 3x natural density and zero scarring.';
 
   return (
-    <div id="medical-standards" className="w-full space-y-10">
+    <div id="medical-standards" className="w-full space-y-8">
       <div className="text-center max-w-3xl mx-auto space-y-2">
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-800 border border-emerald-200 uppercase tracking-wider">
-          GOLD MEDICAL STANDARDS
-        </span>
-        <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
-          {t(lang as Lang, 'competitor.title')}
-        </h2>
-        <p className="text-xs sm:text-sm text-slate-600 font-medium">
-          {t(lang as Lang, 'competitor.subtitle')}
-        </p>
+        <h2 className="text-2xl sm:text-4xl font-black text-slate-900">{title}</h2>
+        <p className="text-xs sm:text-sm text-slate-600 font-medium">{subtitle}</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {features.map((item, idx) => (
-          <div
-            key={idx}
-            className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4 hover:border-emerald-500 hover:shadow-md transition-all"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-3">
-                <span className="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-600 font-black text-lg flex items-center justify-center border border-emerald-100">
-                  {item.icon}
-                </span>
-                <span className="text-[10px] font-black uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">
-                  {item.badge}
-                </span>
-              </div>
-
-              <h3 className="text-base font-black text-slate-900 mb-2 leading-tight">
-                {item.title}
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                {item.desc}
-              </p>
+      {/* 2026 BENTO-GRID LAYOUT */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        
+        {/* BENTO CARD 1 (LARGE SPAN 2): PAINLESS NEEDLE-FREE ANESTHESIA */}
+        <div className="md:col-span-2 bg-slate-950 text-white rounded-3xl p-8 border border-slate-800 shadow-xl flex flex-col justify-between relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[90px] rounded-full pointer-events-none" />
+          
+          <div className="space-y-4 relative z-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-900/60 border border-blue-700/60 text-blue-300 text-xs font-black">
+              <span>💉 Painless Comfort Infiltration</span>
             </div>
 
-            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-extrabold text-slate-500">
-              <span>{item.spec}</span>
-              <span className="text-emerald-600 font-black">✓ Medical Standard</span>
-            </div>
+            <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight">
+              {lang === 'tr' ? 'İğnesiz ve Ağrısız Anestezi Altyapısı' : 'Needle-Free & Painless Comfort Anesthesia'}
+            </h3>
+
+            <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed max-w-xl">
+              {lang === 'tr' 
+                ? 'Basınçlı püskürtme teknolojisi ile iğne kullanılmadan kafa derisine anestezi sıvıları enjekte edilir. Operasyon sırasındaki tüm acı hissi sıfırlanır.'
+                : 'Advanced pressure-spray jet injection delivers local anesthetic without traditional needles, eliminating discomfort completely.'}
+            </p>
           </div>
-        ))}
+
+          <div className="pt-6 mt-6 border-t border-slate-800 flex items-center justify-between text-xs font-extrabold text-slate-300 relative z-10">
+            <span className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+              100% Comfort Guarantee
+            </span>
+            <span className="text-blue-400 font-black">0 Needle Pain →</span>
+          </div>
+        </div>
+
+        {/* BENTO CARD 2: ATP HYPOTHERMOSOL GRAFT PRESERVATION */}
+        <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4 hover:border-blue-500 transition-all">
+          <div className="space-y-3">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 font-black text-xl flex items-center justify-center border border-emerald-100">
+              🧪
+            </div>
+            <h3 className="text-lg font-black text-slate-900 leading-tight">
+              {lang === 'tr' ? 'ATP Canlılık Solüsyonu' : 'ATP HypoThermosol Preservation'}
+            </h3>
+            <p className="text-xs text-slate-600 font-medium leading-relaxed">
+              {lang === 'tr'
+                ? 'Toplanan saç kökleri özel soğutulmuş ATP solüsyonunda bekletilerek %98+ canlılık oranı korunur.'
+                : 'Extracted follicles are stored in chilled ATP nutrient solution to maintain 98%+ graft survival.'}
+            </p>
+          </div>
+
+          <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-black text-emerald-700">
+            <span>Retention Rate</span>
+            <span>%98+ Active</span>
+          </div>
+        </div>
+
+        {/* BENTO CARD 3: SINGLE-USE SAPPHIRE & CHOI PEN KIT */}
+        <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4 hover:border-blue-500 transition-all">
+          <div className="space-y-3">
+            <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 font-black text-xl flex items-center justify-center border border-blue-100">
+              🖊️
+            </div>
+            <h3 className="text-lg font-black text-slate-900 leading-tight">
+              {lang === 'tr' ? 'Tek Kullanımlık Choi Pen Kit' : 'Single-Use Choi Implanter Pens'}
+            </h3>
+            <p className="text-xs text-slate-600 font-medium leading-relaxed">
+              {lang === 'tr'
+                ? 'Her hastaya özel sıfır paketinden açılan Choi implanter kalemleri ile mikroskobik hassasiyet.'
+                : '100% sterile, individually sealed Choi pen cartridges for maximum hygienic precision.'}
+            </p>
+          </div>
+
+          <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-black text-blue-700">
+            <span>Sterility Standard</span>
+            <span>100% Single-Use</span>
+          </div>
+        </div>
+
+        {/* BENTO CARD 4 (SPAN 2): HYPERBARIC OXYGEN & PRP AFTERCARE */}
+        <div className="md:col-span-2 bg-gradient-to-r from-blue-900 to-slate-950 text-white rounded-3xl p-8 border border-blue-800/80 shadow-xl flex flex-col justify-between relative overflow-hidden">
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-800/60 border border-blue-600/60 text-blue-200 text-xs font-black">
+              <span>🩸 Hyperbaric PRP Therapy</span>
+            </div>
+
+            <h3 className="text-2xl font-black text-white leading-tight">
+              {lang === 'tr' ? 'Oksijenli PRP & Saç Derisi Hücre Yenileme' : 'Hyperbaric Oxygen & PRP Tissue Regeneration'}
+            </h3>
+
+            <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed max-w-xl">
+              {lang === 'tr'
+                ? 'Operasyon sonrasında uygulanan konsantre PRP ve medikal oksijen tedavisi ile saç köklerinin hücresel iyileşmesi 2 katına çıkarılır.'
+                : 'Concentrated autologous PRP combined with hyperbaric oxygen session doubles cell repair velocity post-surgery.'}
+            </p>
+          </div>
+
+          <div className="pt-6 mt-6 border-t border-blue-800/60 flex items-center justify-between text-xs font-extrabold text-slate-300">
+            <span>Fast Recovery Protocol</span>
+            <span className="text-emerald-400 font-black">✓ 12-Month Support Included</span>
+          </div>
+        </div>
+
       </div>
     </div>
   );

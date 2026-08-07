@@ -80,14 +80,14 @@ export default function PricingPackages() {
           <a
             href="#analysis-wizard"
             onClick={scrollToWizard}
-            className="w-full min-h-[48px] bg-slate-900 hover:bg-slate-800 text-white font-black text-xs rounded-xl flex items-center justify-center transition-all cursor-pointer"
+            className="w-full min-h-[48px] bg-slate-900 hover:bg-slate-800 text-white font-black text-xs rounded-xl flex items-center justify-center transition-all cursor-pointer shadow-md"
           >
             <span>{t(lang as Lang, 'packages.book_cta')}</span>
           </a>
         </div>
 
-        {/* PACKAGE 2: VIP ANTALYA EXPERIENCE (MOST RECOMMENDED) */}
-        <div className="bg-slate-950 text-white border-2 border-blue-600 rounded-3xl p-6 sm:p-8 shadow-xl relative flex flex-col justify-between space-y-6 transform md:-translate-y-2">
+        {/* PACKAGE 2: VIP ANTALYA EXPERIENCE (GLASSMORPHISM BACKDROP-FILTER) */}
+        <div className="bg-slate-950/95 backdrop-blur-xl text-white border-2 border-blue-600 rounded-3xl p-6 sm:p-8 shadow-2xl relative flex flex-col justify-between space-y-6 transform md:-translate-y-2">
           {/* MOST RECOMMENDED BADGE */}
           <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white font-black text-xs px-4 py-1 rounded-full uppercase tracking-wider shadow-md">
             {t(lang as Lang, 'packages.vip_popular')}
@@ -98,7 +98,7 @@ export default function PricingPackages() {
               <span className="text-xs font-black text-blue-400 uppercase tracking-wider">
                 ALL-INCLUSIVE MEDICAL TOURISM
               </span>
-              <span className="text-xs font-bold text-slate-400">Hotel & Transfer Included</span>
+              <span className="text-xs font-bold text-slate-300">Hotel & Transfer Included</span>
             </div>
 
             <h3 className="text-xl sm:text-2xl font-black text-white mb-1">
@@ -118,7 +118,7 @@ export default function PricingPackages() {
               </div>
             </div>
 
-            <ul className="space-y-3 text-xs text-slate-200 font-semibold">
+            <ul className="space-y-3 text-xs text-slate-100 font-semibold">
               {vipIncludes.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-2.5">
                   <span className="w-5 h-5 rounded-full bg-blue-600/30 text-blue-400 border border-blue-500/30 flex items-center justify-center text-xs font-black shrink-0">✓</span>
@@ -131,7 +131,7 @@ export default function PricingPackages() {
           <a
             href="#analysis-wizard"
             onClick={scrollToWizard}
-            className="w-full min-h-[48px] bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs rounded-xl flex items-center justify-center transition-all cursor-pointer shadow-md active:scale-98"
+            className="w-full min-h-[48px] bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs rounded-xl flex items-center justify-center transition-all cursor-pointer shadow-lg active:scale-98"
           >
             <span>{t(lang as Lang, 'packages.book_cta')}</span>
           </a>

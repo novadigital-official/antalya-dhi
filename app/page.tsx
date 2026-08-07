@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import LegalTrustBand from '@/components/LegalTrustBand';
 import WhyAntalya from '@/components/WhyAntalya';
+import CountUpStats from '@/components/CountUpStats';
 import PricingPackages from '@/components/PricingPackages';
 import SocialProof from '@/components/SocialProof';
 import HairAnalysisWizard from '@/components/HairAnalysisWizard';
@@ -38,14 +39,17 @@ export default function HomePage() {
         {/* 4. WHY ANTALYA FOR HAIR TRANSPLANT? */}
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <WhyAntalya />
+          
+          {/* SAYAÇ ANİMASYONU (COUNT-UP STATS) */}
+          <CountUpStats />
         </section>
 
-        {/* 5. TRANSPARENT PRICING PACKAGES (10-SECOND CONVERSION RULE) */}
+        {/* 5. TRANSPARENT PRICING PACKAGES (GLASSMORPHISM & WCAG CONTRAST) */}
         <section id="packages" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <PricingPackages />
         </section>
 
-        {/* 6. TRUSTPILOT & GOOGLE VERIFIED SOCIAL PROOF (PLACED BEFORE WIZARD) */}
+        {/* 6. TRUSTPILOT & GOOGLE VERIFIED SOCIAL PROOF */}
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <SocialProof />
         </section>
@@ -60,14 +64,14 @@ export default function HomePage() {
           <PatientJourney />
         </section>
 
-        {/* 9. MEDICAL & SURGICAL COORDINATION TEAM */}
-        <section id="team" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
-          <MedicalTeam />
-        </section>
-
-        {/* 10. COMPETITOR BENCHMARK MEDICAL STANDARDS */}
+        {/* 9. MEDICAL STANDARDS 2026 BENTO-GRID */}
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <CompetitorBenchmarkFeatures />
+        </section>
+
+        {/* 10. MEDICAL & SURGICAL COORDINATION TEAM */}
+        <section id="team" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+          <MedicalTeam />
         </section>
 
         {/* 11. DHI CHOI PEN ADVANTAGES */}
