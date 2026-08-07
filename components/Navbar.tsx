@@ -5,16 +5,15 @@ import Link from 'next/link';
 import { useSiteContext } from '@/lib/context';
 import { t, Lang } from '@/lib/i18n';
 
-// Clean SVG Flags for 100% Cross-Platform Display (Windows, Mac, iOS, Android)
-const FLAGS: { lang: Lang; label: string; symbol: string; flagSvg: React.ReactNode }[] = [
+// Clean SVG Flags for Ultra-Minimal Display
+const FLAGS: { lang: Lang; label: string; flagSvg: React.ReactNode }[] = [
   {
     lang: 'en',
-    label: 'EN',
-    symbol: '£',
+    label: 'English',
     flagSvg: (
       <svg className="w-5 h-3.5 rounded-xs shadow-xs object-cover" viewBox="0 0 60 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <clipPath id="uk-clip"><rect width="60" height="30" rx="2"/></clipPath>
-        <g clipPath="url(#uk-clip)">
+        <clipPath id="uk-clip-nav"><rect width="60" height="30" rx="2"/></clipPath>
+        <g clipPath="url(#uk-clip-nav)">
           <rect width="60" height="30" fill="#012169"/>
           <path d="M0 0L60 30M60 0L0 30" stroke="#FFFFFF" strokeWidth="6"/>
           <path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" strokeWidth="4"/>
@@ -26,8 +25,7 @@ const FLAGS: { lang: Lang; label: string; symbol: string; flagSvg: React.ReactNo
   },
   {
     lang: 'fr',
-    label: 'FR',
-    symbol: '€',
+    label: 'Français',
     flagSvg: (
       <svg className="w-5 h-3.5 rounded-xs shadow-xs object-cover" viewBox="0 0 3 2" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="1" height="2" fill="#002395"/>
@@ -38,8 +36,7 @@ const FLAGS: { lang: Lang; label: string; symbol: string; flagSvg: React.ReactNo
   },
   {
     lang: 'tr',
-    label: 'TR',
-    symbol: '₺',
+    label: 'Türkçe',
     flagSvg: (
       <svg className="w-5 h-3.5 rounded-xs shadow-xs object-cover" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="1200" height="800" fill="#E30A17"/>
@@ -103,25 +100,22 @@ export default function Navbar() {
             <Link href="#process" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.process}</Link>
           </div>
 
-          {/* Right Section: Desktop Minimal Flag SVG Selector & CTA */}
+          {/* Right Section: Desktop Ultra-Minimal SVG Flag Selector (NO CURRENCY TEXT) */}
           <div className="hidden md:flex items-center space-x-4">
             
-            {/* Minimalist Flag SVG Selector */}
-            <div className="flex bg-slate-900 border border-slate-800 p-1.5 rounded-2xl gap-1">
+            <div className="flex bg-slate-900 border border-slate-800 p-1.5 rounded-2xl gap-1.5">
               {FLAGS.map((f) => (
                 <button
                   key={f.lang}
                   onClick={() => setLang(f.lang)}
-                  title={`${f.label} (${f.symbol})`}
-                  className={`px-3 py-1.5 text-xs font-black rounded-xl transition-all flex items-center gap-2 cursor-pointer ${
+                  title={f.label}
+                  className={`w-9 h-8 rounded-xl transition-all flex items-center justify-center cursor-pointer ${
                     lang === f.lang
-                      ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-400/40'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
+                      ? 'bg-blue-600 shadow-md ring-2 ring-blue-400/40 scale-105'
+                      : 'opacity-50 hover:opacity-100 hover:bg-slate-800'
                   }`}
                 >
                   {f.flagSvg}
-                  <span>{f.label}</span>
-                  <span className="text-[10px] opacity-75">({f.symbol})</span>
                 </button>
               ))}
             </div>
@@ -136,23 +130,21 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Right Section: DIRECT MINIMAL FLAG SVG SELECTOR + Hamburger */}
-          <div className="flex items-center space-x-2.5 md:hidden">
-            {/* Minimal Mobile Flag SVG Selector */}
+          {/* Mobile Right Section: DIRECT ULTRA-MINIMAL SVG FLAG SELECTOR + Hamburger */}
+          <div className="flex items-center space-x-2 md:hidden">
             <div className="flex bg-slate-900 border border-slate-800 p-1 rounded-xl gap-1">
               {FLAGS.map((f) => (
                 <button
                   key={f.lang}
                   onClick={() => setLang(f.lang)}
                   title={f.label}
-                  className={`px-2 py-1 text-xs font-black rounded-lg transition-all flex items-center gap-1 ${
+                  className={`w-7 h-7 rounded-lg transition-all flex items-center justify-center ${
                     lang === f.lang
-                      ? 'bg-blue-600 text-white shadow-xs'
-                      : 'text-slate-400 hover:text-slate-200'
+                      ? 'bg-blue-600 shadow-xs'
+                      : 'opacity-40 hover:opacity-100'
                   }`}
                 >
                   {f.flagSvg}
-                  <span className="text-[10px]">{f.symbol}</span>
                 </button>
               ))}
             </div>

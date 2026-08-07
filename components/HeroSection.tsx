@@ -40,14 +40,14 @@ export default function HeroSection() {
             <span>{t(lang as Lang, 'hero.ministryBadge')}</span>
           </div>
 
-          {/* H1 Title: Targeted at Foreign & VIP Patients */}
+          {/* H1 Title: Surgeon-Guided Premium Positioning */}
           <h1 className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.12]">
             {lang === 'fr' ? (
-              <>Expérience de Greffe <span className="text-blue-500">DHI VIP</span> à Antalya</>
+              <>Greffe DHI Premium <span className="text-blue-500">sous Contrôle Médical</span> à Antalya</>
             ) : lang === 'tr' ? (
-              <>Antalya'da <span className="text-blue-500">VIP DHI</span> Saç Ekimi Deneyimi</>
+              <>Antalya'da <span className="text-blue-500">Doktor Kontrollü</span> Premium DHI Saç Ekimi</>
             ) : (
-              <>VIP <span className="text-blue-500">DHI Hair Transplant</span> Experience in Antalya</>
+              <><span className="text-blue-500">Surgeon-Guided</span> Premium DHI Hair Transplant in Antalya</>
             )}
           </h1>
 
@@ -78,7 +78,7 @@ export default function HeroSection() {
             </div>
           )}
 
-          {/* Single, Razor-Sharp High-Conversion WhatsApp Action */}
+          {/* Single High-Conversion WhatsApp Action */}
           <div className="pt-2 max-w-lg mx-auto lg:mx-0">
             <a
               href="https://wa.me/905551234567?text=Hello%20Antalya%20DHI,%20I%20would%20like%20to%20send%20my%20scalp%20photos%20for%20a%2024-hour%20doctor%20evaluation."
@@ -92,7 +92,7 @@ export default function HeroSection() {
 
         </div>
 
-        {/* Right Column: Visual Trust Hero Image + 4 Trust Badges (5 cols) */}
+        {/* Right Column: Visual Trust Hero Image + Lead Surgeon Badge Overlay (5 cols) */}
         <div className="lg:col-span-5 space-y-4">
           <div className="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 group">
             <img
@@ -100,10 +100,19 @@ export default function HeroSection() {
               alt="Antalya DHI Medical Consultation"
               className="w-full h-[320px] sm:h-[380px] object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-6">
-              <span className="inline-block bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider w-max mb-2">
-                AUTHENTIC CLINIC ENVIRONMENT
-              </span>
+            {/* Surgeon Badge Overlay */}
+            <div className="absolute top-4 right-4 bg-slate-950/90 backdrop-blur-md border border-blue-500/40 p-3 rounded-2xl shadow-xl flex items-center gap-3 max-w-[220px]">
+              <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-black text-sm border border-blue-400 shrink-0">
+                👨‍⚕️
+              </div>
+              <div>
+                <div className="text-xs font-black text-white">Dr. C. Yılmaz</div>
+                <div className="text-[10px] text-blue-400 font-extrabold">Lead DHI Surgeon</div>
+                <div className="text-[9px] text-slate-400 font-medium">12+ Yıl Cerrahi Pratik</div>
+              </div>
+            </div>
+
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent flex flex-col justify-end p-6">
               <h3 className="text-base sm:text-lg font-black text-white leading-tight">
                 {lang === 'tr' ? 'Uzman Hekim Muayenesi & Ön Saç Çizgisi Planlaması' : 'In-Person Surgeon Consultation & Hairline Design'}
               </h3>
