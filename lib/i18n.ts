@@ -13,27 +13,33 @@ export const translations = {
     'nav.contact': 'Contact',
     
     // Hero Section
-    'hero.title': 'Antalya DHI Hair Transplant',
-    'hero.subtitle': 'Send your scalp photos today for a 24-hour doctor evaluation and personalized all-inclusive DHI plan.',
-    'hero.badge1': '★ ★ ★ ★ ★ 4.9/5 Verified Patient Rating',
-    'hero.badge2': 'Sağlık Bakanlığı Authorized Partner Clinic',
+    'hero.title': 'VIP DHI Hair Transplant Experience in Antalya',
+    'hero.subtitle': 'All-Inclusive VIP Transfer, Luxury Hotel Stay & Medical Coordination for UK & European Patients.',
+    'hero.badge1': '★ ★ ★ ★ ★ 4.9/5 Rating on Trustpilot & Google',
+    'hero.badge2': 'Authorized Medical Tourism Clinic',
     'hero.badge3': 'VIP Transfer & Luxury Hotel Stay',
     'hero.fromPrice': 'From £1,550',
-    'hero.cta_whatsapp': 'Send Photos via WhatsApp',
-    'hero.whatsappCTA': 'Send Photos via WhatsApp',
-    'hero.cta_analysis': 'Send Photos for 24-Hour Evaluation',
-    'hero.analysisCTA': 'Send Photos for 24-Hour Evaluation',
+    'hero.cta_whatsapp': 'Send Photos → Get 24-Hour Doctor Review',
+    'hero.whatsappCTA': 'Send Photos → Get 24-Hour Doctor Review',
+    'hero.cta_analysis': 'Get Free Hair Analysis',
+    'hero.analysisCTA': 'Get Free Hair Analysis',
     'hero.ministryBadge': 'T.C. Ministry of Health Authorized Partner Clinic (Ref: AK-84920)',
 
+    // Hero Visual Tags
+    'hero.vtag1': 'International Patient Coordination',
+    'hero.vtag2': 'Native English & French Support',
+    'hero.vtag3': 'Antalya VIP Health Tourism',
+    'hero.vtag4': '12-Month Post-Op Growth Follow-up',
+
     // Trust Band
-    'trust.certified': 'T.C. Ministry of Health Authorized Clinic',
-    'trust.warranty': 'Lifetime Warranty Certificate',
+    'trust.certified': 'T.C. Ministry of Health Authorized Partner Clinic (Ref: AK-84920)',
+    'trust.warranty': 'Lifetime Warranty Certificate Included',
     'trust.vip_transfer': 'VIP Mercedes Airport & Clinic Transfer',
-    'trust.aftercare': '12-Month Post-Op Follow-up Support',
+    'trust.aftercare': '12-Month Post-Op Growth Support',
 
     // Medical Team Section
     'team.title': 'Our Surgical & Patient Coordination Team',
-    'team.subtitle': 'Certified surgeons and dedicated patient coordinators guiding your DHI transformation in Antalya.',
+    'team.subtitle': 'Experienced hair transplant specialists and international patient coordinators guiding your DHI stay in Antalya.',
     'team.member1.role': 'Lead Hair Transplant Surgeon',
     'team.member1.exp': '12+ Years Surgical Practice',
     'team.member1.desc': 'Specialized in Choi Pen DHI transplantation, natural hairline design, and high-density graft placement.',
@@ -44,86 +50,50 @@ export const translations = {
     'team.member3.exp': '12-Month Growth Specialist',
     'team.member3.desc': 'Guides your first hair wash, supplies medical care kit, and monitors graft growth every month.',
 
-    // Competitor Features (What Top Antalya Clinics Offer)
-    'competitor.title': 'Standard Medical Standards Included in Every Procedure',
-    'competitor.subtitle': 'We match and exceed top European & Turkish clinic standards with zero hidden costs.',
+    // Competitor Features
+    'competitor.title': 'Medical Standards Included in Every Surgery',
+    'competitor.subtitle': 'We match and exceed European clinic standards with zero hidden costs.',
     'competitor.f1.title': 'Needle-Free Painless Anesthesia',
-    'competitor.f1.desc': 'High-pressure ComfortIn anesthesia delivery system eliminates needle pain before graft extraction.',
+    'competitor.f1.desc': 'ComfortIn high-pressure injection system eliminates needle pain before graft extraction.',
     'competitor.f2.title': '98%+ Graft Survival Rate',
-    'competitor.f2.desc': 'Extracted follicles are stored in HypoThermosol ATP nutrient solution for maximum graft viability.',
+    'competitor.f2.desc': 'Follicles stored in HypoThermosol ATP nutrient solution for maximum graft viability.',
     'competitor.f3.title': 'PRP & Oxygenation Therapy',
-    'competitor.f3.desc': 'Platelet-Rich Plasma therapy combined with hyperbaric oxygen session to accelerate post-op healing.',
-    'competitor.f4.title': 'Trichological Scalp Analysis',
-    'competitor.f4.desc': 'Microscopic hair follicle density and scalp elasticity mapping prior to Choi Pen hairline design.',
+    'competitor.f3.desc': 'Platelet-Rich Plasma therapy combined with hyperbaric oxygen session to accelerate healing.',
+    'competitor.f4.title': 'Trichological Scalp Mapping',
+    'competitor.f4.desc': 'Microscopic hair follicle density mapping prior to Choi Pen hairline design.',
 
     // Advantages
     'advantages.title': 'Why DHI Choi Pen Technology?',
     'advantages.subtitle': 'Direct Hair Implantation with Choi Implanter Pen for maximum density and natural direction.',
-    'advantages.items.no_shave.title': 'No-Shave DHI Option',
-    'advantages.items.no_shave.description': 'Implantation without shaving your entire head. Ideal for patients requiring high discretion.',
-    'advantages.items.natural_angle.title': 'Natural Direction & Angle',
-    'advantages.items.natural_angle.description': 'Choi Implanter Pen enables precise 40-45 degree angle placement for 100% natural hair direction.',
-    'advantages.items.high_density.title': 'High-Density Grafting',
-    'advantages.items.high_density.description': 'Allows up to 60-80 grafts per cm² without damaging existing hair follicles.',
-    'advantages.items.fast_recovery.title': 'Micro-Incision Recovery',
-    'advantages.items.fast_recovery.description': 'No scalpel or stitches. Minimal tissue trauma leads to rapid healing within 3-5 days.',
 
-    // Process Timeline ("Size Özel DHI Süreci")
+    // Process Timeline
     'process.title': 'Your Customized DHI Journey in Antalya',
     'process.subtitle': '4 transparent steps from your first online contact to your full hair recovery.',
-    'process.step1.num': '01',
-    'process.step1.title': 'Send Scalp Photos for Free Analysis',
-    'process.step1.desc': 'Send 3 scalp photos via WhatsApp. Our surgical team evaluates graft needs within 24 hours.',
-    'process.step2.num': '02',
-    'process.step2.title': 'Receive All-Inclusive Quote',
-    'process.step2.desc': 'Receive your transparent treatment plan, package rate (£1,550 or £1,900), and flight schedule.',
-    'process.step3.num': '03',
-    'process.step3.title': 'VIP Arrival & Hospital Procedure',
-    'process.step3.desc': 'VIP airport pickup, hotel check-in, and painless DHI hair transplant under sterile hospital conditions.',
-    'process.step4.num': '04',
-    'process.step4.title': '12-Month Post-Op Follow-up',
-    'process.step4.desc': 'Personal coordinator monitoring your wash routine and hair growth milestones every month.',
 
     // Packages
     'packages.title': 'Transparent DHI Packages',
     'packages.subtitle': 'High-quality medical care in Antalya with zero hidden costs.',
-    'packages.standard_name': 'Standard DHI Package',
+    'packages.standard_name': 'Standard DHI',
     'packages.standard_title': 'Standard DHI Package',
-    'packages.standard_desc': 'DHI surgery package for local & self-arranging patients.',
+    'packages.standard_desc': 'Surgery-Focused Basic Package (Ideal for local & self-arranging patients)',
     'packages.standard_includes': 'Maximum Graft DHI Operation|Painless Needle-Free Anesthesia|Post-Op Medication & Special Shampoo Kit|Lifetime Warranty Certificate|12-Month Online Follow-up Support',
     'packages.vip_name': 'VIP Antalya Experience',
     'packages.vip_title': 'VIP Antalya Experience',
-    'packages.vip_desc': 'Complete health tourism experience with luxury stay & transfer.',
+    'packages.vip_desc': 'Turkey Health Tourism & Luxury Comfort Package (Full All-Inclusive Stay)',
     'packages.vip_popular': 'MOST RECOMMENDED',
     'packages.vip_includes': 'Full DHI Operation & Maximum Grafts|VIP Mercedes Vito Airport & Clinic Transfers|1 Night Luxury Hotel Accommodation|Personal Native Language Coordinator (EN/FR/TR)|PRP & Oxygen Therapy Session|12-Month Post-Op Growth Follow-up',
-    'packages.book_cta': 'Send Photos for Evaluation',
+    'packages.book_cta': 'Send Photos → Get 24-Hour Review',
 
     // Calculator / Wizard
     'calculator.title': 'Free DHI Hair Analysis',
-    'calculator.subtitle': 'Select your hair loss stage to receive a customized graft estimate and price quote.',
-    'calculator.step1': 'Hair Loss Stage',
-    'calculator.step2': 'Package Preference',
-    'calculator.step3': 'WhatsApp Analysis',
     'calculator.step3_title': 'Send Scalp Photos for 24-Hour Doctor Review',
-    'calculator.name_placeholder': 'Full Name',
-    'calculator.country_placeholder': 'Select Your Country',
-    'calculator.phone_placeholder': 'WhatsApp Phone Number',
     'calculator.submit': 'Send Photos via WhatsApp',
 
-    // Patient Journey (Social Proof Replacement)
+    // Patient Journey
     'journey.title': 'The Antalya DHI Patient Journey',
-    'journey.subtitle': 'How international patients experience medical tourism with us.',
-    'journey.step1.title': 'VIP Airport Arrival',
-    'journey.step1.desc': 'Private driver meets you at Antalya Airport with Mercedes Vito and takes you to your hotel.',
-    'journey.step2.title': 'Doctor Consultation',
-    'journey.step2.desc': 'In-person scalp evaluation, hairline design, and blood tests at our certified partner clinic.',
-    'journey.step3.title': 'DHI Procedure Day',
-    'journey.step3.desc': 'Comfortable DHI graft extraction and Choi Pen implantation performed by certified surgical specialists.',
-    'journey.step4.title': 'First Wash & Aftercare',
-    'journey.step4.desc': 'Special hair wash demonstration, aftercare kit delivery, and safe return transfer to airport.',
 
     // Disclaimer & Footer
-    'disclaimer.text': 'This platform is an informational and guidance portal for international health tourism. All medical procedures are performed by certified surgeons at our T.C. Ministry of Health Authorized Partner Clinic (Ref: AK-84920).',
+    'disclaimer.text': 'This platform is an informational portal for international health tourism. All medical procedures are performed by certified surgeons at our T.C. Ministry of Health Authorized Partner Clinic (Ref: AK-84920).',
     'footer.rights': 'All Rights Reserved',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
@@ -145,45 +115,54 @@ export const translations = {
     'nav.contact': 'Contact',
     
     // Hero Section
-    'hero.title': 'Greffe de Cheveux DHI à Antalya',
-    'hero.subtitle': 'Envoyez vos photos aujourd\'hui pour une évaluation médicale en 24h et un devis tout compris.',
-    'hero.badge1': '★ ★ ★ ★ ★ Évaluation Patients 4.9/5',
-    'hero.badge2': 'Équipe Médicale Agréée par le Ministère',
-    'hero.badge3': 'Transferts VIP Mercedes & Hôtel',
+    'hero.title': 'Expérience de Greffe DHI VIP à Antalya',
+    'hero.subtitle': 'Transfert VIP, Hébergement de Luxe et Coordination Médicale pour Patients Européens.',
+    'hero.badge1': '★ ★ ★ ★ ★ Évaluation 4.9/5 sur Trustpilot & Google',
+    'hero.badge2': 'Clinique Agréée Tourisme Médical',
+    'hero.badge3': 'Transfert VIP & Hôtel de Luxe',
     'hero.fromPrice': 'À partir de 1 800€',
-    'hero.cta_whatsapp': 'Envoyer Photos sur WhatsApp',
-    'hero.whatsappCTA': 'Envoyer Photos sur WhatsApp',
-    'hero.cta_analysis': 'Évaluation en 24h',
-    'hero.analysisCTA': 'Évaluation en 24h',
+    'hero.cta_whatsapp': 'Envoyer Photos → Évaluation en 24h',
+    'hero.whatsappCTA': 'Envoyer Photos → Évaluation en 24h',
+    'hero.cta_analysis': 'Analyse Capillaire Gratuite',
+    'hero.analysisCTA': 'Analyse Capillaire Gratuite',
     'hero.ministryBadge': 'Clinique Partenaire Certifiée par le Ministère de la Santé T.C. (Ref: AK-84920)',
 
+    // Hero Visual Tags
+    'hero.vtag1': 'Coordination Patient Internationale',
+    'hero.vtag2': 'Support en Français & Anglais',
+    'hero.vtag3': 'Tourisme Médical VIP à Antalya',
+    'hero.vtag4': 'Suivi Post-Opératoire 12 Mois',
+
     // Trust Band
-    'trust.certified': 'Clinique Certifiée Ministère de la Santé T.C.',
-    'trust.warranty': 'Certificat de Garantie à Vie',
-    'trust.vip_transfer': 'Transferts VIP Aéroport & Clinique',
-    'trust.aftercare': 'Suivi Post-Opératoire 12 Mois',
+    'trust.certified': 'Clinique Partenaire Certifiée Ministère de la Santé T.C. (Ref: AK-84920)',
+    'trust.warranty': 'Certificat de Garantie à Vie Inclus',
+    'trust.vip_transfer': 'Transfert VIP Mercedes Aéroport & Clinique',
+    'trust.aftercare': 'Suivi de Croissance Post-Opératoire 12 Mois',
 
     // Medical Team Section
-    'team.title': 'Notre Équipe Médicale & Coordination',
-    'team.subtitle': 'Chirurgiens certifiés et coordinateurs internationaux dédiés à votre parcours DHI à Antalya.',
+    'team.title': 'Notre Équipe Chirurgicale & Coordination',
+    'team.subtitle': 'Chirurgiens certifiés et coordinateurs internationaux dédiés à votre séjour DHI à Antalya.',
     'team.member1.role': 'Chirurgien Spécialiste DHI',
     'team.member1.exp': 'Plus de 12 ans d\'Expérience',
     'team.member1.desc': 'Spécialisé dans l\'implantation DHI Choi Pen, le dessin de la ligne frontale et la haute densité.',
     'team.member2.role': 'Coordinateur Patient International',
-    'team.member2.exp': 'Spécialiste de la Prise en Charge',
-    'team.member2.desc': 'Assure le suivi dans votre langue (FR/EN/TR), les transferts VIP Mercedes et l\'hôtel.',
+    'team.member2.exp': 'Spécialiste Multilingue (FR/EN/TR)',
+    'team.member2.desc': 'Organise vos vols, transferts VIP en Mercedes et votre séjour à l\'hôtel.',
     'team.member3.role': 'Superviseur Médical Post-Opératoire',
-    'team.member3.exp': 'Spécialiste de la Repousse',
-    'team.member3.desc': 'Guide votre routine de lavage, l\'utilisation des soins post-op et suit la repousse chaque mois.',
+    'team.member3.exp': 'Spécialiste Suivi Repousse',
+    'team.member3.desc': 'Guide votre premier lavage, fournit le kit de soins et suit la repousse chaque mois.',
 
     // Competitor Features
     'competitor.title': 'Standards Médicaux Inclus dans Chaque Procédure',
-    'competitor.subtitle': 'Nous surpassons les plus grands standards cliniques européens sans aucun frais caché.',
+    'competitor.subtitle': 'Nous surpassons les standards cliniques européens sans aucun frais caché.',
     'competitor.f1.title': 'Anesthésie Sans Aiguille et Indolore',
-    'competitor.f1.desc': 'Système d\'anesthésie à haute pression ComfortIn éliminant la douleur avant l\'extraction.',
+    'competitor.f1.desc': 'Système d\'injection haute pression ComfortIn éliminant la douleur avant l\'extraction.',
     'competitor.f2.title': 'Taux de Survie des Greffons > 98%',
+    'competitor.f2.desc': 'Follicules conservés dans une solution nutritive HypoThermosol ATP.',
     'competitor.f3.title': 'Thérapie PRP & Oxygénation',
-    'competitor.f4.title': 'Analyse Trichologique du Cuir Chevelu',
+    'competitor.f3.desc': 'Séance de PRP et oxygène hyperbare pour accélérer la cicatrisation.',
+    'competitor.f4.title': 'Cartographie Trichologique du Cuir Chevelu',
+    'competitor.f4.desc': 'Analyse microscopique de densité avant le dessin de la ligne frontale.',
 
     // Advantages
     'advantages.title': 'Pourquoi la Greffe Capillaire DHI ?',
@@ -196,12 +175,15 @@ export const translations = {
     // Packages
     'packages.title': 'Forfaits DHI Transparents',
     'packages.subtitle': 'Des soins médicaux de haute qualité à Antalya sans aucun frais caché.',
-    'packages.standard_name': 'Standard DHI Package',
+    'packages.standard_name': 'Standard DHI',
     'packages.standard_title': 'Standard DHI Package',
+    'packages.standard_desc': 'Forfait Axé Opération Seule (Idéal pour patients autonomes)',
     'packages.vip_name': 'VIP Antalya Experience',
     'packages.vip_title': 'VIP Antalya Experience',
+    'packages.vip_desc': 'Expérience Tourisme Médical & Confort VIP (Séjour Tout Compris)',
     'packages.vip_popular': 'LE PLUS RECOMMANDÉ',
-    'packages.book_cta': 'Évaluation en 24h',
+    'packages.vip_includes': 'Opération DHI Complète & Greffons Maximaux|Transferts VIP en Mercedes Vito Aéroport & Clinique|1 Nuit d\'Hébergement en Hôtel de Luxe|Coordinateur Personnel Dédié (FR/EN/TR)|Thérapie PRP & Oxygénation|Suivi de Croissance Post-Opératoire 12 Mois',
+    'packages.book_cta': 'Envoyer Photos → Évaluation en 24h',
 
     // Calculator / Wizard
     'calculator.title': 'Analyse Capillaire DHI Gratuite',
@@ -212,7 +194,7 @@ export const translations = {
     'journey.title': 'L\'Expérience DHI à Antalya',
 
     // Disclaimer & Footer
-    'disclaimer.text': 'Cette plateforme est un portail d\'information et d\'orientation pour le tourisme médical. Toutes les procédures sont effectuées dans notre clinique partenaire autorisée par le Ministère de la Santé T.C. (Ref: AK-84920).',
+    'disclaimer.text': 'Cette plateforme est un portail d\'information pour le tourisme médical. Toutes les procédures sont effectuées dans notre clinique partenaire autorisée par le Ministère de la Santé T.C. (Ref: AK-84920).',
     'footer.rights': 'Tous Droits Réservés',
     'footer.privacy': 'Politique de Confidentialité',
     'footer.terms': 'Conditions d\'Utilisation',
@@ -234,23 +216,29 @@ export const translations = {
     'nav.contact': 'İletişim',
     
     // Hero Section
-    'hero.title': 'Antalya DHI Saç Ekimi',
-    'hero.subtitle': 'Fotoğrafınızı bugün gönderin, 24 saat içinde uzman doktorumuz değerlendirip kişiye özel DHI planınızı hazırlasın.',
-    'hero.badge1': '★ ★ ★ ★ ★ 4.9/5 Onaylı Hasta Derecelendirmesi',
-    'hero.badge2': 'Sağlık Bakanlığı Onaylı Sağlık Ekibi',
-    'hero.badge3': 'VIP Transfer & Konaklama Desteği',
+    'hero.title': 'Antalya\'da VIP DHI Saç Ekimi Deneyimi',
+    'hero.subtitle': 'Avrupa\'dan Gelen Hastalar İçin VIP Transfer, Otel Konaklaması ve Medikal Koordinasyon Dahil Kişiye Özel Tedavi Planı.',
+    'hero.badge1': '★ ★ ★ ★ ★ Trustpilot & Google Üzerinde 4.9/5 Puan',
+    'hero.badge2': 'Sağlık Turizmi Yetkili Anlaşmalı Klinik',
+    'hero.badge3': 'VIP Transfer & Otel Konaklaması',
     'hero.fromPrice': '90.000 TL\'den',
-    'hero.cta_whatsapp': 'WhatsApp\'tan Fotoğraf Gönder',
-    'hero.whatsappCTA': 'WhatsApp\'tan Fotoğraf Gönder',
-    'hero.cta_analysis': 'Fotoğrafını Gönder, 24 Saatte Uzman Değerlendirsin',
-    'hero.analysisCTA': 'Fotoğrafını Gönder, 24 Saatte Uzman Değerlendirsin',
+    'hero.cta_whatsapp': 'Fotoğrafını Gönder → 24 Saat İçinde Saç Analizi',
+    'hero.whatsappCTA': 'Fotoğrafını Gönder → 24 Saat İçinde Saç Analizi',
+    'hero.cta_analysis': 'Ücretsiz Saç Analizi Al',
+    'hero.analysisCTA': 'Ücretsiz Saç Analizi Al',
     'hero.ministryBadge': 'T.C. Sağlık Bakanlığı Onaylı Anlaşmalı Klinik (Ref: AK-84920)',
 
+    // Hero Visual Tags
+    'hero.vtag1': 'Uluslararası Hasta Koordinasyonu',
+    'hero.vtag2': 'İngilizce & Fransızca Destek',
+    'hero.vtag3': 'Antalya VIP Sağlık Turizmi',
+    'hero.vtag4': '12 Ay Operasyon Sonrası Takip',
+
     // Trust Band
-    'trust.certified': 'T.C. Sağlık Bakanlığı Onaylı Anlaşmalı Klinik',
-    'trust.warranty': 'Ömür Boyu Garanti Sertifikası',
-    'trust.vip_transfer': 'VIP Havaalanı & Klinik Transferi',
-    'trust.aftercare': '12 Ay Operasyon Sonrası Takip',
+    'trust.certified': 'T.C. Sağlık Bakanlığı Onaylı Anlaşmalı Klinik (Ref: AK-84920)',
+    'trust.warranty': 'Ömür Boyu Garanti Sertifikası Dahil',
+    'trust.vip_transfer': 'VIP Mercedes Havaalanı & Klinik Transferi',
+    'trust.aftercare': '12 Ay Operasyon Sonrası Gelişim Takibi',
 
     // Medical Team Section
     'team.title': 'Medikal & Koordinasyon Ekibimiz',
@@ -273,15 +261,15 @@ export const translations = {
     'competitor.f2.title': '%98+ Greft Canlılık Oranı',
     'competitor.f2.desc': 'Toplanan saç kökleri özel HypoThermosol besleyici ATP solüsyonunda muhafaza edilerek %98+ tutunma sağlanır.',
     'competitor.f3.title': 'PRP ve Oksijen Terapisi',
-    'competitor.f3.desc': 'Kendi kanınızdan hazırlanan PRP ile doku iyileşmesini ve saç hücrelerinin hızlı uzamasını sağlayan tedavi.',
-    'competitor.f4.title': 'Trikolojik Saç Derisi Analizi',
+    'competitor.f3.desc': 'Kendi kanınızdan hazırlanan PRP ve hiperbarik oksijen seansı ile hızlı doku iyileşmesi.',
+    'competitor.f4.title': 'Trikolojik Saç Derisi Haritalama',
     'competitor.f4.desc': 'Choi Pen implantasyon öncesi mikroskobik saç derisi esnekliği ve donör alan yoğunluk haritalaması.',
 
     // Advantages
     'advantages.title': 'Neden DHI Saç Ekimi?',
     'advantages.subtitle': 'Choi Implanter Pen ile kanal açmadan doğrudan implantasyon ve doğal görünüm.',
 
-    // Process Timeline ("Size Özel DHI Süreci")
+    // Process Timeline
     'process.title': 'Size Özel DHI Süreci',
     'process.subtitle': 'İlk iletişiminizden tam saç gelişimine kadar 4 şeffaf adım.',
 
@@ -290,10 +278,13 @@ export const translations = {
     'packages.subtitle': 'Gizli maliyet olmadan Antalya\'da dünya standartlarında medikal bakım.',
     'packages.standard_name': 'Standard DHI',
     'packages.standard_title': 'Standard DHI',
+    'packages.standard_desc': 'Operasyon Odaklı Paket (Yerel & kendi organizasyonunu yapan hastalar için)',
     'packages.vip_name': 'VIP Antalya Experience',
     'packages.vip_title': 'VIP Antalya Experience',
+    'packages.vip_desc': 'Türkiye Deneyimi + Konfor Paketi (VIP Transfer & Otel Konaklaması Dahil)',
     'packages.vip_popular': 'EN ÇOK TERCİH EDİLEN',
-    'packages.book_cta': 'Fotoğraf Gönder & Analiz Al',
+    'packages.vip_includes': 'DHI Operasyonu (Maksimum Greft)|VIP Mercedes Vito Havaalanı & Klinik Transferleri|1 Gece Otel Konaklaması|Kişisel Hasta Koordinatörü (TR/EN/FR)|PRP & Oksijen Terapisi Seansı|Ömür Boyu Garanti Sertifikası',
+    'packages.book_cta': 'Fotoğraf Gönder → 24 Saatte Analiz Al',
 
     // Calculator / Wizard
     'calculator.title': 'Ücretsiz Saç Analizi',

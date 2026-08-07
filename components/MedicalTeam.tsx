@@ -12,21 +12,21 @@ export default function MedicalTeam() {
       exp: t(lang as Lang, 'team.member1.exp'),
       desc: t(lang as Lang, 'team.member1.desc'),
       icon: '🩺',
-      tag: 'Certified DHI Surgeon'
+      tag: 'DHI Surgical Lead'
     },
     {
       role: t(lang as Lang, 'team.member2.role'),
       exp: t(lang as Lang, 'team.member2.exp'),
       desc: t(lang as Lang, 'team.member2.desc'),
       icon: '🌐',
-      tag: 'Native EN / FR / TR'
+      tag: 'Multilingual Care (EN/FR/TR)'
     },
     {
       role: t(lang as Lang, 'team.member3.role'),
       exp: t(lang as Lang, 'team.member3.exp'),
       desc: t(lang as Lang, 'team.member3.desc'),
       icon: '📋',
-      tag: '12-Month Growth Care'
+      tag: '12-Month Growth Specialist'
     }
   ];
 
@@ -34,7 +34,7 @@ export default function MedicalTeam() {
     <div id="team" className="w-full space-y-10">
       <div className="text-center max-w-3xl mx-auto space-y-2">
         <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 uppercase tracking-wider">
-          EXPERT CARE & TRANSPARENCY
+          EXPERT SURGICAL & CARE TEAM
         </span>
         <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
           {t(lang as Lang, 'team.title')}
@@ -72,8 +72,8 @@ export default function MedicalTeam() {
             </div>
 
             <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-extrabold text-slate-700">
-              <span>T.C. Ministry of Health Partner</span>
-              <span className="text-emerald-600">✓ Verified</span>
+              <span>Medical Tourism Team</span>
+              <span className="text-blue-600 font-black">Professional Care</span>
             </div>
           </div>
         ))}

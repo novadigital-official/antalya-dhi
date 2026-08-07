@@ -11,32 +11,36 @@ export default function CompetitorBenchmarkFeatures() {
       title: t(lang as Lang, 'competitor.f1.title'),
       desc: t(lang as Lang, 'competitor.f1.desc'),
       icon: '💉',
-      badge: 'Pain-Free Anesthesia'
+      badge: 'ComfortIn Injection System',
+      spec: 'Painless Pressure Delivery'
     },
     {
       title: t(lang as Lang, 'competitor.f2.title'),
       desc: t(lang as Lang, 'competitor.f2.desc'),
       icon: '🔬',
-      badge: 'ATP Follicle Nutrition'
+      badge: 'HypoThermosol ATP Solution',
+      spec: '98%+ Follicle Survival'
     },
     {
       title: t(lang as Lang, 'competitor.f3.title'),
       desc: t(lang as Lang, 'competitor.f3.desc'),
       icon: '🩸',
-      badge: 'Rapid Tissue Repair'
+      badge: 'PRP & Hyperbaric Therapy',
+      spec: 'Accelerated Tissue Healing'
     },
     {
       title: t(lang as Lang, 'competitor.f4.title'),
       desc: t(lang as Lang, 'competitor.f4.desc'),
       icon: '🔍',
-      badge: 'Microscopic Mapping'
+      badge: 'Trichological Analysis',
+      spec: 'Microscopic Graft Mapping'
     }
   ];
 
   return (
     <div id="medical-standards" className="w-full space-y-10">
       <div className="text-center max-w-3xl mx-auto space-y-2">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-800 border border-emerald-200 uppercase tracking-wider">
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-800 border border-emerald-200 uppercase tracking-wider">
           GOLD MEDICAL STANDARDS
         </span>
         <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
@@ -71,9 +75,9 @@ export default function CompetitorBenchmarkFeatures() {
               </p>
             </div>
 
-            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-extrabold text-slate-400">
-              <span>Standard Feature</span>
-              <span className="text-emerald-600 font-black">✓ Included</span>
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-extrabold text-slate-500">
+              <span>{item.spec}</span>
+              <span className="text-emerald-600 font-black">✓ Medical Standard</span>
             </div>
           </div>
         ))}
