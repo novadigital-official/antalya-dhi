@@ -5,10 +5,50 @@ import Link from 'next/link';
 import { useSiteContext } from '@/lib/context';
 import { t, Lang } from '@/lib/i18n';
 
-const FLAGS: { lang: Lang; flag: string; title: string }[] = [
-  { lang: 'en', flag: '🇬🇧', title: 'English / GBP (£)' },
-  { lang: 'fr', flag: '🇫🇷', title: 'Français / EUR (€)' },
-  { lang: 'tr', flag: '🇹🇷', title: 'Türkçe / TRY (₺)' },
+// Clean SVG Flags for 100% Cross-Platform Display (Windows, Mac, iOS, Android)
+const FLAGS: { lang: Lang; label: string; symbol: string; flagSvg: React.ReactNode }[] = [
+  {
+    lang: 'en',
+    label: 'EN',
+    symbol: '£',
+    flagSvg: (
+      <svg className="w-5 h-3.5 rounded-xs shadow-xs object-cover" viewBox="0 0 60 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <clipPath id="uk-clip"><rect width="60" height="30" rx="2"/></clipPath>
+        <g clipPath="url(#uk-clip)">
+          <rect width="60" height="30" fill="#012169"/>
+          <path d="M0 0L60 30M60 0L0 30" stroke="#FFFFFF" strokeWidth="6"/>
+          <path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" strokeWidth="4"/>
+          <path d="M30 0V30M0 15H60" stroke="#FFFFFF" strokeWidth="10"/>
+          <path d="M30 0V30M0 15H60" stroke="#C8102E" strokeWidth="6"/>
+        </g>
+      </svg>
+    )
+  },
+  {
+    lang: 'fr',
+    label: 'FR',
+    symbol: '€',
+    flagSvg: (
+      <svg className="w-5 h-3.5 rounded-xs shadow-xs object-cover" viewBox="0 0 3 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1" height="2" fill="#002395"/>
+        <rect x="1" width="1" height="2" fill="#FFFFFF"/>
+        <rect x="2" width="1" height="2" fill="#ED2939"/>
+      </svg>
+    )
+  },
+  {
+    lang: 'tr',
+    label: 'TR',
+    symbol: '₺',
+    flagSvg: (
+      <svg className="w-5 h-3.5 rounded-xs shadow-xs object-cover" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1200" height="800" fill="#E30A17"/>
+        <circle cx="425" cy="400" r="200" fill="#FFFFFF"/>
+        <circle cx="475" cy="400" r="160" fill="#E30A17"/>
+        <polygon points="587.5,400 706.7,438.7 633 337.3 633,462.7 706.7,361.3" fill="#FFFFFF"/>
+      </svg>
+    )
+  }
 ];
 
 export default function Navbar() {
@@ -58,28 +98,30 @@ export default function Navbar() {
           {/* Center: Desktop Nav Links */}
           <div className="hidden md:flex space-x-8 text-sm">
             <Link href="/" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.home}</Link>
+            <Link href="#results" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.results}</Link>
             <Link href="#packages" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.packages}</Link>
             <Link href="#process" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.process}</Link>
-            <Link href="#results" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.results}</Link>
           </div>
 
-          {/* Right Section: Desktop Minimal Flag Selector & CTA */}
+          {/* Right Section: Desktop Minimal Flag SVG Selector & CTA */}
           <div className="hidden md:flex items-center space-x-4">
             
-            {/* Minimalist Flag Selector */}
+            {/* Minimalist Flag SVG Selector */}
             <div className="flex bg-slate-900 border border-slate-800 p-1.5 rounded-2xl gap-1">
               {FLAGS.map((f) => (
                 <button
                   key={f.lang}
                   onClick={() => setLang(f.lang)}
-                  title={f.title}
-                  className={`w-9 h-9 text-base rounded-xl transition-all flex items-center justify-center cursor-pointer ${
+                  title={`${f.label} (${f.symbol})`}
+                  className={`px-3 py-1.5 text-xs font-black rounded-xl transition-all flex items-center gap-2 cursor-pointer ${
                     lang === f.lang
-                      ? 'bg-blue-600 shadow-md ring-2 ring-blue-400/40 scale-105'
-                      : 'opacity-60 hover:opacity-100 hover:bg-slate-800'
+                      ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-400/40'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
                   }`}
                 >
-                  <span>{f.flag}</span>
+                  {f.flagSvg}
+                  <span>{f.label}</span>
+                  <span className="text-[10px] opacity-75">({f.symbol})</span>
                 </button>
               ))}
             </div>
@@ -94,22 +136,23 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Right Section: DIRECT MINIMAL FLAG SELECTOR + Hamburger */}
+          {/* Mobile Right Section: DIRECT MINIMAL FLAG SVG SELECTOR + Hamburger */}
           <div className="flex items-center space-x-2.5 md:hidden">
-            {/* Minimal Mobile Flag Selector */}
+            {/* Minimal Mobile Flag SVG Selector */}
             <div className="flex bg-slate-900 border border-slate-800 p-1 rounded-xl gap-1">
               {FLAGS.map((f) => (
                 <button
                   key={f.lang}
                   onClick={() => setLang(f.lang)}
-                  title={f.title}
-                  className={`w-7 h-7 text-sm rounded-lg transition-all flex items-center justify-center ${
+                  title={f.label}
+                  className={`px-2 py-1 text-xs font-black rounded-lg transition-all flex items-center gap-1 ${
                     lang === f.lang
-                      ? 'bg-blue-600 shadow-xs'
-                      : 'opacity-50 hover:opacity-100'
+                      ? 'bg-blue-600 text-white shadow-xs'
+                      : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
-                  <span>{f.flag}</span>
+                  {f.flagSvg}
+                  <span className="text-[10px]">{f.symbol}</span>
                 </button>
               ))}
             </div>
@@ -136,9 +179,9 @@ export default function Navbar() {
         <div className="md:hidden bg-slate-950 border-t border-slate-800/80 px-4 pt-3 pb-6 space-y-4">
           <div className="flex flex-col space-y-2 text-sm font-semibold">
             <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-white bg-slate-900">{nav.home}</Link>
+            <Link href="#results" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900">{nav.results}</Link>
             <Link href="#packages" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900">{nav.packages}</Link>
             <Link href="#process" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900">{nav.process}</Link>
-            <Link href="#results" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900">{nav.results}</Link>
           </div>
           
           <div className="pt-4 border-t border-slate-800">
