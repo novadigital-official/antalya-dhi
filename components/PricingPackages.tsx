@@ -13,8 +13,8 @@ export default function PricingPackages() {
     setMounted(true);
   }, []);
 
-  const standardPrice = mounted ? formatPrice(PRICES.standard[currency], currency) : '';
-  const vipPrice = mounted ? formatPrice(PRICES.vip[currency], currency) : '';
+  const standardMain = mounted ? formatPrice(PRICES.standard[currency], currency) : '£1,550';
+  const vipMain = mounted ? formatPrice(PRICES.vip[currency], currency) : '£1,900';
 
   const standardIncludes = t(lang as Lang, 'packages.standard_includes').split('|');
   const vipIncludes = t(lang as Lang, 'packages.vip_includes').split('|');
@@ -31,7 +31,7 @@ export default function PricingPackages() {
     <div id="packages" className="w-full space-y-10">
       <div className="text-center max-w-3xl mx-auto space-y-2">
         <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 uppercase tracking-wider">
-          TRANSPARENT PRICING
+          TRANSPARENT ALL-INCLUSIVE PRICING
         </span>
         <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
           {t(lang as Lang, 'packages.title')}
@@ -60,9 +60,15 @@ export default function PricingPackages() {
               {t(lang as Lang, 'packages.standard_desc')}
             </p>
 
-            <div className="mb-6 pb-6 border-b border-slate-100">
-              <span className="text-xs text-slate-400 font-bold block mb-1">Total Package Rate</span>
-              <span className="text-3xl sm:text-4xl font-black text-slate-900">{standardPrice}</span>
+            {/* DUAL CURRENCY DISPLAY (EUR / GBP / TRY ALWAYS VISIBLE) */}
+            <div className="mb-6 pb-6 border-b border-slate-100 space-y-1">
+              <span className="text-xs text-slate-400 font-bold block">Total Package Rate</span>
+              <div className="flex items-baseline gap-2 flex-wrap">
+                <span className="text-3xl sm:text-4xl font-black text-slate-900">{standardMain}</span>
+                <span className="text-xs font-extrabold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">
+                  (€1,800 / £1,550 / ₺90.000)
+                </span>
+              </div>
             </div>
 
             <ul className="space-y-3 text-xs text-slate-700 font-semibold">
@@ -106,9 +112,15 @@ export default function PricingPackages() {
               {t(lang as Lang, 'packages.vip_desc')}
             </p>
 
-            <div className="mb-6 pb-6 border-b border-slate-800">
-              <span className="text-xs text-slate-400 font-bold block mb-1">Total All-Inclusive Rate</span>
-              <span className="text-3xl sm:text-4xl font-black text-blue-400">{vipPrice}</span>
+            {/* DUAL CURRENCY DISPLAY FOR VIP */}
+            <div className="mb-6 pb-6 border-b border-slate-800 space-y-1">
+              <span className="text-xs text-slate-400 font-bold block">Total All-Inclusive Rate</span>
+              <div className="flex items-baseline gap-2 flex-wrap">
+                <span className="text-3xl sm:text-4xl font-black text-blue-400">{vipMain}</span>
+                <span className="text-xs font-extrabold text-blue-200 bg-blue-900/60 border border-blue-700/60 px-2.5 py-1 rounded-md">
+                  (€2,200 / £1,900 / ₺110.000)
+                </span>
+              </div>
             </div>
 
             <ul className="space-y-3 text-xs text-slate-200 font-semibold">
