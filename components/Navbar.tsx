@@ -4,10 +4,16 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSiteContext } from '@/lib/context';
 import { t, Lang } from '@/lib/i18n';
-import { currencySymbols, Currency } from '@/lib/currency';
+import { currencySymbols } from '@/lib/currency';
+
+const LANG_OPTIONS: { lang: Lang; label: string; symbol: string }[] = [
+  { lang: 'en', label: 'EN', symbol: '£' },
+  { lang: 'fr', label: 'FR', symbol: '€' },
+  { lang: 'tr', label: 'TR', symbol: '₺' },
+];
 
 export default function Navbar() {
-  const { lang, setLang, currency, setCurrency } = useSiteContext();
+  const { lang, setLang, currency } = useSiteContext();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -15,8 +21,21 @@ export default function Navbar() {
     setMounted(true);
   }, []);
 
-  // Safe fallback if translations are not fully defined in a real app yet
-  const nav = { home: t(lang as Lang, 'nav.home'), packages: t(lang as Lang, 'nav.packages'), results: t(lang as Lang, 'nav.results'), contact: t(lang as Lang, 'nav.contact'), freeConsultation: t(lang as Lang, 'nav.freeConsultation') };
+  const nav = {
+    home: t(lang as Lang, 'nav.home'),
+    packages: t(lang as Lang, 'nav.packages'),
+    process: t(lang as Lang, 'nav.process'),
+    results: t(lang as Lang, 'nav.results'),
+    freeConsultation: t(lang as Lang, 'nav.freeConsultation'),
+  };
+
+  const scrollToWizard = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const elem = document.getElementById('analysis-wizard') || document.getElementById('calculator');
+    if (elem) {
+      elem.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   if (!mounted) {
     return <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 h-[73px]"></nav>;
@@ -35,60 +54,49 @@ export default function Navbar() {
           </div>
 
           {/* Center: Desktop Nav Links */}
-          <div className="hidden md:flex space-x-8">
-            <Link href="/" className="text-slate-300 hover:text-white font-medium transition-colors">{nav.home}</Link>
-            <Link href="#packages" className="text-slate-300 hover:text-white font-medium transition-colors">{nav.packages}</Link>
-            <Link href="#results" className="text-slate-300 hover:text-white font-medium transition-colors">{nav.results}</Link>
-            <Link href="#contact" className="text-slate-300 hover:text-white font-medium transition-colors">{nav.contact}</Link>
+          <div className="hidden md:flex space-x-8 text-sm">
+            <Link href="/" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.home}</Link>
+            <Link href="#process" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.process}</Link>
+            <Link href="#packages" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.packages}</Link>
+            <Link href="#results" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.results}</Link>
           </div>
 
-          {/* Right Section: Selectors & CTA */}
-          <div className="hidden md:flex items-center space-x-6">
+          {/* Right Section: Combined Minimalist Language & Currency Selector & CTA */}
+          <div className="hidden md:flex items-center space-x-4">
             
-            {/* Lang Selector */}
-            <div className="flex space-x-1 bg-slate-800 p-1 rounded-lg">
-              {(['en', 'fr', 'tr'] as Lang[]).map((l) => (
+            {/* Minimalist Combined Language + Currency Pill */}
+            <div className="flex bg-slate-800/90 border border-slate-700/80 p-1 rounded-xl">
+              {LANG_OPTIONS.map((opt) => (
                 <button
-                  key={l}
-                  onClick={() => setLang(l)}
-                  className={`min-h-[48px] px-3 py-1 text-sm font-bold rounded-md transition-colors uppercase ${
-                    lang === l ? 'bg-slate-700 text-white' : 'text-slate-400 hover:text-slate-200'
+                  key={opt.lang}
+                  onClick={() => setLang(opt.lang)}
+                  className={`min-h-[40px] px-3 text-xs font-black rounded-lg transition-all flex items-center gap-1 cursor-pointer ${
+                    lang === opt.lang
+                      ? 'bg-blue-600 text-white shadow-sm'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/50'
                   }`}
                 >
-                  {l}
+                  <span>{opt.label}</span>
+                  <span className="text-[10px] opacity-75 font-semibold">({opt.symbol})</span>
                 </button>
               ))}
             </div>
 
-            {/* Currency Selector */}
-            <div className="flex space-x-1 bg-slate-800 p-1 rounded-lg">
-              {(['GBP', 'EUR', 'USD', 'TRY'] as Currency[]).map((c) => (
-                <button
-                  key={c}
-                  onClick={() => setCurrency(c)}
-                  className={`min-h-[48px] px-3 py-1 text-sm font-bold rounded-md transition-colors ${
-                    currency === c ? 'bg-slate-700 text-white' : 'text-slate-400 hover:text-slate-200'
-                  }`}
-                >
-                  {currencySymbols[c]}
-                </button>
-              ))}
-            </div>
-
-            {/* CTA */}
-            <Link 
-              href="#calculator"
-              className="min-h-[48px] inline-flex items-center justify-center px-6 py-2 border border-transparent rounded-full shadow-sm text-base font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition-colors"
+            {/* CTA Button */}
+            <a
+              href="#analysis-wizard"
+              onClick={scrollToWizard}
+              className="min-h-[44px] inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-xs font-black text-white bg-emerald-600 hover:bg-emerald-500 transition-all shadow-md active:scale-95 cursor-pointer"
             >
               {nav.freeConsultation}
-            </Link>
+            </a>
           </div>
 
           {/* Mobile menu button */}
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="min-h-[48px] inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none"
+              className="min-h-[48px] inline-flex items-center justify-center p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
               <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -105,49 +113,46 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-slate-900 border-t border-slate-800 px-4 pt-2 pb-6 space-y-4">
-          <div className="flex flex-col space-y-2">
-            <Link href="/" className="block px-3 py-2 rounded-md text-base font-medium text-white bg-slate-800">{nav.home}</Link>
-            <Link href="#packages" className="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">{nav.packages}</Link>
-            <Link href="#results" className="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">{nav.results}</Link>
-            <Link href="#contact" className="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">{nav.contact}</Link>
+        <div className="md:hidden bg-slate-900 border-t border-slate-800 px-4 pt-3 pb-6 space-y-4">
+          <div className="flex flex-col space-y-2 text-sm font-semibold">
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-white bg-slate-800">{nav.home}</Link>
+            <Link href="#process" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800">{nav.process}</Link>
+            <Link href="#packages" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800">{nav.packages}</Link>
+            <Link href="#results" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800">{nav.results}</Link>
           </div>
           
-          <div className="pt-4 border-t border-slate-800">
-            <div className="flex space-x-2 mb-4">
-              {(['en', 'fr', 'tr'] as Lang[]).map((l) => (
+          <div className="pt-4 border-t border-slate-800 space-y-3">
+            {/* Combined Language & Currency Bar for Mobile */}
+            <div className="flex gap-2">
+              {LANG_OPTIONS.map((opt) => (
                 <button
-                  key={l}
-                  onClick={() => { setLang(l); setIsMobileMenuOpen(false); }}
-                  className={`min-h-[48px] flex-1 py-2 text-sm font-bold rounded-md uppercase ${
-                    lang === l ? 'bg-slate-700 text-white' : 'text-slate-400 bg-slate-800'
+                  key={opt.lang}
+                  onClick={() => {
+                    setLang(opt.lang);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`min-h-[48px] flex-1 text-xs font-black rounded-xl transition-all flex items-center justify-center gap-1 uppercase ${
+                    lang === opt.lang
+                      ? 'bg-blue-600 text-white shadow-sm'
+                      : 'bg-slate-800 text-slate-400 border border-slate-700'
                   }`}
                 >
-                  {l}
-                </button>
-              ))}
-            </div>
-            
-            <div className="flex space-x-2 mb-4">
-              {(['GBP', 'EUR', 'USD', 'TRY'] as Currency[]).map((c) => (
-                <button
-                  key={c}
-                  onClick={() => { setCurrency(c); setIsMobileMenuOpen(false); }}
-                  className={`min-h-[48px] flex-1 py-2 text-sm font-bold rounded-md ${
-                    currency === c ? 'bg-slate-700 text-white' : 'text-slate-400 bg-slate-800'
-                  }`}
-                >
-                  {currencySymbols[c]}
+                  <span>{opt.label}</span>
+                  <span className="text-[10px] opacity-75">({opt.symbol})</span>
                 </button>
               ))}
             </div>
 
-            <Link 
-              href="#calculator"
-              className="min-h-[48px] w-full inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-bold text-white bg-emerald-600 hover:bg-emerald-700"
+            <a
+              href="#analysis-wizard"
+              onClick={(e) => {
+                setIsMobileMenuOpen(false);
+                scrollToWizard(e);
+              }}
+              className="min-h-[48px] w-full inline-flex items-center justify-center px-4 py-3 rounded-xl text-xs font-black text-white bg-emerald-600 hover:bg-emerald-500 shadow-md"
             >
               {nav.freeConsultation}
-            </Link>
+            </a>
           </div>
         </div>
       )}
