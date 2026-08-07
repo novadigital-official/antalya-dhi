@@ -39,11 +39,11 @@ export default function CompetitorBenchmarkFeatures() {
     tr: 'Her hastaya özel sıfır paketinden açılan Choi implanter kalemleri ile mikroskobik hassasiyet.'
   }[lang as Lang] || '100% sterile, individually sealed Choi pen cartridges for maximum hygienic precision.';
 
-  const bento4Title = { en: 'Hyperbaric Oxygen & PRP Tissue Regeneration', fr: 'Régénération Tissulaire Oxygène et PRP', tr: 'Oksijenli PRP & Saç Derisi Hücre Yenileme' }[lang as Lang] || 'Hyperbaric Oxygen & PRP Tissue Regeneration';
+  const bento4Title = { en: 'PRP & Mesotherapy Treatment', fr: 'Traitement PRP & Mésothérapie', tr: 'PRP ve Mezoterapi' }[lang as Lang] || 'PRP & Mesotherapy Treatment';
   const bento4Desc = {
-    en: 'Concentrated autologous PRP combined with hyperbaric oxygen session doubles cell repair velocity post-surgery.',
-    fr: 'PRP autologue concentré associé à une séance d\'oxygène hyperbare doublant la vitesse de réparation.',
-    tr: 'Operasyon sonrasında uygulanan konsantre PRP ve medikal oksijen tedavisi ile saç köklerinin hücresel iyileşmesi 2 katına çıkarılır.'
+    en: 'Concentrated autologous PRP combined with mesotherapy session accelerates follicle recovery and scalp regeneration.',
+    fr: 'PRP autologue concentré associé à une séance de mésothérapie accélérant la récupération folliculaire.',
+    tr: 'Operasyon sonrasında uygulanan konsantre PRP ve mezoterapi seansı ile saç köklerinin iyileşme süreci hızlandırılır.'
   }[lang as Lang] || 'Concentrated autologous PRP combined with hyperbaric oxygen session doubles cell repair velocity post-surgery.';
 
   return (
@@ -129,7 +129,7 @@ export default function CompetitorBenchmarkFeatures() {
         <div className="md:col-span-2 bg-gradient-to-r from-blue-900 to-slate-950 text-white rounded-3xl p-8 border border-blue-800/80 shadow-xl flex flex-col justify-between relative overflow-hidden">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-800/60 border border-blue-600/60 text-blue-200 text-xs font-black">
-              <span>🩸 Hyperbaric PRP Therapy</span>
+              <span>🩸 PRP & Mesotherapy</span>
             </div>
 
             <h3 className="text-2xl font-black text-white leading-tight">
@@ -144,7 +144,7 @@ export default function CompetitorBenchmarkFeatures() {
           <div className="pt-6 mt-6 border-t border-blue-800/60 flex items-center justify-between text-xs font-extrabold text-slate-300">
             <span>{lang === 'tr' ? 'Hızlı İyileşme Protokolü' : lang === 'fr' ? 'Protocole Récupération Rapide' : 'Fast Recovery Protocol'}</span>
             <span className="text-emerald-400 font-black">
-              {lang === 'tr' ? '✓ 12 Ay Takip Dahil' : lang === 'fr' ? '✓ Suivi 12 Mois Inclus' : '✓ 12-Month Support Included'}
+              {lang === 'tr' ? '✓ Aktif WhatsApp Destek Hattı' : lang === 'fr' ? '✓ Ligne WhatsApp Active' : '✓ Active WhatsApp Support Line'}
             </span>
           </div>
         </div>

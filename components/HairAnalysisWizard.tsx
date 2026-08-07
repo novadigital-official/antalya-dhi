@@ -64,6 +64,26 @@ export default function HairAnalysisWizard() {
 
     startTransition(() => {
       const selectedGrafts = NORWOOD_LEVELS.find(n => n.level === selectedNorwood)?.grafts || 'Custom';
+      
+      const newLead = {
+        id: Date.now().toString(),
+        name: name.trim(),
+        phone: `${countryCode} ${phone.trim()}`,
+        country: countryName,
+        language: lang.toUpperCase(),
+        package: selectedPackage,
+        norwood: `Stage ${selectedNorwood} (${selectedGrafts})`,
+        date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ' (' + new Date().toLocaleDateString() + ')',
+        status: 'New Lead'
+      };
+
+      try {
+        const existing = JSON.parse(localStorage.getItem('dhi_patient_leads') || '[]');
+        localStorage.setItem('dhi_patient_leads', JSON.stringify([newLead, ...existing]));
+      } catch (err) {
+        console.error(err);
+      }
+
       const waMsg = encodeURIComponent(
         `Hello Antalya DHI Team,\n` +
         `I would like to get a FREE DHI Hair Analysis:\n` +

@@ -1,0 +1,21 @@
+<svg width="240" height="60" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Brand Emblem Shield & Choi Pen Follicle Tip -->
+  <rect x="2" y="6" width="48" height="48" rx="16" fill="url(#blue-grad)" />
+  
+  <!-- Stylized Hair Follicle / Choi Implanter Pen Vector Icon -->
+  <path d="M26 14C22 20 18 27 18 33C18 37.4183 21.5817 41 26 41C30.4183 41 34 37.4183 34 33C34 27 30 20 26 14Z" fill="#FFFFFF"/>
+  <path d="M26 22L26 36M22 30L26 34L30 30" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="26" cy="33" r="2" fill="#2563EB"/>
+
+  <!-- Typography -->
+  <text x="62" y="31" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="20" letter-spacing="-0.5">ANTALYA</text>
+  <text x="62" y="47" fill="#3B82F6" font-family="'Inter', sans-serif" font-weight="800" font-size="14" letter-spacing="2">DHI CLINIC</text>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="blue-grad" x1="2" y1="6" x2="50" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -16,7 +16,7 @@ export default function SemanticSeoGuide() {
     {
       slug: 'dhi-hair-transplant-turkey-guide',
       title: lang === 'tr' ? 'Türkiye DHI Saç Ekimi Eksiksiz Hasta Rehberi' : 'DHI Hair Transplant Turkey: Complete Medical Tourism Guide',
-      desc: lang === 'tr' ? 'Yabancı hastalar için havalimanından 12 aylık saç gelişimine kadar tüm süreç.' : 'Everything international patients need to know about DHI hair restoration in Antalya.',
+      desc: lang === 'tr' ? 'Yabancı hastalar için havalimanından operasyon sonrası bakıma kadar tüm süreç.' : 'Everything international patients need to know about DHI hair restoration in Antalya.',
       tag: 'Medical Guide'
     },
     {

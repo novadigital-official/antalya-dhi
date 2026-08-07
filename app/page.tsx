@@ -19,14 +19,13 @@ import SemanticSeoGuide from '@/components/SemanticSeoGuide';
 import VIPPackageDetails from '@/components/VIPPackageDetails';
 import FaqSection from '@/components/FaqSection';
 import MedicalDisclaimer from '@/components/MedicalDisclaimer';
-import MobileStickyBar from '@/components/MobileStickyBar';
+
 import WhatsAppWidget from '@/components/WhatsAppWidget';
 import Footer from '@/components/Footer';
 
 export default function HomePage() {
   return (
-    <SiteProvider>
-      <main className="min-h-screen bg-slate-50 text-slate-900 font-sans relative pb-16 md:pb-0">
+    <main className="min-h-screen bg-slate-50 text-slate-900 font-sans relative">
         {/* 1. NAVBAR WITH SVG FLAGS */}
         <Navbar />
 
@@ -113,9 +112,7 @@ export default function HomePage() {
         {/* 19. FIXED FLOATING WHATSAPP SPHERE WIDGET */}
         <WhatsAppWidget />
 
-        {/* 20. MOBILE STICKY BOTTOM BAR */}
-        <MobileStickyBar />
+
       </main>
-    </SiteProvider>
   );
 }

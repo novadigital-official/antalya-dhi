@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import JsonLd from '@/components/JsonLd';
+import { SiteProvider } from '@/lib/context';
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -62,8 +63,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
-        <JsonLd />
-        {children}
+        <SiteProvider>
+          <JsonLd />
+          {children}
+        </SiteProvider>
       </body>
     </html>
   );

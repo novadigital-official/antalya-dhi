@@ -84,11 +84,17 @@ export default function Navbar() {
           
           {/* Left: Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="text-lg sm:text-xl font-black text-white tracking-tight flex items-center gap-2">
-              <span className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-sm shadow-md">
-                DHI
-              </span>
-              <span>ANTALYA <span className="text-blue-500 font-extrabold">CLINIC</span></span>
+            <Link href="/" className="flex items-center gap-2.5 group">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white font-black shadow-md border border-blue-500/30 group-hover:scale-105 transition-transform">
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2C9 6 6 10 6 14C6 17.3137 8.68629 20 12 20C15.3137 20 18 17.3137 18 14C18 10 15 6 12 2Z" fill="white"/>
+                  <path d="M12 7V16M9 13L12 16L15 13" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-base sm:text-lg font-black text-white leading-none tracking-tight">ANTALYA</span>
+                <span className="text-[10px] font-extrabold text-blue-400 tracking-widest leading-none mt-0.5">DHI CLINIC</span>
+              </div>
             </Link>
           </div>
 

@@ -24,7 +24,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <ul>
         <li><strong>Kullanılan Teknoloji:</strong> Choi Implanter Pen iğne kalemi teknolojisi.</li>
         <li><strong>Konaklama ve VIP Transfer:</strong> 4/5 yıldızlı otel ve VIP Mercedes Vito transfer paketleri.</li>
-        <li><strong>Medikal Takip:</strong> Operasyon sonrası 12 ay boyunca aylık gelişim takibi ve bakım kiti.</li>
+        <li><strong>Operasyon Sonrası Destek:</strong> Bakım kiti, medikal yıkama eğitimi ve sorularınız için aktif WhatsApp destek hattı.</li>
       </ul>
 
       <h3>DHI Standart vs VIP Antalya Experience Paketi</h3>

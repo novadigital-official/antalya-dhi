@@ -10,7 +10,7 @@ export default function Footer() {
   const desc = {
     en: 'Premium DHI hair transplant clinic in Antalya, Turkey. Specialized in international patient care, VIP transfers, and high-density hair restoration.',
     fr: 'Clinique de greffe de cheveux DHI premium à Antalya, Turquie. Spécialisée dans les soins internationaux et les forfaits VIP.',
-    tr: 'Antalya\'da uzman hekim kontrollü DHI saç ekim ve sağlık turizmi rehberlik portalı. VIP transfer, konaklama ve 12 ay tıbbi takip.',
+    tr: 'Antalya\'da uzman hekim kontrollü DHI saç ekim ve sağlık turizmi rehberlik portalı. VIP transfer, konaklama ve aktif WhatsApp destek hattı.',
   }[lang as Lang] || 'Premium DHI hair transplant clinic in Antalya, Turkey.';
 
   const quickLinksTitle = { en: 'Quick Links', fr: 'Liens Rapides', tr: 'Hızlı Bağlantılar' }[lang as Lang] || 'Quick Links';

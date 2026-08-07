@@ -29,25 +29,25 @@ export const translations = {
     'hero.vtag1': 'International Patient Coordination',
     'hero.vtag2': 'Native English & French Support',
     'hero.vtag3': 'Antalya VIP Health Tourism',
-    'hero.vtag4': '12-Month Post-Op Growth Follow-up',
+    'hero.vtag4': 'Active WhatsApp Support Line',
 
     // Trust Band
     'trust.certified': 'T.C. Ministry of Health Authorized Partner Clinic (Ref: AK-84920)',
     'trust.warranty': 'Lifetime Warranty Certificate Included',
     'trust.vip_transfer': 'VIP Mercedes Airport & Clinic Transfer',
-    'trust.aftercare': '12-Month Post-Op Growth Support',
+    'trust.aftercare': 'Active WhatsApp Post-Op Support Line',
 
     // Medical Team Section
     'team.title': 'Our Surgical & Patient Coordination Team',
     'team.subtitle': 'Experienced hair transplant specialists and international patient coordinators guiding your DHI stay in Antalya.',
-    'team.member1.role': 'Lead Hair Transplant Surgeon',
-    'team.member1.exp': '12+ Years Surgical Practice',
+    'team.member1.role': 'Hair Transplant Team',
+    'team.member1.exp': '12+ Years Clinical Practice',
     'team.member1.desc': 'Specialized in Choi Pen DHI transplantation, natural hairline design, and high-density graft placement.',
     'team.member2.role': 'Senior Patient Coordinator',
-    'team.member2.exp': 'Native Language Specialist (EN/FR/TR)',
+    'team.member2.exp': 'Multilingual Coordinator (EN/FR/TR)',
     'team.member2.desc': 'Manages your flight itinerary, VIP Mercedes Vito transfer, and luxury hotel accommodation.',
     'team.member3.role': 'Post-Op Care Supervisor',
-    'team.member3.exp': '12-Month Growth Specialist',
+    'team.member3.exp': 'Post-Op Care Specialist',
     'team.member3.desc': 'Guides your first hair wash, supplies medical care kit, and monitors graft growth every month.',
 
     // Competitor Features
@@ -87,8 +87,8 @@ export const translations = {
     'process.step3.title': 'VIP Arrival & Hospital Procedure',
     'process.step3.desc': 'VIP airport pickup, hotel check-in, and painless DHI hair transplant under sterile hospital conditions.',
     'process.step4.num': '04',
-    'process.step4.title': '12-Month Post-Op Follow-up',
-    'process.step4.desc': 'Personal coordinator monitoring your wash routine and hair growth milestones every month.',
+    'process.step4.title': 'Post-Op Care & WhatsApp Support',
+    'process.step4.desc': 'Receive your aftercare kit, first wash training, and stay connected via our active WhatsApp support line for any questions.',
 
     // Packages
     'packages.title': 'Transparent DHI Packages',
@@ -96,12 +96,12 @@ export const translations = {
     'packages.standard_name': 'Standard DHI',
     'packages.standard_title': 'Standard DHI Package',
     'packages.standard_desc': 'Surgery-Focused Basic Package (Ideal for local & self-arranging patients)',
-    'packages.standard_includes': 'Maximum Graft DHI Operation|Painless Needle-Free Anesthesia|Post-Op Medication & Special Shampoo Kit|Lifetime Warranty Certificate|12-Month Online Follow-up Support',
+    'packages.standard_includes': 'Maximum Graft DHI Operation|Painless Needle-Free Anesthesia|Post-Op Medication & Special Shampoo Kit|Lifetime Warranty Certificate|Active WhatsApp Post-Op Support Line',
     'packages.vip_name': 'VIP Antalya Experience',
     'packages.vip_title': 'VIP Antalya Experience',
     'packages.vip_desc': 'Turkey Health Tourism & Luxury Comfort Package (Full All-Inclusive Stay)',
     'packages.vip_popular': 'MOST RECOMMENDED',
-    'packages.vip_includes': 'Full DHI Operation & Maximum Grafts|VIP Mercedes Vito Airport & Clinic Transfers|1 Night Luxury Hotel Accommodation|Personal Native Language Coordinator (EN/FR/TR)|PRP & Oxygen Therapy Session|12-Month Post-Op Growth Follow-up',
+    'packages.vip_includes': 'Full DHI Operation & Maximum Grafts|VIP Mercedes Vito Airport & Clinic Transfers|1 Night Luxury Hotel Accommodation|Multilingual Patient Coordinator (EN/FR/TR)|PRP & Mesotherapy Session|Active WhatsApp Post-Op Support Line',
     'packages.book_cta': 'Send Photos → Get 24-Hour Review',
 
     // Calculator / Wizard Form Keys
@@ -142,7 +142,7 @@ export const translations = {
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
 
-    // Mobile CTA
+    // Mobile CTA (deprecated - MobileStickyBar removed)
     'mobile_cta.whatsapp': 'WhatsApp Consultant',
     'mobile_cta.analysis': 'Send Photos',
     'mobile_cta.free_analysis': 'Send Photos'
@@ -175,25 +175,25 @@ export const translations = {
     'hero.vtag1': 'Coordination Patient Internationale',
     'hero.vtag2': 'Support en Français & Anglais',
     'hero.vtag3': 'Tourisme Médical VIP à Antalya',
-    'hero.vtag4': 'Suivi Post-Opératoire 12 Mois',
+    'hero.vtag4': 'Ligne de Support WhatsApp Active',
 
     // Trust Band
     'trust.certified': 'Clinique Partenaire Certifiée Ministère de la Santé T.C. (Ref: AK-84920)',
     'trust.warranty': 'Certificat de Garantie à Vie Inclus',
     'trust.vip_transfer': 'Transfert VIP Mercedes Aéroport & Clinique',
-    'trust.aftercare': 'Suivi de Croissance Post-Opératoire 12 Mois',
+    'trust.aftercare': 'Ligne de Support WhatsApp Post-Opératoire',
 
     // Medical Team Section
     'team.title': 'Notre Équipe Chirurgicale & Coordination',
     'team.subtitle': 'Chirurgiens certifiés et coordinateurs internationaux dédiés à votre séjour DHI à Antalya.',
-    'team.member1.role': 'Chirurgien Spécialiste DHI',
-    'team.member1.exp': 'Plus de 12 ans d\'Expérience',
+    'team.member1.role': 'Équipe de Greffe Capillaire',
+    'team.member1.exp': 'Plus de 12 ans de Pratique Clinique',
     'team.member1.desc': 'Spécialisé dans l\'implantation DHI Choi Pen, le dessin de la ligne frontale et la haute densité.',
     'team.member2.role': 'Coordinateur Patient International',
-    'team.member2.exp': 'Spécialiste Multilingue (FR/EN/TR)',
+    'team.member2.exp': 'Coordinateur Multilingue (FR/EN/TR)',
     'team.member2.desc': 'Organise vos vols, transferts VIP en Mercedes et votre séjour à l\'hôtel.',
     'team.member3.role': 'Superviseur Médical Post-Opératoire',
-    'team.member3.exp': 'Spécialiste Suivi Repousse',
+    'team.member3.exp': 'Spécialiste Soins Post-Opératoires',
     'team.member3.desc': 'Guide votre premier lavage, fournit le kit de soins et suit la repousse chaque mois.',
 
     // Competitor Features
@@ -233,8 +233,8 @@ export const translations = {
     'process.step3.title': 'Arrivée VIP & Procédure DHI',
     'process.step3.desc': 'Accueil VIP à l\'aéroport, hébergement et greffe DHI indolore dans un environnement stérile.',
     'process.step4.num': '04',
-    'process.step4.title': 'Suivi Post-Opératoire 12 Mois',
-    'process.step4.desc': 'Un coordinateur personnel suit votre routine de lavage et la repousse chaque mois.',
+    'process.step4.title': 'Soins Post-Op & Support WhatsApp',
+    'process.step4.desc': 'Kit de soins, formation au premier lavage et ligne WhatsApp active pour toutes vos questions.',
 
     // Packages
     'packages.title': 'Forfaits DHI Transparents',
@@ -246,7 +246,7 @@ export const translations = {
     'packages.vip_title': 'VIP Antalya Experience',
     'packages.vip_desc': 'Expérience Tourisme Médical & Confort VIP (Séjour Tout Compris)',
     'packages.vip_popular': 'LE PLUS RECOMMANDÉ',
-    'packages.vip_includes': 'Opération DHI Complète & Greffons Maximaux|Transferts VIP en Mercedes Vito Aéroport & Clinique|1 Nuit d\'Hébergement en Hôtel de Luxe|Coordinateur Personnel Dédié (FR/EN/TR)|Thérapie PRP & Oxygénation|Suivi de Croissance Post-Opératoire 12 Mois',
+    'packages.vip_includes': 'Opération DHI Complète & Greffons Maximaux|Transferts VIP en Mercedes Vito Aéroport & Clinique|1 Nuit d\'Hébergement en Hôtel de Luxe|Coordinateur Multilingue (FR/EN/TR)|Séance PRP & Mésothérapie|Ligne de Support WhatsApp Active',
     'packages.book_cta': 'Envoyer Photos → Évaluation en 24h',
 
     // Calculator / Wizard Form Keys
@@ -320,25 +320,25 @@ export const translations = {
     'hero.vtag1': 'Uluslararası Hasta Koordinasyonu',
     'hero.vtag2': 'İngilizce & Fransızca Destek',
     'hero.vtag3': 'Antalya VIP Sağlık Turizmi',
-    'hero.vtag4': '12 Ay Operasyon Sonrası Takip',
+    'hero.vtag4': 'Aktif WhatsApp Destek Hattı',
 
     // Trust Band
     'trust.certified': 'T.C. Sağlık Bakanlığı Onaylı Anlaşmalı Klinik (Ref: AK-84920)',
     'trust.warranty': 'Ömür Boyu Garanti Sertifikası Dahil',
     'trust.vip_transfer': 'VIP Mercedes Havaalanı & Klinik Transferi',
-    'trust.aftercare': '12 Ay Operasyon Sonrası Gelişim Takibi',
+    'trust.aftercare': 'Aktif WhatsApp Operasyon Sonrası Destek Hattı',
 
     // Medical Team Section
     'team.title': 'Medikal & Koordinasyon Ekibimiz',
     'team.subtitle': 'Antalya\'daki DHI tedavi yolculuğunuza rehberlik eden uzman medikal kadro ve uluslararası hasta koordinatörleri.',
-    'team.member1.role': 'Kıdemli Saç Ekimi Cerrahı',
-    'team.member1.exp': '12+ Yıl Cerrahi Pratik',
+    'team.member1.role': 'Saç Ekimi Ekibi',
+    'team.member1.exp': '12+ Yıl Klinik Deneyim',
     'team.member1.desc': 'Choi Pen DHI implantasyonu, doğal ön saç çizgisi tasarımı ve yüksek yoğunluklu ekimde uzmanlaşmıştır.',
     'team.member2.role': 'Uluslararası Hasta Koordinatörü',
-    'team.member2.exp': 'Ana Dil Desteği (EN/FR/TR)',
+    'team.member2.exp': 'Çok Dilli Koordinasyon (EN/FR/TR)',
     'team.member2.desc': 'Uçuş seyahat programınızı, VIP Mercedes Vito transferlerinizi ve otel konaklamanızı organize eder.',
     'team.member3.role': 'Operasyon Sonrası Takip Sorumlusu',
-    'team.member3.exp': '12 Ay Gelişim Uzmanı',
+    'team.member3.exp': 'Operasyon Sonrası Bakım Uzmanı',
     'team.member3.desc': 'İlk yıkamanızı yaptırır, bakım kitinizi teslim eder ve her ay saç uzama gelişiminizi takip eder.',
 
     // Competitor Features
@@ -378,8 +378,8 @@ export const translations = {
     'process.step3.title': 'Antalya Operasyon Süreci',
     'process.step3.desc': 'VIP Mercedes karşılama, otel konaklaması ve steril hastane ortamında konforlu DHI saç ekim operasyonu.',
     'process.step4.num': '04',
-    'process.step4.title': 'Sonrası Takip',
-    'process.step4.desc': 'Medikal yıkama eğitimi, bakım kiti ve 12 ay boyunca her ay kişisel koordinatör ile gelişim takibi.',
+    'process.step4.title': 'Sonrası Bakım & WhatsApp Destek',
+    'process.step4.desc': 'Medikal yıkama eğitimi, bakım kiti teslimi ve sorularınız için aktif WhatsApp destek hattımız her zaman yanınızda.',
 
     // Packages
     'packages.title': 'Şeffaf DHI Paketleri',
@@ -391,7 +391,7 @@ export const translations = {
     'packages.vip_title': 'VIP Antalya Experience',
     'packages.vip_desc': 'Türkiye Deneyimi + Konfor Paketi (VIP Transfer & Otel Konaklaması Dahil)',
     'packages.vip_popular': 'EN ÇOK TERCİH EDİLEN',
-    'packages.vip_includes': 'DHI Operasyonu (Maksimum Greft)|VIP Mercedes Vito Havaalanı & Klinik Transferleri|1 Gece Otel Konaklaması|Kişisel Hasta Koordinatörü (TR/EN/FR)|PRP & Oksijen Terapisi Seansı|Ömür Boyu Garanti Sertifikası',
+    'packages.vip_includes': 'DHI Operasyonu (Maksimum Greft)|VIP Mercedes Vito Havaalanı & Klinik Transferleri|1 Gece Otel Konaklaması|Çok Dilli Hasta Koordinatörü (TR/EN/FR)|PRP & Mezoterapi Seansı|Aktif WhatsApp Destek Hattı',
     'packages.book_cta': 'Fotoğraf Gönder → 24 Saatte Analiz Al',
 
     // Calculator / Wizard Form Keys

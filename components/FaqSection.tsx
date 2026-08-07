@@ -22,7 +22,7 @@ export default function FaqSection() {
     },
     {
       q: "VIP Antalya Experience paketine neler dahildir?",
-      a: "VIP paketimizde maksimum greft DHI saç ekim operasyonu, Antalya Havalimanı & klinik VIP Mercedes Vito transferleri, 1 gece otel konaklaması, kişisel ana dil koordinatörü (EN/FR/TR) ve 12 ay boyunca medikal takip hizmeti yer almaktadır."
+      a: "VIP paketimizde maksimum greft DHI saç ekim operasyonu, Antalya Havalimanı & klinik VIP Mercedes Vito transferleri, 1 gece otel konaklaması, çok dilli hasta koordinatörü (EN/FR/TR), PRP & mezoterapi seansı ve aktif WhatsApp destek hattı yer almaktadır."
     },
     {
       q: "DHI saç ekimi sonrası iyileşme süresi kaç gündür?",
@@ -31,7 +31,7 @@ export default function FaqSection() {
   ] : lang === 'fr' ? [
     {
       q: "Quel est le prix d'une greffe de cheveux DHI à Antalya ?",
-      a: "Les prix des forfaits DHI à Antalya varient de 1 800€ (£1,550) pour le forfait Standard à 2 200€ (£1,900) pour l'expérience VIP All-Inclusive avec séjour en hôtel, transferts VIP en Mercedes et suivi 12 mois."
+      a: "Les prix des forfaits DHI à Antalya varient de 1 800€ (£1,550) pour le forfait Standard à 2 200€ (£1,900) pour l'expérience VIP All-Inclusive avec séjour en hôtel, transferts VIP en Mercedes et ligne WhatsApp active."
     },
     {
       q: "Quelle est la différence entre la méthode DHI et FUE ?",
@@ -43,7 +43,7 @@ export default function FaqSection() {
     },
     {
       q: "Que comprend le forfait VIP Antalya Experience ?",
-      a: "Le forfait VIP comprend l'opération DHI avec greffons maximaux, les transferts VIP en Mercedes Vito, 1 nuit d'hôtel, un coordinateur personnel parlant français et le suivi post-opératoire de 12 mois."
+      a: "Le forfait VIP comprend l'opération DHI avec greffons maximaux, les transferts VIP en Mercedes Vito, 1 nuit d'hôtel, un coordinateur multilingue et une ligne WhatsApp active pour vos questions."
     },
     {
       q: "Quel est le temps de récupération après une greffe DHI ?",
@@ -52,7 +52,7 @@ export default function FaqSection() {
   ] : [
     {
       q: "How much does a DHI hair transplant cost in Antalya, Turkey?",
-      a: "DHI hair transplant packages in Antalya range from £1,550 (€1,800) for Standard DHI to £1,900 (€2,200) for the VIP Antalya Experience. The VIP package includes hotel accommodation, VIP Mercedes Vito transfers, and 12-month post-op care."
+      a: "DHI hair transplant packages in Antalya range from £1,550 (€1,800) for Standard DHI to £1,900 (€2,200) for the VIP Antalya Experience. The VIP package includes hotel accommodation, VIP Mercedes Vito transfers, and an active WhatsApp support line."
     },
     {
       q: "What is the difference between DHI and FUE hair transplant?",
@@ -64,7 +64,7 @@ export default function FaqSection() {
     },
     {
       q: "What is included in the VIP Antalya Experience package?",
-      a: "The VIP package includes maximum graft DHI surgery, private Mercedes Vito airport & clinic transfers, 1-night hotel accommodation, a personal native language coordinator (EN/FR/TR), and 12 months of post-op growth monitoring."
+      a: "The VIP package includes maximum graft DHI surgery, private Mercedes Vito airport & clinic transfers, 1-night hotel accommodation, a multilingual patient coordinator (EN/FR/TR), and an active WhatsApp support line for any questions."
     },
     {
       q: "How long is the recovery time after DHI hair transplant?",
