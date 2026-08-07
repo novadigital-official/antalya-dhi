@@ -4,12 +4,12 @@ import { SiteProvider } from '@/lib/context';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import LegalTrustBand from '@/components/LegalTrustBand';
+import PricingPackages from '@/components/PricingPackages';
 import MedicalTeam from '@/components/MedicalTeam';
 import ProcessTimeline from '@/components/ProcessTimeline';
 import DHIAdvantages from '@/components/DHIAdvantages';
 import DHIVsFueComparison from '@/components/DHIVsFueComparison';
 import PatientJourney from '@/components/PatientJourney';
-import PricingPackages from '@/components/PricingPackages';
 import LiveUrgencyBadge from '@/components/LiveUrgencyBadge';
 import HairAnalysisWizard from '@/components/HairAnalysisWizard';
 import FaqSection from '@/components/FaqSection';
@@ -27,40 +27,40 @@ export default function HomePage() {
         {/* 1. PREMIUM NAVBAR */}
         <Navbar />
 
-        {/* 2. HERO — SATIŞ VE GÜVEN YÜKSEK İLK EKRAN */}
+        {/* 2. HERO — %100 DİL İZOLASYONLU VE DÖNÜŞÜM ODAKLI İLK EKRAN */}
         <HeroSection />
 
         {/* 3. SAĞLIK BAKANLIĞI GÜVEN BANDI */}
         <LegalTrustBand />
 
-        {/* 4. DOKTOR VE MEDİKAL EKİP GÜVEN ALANI (KİM YAPACAK?) */}
-        <section id="team" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* 4. ŞEFFAF FİYAT PAKETLERİ (10 SANİYE KURALI — STANDARD VS VIP ANTALYA EXPERIENCE) */}
+        <section id="packages" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <PricingPackages />
+        </section>
+
+        {/* 5. DOKTOR VE MEDİKAL EKİP GÜVEN ALANI (KİM YAPACAK?) */}
+        <section id="team" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <MedicalTeam />
         </section>
 
-        {/* 5. SİZE ÖZEL DHI SÜRECİ (4 ADIM TIMELINE) */}
+        {/* 6. SİZE ÖZEL DHI SÜRECİ (4 ADIM TIMELINE) */}
         <section id="process" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <ProcessTimeline />
         </section>
 
-        {/* 6. DHI TEKNİK AVANTAJLARI */}
+        {/* 7. DHI TEKNİK AVANTAJLARI */}
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <DHIAdvantages />
         </section>
 
-        {/* 7. DHI VE FUE KARŞILAŞTIRMASI (SEMANTIC COMPARISON) */}
+        {/* 8. DHI VE FUE KARŞILAŞTIRMASI (SEMANTIC COMPARISON) */}
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <DHIVsFueComparison />
         </section>
 
-        {/* 8. ANTALYA DHI DENEYİMİ VE HASTA YOLCULUĞU */}
+        {/* 9. ANTALYA DHI DENEYİMİ VE HASTA YOLCULUĞU */}
         <section id="results" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <PatientJourney />
-        </section>
-
-        {/* 9. ŞEFFAF FİYAT PAKETLERİ (STANDARD 90K + VIP ANTALYA EXPERIENCE 110K) */}
-        <section id="packages" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
-          <PricingPackages />
         </section>
 
         {/* 10. CANLI ACİLİYET ROZETİ + ÜCRETSİZ SAÇ ANALİZİ SİHİRBAZI */}

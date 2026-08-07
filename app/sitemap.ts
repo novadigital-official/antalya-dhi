@@ -19,6 +19,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const landingPages = [
+    'antalya-dhi-hair-transplant',
+    'dhi-vs-fue',
+    'hair-transplant-cost-turkey-2026',
+    'uk-hair-transplant-turkey',
+    'fr-greffe-cheveux-turquie',
+  ].map((slug) => ({
+    url: `${baseUrl}/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'daily' as const,
+    priority: 0.9,
+  }));
+
   return [
     {
       url: baseUrl,
@@ -32,6 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 0.8,
     },
+    ...landingPages,
     ...blogUrls,
   ];
 }
