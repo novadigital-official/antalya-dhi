@@ -33,7 +33,7 @@ export default function MedicalTeam() {
   return (
     <div id="team" className="w-full space-y-10">
       <div className="text-center max-w-3xl mx-auto space-y-2">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 uppercase tracking-wider">
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 uppercase tracking-wider">
           EXPERT CARE & TRANSPARENCY
         </span>
         <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
@@ -52,7 +52,7 @@ export default function MedicalTeam() {
           >
             <div>
               <div className="flex items-center justify-between mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-slate-900 text-amber-400 font-black text-xl flex items-center justify-center shadow-sm">
+                <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 font-black text-xl flex items-center justify-center border border-blue-100 shadow-sm">
                   {m.icon}
                 </div>
                 <span className="text-[10px] font-black text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full uppercase tracking-wider">

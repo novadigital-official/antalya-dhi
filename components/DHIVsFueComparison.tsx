@@ -41,7 +41,7 @@ export default function DHIVsFueComparison() {
   return (
     <div id="dhi-vs-fue" className="w-full space-y-8">
       <div className="text-center max-w-3xl mx-auto space-y-2">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 uppercase tracking-wider">
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 uppercase tracking-wider">
           MEDICAL COMPARISON
         </span>
         <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
@@ -53,9 +53,9 @@ export default function DHIVsFueComparison() {
       </div>
 
       <div className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm">
-        <div className="grid grid-cols-3 bg-slate-900 text-white p-4 sm:p-5 text-xs sm:text-sm font-black border-b border-slate-800">
+        <div className="grid grid-cols-3 bg-slate-950 text-white p-4 sm:p-5 text-xs sm:text-sm font-black border-b border-slate-800">
           <div>{lang === 'tr' ? 'Parametre' : 'Medical Parameter'}</div>
-          <div className="text-amber-400 text-center">DHI Technique</div>
+          <div className="text-blue-400 text-center">DHI Technique</div>
           <div className="text-slate-400 text-center">Classic FUE</div>
         </div>
 

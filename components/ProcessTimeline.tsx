@@ -32,7 +32,7 @@ export default function ProcessTimeline() {
   return (
     <div id="process" className="w-full space-y-10">
       <div className="text-center max-w-3xl mx-auto space-y-2">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 uppercase tracking-wider">
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 uppercase tracking-wider">
           TRANSPARENT STEPS
         </span>
         <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
@@ -50,7 +50,7 @@ export default function ProcessTimeline() {
             className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm hover:border-blue-500 hover:shadow-md transition-all flex flex-col justify-between"
           >
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-slate-900 text-amber-400 font-black text-lg flex items-center justify-center mb-4 shadow-sm">
+              <div className="w-12 h-12 rounded-2xl bg-blue-600 text-white font-black text-lg flex items-center justify-center mb-4 shadow-sm">
                 {step.num}
               </div>
               <h3 className="text-base font-black text-slate-900 mb-2 leading-tight">
