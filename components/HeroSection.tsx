@@ -25,67 +25,60 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full bg-slate-900 text-white pt-28 pb-16 md:pt-36 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Background Subtle Gradient & Glow */}
+      {/* Background Subtle Glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 pointer-events-none" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-600/15 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-600/15 blur-[130px] rounded-full pointer-events-none" />
 
-      <div className="relative max-w-5xl mx-auto text-center space-y-6">
+      <div className="relative max-w-4xl mx-auto text-center space-y-7">
         
         {/* T.C. Sağlık Bakanlığı Onaylı Rozet */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700/80 backdrop-blur-md text-xs font-bold text-slate-300">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/90 border border-slate-700 backdrop-blur-md text-xs font-extrabold text-slate-300">
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
           <span>{t(lang as Lang, 'hero.ministryBadge')}</span>
         </div>
 
         {/* Ana Başlık */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-[1.15]">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-[1.12]">
           {lang === 'tr' ? (
             <>Antalya'da <span className="text-amber-500">Premium DHI</span> Saç Ekimi</>
           ) : lang === 'fr' ? (
             <>Greffe de Cheveux <span className="text-amber-500">DHI Premium</span> à Antalya</>
           ) : (
-            <>Premium <span className="text-amber-500">DHI Hair Transplant</span> in Antalya</>
+            <>Antalya <span className="text-amber-500">DHI Hair Transplant</span></>
           )}
         </h1>
 
         {/* Alt Açıklama */}
-        <p className="max-w-3xl mx-auto text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed font-medium">
+        <p className="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed font-medium">
           {t(lang as Lang, 'hero.subtitle')}
         </p>
 
-        {/* 4 Güven Rozeti */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 max-w-3xl mx-auto pt-2 text-xs font-bold text-slate-200">
-          <div className="bg-slate-800/60 border border-slate-700/60 p-3 rounded-xl flex items-center justify-center gap-1.5 text-center min-h-[48px]">
-            <span className="text-emerald-400 font-black">✓</span>
-            <span>{t(lang as Lang, 'hero.trust1')}</span>
+        {/* 3 Temel Güven Rozeti (Daha Temiz & Okunabilir) */}
+        <div className="flex flex-wrap items-center justify-center gap-2.5 max-w-2xl mx-auto pt-1 text-xs font-black text-slate-200">
+          <div className="bg-slate-800/80 border border-slate-700/80 px-4 py-3 rounded-2xl flex items-center gap-2 min-h-[48px]">
+            <span>{t(lang as Lang, 'hero.badge1')}</span>
           </div>
-          <div className="bg-slate-800/60 border border-slate-700/60 p-3 rounded-xl flex items-center justify-center gap-1.5 text-center min-h-[48px]">
-            <span className="text-emerald-400 font-black">✓</span>
-            <span>{t(lang as Lang, 'hero.trust2')}</span>
+          <div className="bg-slate-800/80 border border-slate-700/80 px-4 py-3 rounded-2xl flex items-center gap-2 min-h-[48px]">
+            <span>🏥 {t(lang as Lang, 'hero.badge2')}</span>
           </div>
-          <div className="bg-slate-800/60 border border-slate-700/60 p-3 rounded-xl flex items-center justify-center gap-1.5 text-center min-h-[48px]">
-            <span className="text-emerald-400 font-black">✓</span>
-            <span>{t(lang as Lang, 'hero.trust3')}</span>
-          </div>
-          <div className="bg-slate-800/60 border border-slate-700/60 p-3 rounded-xl flex items-center justify-center gap-1.5 text-center min-h-[48px]">
-            <span className="text-emerald-400 font-black">✓</span>
-            <span>{t(lang as Lang, 'hero.trust4')}</span>
+          <div className="bg-slate-800/80 border border-slate-700/80 px-4 py-3 rounded-2xl flex items-center gap-2 min-h-[48px]">
+            <span>✈ {t(lang as Lang, 'hero.badge3')}</span>
           </div>
         </div>
 
-        {/* Subtle Price Badge */}
+        {/* Subtle Price Pill */}
         {mounted && (
           <div className="pt-1">
-            <span className="inline-block bg-blue-950/80 border border-blue-800/60 text-blue-300 text-xs font-extrabold px-3.5 py-1.5 rounded-full">
-              {lang === 'tr' ? 'Şeffaf Paketler ' : 'Transparent Packages '} 
+            <span className="inline-block bg-blue-950/90 border border-blue-800/60 text-blue-300 text-xs font-extrabold px-4 py-2 rounded-full shadow-sm">
+              {lang === 'tr' ? 'Şeffaf Paketler ' : 'Transparent Rates '} 
               <span className="text-white font-black">{priceFormatted}</span>
               {lang === 'tr' ? "'den başlayan fiyatlarla" : ' starting rate'}
             </span>
           </div>
         )}
 
-        {/* CTA Butonları: 1. Ana (Ücretsiz Saç Analizi Al) + 2. WhatsApp İletişim */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-4 max-w-lg mx-auto">
+        {/* CTA Butonları */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-3 max-w-md mx-auto">
           <a
             href="#analysis-wizard"
             onClick={scrollToWizard}
@@ -100,7 +93,7 @@ export default function HeroSection() {
             rel="noopener noreferrer"
             className="w-full sm:w-auto min-h-[52px] px-8 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm rounded-xl shadow-lg hover:shadow-emerald-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98"
           >
-            <span>{t(lang as Lang, 'hero.cta_whatsapp')}</span>
+            <span>💬 {t(lang as Lang, 'hero.cta_whatsapp')}</span>
           </a>
         </div>
 
