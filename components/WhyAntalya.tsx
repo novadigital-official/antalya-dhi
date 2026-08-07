@@ -41,6 +41,9 @@ export default function WhyAntalya() {
     }
   ];
 
+  const tagLeft = { en: 'Antalya Health Tourism', fr: 'Tourisme Médical Antalya', tr: 'Antalya Sağlık Turizmi' }[lang as Lang] || 'Antalya Health Tourism';
+  const tagRight = { en: '✓ Advantage', fr: '✓ Avantage', tr: '✓ Avantaj' }[lang as Lang] || '✓ Advantage';
+
   return (
     <div id="why-antalya" className="w-full space-y-8">
       <div className="text-center max-w-3xl mx-auto space-y-2">
@@ -64,8 +67,8 @@ export default function WhyAntalya() {
             </div>
 
             <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-extrabold text-blue-600">
-              <span>Antalya Health Tourism</span>
-              <span>✓ Advantage</span>
+              <span>{tagLeft}</span>
+              <span>{tagRight}</span>
             </div>
           </div>
         ))}

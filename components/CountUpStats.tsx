@@ -7,7 +7,7 @@ import { Lang } from '@/lib/i18n';
 interface StatItem {
   target: number;
   prefix?: string;
-  suffix: string;
+  suffix: { en: string; fr: string; tr: string };
   label: { en: string; fr: string; tr: string };
   sub: { en: string; fr: string; tr: string };
 }
@@ -16,28 +16,28 @@ const STATS: StatItem[] = [
   {
     target: 3600,
     prefix: '',
-    suffix: '+',
+    suffix: { en: '+', fr: '+', tr: '+' },
     label: { en: 'Avg. Grafts Implanted', fr: 'Greffons Moyens', tr: 'Ort. Greft Kapasitesi' },
     sub: { en: 'Maximum Donor Density', fr: 'Densité Donneur Maximale', tr: 'Maksimum Donör Yoğunluğu' }
   },
   {
     target: 98,
     prefix: '%',
-    suffix: '+',
+    suffix: { en: '+', fr: '+', tr: '+' },
     label: { en: 'Graft Retention Rate', fr: 'Taux de Prise des Greffons', tr: 'Greft Tutunma Oranı' },
     sub: { en: 'ATP Solution Preservation', fr: 'Solution ATP Brevetée', tr: 'ATP Solüsyon Koruması' }
   },
   {
     target: 12,
     prefix: '',
-    suffix: ' Months',
+    suffix: { en: ' Months', fr: ' Mois', tr: ' Ay Garanti' },
     label: { en: 'Medical Guarantee', fr: 'Garantie Médicale', tr: 'Ay Tıbbi Takip Garanti' },
     sub: { en: 'Comprehensive Aftercare', fr: 'Suivi Post-Opératoire Complete', tr: 'Kapsamlı Operasyon Sonrası Takip' }
   },
   {
     target: 5000,
     prefix: '',
-    suffix: '+',
+    suffix: { en: '+', fr: '+', tr: '+' },
     label: { en: 'International Patients', fr: 'Patients Internationaux', tr: 'Uluslararası Başarılı Hasta' },
     sub: { en: 'UK, France & Europe', fr: 'UK, France & Europe', tr: 'İngiltere, Fransa & Avrupa' }
   }
@@ -56,7 +56,7 @@ export default function CountUpStats() {
           setHasAnimated(true);
           
           STATS.forEach((stat, index) => {
-            const duration = 2000; // 2 seconds
+            const duration = 2000;
             const steps = 50;
             const stepTime = duration / steps;
             const increment = stat.target / steps;
@@ -95,7 +95,7 @@ export default function CountUpStats() {
             <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight flex items-center justify-center gap-0.5">
               <span className="text-blue-400">{stat.prefix}</span>
               <span>{counts[idx].toLocaleString()}</span>
-              <span className="text-emerald-400">{stat.suffix}</span>
+              <span className="text-emerald-400">{stat.suffix[lang as Lang] || stat.suffix['en']}</span>
             </div>
             <div className="text-xs sm:text-sm font-extrabold text-slate-200">
               {stat.label[lang as Lang] || stat.label['en']}
