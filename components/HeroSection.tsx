@@ -23,6 +23,14 @@ export default function HeroSection() {
     }
   };
 
+  const whatsappUrl = `https://wa.me/905070871789?text=${encodeURIComponent(
+    lang === 'tr'
+      ? 'Merhaba, Antalya DHI saç ekimi için ücretsiz fotoğraf analizi ve doktor değerlendirmesi almak istiyorum.'
+      : lang === 'fr'
+      ? 'Bonjour, je souhaite obtenir une analyse capillaire gratuite et une évaluation médicale.'
+      : 'Hello, I would like to send my scalp photos for a free 24-hour doctor evaluation.'
+  )}`;
+
   return (
     <section className="relative w-full bg-slate-950 text-white pt-28 pb-16 md:pt-36 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-slate-800/80">
       {/* Background Glow */}
@@ -81,7 +89,7 @@ export default function HeroSection() {
           {/* Single High-Conversion WhatsApp Action */}
           <div className="pt-2 max-w-lg mx-auto lg:mx-0">
             <a
-              href="https://wa.me/905551234567?text=Hello%20Antalya%20DHI,%20I%20would%20like%20to%20send%20my%20scalp%20photos%20for%20a%2024-hour%20doctor%20evaluation."
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full min-h-[56px] px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm sm:text-base rounded-2xl shadow-xl hover:shadow-emerald-600/25 transition-all flex items-center justify-center gap-2.5 cursor-pointer active:scale-98"
@@ -92,27 +100,15 @@ export default function HeroSection() {
 
         </div>
 
-        {/* Right Column: Visual Trust Hero Image + Anonymized Surgical Team Badge (5 cols) */}
+        {/* Right Column: Clean Visual Trust Photo (NO OVERLAY BADGES) */}
         <div className="lg:col-span-5 space-y-4">
           <div className="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 group">
             <img
               src="/images/clinic-consultation.jpg"
               alt="Antalya DHI Medical Consultation"
-              className="w-full h-[320px] sm:h-[380px] object-cover group-hover:scale-105 transition-transform duration-700"
+              className="w-full h-[340px] sm:h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            {/* Anonymized Surgical Team Badge (No fake doctor names) */}
-            <div className="absolute top-4 right-4 bg-slate-950/90 backdrop-blur-md border border-blue-500/40 p-3 rounded-2xl shadow-xl flex items-center gap-3 max-w-[230px]">
-              <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-black text-sm border border-blue-400 shrink-0">
-                🏥
-              </div>
-              <div>
-                <div className="text-xs font-black text-white">Certified Medical Team</div>
-                <div className="text-[10px] text-blue-400 font-extrabold">Lead Surgical Practice</div>
-                <div className="text-[9px] text-slate-400 font-medium">T.C. Health Tourism Partner</div>
-              </div>
-            </div>
-
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent flex flex-col justify-end p-6">
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-6">
               <h3 className="text-base sm:text-lg font-black text-white leading-tight">
                 {lang === 'tr' ? 'Uzman Hekim Muayenesi & Ön Saç Çizgisi Planlaması' : 'In-Person Surgeon Consultation & Hairline Design'}
               </h3>

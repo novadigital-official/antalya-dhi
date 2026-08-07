@@ -20,7 +20,7 @@ export default function WhatsAppWidget() {
     tr: 'Merhaba Antalya DHI Klinik, ücretsiz saç analizi ve doktor değerlendirmesi almak istiyorum.',
   }[lang as Lang] || 'Hello Antalya DHI Clinic, I would like to get a free scalp analysis and doctor evaluation.';
 
-  const url = `https://wa.me/905551234567?text=${encodeURIComponent(msg)}`;
+  const url = `https://wa.me/905070871789?text=${encodeURIComponent(msg)}`;
 
   return (
     <a 

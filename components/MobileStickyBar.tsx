@@ -22,12 +22,20 @@ export default function MobileStickyBar() {
     }
   };
 
+  const waMsg = encodeURIComponent(
+    lang === 'tr'
+      ? 'Merhaba, Antalya DHI saç ekimi için ücretsiz fotoğraf analizi ve doktor değerlendirmesi almak istiyorum.'
+      : lang === 'fr'
+      ? 'Bonjour, je souhaite obtenir une analyse capillaire gratuite et une évaluation médicale.'
+      : 'Hello, I would like to send my scalp photos for a free 24-hour doctor evaluation.'
+  );
+
   return (
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-md p-2.5 border-t border-slate-800 shadow-2xl">
       <div className="flex items-center gap-2 max-w-md mx-auto">
         {/* Left: WhatsApp Consultant */}
         <a
-          href="https://wa.me/905551234567?text=Hello%20Antalya%20DHI,%20I%20would%20like%20to%20consult%20via%20WhatsApp."
+          href={`https://wa.me/905070871789?text=${waMsg}`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp Consultant"

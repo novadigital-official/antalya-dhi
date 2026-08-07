@@ -32,7 +32,6 @@ export default function HairAnalysisWizard() {
   const [selectedPackage, setSelectedPackage] = useState<'Standard DHI' | 'VIP DHI Experience'>('VIP DHI Experience');
   const [name, setName] = useState<string>('');
   
-  // Default country phone code automatically syncs with selected language (TR -> +90, FR -> +33, EN -> +44)
   const [countryCode, setCountryCode] = useState<string>(lang === 'tr' ? '+90' : lang === 'fr' ? '+33' : '+44');
   const [countryName, setCountryName] = useState<string>(lang === 'tr' ? 'Turkey' : lang === 'fr' ? 'France' : 'United Kingdom');
   const [phone, setPhone] = useState<string>('');
@@ -75,7 +74,7 @@ export default function HairAnalysisWizard() {
         `• *Package Preference:* ${selectedPackage}\n` +
         `I would like to send my scalp photos for doctor evaluation.`
       );
-      window.open(`https://wa.me/905551234567?text=${waMsg}`, '_blank');
+      window.open(`https://wa.me/905070871789?text=${waMsg}`, '_blank');
     });
   };
 
