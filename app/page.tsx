@@ -4,11 +4,12 @@ import { SiteProvider } from '@/lib/context';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import LegalTrustBand from '@/components/LegalTrustBand';
+import ProcessTimeline from '@/components/ProcessTimeline';
 import DHIAdvantages from '@/components/DHIAdvantages';
 import PricingPackages from '@/components/PricingPackages';
-import BeforeAfterSlider from '@/components/BeforeAfterSlider';
+import PatientJourney from '@/components/PatientJourney';
 import LiveUrgencyBadge from '@/components/LiveUrgencyBadge';
-import HairCalculator from '@/components/HairCalculator';
+import HairAnalysisWizard from '@/components/HairAnalysisWizard';
 import SocialProof from '@/components/SocialProof';
 import VIPPackageDetails from '@/components/VIPPackageDetails';
 import MedicalDisclaimer from '@/components/MedicalDisclaimer';
@@ -23,55 +24,60 @@ export default function HomePage() {
         {/* 1. PREMIUM NAVBAR */}
         <Navbar />
 
-        {/* 2. HERO — AGRESIF SATIŞ BAŞLIĞI & CTA */}
+        {/* 2. HERO — SALES CONVERSION SECTION */}
         <HeroSection />
 
         {/* 3. SAĞLIK BAKANLIĞI GÜVEN BANDI */}
         <LegalTrustBand />
 
-        {/* 4. DHI TEKNİK AVANTAJLARI */}
+        {/* 4. SİZE ÖZEL DHI SÜRECİ (4 ADIM TIMELINE) */}
+        <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-200">
+          <ProcessTimeline />
+        </section>
+
+        {/* 5. DHI TEKNİK AVANTAJLARI */}
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <DHIAdvantages />
         </section>
 
-        {/* 5. FİYAT PAKETLERİ (STANDARD + VIP) */}
+        {/* 6. ŞEFFAF FİYAT PAKETLERİ (STANDARD 90K + VIP 110K) */}
         <section id="packages" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <PricingPackages />
         </section>
 
-        {/* 6. BEFORE/AFTER SONUÇLAR */}
+        {/* 7. HASTA DENEYİMİ (GERÇEK ANTALYA DHI YOLCULUĞU) */}
         <section id="results" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
-          <BeforeAfterSlider />
+          <PatientJourney />
         </section>
 
-        {/* 7. CANLI ACILIYET ROZETİ + DHI SİHİRBAZ HESAPLAYICISI */}
-        <section id="calculator" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+        {/* 8. CANLI ACİLİYET ROZETİ + ÜCRETSİZ SAÇ ANALİZİ SİHİRBAZI */}
+        <section id="analysis-wizard" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <div className="flex justify-center mb-6">
             <LiveUrgencyBadge />
           </div>
-          <HairCalculator />
+          <HairAnalysisWizard />
         </section>
 
-        {/* 8. VIP PAKET DETAYLARI — JOURNEY TIMELINE */}
+        {/* 9. VIP HİZMET TIMELINE DİYAGRAMI */}
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <VIPPackageDetails />
         </section>
 
-        {/* 9. SOSYAL KANIT & TESTİMONİALLER */}
+        {/* 10. SOSYAL KANIT & HASTA GÖRÜŞLERİ */}
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <SocialProof />
         </section>
 
-        {/* 10. TIBBİ DISCLAIMER (3 DİLDE ZORUNLU) */}
+        {/* 11. TIBBİ DISCLAIMER (ZORUNLU 3 DİLDE) */}
         <MedicalDisclaimer />
 
-        {/* 11. FOOTER */}
+        {/* 12. FOOTER */}
         <Footer />
 
-        {/* 12. FLOATING WHATSAPP WİDGET (DESKTOP) */}
+        {/* 13. FLOATING WHATSAPP BOT (DESKTOP) */}
         <WhatsAppWidget />
 
-        {/* 13. MOBİL YAPIŞKAN CTA BARI */}
+        {/* 14. MOBİL YAPIŞKAN CTA BARI */}
         <MobileStickyBar />
       </main>
     </SiteProvider>

@@ -15,10 +15,10 @@ export const PRICES = {
     TRY: 90000
   },
   vip: {
-    GBP: 2050,
-    EUR: 2400,
-    USD: 2600,
-    TRY: 120000
+    GBP: 1900,
+    EUR: 2200,
+    USD: 2400,
+    TRY: 110000
   }
 };
 
