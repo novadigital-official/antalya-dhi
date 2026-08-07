@@ -15,10 +15,16 @@ export default function WhatsAppWidget() {
   if (!mounted) return null;
 
   const msg = {
-    en: 'Hello, I would like to get information about DHI hair transplant packages in Antalya.',
-    fr: 'Bonjour, je souhaite obtenir des informations sur les forfaits de greffe DHI à Antalya.',
-    tr: 'Merhaba, Antalya DHI saç ekimi paketleri hakkında bilgi almak istiyorum.',
-  }[lang as Lang] || 'Hello, I would like to get information about DHI hair transplant packages in Antalya.';
+    en: 'Hello Antalya DHI Clinic, I would like to get a free scalp analysis and doctor evaluation.',
+    fr: 'Bonjour Antalya DHI Clinic, je souhaite obtenir une analyse gratuite et une évaluation médicale.',
+    tr: 'Merhaba Antalya DHI Klinik, ücretsiz saç analizi ve doktor değerlendirmesi almak istiyorum.',
+  }[lang as Lang] || 'Hello Antalya DHI Clinic, I would like to get a free scalp analysis and doctor evaluation.';
+
+  const label = {
+    en: 'Doctor Online — Chat on WhatsApp',
+    fr: 'Médecin en Ligne — WhatsApp',
+    tr: 'Doktor Online — WhatsApp İletişim',
+  }[lang as Lang] || 'Doctor Online — Chat on WhatsApp';
 
   const url = `https://wa.me/905551234567?text=${encodeURIComponent(msg)}`;
 
@@ -27,9 +33,14 @@ export default function WhatsAppWidget() {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="hidden md:flex fixed bottom-6 right-6 z-50 bg-emerald-600 text-white font-black px-6 py-4 rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all min-h-[48px] items-center justify-center cursor-pointer"
+      className="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 z-50 bg-emerald-600 hover:bg-emerald-500 text-white font-black px-4 py-3 sm:px-5 sm:py-3.5 rounded-full shadow-2xl hover:shadow-emerald-600/30 hover:scale-105 transition-all flex items-center gap-2.5 border-2 border-emerald-400/40 cursor-pointer active:scale-95 group"
     >
-      WhatsApp
+      <span className="relative flex h-3 w-3 shrink-0">
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+        <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+      </span>
+      <span className="text-xl">💬</span>
+      <span className="text-xs font-black tracking-tight hidden sm:inline">{label}</span>
     </a>
   );
 }

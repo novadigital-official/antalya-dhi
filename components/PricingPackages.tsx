@@ -28,11 +28,8 @@ export default function PricingPackages() {
   };
 
   return (
-    <div id="packages" className="w-full space-y-10">
+    <div id="packages" className="w-full space-y-8">
       <div className="text-center max-w-3xl mx-auto space-y-2">
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 uppercase tracking-wider">
-          TRANSPARENT ALL-INCLUSIVE PRICING
-        </span>
         <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
           {t(lang as Lang, 'packages.title')}
         </h2>
@@ -60,7 +57,6 @@ export default function PricingPackages() {
               {t(lang as Lang, 'packages.standard_desc')}
             </p>
 
-            {/* DUAL CURRENCY DISPLAY (EUR / GBP / TRY ALWAYS VISIBLE) */}
             <div className="mb-6 pb-6 border-b border-slate-100 space-y-1">
               <span className="text-xs text-slate-400 font-bold block">Total Package Rate</span>
               <div className="flex items-baseline gap-2 flex-wrap">
@@ -112,7 +108,6 @@ export default function PricingPackages() {
               {t(lang as Lang, 'packages.vip_desc')}
             </p>
 
-            {/* DUAL CURRENCY DISPLAY FOR VIP */}
             <div className="mb-6 pb-6 border-b border-slate-800 space-y-1">
               <span className="text-xs text-slate-400 font-bold block">Total All-Inclusive Rate</span>
               <div className="flex items-baseline gap-2 flex-wrap">

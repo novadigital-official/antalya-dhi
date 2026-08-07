@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { useSiteContext } from '@/lib/context';
 import { t, Lang } from '@/lib/i18n';
 
-const LANG_OPTIONS: { lang: Lang; label: string; flag: string; symbol: string }[] = [
-  { lang: 'en', label: 'EN', flag: '🇬🇧', symbol: '£' },
-  { lang: 'fr', label: 'FR', flag: '🇫🇷', symbol: '€' },
-  { lang: 'tr', label: 'TR', flag: '🇹🇷', symbol: '₺' },
+const FLAGS: { lang: Lang; flag: string; title: string }[] = [
+  { lang: 'en', flag: '🇬🇧', title: 'English / GBP (£)' },
+  { lang: 'fr', flag: '🇫🇷', title: 'Français / EUR (€)' },
+  { lang: 'tr', flag: '🇹🇷', title: 'Türkçe / TRY (₺)' },
 ];
 
 export default function Navbar() {
@@ -58,29 +58,28 @@ export default function Navbar() {
           {/* Center: Desktop Nav Links */}
           <div className="hidden md:flex space-x-8 text-sm">
             <Link href="/" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.home}</Link>
-            <Link href="#process" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.process}</Link>
             <Link href="#packages" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.packages}</Link>
+            <Link href="#process" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.process}</Link>
             <Link href="#results" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.results}</Link>
           </div>
 
-          {/* Right Section: Desktop Language/Currency Pill & CTA */}
+          {/* Right Section: Desktop Minimal Flag Selector & CTA */}
           <div className="hidden md:flex items-center space-x-4">
             
-            {/* Minimalist Combined Language + Currency Selector */}
-            <div className="flex bg-slate-900 border border-slate-800 p-1 rounded-xl">
-              {LANG_OPTIONS.map((opt) => (
+            {/* Minimalist Flag Selector */}
+            <div className="flex bg-slate-900 border border-slate-800 p-1.5 rounded-2xl gap-1">
+              {FLAGS.map((f) => (
                 <button
-                  key={opt.lang}
-                  onClick={() => setLang(opt.lang)}
-                  className={`min-h-[38px] px-3 text-xs font-black rounded-lg transition-all flex items-center gap-1 cursor-pointer ${
-                    lang === opt.lang
-                      ? 'bg-blue-600 text-white shadow-sm'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
+                  key={f.lang}
+                  onClick={() => setLang(f.lang)}
+                  title={f.title}
+                  className={`w-9 h-9 text-base rounded-xl transition-all flex items-center justify-center cursor-pointer ${
+                    lang === f.lang
+                      ? 'bg-blue-600 shadow-md ring-2 ring-blue-400/40 scale-105'
+                      : 'opacity-60 hover:opacity-100 hover:bg-slate-800'
                   }`}
                 >
-                  <span>{opt.flag}</span>
-                  <span>{opt.label}</span>
-                  <span className="text-[10px] opacity-75 font-semibold">({opt.symbol})</span>
+                  <span>{f.flag}</span>
                 </button>
               ))}
             </div>
@@ -95,22 +94,22 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Right Section: DIRECT MINIMAL LANGUAGE TOGGLE + Hamburger */}
-          <div className="flex items-center space-x-2 md:hidden">
-            {/* Direct Minimal Mobile Language Toggle (ALWAYS VISIBLE OUTSIDE HAMBURGER) */}
-            <div className="flex bg-slate-900 border border-slate-800 p-1 rounded-xl">
-              {LANG_OPTIONS.map((opt) => (
+          {/* Mobile Right Section: DIRECT MINIMAL FLAG SELECTOR + Hamburger */}
+          <div className="flex items-center space-x-2.5 md:hidden">
+            {/* Minimal Mobile Flag Selector */}
+            <div className="flex bg-slate-900 border border-slate-800 p-1 rounded-xl gap-1">
+              {FLAGS.map((f) => (
                 <button
-                  key={opt.lang}
-                  onClick={() => setLang(opt.lang)}
-                  className={`px-2 py-1 text-[11px] font-black rounded-lg transition-all flex items-center gap-0.5 ${
-                    lang === opt.lang
-                      ? 'bg-blue-600 text-white shadow-xs'
-                      : 'text-slate-400 hover:text-slate-200'
+                  key={f.lang}
+                  onClick={() => setLang(f.lang)}
+                  title={f.title}
+                  className={`w-7 h-7 text-sm rounded-lg transition-all flex items-center justify-center ${
+                    lang === f.lang
+                      ? 'bg-blue-600 shadow-xs'
+                      : 'opacity-50 hover:opacity-100'
                   }`}
                 >
-                  <span>{opt.flag}</span>
-                  <span>{opt.symbol}</span>
+                  <span>{f.flag}</span>
                 </button>
               ))}
             </div>
@@ -137,8 +136,8 @@ export default function Navbar() {
         <div className="md:hidden bg-slate-950 border-t border-slate-800/80 px-4 pt-3 pb-6 space-y-4">
           <div className="flex flex-col space-y-2 text-sm font-semibold">
             <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-white bg-slate-900">{nav.home}</Link>
-            <Link href="#process" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900">{nav.process}</Link>
             <Link href="#packages" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900">{nav.packages}</Link>
+            <Link href="#process" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900">{nav.process}</Link>
             <Link href="#results" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900">{nav.results}</Link>
           </div>
           
