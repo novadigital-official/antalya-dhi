@@ -6,31 +6,28 @@ import { t, Lang } from '@/lib/i18n';
 export default function DHIAdvantages() {
   const { lang } = useSiteContext();
   
-  const advantages = {
-    title: t(lang as Lang, 'advantages.title') || 'Why Choose DHI Technique?',
-    items: [
-      {
-        id: 'no-shave',
-        title: t(lang as Lang, 'advantages.items.no_shave.title') || 'No-Shave Option',
-        description: t(lang as Lang, 'advantages.items.no_shave.description') || 'Perfect for long hair. Implantation can be done without completely shaving the recipient area.'
-      },
-      {
-        id: 'natural-angle',
-        title: t(lang as Lang, 'advantages.items.natural_angle.title') || 'Natural Angle Control',
-        description: t(lang as Lang, 'advantages.items.natural_angle.description') || 'The Choi Pen allows precise control over depth, angle, and direction of each implanted follicle.'
-      },
-      {
-        id: 'high-density',
-        title: t(lang as Lang, 'advantages.items.high_density.title') || 'High-Density Placement',
-        description: t(lang as Lang, 'advantages.items.high_density.description') || 'Provides maximum density compared to traditional methods by placing grafts closer together.'
-      },
-      {
-        id: 'fast-recovery',
-        title: t(lang as Lang, 'advantages.items.fast_recovery.title') || 'Faster Recovery',
-        description: t(lang as Lang, 'advantages.items.fast_recovery.description') || 'Minimal tissue trauma means less bleeding, faster healing, and no scarring.'
-      }
-    ]
-  };
+  const advantages = [
+    {
+      id: 'no-shave',
+      title: t(lang as Lang, 'advantages.items.no_shave.title'),
+      desc: t(lang as Lang, 'advantages.items.no_shave.description')
+    },
+    {
+      id: 'natural-angle',
+      title: t(lang as Lang, 'advantages.items.natural_angle.title'),
+      desc: t(lang as Lang, 'advantages.items.natural_angle.description')
+    },
+    {
+      id: 'high-density',
+      title: t(lang as Lang, 'advantages.items.high_density.title'),
+      desc: t(lang as Lang, 'advantages.items.high_density.description')
+    },
+    {
+      id: 'fast-recovery',
+      title: t(lang as Lang, 'advantages.items.fast_recovery.title'),
+      desc: t(lang as Lang, 'advantages.items.fast_recovery.description')
+    }
+  ];
 
   const icons = {
     'no-shave': (
@@ -57,30 +54,41 @@ export default function DHIAdvantages() {
   };
 
   return (
-    <section className="w-full bg-slate-50 py-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        
-        <h2 className="text-3xl sm:text-4xl font-black text-slate-900 text-center mb-12">
-          {advantages.title}
+    <div id="advantages" className="w-full space-y-10">
+      <div className="text-center max-w-3xl mx-auto space-y-2">
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 uppercase tracking-wider">
+          CHOI PEN ADVANTAGES
+        </span>
+        <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
+          {t(lang as Lang, 'advantages.title')}
         </h2>
+        <p className="text-xs sm:text-sm text-slate-600 font-medium">
+          {t(lang as Lang, 'advantages.subtitle')}
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {advantages.items.map((item: any) => (
-            <div key={item.id} className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mb-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {advantages.map((item) => (
+          <div key={item.id} className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm hover:border-blue-500 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5 border border-blue-100 shadow-xs">
                 {icons[item.id as keyof typeof icons]}
               </div>
-              <h3 className="font-black text-base text-slate-900 mb-3">
+              <h3 className="font-black text-base text-slate-900 mb-2 leading-tight">
                 {item.title}
               </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                {item.description}
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                {item.desc}
               </p>
             </div>
-          ))}
-        </div>
-
+            
+            <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-extrabold text-blue-600">
+              <span>DHI Choi Standard</span>
+              <span>✓</span>
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }

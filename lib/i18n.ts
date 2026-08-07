@@ -62,9 +62,17 @@ export const translations = {
     'competitor.f4.title': 'Trichological Scalp Mapping',
     'competitor.f4.desc': 'Microscopic hair follicle density mapping prior to Choi Pen hairline design.',
 
-    // Advantages
-    'advantages.title': 'Why DHI Choi Pen Technology?',
+    // Advantages Section Keys
+    'advantages.title': 'Why Choose DHI Choi Pen Technology?',
     'advantages.subtitle': 'Direct Hair Implantation with Choi Implanter Pen for maximum density and natural direction.',
+    'advantages.items.no_shave.title': 'No-Shave Option',
+    'advantages.items.no_shave.description': 'Ideal for maintaining existing hair. Graft implantation performed without completely shaving the recipient area.',
+    'advantages.items.natural_angle.title': 'Natural Angle Precision',
+    'advantages.items.natural_angle.description': 'The Choi Implanter Pen allows full 360-degree control over depth, angle, and growth direction for a natural hairline.',
+    'advantages.items.high_density.title': 'Maximum Graft Density',
+    'advantages.items.high_density.description': 'Enables up to 80 grafts per cm² placement by eliminating scalp incision channels, delivering high hair density.',
+    'advantages.items.fast_recovery.title': 'Rapid Scalp Recovery',
+    'advantages.items.fast_recovery.description': 'Minimal tissue trauma means significantly less bleeding, reduced scab formation, and fast 3-5 day scalp recovery.',
 
     // Process Timeline
     'process.title': 'Your Customized DHI Journey in Antalya',
@@ -96,9 +104,24 @@ export const translations = {
     'packages.vip_includes': 'Full DHI Operation & Maximum Grafts|VIP Mercedes Vito Airport & Clinic Transfers|1 Night Luxury Hotel Accommodation|Personal Native Language Coordinator (EN/FR/TR)|PRP & Oxygen Therapy Session|12-Month Post-Op Growth Follow-up',
     'packages.book_cta': 'Send Photos → Get 24-Hour Review',
 
-    // Calculator / Wizard
+    // Calculator / Wizard Form Keys
     'calculator.title': 'Free DHI Hair Analysis',
-    'calculator.step3_title': 'Send Scalp Photos for 24-Hour Doctor Review',
+    'calculator.step_label': 'STEP',
+    'calculator.of': 'OF',
+    'calculator.step1': 'Select Hair Loss Level',
+    'calculator.step1_desc': 'Choose the Norwood diagram level closest to your hair loss.',
+    'calculator.step2': 'Choose DHI Package Preference',
+    'calculator.step2_desc': 'Select your preferred treatment package option.',
+    'calculator.step3': 'Doctor Evaluation & Contact Details',
+    'calculator.step3_title': 'Send scalp photos for a direct 24-hour doctor evaluation.',
+    'calculator.name_label': 'Full Name *',
+    'calculator.name_placeholder': 'Enter your full name',
+    'calculator.country_label': 'Country *',
+    'calculator.phone_label': 'WhatsApp Phone Number *',
+    'calculator.phone_placeholder': 'Enter phone number without country code',
+    'calculator.wa_info': 'Send your scalp photos via WhatsApp for a direct doctor consultation & exact graft quote.',
+    'calculator.back': '← Back',
+    'calculator.next': 'Continue →',
     'calculator.submit': 'Send Photos via WhatsApp',
 
     // Patient Journey
@@ -185,9 +208,17 @@ export const translations = {
     'competitor.f4.title': 'Cartographie Trichologique du Cuir Chevelu',
     'competitor.f4.desc': 'Analyse microscopique de densité avant le dessin de la ligne frontale.',
 
-    // Advantages
-    'advantages.title': 'Pourquoi la Greffe Capillaire DHI ?',
+    // Advantages Section Keys
+    'advantages.title': 'Pourquoi Choisir la Technologie DHI Choi Pen ?',
     'advantages.subtitle': 'Implantation Directe de Cheveux avec Choi Implanter Pen pour une densité maximale.',
+    'advantages.items.no_shave.title': 'Option Sans Raser',
+    'advantages.items.no_shave.description': 'Idéal pour conserver vos cheveux longs. L\'implantation est réalisée sans raser complètement la zone réceptrice.',
+    'advantages.items.natural_angle.title': 'Précision de l\'Angle Naturel',
+    'advantages.items.natural_angle.description': 'Le stylo Choi permet un contrôle total sur la profondeur, l\'angle et la direction de chaque greffon.',
+    'advantages.items.high_density.title': 'Densité Maximale de Greffons',
+    'advantages.items.high_density.description': 'Permet de placer jusqu\'à 80 greffons par cm² sans ouvrir de canaux préalables, garantissant une densité optimale.',
+    'advantages.items.fast_recovery.title': 'Récupération Rapide du Cuir Chevelu',
+    'advantages.items.fast_recovery.description': 'Traumatisme tissulaire minimal, saignements réduits et guérison rapide en 3 à 5 jours.',
 
     // Process Timeline
     'process.title': 'Votre Parcours DHI Personnalisé à Antalya',
@@ -218,9 +249,24 @@ export const translations = {
     'packages.vip_includes': 'Opération DHI Complète & Greffons Maximaux|Transferts VIP en Mercedes Vito Aéroport & Clinique|1 Nuit d\'Hébergement en Hôtel de Luxe|Coordinateur Personnel Dédié (FR/EN/TR)|Thérapie PRP & Oxygénation|Suivi de Croissance Post-Opératoire 12 Mois',
     'packages.book_cta': 'Envoyer Photos → Évaluation en 24h',
 
-    // Calculator / Wizard
+    // Calculator / Wizard Form Keys
     'calculator.title': 'Analyse Capillaire DHI Gratuite',
-    'calculator.step3_title': 'Envoyez vos photos pour une évaluation médicale sous 24h',
+    'calculator.step_label': 'ÉTAPE',
+    'calculator.of': 'SUR',
+    'calculator.step1': 'Sélectionnez le Niveau de Calvitie',
+    'calculator.step1_desc': 'Choisissez l\'échelle Norwood correspondant le plus à votre chute de cheveux.',
+    'calculator.step2': 'Choisissez votre Forfait DHI',
+    'calculator.step2_desc': 'Sélectionnez le forfait adapté à votre séjour médical.',
+    'calculator.step3': 'Évaluation Médicale & Vos Coordonnées',
+    'calculator.step3_title': 'Envoyez vos photos pour une évaluation médicale sous 24h.',
+    'calculator.name_label': 'Nom et Prénom *',
+    'calculator.name_placeholder': 'Entrez votre nom complet',
+    'calculator.country_label': 'Pays *',
+    'calculator.phone_label': 'Numéro WhatsApp *',
+    'calculator.phone_placeholder': 'Entrez le numéro sans code pays',
+    'calculator.wa_info': 'Envoyez vos photos de cuir chevelu par WhatsApp pour une consultation directe avec notre médecin.',
+    'calculator.back': '← Retour',
+    'calculator.next': 'Continuer →',
     'calculator.submit': 'Envoyer Photos sur WhatsApp',
 
     // Patient Journey
@@ -307,9 +353,17 @@ export const translations = {
     'competitor.f4.title': 'Trikolojik Saç Derisi Haritalama',
     'competitor.f4.desc': 'Choi Pen implantasyon öncesi mikroskobik saç derisi esnekliği ve donör alan yoğunluk haritalaması.',
 
-    // Advantages
-    'advantages.title': 'Neden DHI Saç Ekimi?',
-    'advantages.subtitle': 'Choi Implanter Pen ile kanal açmadan doğrudan implantasyon ve doğal görünüm.',
+    // Advantages Section Keys
+    'advantages.title': 'Neden DHI Choi Pen Teknolojisi?',
+    'advantages.subtitle': 'Choi Implanter Pen ile kanal açmadan doğrudan implantasyon, yüksek yoğunluk ve doğal görünüm.',
+    'advantages.items.no_shave.title': 'Tıraşsız Ekim Seçeneği',
+    'advantages.items.no_shave.description': 'Mevcut saç yapısını korumak isteyenler için idealdir. Ekim alanı tamamen tıraş edilmeden implantasyon gerçekleştirilebilir.',
+    'advantages.items.natural_angle.title': 'Doğal Açı ve Yön Hassasiyeti',
+    'advantages.items.natural_angle.description': 'Choi Implanter Pen sayesinde her bir saç kökünün derinliği, çıkış açısı ve yönü 360 derece hassasiyetle kontrol edilir.',
+    'advantages.items.high_density.title': 'Maksimum Greft Yoğunluğu',
+    'advantages.items.high_density.description': 'Kanal açma nekröz riski oluşturmadığı için cm² başına 80 grefe kadar sık ve doğal implantasyon imkanı sunar.',
+    'advantages.items.fast_recovery.title': 'Hızlı Deri İyileşmesi',
+    'advantages.items.fast_recovery.description': 'Minimum doku travması sayesinde kanama ve kabuklanma son derece az olur; 3-5 gün içinde hızlı deride iyileşme sağlanır.',
 
     // Process Timeline
     'process.title': 'Size Özel DHI Süreci',
@@ -340,9 +394,24 @@ export const translations = {
     'packages.vip_includes': 'DHI Operasyonu (Maksimum Greft)|VIP Mercedes Vito Havaalanı & Klinik Transferleri|1 Gece Otel Konaklaması|Kişisel Hasta Koordinatörü (TR/EN/FR)|PRP & Oksijen Terapisi Seansı|Ömür Boyu Garanti Sertifikası',
     'packages.book_cta': 'Fotoğraf Gönder → 24 Saatte Analiz Al',
 
-    // Calculator / Wizard
+    // Calculator / Wizard Form Keys
     'calculator.title': 'Ücretsiz Saç Analizi',
-    'calculator.step3_title': 'Fotoğrafınızı Gönderin, 24 Saat İçinde Uzman Doktorumuz Değerlendirsin',
+    'calculator.step_label': 'ADIM',
+    'calculator.of': '/',
+    'calculator.step1': 'Saç Dökülme Seviyenizi Seçin',
+    'calculator.step1_desc': 'Mevcut saç dökülme durumunuza en yakın Norwood seviyesini seçin.',
+    'calculator.step2': 'DHI Paket Tercihinizi Belirleyin',
+    'calculator.step2_desc': 'Antalya seyahatinize uygun paket seçeneğini belirleyin.',
+    'calculator.step3': 'Doktor Değerlendirmesi ve İletişim',
+    'calculator.step3_title': 'Fotoğrafınızı Gönderin, 24 Saat İçinde Uzman Doktorumuz Değerlendirsin.',
+    'calculator.name_label': 'Adınız Soyadınız *',
+    'calculator.name_placeholder': 'Adınızı ve soyadınızı giriniz',
+    'calculator.country_label': 'Ülke *',
+    'calculator.phone_label': 'WhatsApp Telefon Numarası *',
+    'calculator.phone_placeholder': 'Başında 0 olmadan numaranızı giriniz',
+    'calculator.wa_info': 'Kafa derisi fotoğraflarınızı WhatsApp üzerinden göndererek doktorumuzdan doğrudan greft analizi ve kişisel teklif alın.',
+    'calculator.back': '← Geri',
+    'calculator.next': 'Devam Et →',
     'calculator.submit': 'WhatsApp\'tan Fotoğraf Gönder',
 
     // Patient Journey

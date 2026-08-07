@@ -1,23 +1,23 @@
 'use client';
 
-import { useState, useTransition } from 'react';
+import { useState, useEffect, useTransition } from 'react';
 import { useSiteContext } from '@/lib/context';
 import { t, Lang } from '@/lib/i18n';
 
 const NORWOOD_LEVELS = [
-  { level: 1, title: 'Stage 1', desc: 'Minimal Hair Loss', grafts: '1,000 - 1,500 Grafts' },
-  { level: 2, title: 'Stage 2', desc: 'Slight Receding Hairline', grafts: '1,500 - 2,000 Grafts' },
-  { level: 3, title: 'Stage 3', desc: 'Receding Temple Area', grafts: '2,000 - 2,500 Grafts' },
-  { level: 4, title: 'Stage 4', desc: 'Crown Thinning & Temples', grafts: '2,500 - 3,200 Grafts' },
-  { level: 5, title: 'Stage 5', desc: 'Advanced Crown Thinning', grafts: '3,200 - 4,000 Grafts' },
-  { level: 6, title: 'Stage 6', desc: 'Severe Hair Loss', grafts: '4,000 - 4,500 Grafts' },
-  { level: 7, title: 'Stage 7', desc: 'Extensive Hair Loss', grafts: '4,500+ Grafts' },
+  { level: 1, title: { en: 'Stage 1', fr: 'Stade 1', tr: 'Seviye 1' }, desc: { en: 'Minimal Hair Loss', fr: 'Chute Minimale', tr: 'Minimum Dökülme' }, grafts: '1,000 - 1,500 Grafts' },
+  { level: 2, title: { en: 'Stage 2', fr: 'Stade 2', tr: 'Seviye 2' }, desc: { en: 'Slight Receding Hairline', fr: 'Léger Recul Frontal', tr: 'Hafif Şakak Çekilmesi' }, grafts: '1,500 - 2,000 Grafts' },
+  { level: 3, title: { en: 'Stage 3', fr: 'Stade 3', tr: 'Seviye 3' }, desc: { en: 'Receding Temple Area', fr: 'Recul des Temples', tr: 'Belirgin Şakak Dökülmesi' }, grafts: '2,000 - 2,500 Grafts' },
+  { level: 4, title: { en: 'Stage 4', fr: 'Stade 4', tr: 'Seviye 4' }, desc: { en: 'Crown Thinning & Temples', fr: 'Eclaircissement Sommet', tr: 'Tepe & Şakak Dökülmesi' }, grafts: '2,500 - 3,200 Grafts' },
+  { level: 5, title: { en: 'Stage 5', fr: 'Stade 5', tr: 'Seviye 5' }, desc: { en: 'Advanced Crown Thinning', fr: 'Calvitie Avancée', tr: 'İleri Seviye Tepe Dökülmesi' }, grafts: '3,200 - 4,000 Grafts' },
+  { level: 6, title: { en: 'Stage 6', fr: 'Stade 6', tr: 'Seviye 6' }, desc: { en: 'Severe Hair Loss', fr: 'Chute Sévère', tr: 'Şiddetli Saç Kaybı' }, grafts: '4,000 - 4,500 Grafts' },
+  { level: 7, title: { en: 'Stage 7', fr: 'Stade 7', tr: 'Seviye 7' }, desc: { en: 'Extensive Hair Loss', fr: 'Chute Très Étendue', tr: 'İleri Derece Donör İhtiyacı' }, grafts: '4,500+ Grafts' },
 ];
 
 const COUNTRIES = [
+  { code: '+90', name: 'Turkey' },
   { code: '+44', name: 'United Kingdom' },
   { code: '+33', name: 'France' },
-  { code: '+90', name: 'Turkey' },
   { code: '+49', name: 'Germany' },
   { code: '+31', name: 'Netherlands' },
   { code: '+32', name: 'Belgium' },
@@ -31,10 +31,25 @@ export default function HairAnalysisWizard() {
   const [selectedNorwood, setSelectedNorwood] = useState<number>(3);
   const [selectedPackage, setSelectedPackage] = useState<'Standard DHI' | 'VIP DHI Experience'>('VIP DHI Experience');
   const [name, setName] = useState<string>('');
-  const [countryCode, setCountryCode] = useState<string>('+44');
-  const [countryName, setCountryName] = useState<string>('United Kingdom');
+  
+  // Default country phone code automatically syncs with selected language (TR -> +90, FR -> +33, EN -> +44)
+  const [countryCode, setCountryCode] = useState<string>(lang === 'tr' ? '+90' : lang === 'fr' ? '+33' : '+44');
+  const [countryName, setCountryName] = useState<string>(lang === 'tr' ? 'Turkey' : lang === 'fr' ? 'France' : 'United Kingdom');
   const [phone, setPhone] = useState<string>('');
   const [isPending, startTransition] = useTransition();
+
+  useEffect(() => {
+    if (lang === 'tr') {
+      setCountryCode('+90');
+      setCountryName('Turkey');
+    } else if (lang === 'fr') {
+      setCountryCode('+33');
+      setCountryName('France');
+    } else {
+      setCountryCode('+44');
+      setCountryName('United Kingdom');
+    }
+  }, [lang]);
 
   const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const found = COUNTRIES.find(c => c.code === e.target.value);
@@ -71,7 +86,7 @@ export default function HairAnalysisWizard() {
         <div className="flex items-center justify-between mb-8 pb-6 border-b border-slate-100">
           <div>
             <span className="text-[11px] font-black text-blue-600 uppercase tracking-widest block mb-1">
-              STEP {step} OF 3
+              {t(lang as Lang, 'calculator.step_label')} {step} {t(lang as Lang, 'calculator.of')} 3
             </span>
             <h3 className="text-xl sm:text-2xl font-black text-slate-900">
               {t(lang as Lang, 'calculator.title')}
@@ -104,7 +119,7 @@ export default function HairAnalysisWizard() {
                 1. {t(lang as Lang, 'calculator.step1')}
               </h4>
               <p className="text-xs text-slate-500 font-medium">
-                Select the diagram level that closest resembles your current scalp hair loss.
+                {t(lang as Lang, 'calculator.step1_desc')}
               </p>
             </div>
 
@@ -121,13 +136,17 @@ export default function HairAnalysisWizard() {
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-black text-sm text-slate-900">{n.title}</span>
+                    <span className="font-black text-sm text-slate-900">
+                      {n.title[lang as Lang] || n.title['en']}
+                    </span>
                     {selectedNorwood === n.level && (
                       <span className="w-4 h-4 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-black">✓</span>
                     )}
                   </div>
                   <div>
-                    <span className="text-[11px] text-slate-500 font-medium block">{n.desc}</span>
+                    <span className="text-[11px] text-slate-500 font-medium block">
+                      {n.desc[lang as Lang] || n.desc['en']}
+                    </span>
                     <span className="text-xs font-black text-blue-700 block mt-1">{n.grafts}</span>
                   </div>
                 </button>
@@ -140,7 +159,7 @@ export default function HairAnalysisWizard() {
                 onClick={() => setStep(2)}
                 className="min-h-[48px] px-8 bg-blue-600 hover:bg-blue-500 text-white font-black text-sm rounded-xl shadow-md transition-all cursor-pointer"
               >
-                Continue to Step 2 →
+                {t(lang as Lang, 'calculator.next')}
               </button>
             </div>
           </div>
@@ -154,12 +173,12 @@ export default function HairAnalysisWizard() {
                 2. {t(lang as Lang, 'calculator.step2')}
               </h4>
               <p className="text-xs text-slate-500 font-medium">
-                Choose the DHI package structure tailored for your medical stay.
+                {t(lang as Lang, 'calculator.step2_desc')}
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Standard */}
+              {/* Standard Package */}
               <button
                 type="button"
                 onClick={() => setSelectedPackage('Standard DHI')}
@@ -170,11 +189,11 @@ export default function HairAnalysisWizard() {
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-black text-base text-slate-900">Standard DHI</span>
-                  <span className="text-xs font-black text-slate-600">90.000 TL</span>
+                  <span className="font-black text-base text-slate-900">{t(lang as Lang, 'packages.standard_name')}</span>
+                  <span className="text-xs font-black text-slate-700">£1,550 (€1,800)</span>
                 </div>
                 <p className="text-xs text-slate-600 font-medium">
-                  DHI surgery, local anesthesia, post-op medication kit, and lifetime warranty certificate.
+                  {t(lang as Lang, 'packages.standard_desc')}
                 </p>
               </button>
 
@@ -184,16 +203,16 @@ export default function HairAnalysisWizard() {
                 onClick={() => setSelectedPackage('VIP DHI Experience')}
                 className={`p-6 rounded-2xl border text-left transition-all cursor-pointer flex flex-col justify-between space-y-3 ${
                   selectedPackage === 'VIP DHI Experience'
-                    ? 'border-amber-500 bg-slate-900 text-white shadow-md ring-2 ring-amber-500/40'
+                    ? 'border-blue-600 bg-slate-950 text-white shadow-md ring-2 ring-blue-500/40'
                     : 'border-slate-200 bg-slate-50/50 hover:border-slate-300'
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-black text-base text-amber-400">VIP DHI Experience</span>
-                  <span className="text-xs font-black text-amber-400">110.000 TL</span>
+                  <span className="font-black text-base text-blue-400">{t(lang as Lang, 'packages.vip_name')}</span>
+                  <span className="text-xs font-black text-blue-400">£1,900 (€2,200)</span>
                 </div>
                 <p className="text-xs text-slate-300 font-medium">
-                  Includes DHI surgery, VIP Mercedes Vito transfer, hotel stay, personal coordinator & 12-month growth follow-up.
+                  {t(lang as Lang, 'packages.vip_desc')}
                 </p>
               </button>
             </div>
@@ -204,14 +223,14 @@ export default function HairAnalysisWizard() {
                 onClick={() => setStep(1)}
                 className="min-h-[48px] px-6 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition-all cursor-pointer"
               >
-                ← Back
+                {t(lang as Lang, 'calculator.back')}
               </button>
               <button
                 type="button"
                 onClick={() => setStep(3)}
                 className="min-h-[48px] px-8 bg-blue-600 hover:bg-blue-500 text-white font-black text-sm rounded-xl shadow-md transition-all cursor-pointer"
               >
-                Continue to Step 3 →
+                {t(lang as Lang, 'calculator.next')}
               </button>
             </div>
           </div>
@@ -231,7 +250,9 @@ export default function HairAnalysisWizard() {
 
             <div className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-slate-600 mb-1.5">Full Name *</label>
+                <label className="block text-xs font-bold text-slate-600 mb-1.5">
+                  {t(lang as Lang, 'calculator.name_label')}
+                </label>
                 <input
                   type="text"
                   placeholder={t(lang as Lang, 'calculator.name_placeholder')}
@@ -244,7 +265,9 @@ export default function HairAnalysisWizard() {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-slate-600 mb-1.5">Country *</label>
+                  <label className="block text-xs font-bold text-slate-600 mb-1.5">
+                    {t(lang as Lang, 'calculator.country_label')}
+                  </label>
                   <select
                     value={countryCode}
                     onChange={handleCountryChange}
@@ -259,7 +282,9 @@ export default function HairAnalysisWizard() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="block text-xs font-bold text-slate-600 mb-1.5">WhatsApp Phone Number *</label>
+                  <label className="block text-xs font-bold text-slate-600 mb-1.5">
+                    {t(lang as Lang, 'calculator.phone_label')}
+                  </label>
                   <div className="flex items-center gap-2">
                     <span className="min-h-[48px] px-3 bg-slate-100 border border-slate-200 rounded-xl text-xs font-black text-slate-700 flex items-center justify-center">
                       {countryCode}
@@ -278,7 +303,7 @@ export default function HairAnalysisWizard() {
 
               <div className="bg-emerald-50 border border-emerald-200 p-3.5 rounded-2xl text-xs text-emerald-800 font-semibold flex items-center gap-2">
                 <span className="text-emerald-600 font-black text-base">💬</span>
-                <span>Send your scalp photos via WhatsApp for a direct doctor consultation & exact graft quote.</span>
+                <span>{t(lang as Lang, 'calculator.wa_info')}</span>
               </div>
             </div>
 
@@ -288,7 +313,7 @@ export default function HairAnalysisWizard() {
                 onClick={() => setStep(2)}
                 className="min-h-[48px] px-6 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition-all cursor-pointer"
               >
-                ← Back
+                {t(lang as Lang, 'calculator.back')}
               </button>
               <button
                 type="submit"
