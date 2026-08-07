@@ -40,7 +40,7 @@ export default function HeroSection() {
             <span>{t(lang as Lang, 'hero.ministryBadge')}</span>
           </div>
 
-          {/* H1 Title: Surgeon-Guided Premium Positioning */}
+          {/* H1 Title: Doctor-Guided Premium Positioning */}
           <h1 className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.12]">
             {lang === 'fr' ? (
               <>Greffe DHI Premium <span className="text-blue-500">sous Contrôle Médical</span> à Antalya</>
@@ -92,7 +92,7 @@ export default function HeroSection() {
 
         </div>
 
-        {/* Right Column: Visual Trust Hero Image + Lead Surgeon Badge Overlay (5 cols) */}
+        {/* Right Column: Visual Trust Hero Image + Anonymized Surgical Team Badge (5 cols) */}
         <div className="lg:col-span-5 space-y-4">
           <div className="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 group">
             <img
@@ -100,15 +100,15 @@ export default function HeroSection() {
               alt="Antalya DHI Medical Consultation"
               className="w-full h-[320px] sm:h-[380px] object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            {/* Surgeon Badge Overlay */}
-            <div className="absolute top-4 right-4 bg-slate-950/90 backdrop-blur-md border border-blue-500/40 p-3 rounded-2xl shadow-xl flex items-center gap-3 max-w-[220px]">
+            {/* Anonymized Surgical Team Badge (No fake doctor names) */}
+            <div className="absolute top-4 right-4 bg-slate-950/90 backdrop-blur-md border border-blue-500/40 p-3 rounded-2xl shadow-xl flex items-center gap-3 max-w-[230px]">
               <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-black text-sm border border-blue-400 shrink-0">
-                👨‍⚕️
+                🏥
               </div>
               <div>
-                <div className="text-xs font-black text-white">Dr. C. Yılmaz</div>
-                <div className="text-[10px] text-blue-400 font-extrabold">Lead DHI Surgeon</div>
-                <div className="text-[9px] text-slate-400 font-medium">12+ Yıl Cerrahi Pratik</div>
+                <div className="text-xs font-black text-white">Certified Medical Team</div>
+                <div className="text-[10px] text-blue-400 font-extrabold">Lead Surgical Practice</div>
+                <div className="text-[9px] text-slate-400 font-medium">T.C. Health Tourism Partner</div>
               </div>
             </div>
 

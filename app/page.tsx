@@ -8,7 +8,6 @@ import WhyAntalya from '@/components/WhyAntalya';
 import PricingPackages from '@/components/PricingPackages';
 import SocialProof from '@/components/SocialProof';
 import HairAnalysisWizard from '@/components/HairAnalysisWizard';
-import LiveUrgencyBadge from '@/components/LiveUrgencyBadge';
 import PatientJourney from '@/components/PatientJourney';
 import MedicalTeam from '@/components/MedicalTeam';
 import CompetitorBenchmarkFeatures from '@/components/CompetitorBenchmarkFeatures';
@@ -53,13 +52,10 @@ export default function HomePage() {
 
         {/* 7. INTERACTIVE HAIR ANALYSIS WIZARD & LEAD GENERATION */}
         <section id="analysis-wizard" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
-          <div className="flex justify-center mb-6">
-            <LiveUrgencyBadge />
-          </div>
           <HairAnalysisWizard />
         </section>
 
-        {/* 8. ANTALYA DHI PATIENT EXPERIENCE */}
+        {/* 8. ANTALYA DHI PATIENT EXPERIENCE (4 UNIQUE PHOTOGRAPHY CARDS) */}
         <section id="results" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <PatientJourney />
         </section>
