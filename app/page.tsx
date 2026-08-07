@@ -6,12 +6,14 @@ import HeroSection from '@/components/HeroSection';
 import LegalTrustBand from '@/components/LegalTrustBand';
 import PricingPackages from '@/components/PricingPackages';
 import MedicalTeam from '@/components/MedicalTeam';
+import CompetitorBenchmarkFeatures from '@/components/CompetitorBenchmarkFeatures';
 import ProcessTimeline from '@/components/ProcessTimeline';
 import DHIAdvantages from '@/components/DHIAdvantages';
 import DHIVsFueComparison from '@/components/DHIVsFueComparison';
 import PatientJourney from '@/components/PatientJourney';
 import LiveUrgencyBadge from '@/components/LiveUrgencyBadge';
 import HairAnalysisWizard from '@/components/HairAnalysisWizard';
+import SemanticSeoGuide from '@/components/SemanticSeoGuide';
 import FaqSection from '@/components/FaqSection';
 import SocialProof from '@/components/SocialProof';
 import VIPPackageDetails from '@/components/VIPPackageDetails';
@@ -27,13 +29,13 @@ export default function HomePage() {
         {/* 1. PREMIUM NAVBAR */}
         <Navbar />
 
-        {/* 2. HERO — %100 DİL İZOLASYONLU VE DÖNÜŞÜM ODAKLI İLK EKRAN */}
+        {/* 2. HERO — SATIŞ VE GÜVEN YÜKSEK İLK EKRAN */}
         <HeroSection />
 
         {/* 3. SAĞLIK BAKANLIĞI GÜVEN BANDI */}
         <LegalTrustBand />
 
-        {/* 4. ŞEFFAF FİYAT PAKETLERİ (10 SANİYE KURALI — STANDARD VS VIP ANTALYA EXPERIENCE) */}
+        {/* 4. ŞEFFAF FİYAT PAKETLERİ (10 SANİYE KURALI) */}
         <section id="packages" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <PricingPackages />
         </section>
@@ -43,27 +45,32 @@ export default function HomePage() {
           <MedicalTeam />
         </section>
 
-        {/* 6. SİZE ÖZEL DHI SÜRECİ (4 ADIM TIMELINE) */}
+        {/* 6. RAKİP KISITLAMASIZ MEDİKAL STANDARTLARIMIZ (İĞNESİZ ANESTEZİ, ATP, PRP) */}
+        <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+          <CompetitorBenchmarkFeatures />
+        </section>
+
+        {/* 7. SİZE ÖZEL DHI SÜRECİ (4 ADIM TIMELINE) */}
         <section id="process" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <ProcessTimeline />
         </section>
 
-        {/* 7. DHI TEKNİK AVANTAJLARI */}
+        {/* 8. DHI TEKNİK AVANTAJLARI */}
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <DHIAdvantages />
         </section>
 
-        {/* 8. DHI VE FUE KARŞILAŞTIRMASI (SEMANTIC COMPARISON) */}
+        {/* 9. DHI VE FUE KARŞILAŞTIRMASI (SEMANTIC COMPARISON) */}
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <DHIVsFueComparison />
         </section>
 
-        {/* 9. ANTALYA DHI DENEYİMİ VE HASTA YOLCULUĞU */}
+        {/* 10. ANTALYA DHI DENEYİMİ VE HASTA YOLCULUĞU */}
         <section id="results" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <PatientJourney />
         </section>
 
-        {/* 10. CANLI ACİLİYET ROZETİ + ÜCRETSİZ SAÇ ANALİZİ SİHİRBAZI */}
+        {/* 11. CANLI ACİLİYET ROZETİ + ÜCRETSİZ SAÇ ANALİZİ SİHİRBAZI */}
         <section id="analysis-wizard" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <div className="flex justify-center mb-6">
             <LiveUrgencyBadge />
@@ -71,31 +78,36 @@ export default function HomePage() {
           <HairAnalysisWizard />
         </section>
 
-        {/* 11. SIKÇA SORULAN SORULAR & AI SEARCH (GEO) Q&A */}
+        {/* 12. SEMANTİK SEO DHI REHBERİ (CHATGPT & GOOGLE İNDEKS) */}
+        <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+          <SemanticSeoGuide />
+        </section>
+
+        {/* 13. SIKÇA SORULAN SORULAR & AI SEARCH (GEO) Q&A */}
         <section id="faq-section" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <FaqSection />
         </section>
 
-        {/* 12. VIP HİZMET TIMELINE DİYAGRAMI */}
+        {/* 14. VIP HİZMET TIMELINE DİYAGRAMI */}
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <VIPPackageDetails />
         </section>
 
-        {/* 13. SOSYAL KANIT & HASTA GÖRÜŞLERİ */}
+        {/* 15. SOSYAL KANIT & HASTA GÖRÜŞLERİ */}
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <SocialProof />
         </section>
 
-        {/* 14. TIBBİ DISCLAIMER (ZORUNLU 3 DİLDE) */}
+        {/* 16. TIBBİ DISCLAIMER (ZORUNLU 3 DİLDE) */}
         <MedicalDisclaimer />
 
-        {/* 15. FOOTER */}
+        {/* 17. FOOTER */}
         <Footer />
 
-        {/* 16. FLOATING WHATSAPP BOT (DESKTOP) */}
+        {/* 18. FLOATING WHATSAPP BOT (DESKTOP) */}
         <WhatsAppWidget />
 
-        {/* 17. MOBİL YAPIŞKAN CTA BARI */}
+        {/* 19. MOBİL YAPIŞKAN CTA BARI */}
         <MobileStickyBar />
       </main>
     </SiteProvider>
