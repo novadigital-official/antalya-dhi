@@ -69,6 +69,18 @@ export const translations = {
     // Process Timeline
     'process.title': 'Your Customized DHI Journey in Antalya',
     'process.subtitle': '4 transparent steps from your first online contact to your full hair recovery.',
+    'process.step1.num': '01',
+    'process.step1.title': 'Send Scalp Photos for Free Analysis',
+    'process.step1.desc': 'Send 3 scalp photos via WhatsApp. Our surgical team evaluates graft needs within 24 hours.',
+    'process.step2.num': '02',
+    'process.step2.title': 'Receive All-Inclusive Quote',
+    'process.step2.desc': 'Receive your transparent treatment plan, package rate (£1,550 or £1,900), and flight schedule.',
+    'process.step3.num': '03',
+    'process.step3.title': 'VIP Arrival & Hospital Procedure',
+    'process.step3.desc': 'VIP airport pickup, hotel check-in, and painless DHI hair transplant under sterile hospital conditions.',
+    'process.step4.num': '04',
+    'process.step4.title': '12-Month Post-Op Follow-up',
+    'process.step4.desc': 'Personal coordinator monitoring your wash routine and hair growth milestones every month.',
 
     // Packages
     'packages.title': 'Transparent DHI Packages',
@@ -91,6 +103,15 @@ export const translations = {
 
     // Patient Journey
     'journey.title': 'The Antalya DHI Patient Journey',
+    'journey.subtitle': 'How international patients experience medical tourism with us.',
+    'journey.step1.title': 'VIP Airport Arrival',
+    'journey.step1.desc': 'Private driver meets you at Antalya Airport with Mercedes Vito and takes you to your hotel.',
+    'journey.step2.title': 'Surgeon Consultation',
+    'journey.step2.desc': 'In-person scalp evaluation, hairline design, and blood tests at our certified partner clinic.',
+    'journey.step3.title': 'Choi Pen DHI Suite',
+    'journey.step3.desc': 'Comfortable DHI graft extraction and Choi Pen implantation performed by certified surgical specialists.',
+    'journey.step4.title': 'First Wash & Aftercare',
+    'journey.step4.desc': 'Special hair wash demonstration, aftercare kit delivery, and safe return transfer to airport.',
 
     // Disclaimer & Footer
     'disclaimer.text': 'This platform is an informational portal for international health tourism. All medical procedures are performed by certified surgeons at our T.C. Ministry of Health Authorized Partner Clinic (Ref: AK-84920).',
@@ -171,6 +192,18 @@ export const translations = {
     // Process Timeline
     'process.title': 'Votre Parcours DHI Personnalisé à Antalya',
     'process.subtitle': '4 étapes transparentes du premier contact au résultat final.',
+    'process.step1.num': '01',
+    'process.step1.title': 'Analyse Capillaire en Ligne',
+    'process.step1.desc': 'Envoyez vos photos par WhatsApp pour une consultation médicale gratuite sous 24h.',
+    'process.step2.num': '02',
+    'process.step2.title': 'Plan de Traitement Personnalisé',
+    'process.step2.desc': 'Recevez un devis DHI clair et tout compris avec l\'itinéraire de voyage.',
+    'process.step3.num': '03',
+    'process.step3.title': 'Arrivée VIP & Procédure DHI',
+    'process.step3.desc': 'Accueil VIP à l\'aéroport, hébergement et greffe DHI indolore dans un environnement stérile.',
+    'process.step4.num': '04',
+    'process.step4.title': 'Suivi Post-Opératoire 12 Mois',
+    'process.step4.desc': 'Un coordinateur personnel suit votre routine de lavage et la repousse chaque mois.',
 
     // Packages
     'packages.title': 'Forfaits DHI Transparents',
@@ -192,6 +225,15 @@ export const translations = {
 
     // Patient Journey
     'journey.title': 'L\'Expérience DHI à Antalya',
+    'journey.subtitle': 'Découvrez le parcours de nos patients internationaux.',
+    'journey.step1.title': 'Arrivée VIP à l\'Aéroport',
+    'journey.step1.desc': 'Un chauffeur privé vous accueille à l\'aéroport d\'Antalya en Mercedes Vito.',
+    'journey.step2.title': 'Consultation Chirurgicale',
+    'journey.step2.desc': 'Évaluation du cuir chevelu et dessin de la ligne frontale dans notre clinique partenaire.',
+    'journey.step3.title': 'Jour de la Procédure DHI',
+    'journey.step3.desc': 'Extraction et implantation DHI réalisées par des spécialistes chirurgicaux certifiés.',
+    'journey.step4.title': 'Premier Lavage & Suivi',
+    'journey.step4.desc': 'Démonstration du premier lavage, remise du kit de soin et transfert de retour.',
 
     // Disclaimer & Footer
     'disclaimer.text': 'Cette plateforme est un portail d\'information pour le tourisme médical. Toutes les procédures sont effectuées dans notre clinique partenaire autorisée par le Ministère de la Santé T.C. (Ref: AK-84920).',
@@ -272,6 +314,18 @@ export const translations = {
     // Process Timeline
     'process.title': 'Size Özel DHI Süreci',
     'process.subtitle': 'İlk iletişiminizden tam saç gelişimine kadar 4 şeffaf adım.',
+    'process.step1.num': '01',
+    'process.step1.title': 'Online Saç Analizi',
+    'process.step1.desc': 'Fotoğraflarınızı WhatsApp üzerinden iletin; uzman sağlık ekibimiz greft miktarınızı ve uygunluğunuzu ücretsiz analiz etsin.',
+    'process.step2.num': '02',
+    'process.step2.title': 'Kişisel Tedavi Planı',
+    'process.step2.desc': 'Şeffaf fiyatlandırma, paket detayları ve Antalya ziyaret seyahat programınızı içeren özel teklifinizi alın.',
+    'process.step3.num': '03',
+    'process.step3.title': 'Antalya Operasyon Süreci',
+    'process.step3.desc': 'VIP Mercedes karşılama, otel konaklaması ve steril hastane ortamında konforlu DHI saç ekim operasyonu.',
+    'process.step4.num': '04',
+    'process.step4.title': 'Sonrası Takip',
+    'process.step4.desc': 'Medikal yıkama eğitimi, bakım kiti ve 12 ay boyunca her ay kişisel koordinatör ile gelişim takibi.',
 
     // Packages
     'packages.title': 'Şeffaf DHI Paketleri',
@@ -293,6 +347,15 @@ export const translations = {
 
     // Patient Journey
     'journey.title': 'Antalya DHI Deneyimi',
+    'journey.subtitle': 'Uluslararası hastalarımızın Antalya\'daki tedavi yolculuğu.',
+    'journey.step1.title': 'VIP Havaalanı Karşılama',
+    'journey.step1.desc': 'Özel şoförünüz Antalya Havalimanı\'nda sizi Mercedes Vito ile karşılar ve otelinize transfer eder.',
+    'journey.step2.title': 'Klinik Muayenesi',
+    'journey.step2.desc': 'Anlaşmalı uzman kliniğimizde doktor muayenesi, ön saç çizgisi çizimi ve kan tahlilleri.',
+    'journey.step3.title': 'Choi Pen DHI Operasyonu',
+    'journey.step3.desc': 'Steril hastane ortamında ağrısız Choi Pen teknolojisi ile konforlu DHI ekim operasyonu.',
+    'journey.step4.title': 'İlk Yıkama & Takip',
+    'journey.step4.desc': 'Klinikte medikal saç yıkama eğitimi, bakım kiti teslimi ve havalimanına VIP dönüş transferi.',
 
     // Disclaimer & Footer
     'disclaimer.text': 'Bu platform uluslararası sağlık turizmi bilgilendirme ve rehberlik portalıdır. Tüm tıbbi operasyonlar T.C. Sağlık Bakanlığı Yetkili Kliniği bünyesinde uzman hekimler tarafından gerçekleştirilmektedir (Ref: AK-84920).',

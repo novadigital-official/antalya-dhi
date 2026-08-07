@@ -19,19 +19,19 @@ export default function MedicalTeam() {
       exp: t(lang as Lang, 'team.member2.exp'),
       desc: t(lang as Lang, 'team.member2.desc'),
       icon: '🌐',
-      tag: 'Multilingual Care (EN/FR/TR)'
+      tag: 'Multilingual Care'
     },
     {
       role: t(lang as Lang, 'team.member3.role'),
       exp: t(lang as Lang, 'team.member3.exp'),
       desc: t(lang as Lang, 'team.member3.desc'),
       icon: '📋',
-      tag: '12-Month Growth Specialist'
+      tag: '12-Month Growth'
     }
   ];
 
   return (
-    <div id="team" className="w-full space-y-10">
+    <div id="team" className="w-full space-y-8">
       <div className="text-center max-w-3xl mx-auto space-y-2">
         <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 uppercase tracking-wider">
           EXPERT SURGICAL & CARE TEAM
@@ -44,34 +44,34 @@ export default function MedicalTeam() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {members.map((m, idx) => (
           <div
             key={idx}
-            className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between space-y-6 hover:border-blue-500 hover:shadow-md transition-all"
+            className="bg-white border border-slate-200 rounded-3xl p-5 sm:p-6 shadow-sm flex flex-col justify-between space-y-4 hover:border-blue-500 hover:shadow-md transition-all"
           >
             <div>
-              <div className="flex items-center justify-between mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 font-black text-xl flex items-center justify-center border border-blue-100 shadow-sm">
+              <div className="flex items-center justify-between mb-3">
+                <div className="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 font-black text-lg flex items-center justify-center border border-blue-100 shadow-sm">
                   {m.icon}
                 </div>
-                <span className="text-[10px] font-black text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="text-[10px] font-black text-blue-700 bg-blue-50 border border-blue-200 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                   {m.tag}
                 </span>
               </div>
 
-              <span className="text-xs font-extrabold text-blue-600 uppercase tracking-wider block mb-1">
+              <span className="text-[11px] font-extrabold text-blue-600 uppercase tracking-wider block mb-1">
                 {m.exp}
               </span>
-              <h3 className="text-lg font-black text-slate-900 mb-2 leading-snug">
+              <h3 className="text-base font-black text-slate-900 mb-1 leading-snug">
                 {m.role}
               </h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
+              <p className="text-xs text-slate-600 leading-relaxed font-medium line-clamp-3">
                 {m.desc}
               </p>
             </div>
 
-            <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-extrabold text-slate-700">
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-extrabold text-slate-500">
               <span>Medical Tourism Team</span>
               <span className="text-blue-600 font-black">Professional Care</span>
             </div>
