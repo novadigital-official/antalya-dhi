@@ -15,10 +15,10 @@ export default function WhatsAppWidget() {
   if (!mounted) return null;
 
   const msg = {
-    en: 'Hello Antalya DHI Clinic, I would like to get a free scalp analysis and doctor evaluation.',
-    fr: 'Bonjour Antalya DHI Clinic, je souhaite obtenir une analyse gratuite et une évaluation médicale.',
-    tr: 'Merhaba Antalya DHI Klinik, ücretsiz saç analizi ve doktor değerlendirmesi almak istiyorum.',
-  }[lang as Lang] || 'Hello Antalya DHI Clinic, I would like to get a free scalp analysis and doctor evaluation.';
+    en: 'Hello, I am contacting you via your official Antalya DHI Clinic website. I would like to get a free scalp analysis and doctor evaluation.',
+    fr: 'Bonjour, je vous contacte via le site web officiel de la clinique Antalya DHI. Je souhaite obtenir une analyse gratuite du cuir chevelu.',
+    tr: 'Merhaba, Antalya DHI klinik web siteniz üzerinden ulaştım. Ücretsiz saç analizi ve doktor değerlendirmesi almak istiyorum.',
+  }[lang as Lang] || 'Hello, I am contacting you via your official Antalya DHI Clinic website. I would like to get a free scalp analysis and doctor evaluation.';
 
   const url = `https://wa.me/905070871789?text=${encodeURIComponent(msg)}`;
 

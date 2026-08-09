@@ -24,10 +24,10 @@ export default function MobileStickyBar() {
 
   const waMsg = encodeURIComponent(
     lang === 'tr'
-      ? 'Merhaba, Antalya DHI saç ekimi için ücretsiz fotoğraf analizi ve doktor değerlendirmesi almak istiyorum.'
+      ? 'Merhaba, Antalya DHI klinik web siteniz üzerinden ulaştım. Ücretsiz saç analizi ve doktor değerlendirmesi almak istiyorum.'
       : lang === 'fr'
-      ? 'Bonjour, je souhaite obtenir une analyse capillaire gratuite et une évaluation médicale.'
-      : 'Hello, I would like to send my scalp photos for a free 24-hour doctor evaluation.'
+      ? 'Bonjour, je vous contacte via le site web officiel de la clinique Antalya DHI. Je souhaite obtenir une analyse gratuite du cuir chevelu.'
+      : 'Hello, I am contacting you via your official Antalya DHI Clinic website. I would like to get a free scalp analysis and doctor evaluation.'
   );
 
   return (
