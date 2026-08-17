@@ -7,7 +7,7 @@ export default function LegalTrustBand() {
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-          <span>T.C. Ministry of Health International Health Tourism Authorization | Ref: AK-84920</span>
+          <span>T.C. Ministry of Health Licensed Partner Clinics &amp; Certified DHI Specialists</span>
         </div>
       </div>
     </div>

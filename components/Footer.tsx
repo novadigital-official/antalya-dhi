@@ -8,10 +8,10 @@ export default function Footer() {
   const { lang } = useSiteContext();
 
   const desc = {
-    en: 'Premium DHI hair transplant clinic in Antalya, Turkey. Specialized in international patient care, VIP transfers, and high-density hair restoration.',
-    fr: 'Clinique de greffe de cheveux DHI premium à Antalya, Turquie. Spécialisée dans les soins internationaux et les forfaits VIP.',
-    tr: 'Antalya\'da uzman hekim kontrollü DHI saç ekim ve sağlık turizmi rehberlik portalı. VIP transfer, konaklama ve aktif WhatsApp destek hattı.',
-  }[lang as Lang] || 'Premium DHI hair transplant clinic in Antalya, Turkey.';
+    en: 'Independent VIP DHI hair transplant consultation & international patient coordination portal in Antalya, Turkey. Connecting patients with licensed surgical facilities.',
+    fr: 'Portail indépendant de conseil et de coordination pour la greffe de cheveux DHI VIP à Antalya, Turquie. Mettant en relation les patients avec des cliniques agréées.',
+    tr: 'Antalya\'da uzman hekim kontrollü DHI saç ekim ve uluslararası hasta rehberlik portalı. VIP transfer, otel konaklaması ve medikal koordinasyon.',
+  }[lang as Lang] || 'VIP DHI hair transplant consultation & coordination portal in Antalya, Turkey.';
 
   const quickLinksTitle = { en: 'Quick Links', fr: 'Liens Rapides', tr: 'Hızlı Bağlantılar' }[lang as Lang] || 'Quick Links';
   const contactTitle = { en: 'Contact Info', fr: 'Informations de Contact', tr: 'İletişim Bilgileri' }[lang as Lang] || 'Contact Info';
@@ -42,7 +42,7 @@ export default function Footer() {
           <div>
             <div className="font-black text-2xl text-white mb-4 flex items-center gap-2">
               <span className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-xs">DHI</span>
-              <span>ANTALYA <span className="text-blue-500 font-extrabold">CLINIC</span></span>
+              <span>ANTALYA <span className="text-blue-500 font-extrabold">DHI</span></span>
             </div>
             <p className="text-xs leading-relaxed max-w-sm font-medium text-slate-300">
               {desc}

@@ -23,7 +23,7 @@ export const translations = {
     'hero.whatsappCTA': 'Send Photos → Get 24-Hour Doctor Review',
     'hero.cta_analysis': 'Get Free Hair Analysis',
     'hero.analysisCTA': 'Get Free Hair Analysis',
-    'hero.ministryBadge': 'T.C. Ministry of Health Authorized Partner Clinic (Ref: AK-84920)',
+    'hero.ministryBadge': 'Procedures Performed in T.C. Ministry of Health Licensed Partner Clinics',
 
     // Hero Visual Tags
     'hero.vtag1': 'International Patient Coordination',
@@ -32,7 +32,7 @@ export const translations = {
     'hero.vtag4': 'Active WhatsApp Support Line',
 
     // Trust Band
-    'trust.certified': 'T.C. Ministry of Health Authorized Partner Clinic (Ref: AK-84920)',
+    'trust.certified': 'T.C. Ministry of Health Licensed Partner Facilities',
     'trust.warranty': 'Lifetime Warranty Certificate Included',
     'trust.vip_transfer': 'VIP Mercedes Airport & Clinic Transfer',
     'trust.aftercare': 'Active WhatsApp Post-Op Support Line',
@@ -169,7 +169,7 @@ export const translations = {
     'hero.whatsappCTA': 'Envoyer Photos → Évaluation en 24h',
     'hero.cta_analysis': 'Analyse Capillaire Gratuite',
     'hero.analysisCTA': 'Analyse Capillaire Gratuite',
-    'hero.ministryBadge': 'Clinique Partenaire Certifiée par le Ministère de la Santé T.C. (Ref: AK-84920)',
+    'hero.ministryBadge': 'Interventions Réalisées dans des Établissements Partenaires Agréés par le Ministère de la Santé T.C.',
 
     // Hero Visual Tags
     'hero.vtag1': 'Coordination Patient Internationale',
@@ -178,7 +178,7 @@ export const translations = {
     'hero.vtag4': 'Ligne de Support WhatsApp Active',
 
     // Trust Band
-    'trust.certified': 'Clinique Partenaire Certifiée Ministère de la Santé T.C. (Ref: AK-84920)',
+    'trust.certified': 'Établissements Partenaires Agréés par le Ministère de la Santé T.C.',
     'trust.warranty': 'Certificat de Garantie à Vie Inclus',
     'trust.vip_transfer': 'Transfert VIP Mercedes Aéroport & Clinique',
     'trust.aftercare': 'Ligne de Support WhatsApp Post-Opératoire',
@@ -314,7 +314,7 @@ export const translations = {
     'hero.whatsappCTA': 'Fotoğrafını Gönder → 24 Saat İçinde Saç Analizi',
     'hero.cta_analysis': 'Ücretsiz Saç Analizi Al',
     'hero.analysisCTA': 'Ücretsiz Saç Analizi Al',
-    'hero.ministryBadge': 'T.C. Sağlık Bakanlığı Onaylı Anlaşmalı Klinik (Ref: AK-84920)',
+    'hero.ministryBadge': 'Tüm Operasyonlar T.C. Sağlık Bakanlığı Ruhsatlı Anlaşmalı Sağlık Kuruluşlarında Yapılmaktadır',
 
     // Hero Visual Tags
     'hero.vtag1': 'Uluslararası Hasta Koordinasyonu',
@@ -323,7 +323,7 @@ export const translations = {
     'hero.vtag4': 'Aktif WhatsApp Destek Hattı',
 
     // Trust Band
-    'trust.certified': 'T.C. Sağlık Bakanlığı Onaylı Anlaşmalı Klinik (Ref: AK-84920)',
+    'trust.certified': 'T.C. Sağlık Bakanlığı Ruhsatlı Anlaşmalı Sağlık Kuruluşları',
     'trust.warranty': 'Ömür Boyu Garanti Sertifikası Dahil',
     'trust.vip_transfer': 'VIP Mercedes Havaalanı & Klinik Transferi',
     'trust.aftercare': 'Aktif WhatsApp Operasyon Sonrası Destek Hattı',
