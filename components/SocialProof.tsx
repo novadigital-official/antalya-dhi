@@ -59,47 +59,47 @@ export default function SocialProof() {
   ];
 
   return (
-    <section id="reviews" className="py-20 bg-[#070B14] text-white border-b border-white/[0.08] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
+    <section id="reviews" className="py-14 sm:py-18 bg-[#FAFBFC] border-b border-slate-200/80 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-950/80 border border-blue-800/60 text-blue-300 text-xs font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5" />
+        <div className="text-center max-w-3xl mx-auto space-y-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>{lang === 'tr' ? 'Gerçek Hasta Deneyimleri' : 'Verified Testimonials'}</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
             {title}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 font-normal max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm text-slate-600 font-normal max-w-2xl mx-auto">
             {subtitle}
           </p>
         </div>
 
         {/* Testimonials 3-Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {reviews.map((r, idx) => (
             <div
               key={idx}
-              className="bg-slate-900/90 border border-slate-800 hover:border-slate-700 rounded-3xl p-7 flex flex-col justify-between space-y-5 card-hover shadow-xl backdrop-blur-md"
+              className="bg-white border border-slate-200 hover:border-emerald-400 rounded-3xl p-6 flex flex-col justify-between space-y-4 card-hover-soft shadow-xs"
             >
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {/* Route Header */}
-                <div className="flex items-center justify-between pb-3.5 border-b border-slate-800 text-[11px] font-bold text-slate-400">
-                  <div className="flex items-center gap-1.5 text-blue-400">
+                <div className="flex items-center justify-between pb-3 border-b border-slate-100 text-[11px] font-bold text-slate-500">
+                  <div className="flex items-center gap-1.5 text-emerald-700 font-extrabold">
                     <Plane className="w-3.5 h-3.5" />
                     <span>{r.route}</span>
                   </div>
-                  <span className="text-slate-500 font-medium">{r.flight}</span>
+                  <span className="text-slate-400 font-medium">{r.flight}</span>
                 </div>
 
                 {/* Patient Info & Stars */}
                 <div className="flex justify-between items-start">
                   <div>
-                    <div className="text-sm font-bold text-white">{r.patient[lang as Lang] || r.patient['en']}</div>
-                    <div className="text-[11px] text-emerald-400 flex items-center gap-1 mt-0.5 font-medium">
+                    <div className="text-xs sm:text-sm font-bold text-slate-900">{r.patient[lang as Lang] || r.patient['en']}</div>
+                    <div className="text-[11px] text-emerald-600 flex items-center gap-1 mt-0.5 font-medium">
                       <CheckCircle2 className="w-3 h-3" />
-                      <span>Verified Medical Stay</span>
+                      <span>Verified Stay</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-0.5 text-amber-400">
@@ -110,14 +110,14 @@ export default function SocialProof() {
                 </div>
 
                 {/* Quote */}
-                <p className="text-xs text-slate-300 italic leading-relaxed font-normal">
+                <p className="text-xs text-slate-600 italic leading-relaxed font-normal">
                   {r.text[lang as Lang] || r.text['en']}
                 </p>
               </div>
 
               {/* Grafts tag */}
-              <div className="pt-3.5 border-t border-slate-800/80">
-                <div className="text-[11px] font-bold text-blue-300 bg-blue-950/80 border border-blue-800/60 px-3 py-1.5 rounded-xl text-center">
+              <div className="pt-3 border-t border-slate-100">
+                <div className="text-[11px] font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-xl text-center">
                   {r.grafts}
                 </div>
               </div>
@@ -125,29 +125,29 @@ export default function SocialProof() {
           ))}
         </div>
 
-        {/* Modern Trust Bar Strip */}
-        <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row justify-around items-center text-center gap-6 shadow-2xl">
-          <div className="space-y-1">
-            <div className="font-heading font-extrabold text-2xl sm:text-3xl text-amber-400">4.9 / 5.0</div>
-            <div className="text-xs text-slate-400 font-medium">
+        {/* Deep Emerald Trust Bar Strip */}
+        <div className="bg-emerald-luxury text-white rounded-3xl p-6 sm:p-7 flex flex-col sm:flex-row justify-around items-center text-center gap-5 shadow-lg border border-emerald-500/30">
+          <div className="space-y-0.5">
+            <div className="font-heading font-black text-2xl sm:text-3xl text-amber-300">4.9 / 5.0</div>
+            <div className="text-xs text-emerald-200/80 font-medium">
               {lang === 'tr' ? 'Ortalama Hasta Puanı' : 'Average Verified Rating'}
             </div>
           </div>
 
-          <div className="hidden sm:block w-px h-10 bg-slate-800" />
+          <div className="hidden sm:block w-px h-8 bg-emerald-700/50" />
 
-          <div className="space-y-1">
-            <div className="font-heading font-extrabold text-2xl sm:text-3xl text-white">5,000+</div>
-            <div className="text-xs text-slate-400 font-medium">
+          <div className="space-y-0.5">
+            <div className="font-heading font-black text-2xl sm:text-3xl text-white">5,000+</div>
+            <div className="text-xs text-emerald-200/80 font-medium">
               {lang === 'tr' ? 'Tamamlanan DHI Operasyonu' : 'Completed DHI Procedures'}
             </div>
           </div>
 
-          <div className="hidden sm:block w-px h-10 bg-slate-800" />
+          <div className="hidden sm:block w-px h-8 bg-emerald-700/50" />
 
-          <div className="space-y-1">
-            <div className="font-heading font-extrabold text-2xl sm:text-3xl text-blue-400">35+ Countries</div>
-            <div className="text-xs text-slate-400 font-medium">
+          <div className="space-y-0.5">
+            <div className="font-heading font-black text-2xl sm:text-3xl text-emerald-300">35+ Countries</div>
+            <div className="text-xs text-emerald-200/80 font-medium">
               {lang === 'tr' ? 'Uluslararası Hasta Portföyü' : 'International Patients'}
             </div>
           </div>

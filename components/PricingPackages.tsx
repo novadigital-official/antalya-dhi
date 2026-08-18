@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useSiteContext } from '@/lib/context';
 import { t, Lang } from '@/lib/i18n';
 import { PRICES, formatPrice } from '@/lib/currency';
-import { Check, Sparkles, ArrowRight, ShieldCheck, Star } from 'lucide-react';
+import { Check, Sparkles, ArrowRight, Star } from 'lucide-react';
 
 export default function PricingPackages() {
   const { lang, currency } = useSiteContext();
@@ -38,69 +38,69 @@ export default function PricingPackages() {
   }[lang as Lang] || 'Fully coordinated with zero hidden costs.';
 
   return (
-    <section id="packages" className="py-20 bg-slate-950 text-white border-b border-white/[0.08] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <section id="packages" className="py-14 sm:py-18 bg-white border-b border-slate-200/80 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-950/80 border border-blue-800/60 text-blue-300 text-xs font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5" />
+        <div className="text-center max-w-3xl mx-auto space-y-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>{lang === 'tr' ? 'Şeffaf Fiyatlandırma' : 'Transparent Rates'}</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
             {title}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 font-normal max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm text-slate-600 font-normal max-w-2xl mx-auto">
             {subtitle}
           </p>
         </div>
 
         {/* 2 Package Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-5xl mx-auto items-stretch">
           
-          {/* PACKAGE 1: STANDARD DHI (5 cols) */}
-          <div className="lg:col-span-5 bg-slate-900/90 border border-slate-800 rounded-3xl p-7 sm:p-8 shadow-xl flex flex-col justify-between space-y-6 card-hover backdrop-blur-md">
-            <div className="space-y-5">
+          {/* PACKAGE 1: STANDARD DHI (5 cols — Clean White Card) */}
+          <div className="lg:col-span-5 bg-white border border-slate-200 rounded-3xl p-7 shadow-xs flex flex-col justify-between space-y-5 card-hover-soft">
+            <div className="space-y-4">
               <div>
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block">
-                  {lang === 'tr' ? 'Standart Operasyon' : 'Clinical Procedure Package'}
+                <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
+                  {lang === 'tr' ? 'Standart Operasyon' : 'Procedure-Focused Package'}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mt-1">
+                <h3 className="text-xl font-heading font-bold text-slate-900 mt-1">
                   Standard DHI
                 </h3>
-                <p className="text-xs text-slate-400 font-normal mt-1 leading-relaxed">
-                  {lang === 'tr' ? 'Kendi konaklama ve transferini ayarlayan hastalar için cerrahi odaklı paket.' : 'Surgery-focused clinical package for self-arranging international patients.'}
+                <p className="text-xs text-slate-500 font-normal mt-1 leading-relaxed">
+                  {lang === 'tr' ? 'Kendi konaklama ve transferini ayarlayan hastalar için cerrahi paket.' : 'Surgery-focused clinical package for self-arranging patients.'}
                 </p>
               </div>
 
               {/* Price Box */}
-              <div className="p-4 bg-slate-950/80 border border-slate-800 rounded-2xl space-y-1">
-                <span className="text-[11px] text-slate-400 font-medium block">Total Fixed Procedure Rate</span>
+              <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-1">
+                <span className="text-[11px] text-slate-500 font-medium block">Total Fixed Rate</span>
                 <div className="flex items-baseline gap-2 flex-wrap">
-                  <span className="text-3xl sm:text-4xl font-extrabold text-white font-heading">{standardPrice}</span>
-                  <span className="text-xs font-bold text-slate-400 bg-slate-800/80 px-2.5 py-1 rounded-lg">
-                    (€1,800 / £1,550 / ₺90.000)
+                  <span className="text-3xl font-extrabold text-slate-900 font-heading">{standardPrice}</span>
+                  <span className="text-xs font-bold text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded-lg">
+                    (€1,800 / £1,550 / ₺90k)
                   </span>
                 </div>
               </div>
 
               {/* Inclusions List */}
-              <ul className="space-y-3 text-xs text-slate-200 font-medium">
+              <ul className="space-y-2.5 text-xs text-slate-700 font-medium">
                 <li className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                  <span>{lang === 'tr' ? 'Ruhsatlı Hastanede Maksimum Greft DHI Operasyonu' : 'Maximum Graft DHI Operation in Licensed Hospital'}</span>
+                  <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <span>{lang === 'tr' ? 'Ruhsatlı Hastanede Maksimum Greft DHI' : 'Maximum Graft DHI Operation in Licensed Hospital'}</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span>{lang === 'tr' ? 'İğnesiz Konforlu Anestezi Altyapısı' : 'Needle-Free Comfort Anesthesia System'}</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                  <span>{lang === 'tr' ? 'Operasyon Sonrası İlaç ve Özel Şampuan Kiti' : 'Post-Op Medication & Special Shampoo Kit'}</span>
+                  <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <span>{lang === 'tr' ? 'Operasyon Sonrası İlaç ve Özel Şampuan' : 'Post-Op Medication & Special Shampoo Kit'}</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                  <span>{lang === 'tr' ? '12 Ay Uzaktan Medikal Takip Protokolü' : '12-Month Remote Post-Op Follow-Up Protocol'}</span>
+                  <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <span>{lang === 'tr' ? '12 Ay Uzaktan Medikal Takip' : '12-Month Remote Follow-Up Protocol'}</span>
                 </li>
               </ul>
             </div>
@@ -108,86 +108,86 @@ export default function PricingPackages() {
             <a
               href="#analysis-wizard"
               onClick={scrollToWizard}
-              className="w-full min-h-[48px] bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs rounded-xl flex items-center justify-center transition-all cursor-pointer shadow-md"
+              className="w-full min-h-[46px] bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold text-xs rounded-xl flex items-center justify-center transition-all cursor-pointer shadow-2xs"
             >
               <span>{t(lang as Lang, 'packages.book_cta')}</span>
             </a>
           </div>
 
-          {/* PACKAGE 2: VIP ANTALYA EXPERIENCE (7 cols — Highlighted Featured) */}
-          <div className="lg:col-span-7 bg-slate-900 border-2 border-blue-500/80 rounded-3xl p-7 sm:p-9 shadow-2xl relative flex flex-col justify-between space-y-6 card-hover glow-blue">
+          {/* PACKAGE 2: VIP ANTALYA EXPERIENCE (7 cols — Deep Emerald Luxury Gradient) */}
+          <div className="lg:col-span-7 bg-emerald-card text-white rounded-3xl p-7 sm:p-8 shadow-xl relative flex flex-col justify-between space-y-5 card-hover-soft border border-emerald-500/40">
             {/* VIP Popular Badge */}
-            <div className="absolute -top-3.5 left-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg flex items-center gap-1.5 border border-blue-400/40">
-              <Star className="w-3.5 h-3.5 fill-current text-amber-300" />
+            <div className="absolute -top-3.5 left-7 bg-amber-400 text-slate-950 font-extrabold text-[11px] px-3.5 py-1 rounded-full uppercase tracking-wider shadow-md flex items-center gap-1">
+              <Star className="w-3 h-3 fill-current text-slate-950" />
               <span>{lang === 'tr' ? 'En Çok Tercih Edilen VIP Paket' : 'Most Requested VIP All-Inclusive'}</span>
             </div>
 
-            <div className="space-y-6 pt-2">
-              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 border-b border-slate-800 pb-5">
+            <div className="space-y-5 pt-1">
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 border-b border-emerald-600/30 pb-4">
                 <div>
-                  <span className="text-xs font-bold text-blue-400 uppercase tracking-wider block">
+                  <span className="text-xs font-bold text-emerald-300 uppercase tracking-wider block">
                     {lang === 'tr' ? 'Tam Kapsamlı Sağlık Turizmi Deneyimi' : 'Complete Luxury Medical Experience'}
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-heading font-extrabold text-white mt-1">
+                  <h3 className="text-2xl font-heading font-extrabold text-white mt-0.5">
                     VIP Antalya Experience
                   </h3>
                 </div>
 
                 {/* Price */}
                 <div className="text-left sm:text-right">
-                  <span className="text-3xl sm:text-4xl font-extrabold font-heading text-blue-400">{vipPrice}</span>
-                  <span className="text-[11px] text-slate-400 block font-semibold">(€2,200 / £1,900 / ₺110.000)</span>
+                  <span className="text-3xl font-extrabold font-heading text-emerald-300">{vipPrice}</span>
+                  <span className="text-[11px] text-emerald-200/80 block font-semibold">(€2,200 / £1,900 / ₺110k)</span>
                 </div>
               </div>
 
               {/* 3-Day Itinerary Steps */}
-              <div className="space-y-3">
-                <div className="text-xs font-bold text-slate-300 uppercase tracking-wider">
+              <div className="space-y-2.5">
+                <div className="text-xs font-bold text-emerald-200 uppercase tracking-wider">
                   {lang === 'tr' ? '3 Günlük Cerrahi Seyahat Planı:' : 'Your 3-Day Medical Itinerary:'}
                 </div>
 
-                <div className="space-y-2.5">
+                <div className="space-y-2">
                   {/* Day 1 */}
-                  <div className="flex items-start gap-3 bg-slate-950/70 p-3.5 rounded-2xl border border-slate-800">
-                    <div className="w-7 h-7 rounded-xl bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center justify-center font-black text-xs shrink-0 mt-0.5">
+                  <div className="flex items-start gap-3 bg-emerald-950/60 p-3 rounded-2xl border border-emerald-600/30">
+                    <div className="w-6 h-6 rounded-lg bg-emerald-500 text-slate-950 flex items-center justify-center font-black text-xs shrink-0 mt-0.5">
                       01
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-white">
-                        {lang === 'tr' ? '1. Gün: Havalimanı Karşılama & Otele Yerleşme' : 'Day 1: VIP Airport Arrival & 5★ Hotel Stay'}
+                        {lang === 'tr' ? '1. Gün: Havalimanı Karşılama & 5★ Otele Yerleşme' : 'Day 1: VIP Airport Arrival & 5★ Hotel Stay'}
                       </h4>
-                      <p className="text-[11px] text-slate-400 font-normal mt-0.5">
-                        {lang === 'tr' ? 'Antalya Havalimanı\'ndan Mercedes Vito ile özel transfer ve 5 yıldızlı otelde dinlenme.' : 'Private Mercedes Vito transfer from Antalya Airport directly to your luxury hotel.'}
+                      <p className="text-[11px] text-emerald-200/80 font-normal">
+                        {lang === 'tr' ? 'Mercedes Vito ile özel transfer ve 5 yıldızlı otelde dinlenme.' : 'Private Mercedes Vito transfer directly to your luxury hotel.'}
                       </p>
                     </div>
                   </div>
 
                   {/* Day 2 */}
-                  <div className="flex items-start gap-3 bg-slate-950/70 p-3.5 rounded-2xl border border-slate-800">
-                    <div className="w-7 h-7 rounded-xl bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center justify-center font-black text-xs shrink-0 mt-0.5">
+                  <div className="flex items-start gap-3 bg-emerald-950/60 p-3 rounded-2xl border border-emerald-600/30">
+                    <div className="w-6 h-6 rounded-lg bg-emerald-500 text-slate-950 flex items-center justify-center font-black text-xs shrink-0 mt-0.5">
                       02
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-white">
                         {lang === 'tr' ? '2. Gün: Ameliyathane, Choi Pen DHI & PRP Seansı' : 'Day 2: Surgery Day, Choi Pen DHI & PRP Therapy'}
                       </h4>
-                      <p className="text-[11px] text-slate-400 font-normal mt-0.5">
-                        {lang === 'tr' ? 'Hekim ön çizgi planlaması, iğnesiz anestezi, maksimum greft DHI ekimi ve kök güçlendirici PRP.' : 'Surgeon hairline design, needle-free anesthesia, full Choi Pen DHI placement & PRP.'}
+                      <p className="text-[11px] text-emerald-200/80 font-normal">
+                        {lang === 'tr' ? 'Hekim ön çizgi planlaması, iğnesiz anestezi, maksimum greft DHI ve PRP.' : 'Surgeon hairline design, needle-free anesthesia, Choi Pen DHI & PRP.'}
                       </p>
                     </div>
                   </div>
 
                   {/* Day 3 */}
-                  <div className="flex items-start gap-3 bg-slate-950/70 p-3.5 rounded-2xl border border-slate-800">
-                    <div className="w-7 h-7 rounded-xl bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center justify-center font-black text-xs shrink-0 mt-0.5">
+                  <div className="flex items-start gap-3 bg-emerald-950/60 p-3 rounded-2xl border border-emerald-600/30">
+                    <div className="w-6 h-6 rounded-lg bg-emerald-500 text-slate-950 flex items-center justify-center font-black text-xs shrink-0 mt-0.5">
                       03
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-white">
                         {lang === 'tr' ? '3. Gün: Medikal Yıkama Eğitimi & VIP Uğurlama' : 'Day 3: Clinical Wash Training & VIP Departure'}
                       </h4>
-                      <p className="text-[11px] text-slate-400 font-normal mt-0.5">
-                        {lang === 'tr' ? 'Uzman kontrolünde ilk saç yıkaması, 12 aylık bakım kiti teslimi ve havalimanına dönüş transferi.' : 'First clinical hair wash, handover of 12-month aftercare kit, and return transfer.'}
+                      <p className="text-[11px] text-emerald-200/80 font-normal">
+                        {lang === 'tr' ? 'Uzman kontrolünde ilk yıkama, 12 aylık bakım kiti teslimi ve dönüş transferi.' : 'First hair wash, handover of 12-month aftercare kit, and return transfer.'}
                       </p>
                     </div>
                   </div>
@@ -198,7 +198,7 @@ export default function PricingPackages() {
             <a
               href="#analysis-wizard"
               onClick={scrollToWizard}
-              className="w-full min-h-[52px] bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold text-sm rounded-2xl flex items-center justify-center transition-all cursor-pointer shadow-xl shadow-blue-600/40 hover:scale-101 active:scale-98 gap-2"
+              className="w-full min-h-[48px] bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-extrabold text-xs sm:text-sm rounded-2xl flex items-center justify-center transition-all cursor-pointer shadow-lg shadow-emerald-950/50 hover:scale-101 active:scale-98 gap-2"
             >
               <span>{t(lang as Lang, 'packages.book_cta')}</span>
               <ArrowRight className="w-4 h-4" />

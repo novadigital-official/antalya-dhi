@@ -61,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${plusJakartaSans.variable} ${inter.variable}`} suppressHydrationWarning>
-      <body className="font-sans antialiased bg-slate-950 text-slate-100 selection:bg-blue-600 selection:text-white" suppressHydrationWarning>
+      <body className="font-sans antialiased bg-[#FAFBFC] text-slate-900 selection:bg-emerald-600 selection:text-white" suppressHydrationWarning>
         <SiteProvider>
           <JsonLd />
           {children}

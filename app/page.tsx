@@ -20,11 +20,11 @@ import Footer from '@/components/Footer';
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#070B14] text-slate-100 font-sans relative selection:bg-blue-600 selection:text-white">
-      {/* 1. STICKY GLASSMORPHISM NAVBAR */}
+    <main className="min-h-screen bg-[#FAFBFC] text-slate-900 font-sans relative selection:bg-emerald-600 selection:text-white">
+      {/* 1. STICKY LUMINOUS WHITE NAVBAR */}
       <Navbar />
 
-      {/* 2. HERO — ULTRA-LUXURY SPLIT HERO WITH REAL PHOTOGRAPHY */}
+      {/* 2. HERO — DEEP LUXURY EMERALD GRADIENT WITH REAL CLINIC PHOTO */}
       <HeroSection />
 
       {/* 3. COMPARATIVE BENCHMARK (LONDON/PARIS/BERLIN VS ANTALYA DHI) */}
@@ -33,10 +33,10 @@ export default function HomePage() {
       {/* 4. 4 HIGH-RESOLUTION PHOTOGRAPHIC PATIENT JOURNEY CARDS */}
       <PatientJourney />
 
-      {/* 5. 3-DAY LUXURY ITINERARY & TRANSPARENT PRICING PLANS */}
+      {/* 5. 3-DAY ITINERARY & TRANSPARENT PRICING PLANS */}
       <PricingPackages />
 
-      {/* 6. INTERNATIONAL PATIENT EXPERIENCES & VERIFIED TRUST BAR */}
+      {/* 6. INTERNATIONAL PATIENT EXPERIENCES & EMERALD TRUST BAR */}
       <SocialProof />
 
       {/* 7. 3-STEP INTERACTIVE HAIR ANALYSIS WIZARD */}

@@ -1,7 +1,7 @@
 'use client';
 
 import { useSiteContext } from '@/lib/context';
-import { Sparkles, Check, X } from 'lucide-react';
+import { Sparkles, Check } from 'lucide-react';
 
 export default function DHIVsFueComparison() {
   const { lang } = useSiteContext();
@@ -40,40 +40,40 @@ export default function DHIVsFueComparison() {
   ];
 
   return (
-    <section id="dhi-vs-fue" className="py-20 bg-slate-950 text-white border-b border-white/[0.08] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <section id="dhi-vs-fue" className="py-14 sm:py-18 bg-white border-b border-slate-200/80 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-950/80 border border-blue-800/60 text-blue-300 text-xs font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5" />
+        <div className="text-center max-w-3xl mx-auto space-y-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>{lang === 'tr' ? 'Teknik Karşılaştırma' : 'Technical Comparison'}</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
             {lang === 'tr' ? "DHI Choi Pen ile Klasik FUE Karşılaştırması" : "Choi Pen DHI vs Traditional FUE Technique"}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 font-normal max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm text-slate-600 font-normal max-w-2xl mx-auto">
             {lang === 'tr' ? "Choi Pen DHI teknolojisi ile klasik kesili teknikler arasındaki temel klinik farklar." : "Clinical differences between direct Choi Implanter DHI and standard slit FUE procedures."}
           </p>
         </div>
 
         {/* Table */}
-        <div className="max-w-4xl mx-auto bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl backdrop-blur-md">
-          <div className="grid grid-cols-3 bg-slate-950/90 text-white p-5 text-xs sm:text-sm font-extrabold border-b border-slate-800">
+        <div className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-xs">
+          <div className="grid grid-cols-3 bg-slate-900 text-white p-4 sm:p-5 text-xs sm:text-sm font-extrabold border-b border-slate-800">
             <div>{lang === 'tr' ? 'Klinik Parametre' : 'Clinical Parameter'}</div>
-            <div className="text-blue-400 text-center font-bold">DHI Choi Pen Protocol</div>
-            <div className="text-slate-400 text-center font-medium">Traditional FUE</div>
+            <div className="text-emerald-400 text-center font-bold">DHI Choi Pen Protocol</div>
+            <div className="text-slate-300 text-center font-medium">Traditional FUE</div>
           </div>
 
-          <div className="divide-y divide-slate-800/80 text-xs sm:text-sm">
+          <div className="divide-y divide-slate-100 text-xs sm:text-sm">
             {comparisonData.map((row, idx) => (
-              <div key={idx} className="grid grid-cols-3 p-5 items-center hover:bg-slate-800/40 transition-colors">
-                <div className="text-white font-bold">{row.feature}</div>
-                <div className="text-center text-blue-300 font-bold bg-blue-950/60 p-2.5 rounded-xl border border-blue-800/60 flex items-center justify-center gap-1.5">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+              <div key={idx} className="grid grid-cols-3 p-4 sm:p-5 items-center hover:bg-slate-50/80 transition-colors">
+                <div className="text-slate-900 font-bold">{row.feature}</div>
+                <div className="text-center text-emerald-900 font-bold bg-emerald-50 p-2 rounded-xl border border-emerald-200 flex items-center justify-center gap-1.5">
+                  <Check className="w-4 h-4 text-emerald-600 shrink-0" />
                   <span>{row.dhi}</span>
                 </div>
-                <div className="text-center text-slate-400 font-medium">{row.fue}</div>
+                <div className="text-center text-slate-500 font-medium">{row.fue}</div>
               </div>
             ))}
           </div>

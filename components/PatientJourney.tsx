@@ -2,7 +2,7 @@
 
 import { useSiteContext } from '@/lib/context';
 import { t, Lang } from '@/lib/i18n';
-import { Sparkles, Check, ArrowRight } from 'lucide-react';
+import { Sparkles, Check } from 'lucide-react';
 
 export default function PatientJourney() {
   const { lang } = useSiteContext();
@@ -57,61 +57,58 @@ export default function PatientJourney() {
   ];
 
   return (
-    <section id="results" className="py-20 bg-slate-900/60 text-white border-b border-white/[0.08] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <section id="results" className="py-14 sm:py-18 bg-[#F8FAFC] border-b border-slate-200/80 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-950/80 border border-blue-800/60 text-blue-300 text-xs font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5" />
+        <div className="text-center max-w-3xl mx-auto space-y-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>{eyebrow}</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
             {heading}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 font-normal max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm text-slate-600 font-normal max-w-2xl mx-auto">
             {subtitle}
           </p>
         </div>
 
         {/* 4 Photographic Journey Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {journeySteps.map((item, idx) => (
             <div
               key={idx}
-              className="bg-slate-900 border border-slate-800 hover:border-blue-500/50 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between card-hover group"
+              className="bg-white border border-slate-200 hover:border-emerald-500/50 rounded-3xl overflow-hidden shadow-xs flex flex-col justify-between card-hover-soft group"
             >
               <div>
                 {/* Photo Frame */}
-                <div className="relative h-56 w-full overflow-hidden bg-slate-950">
+                <div className="relative h-48 w-full overflow-hidden bg-slate-900">
                   <img
                     src={item.img}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 opacity-90"
+                    className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent" />
-                  
-                  {/* Step Number Tag */}
-                  <div className="absolute top-3.5 left-3.5 bg-blue-600/90 backdrop-blur-md text-white font-extrabold text-xs px-3 py-1 rounded-xl shadow-lg border border-blue-400/30">
-                    Step {item.step}
+                  <div className="absolute top-3 left-3 bg-emerald-700/90 text-white font-extrabold text-xs px-2.5 py-1 rounded-lg shadow-sm">
+                    {item.step}
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 space-y-2">
-                  <h3 className="font-heading font-bold text-base text-white leading-snug">
+                <div className="p-5 space-y-1.5">
+                  <h3 className="font-heading font-bold text-sm sm:text-base text-slate-900 leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed font-normal">
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal">
                     {item.desc}
                   </p>
                 </div>
               </div>
 
               {/* Bottom Tag */}
-              <div className="px-6 pb-6 pt-3 flex items-center justify-between text-[11px] font-bold text-blue-400 border-t border-slate-800/80">
+              <div className="px-5 pb-5 pt-3 flex items-center justify-between text-[11px] font-bold text-emerald-700 border-t border-slate-100">
                 <span>{item.spec}</span>
-                <span className="text-emerald-400 font-extrabold flex items-center gap-1">
+                <span className="text-emerald-600 font-extrabold flex items-center gap-1">
                   <Check className="w-3.5 h-3.5" />
                 </span>
               </div>

@@ -13,8 +13,8 @@ export default function MedicalDisclaimer() {
   }[lang as Lang] || 'LEGAL DISCLAIMER: This website is an independent international patient consultation and coordination portal. All procedures are performed directly in licensed partner healthcare facilities.';
 
   return (
-    <div className="w-full bg-slate-950 text-slate-400 border-t border-slate-800 py-8 px-4">
-      <div className="text-xs leading-relaxed text-center max-w-5xl mx-auto space-y-2">
+    <div className="w-full bg-slate-900 text-slate-400 border-t border-slate-800 py-8 px-4">
+      <div className="text-[11px] leading-relaxed text-center max-w-5xl mx-auto space-y-2">
         <p>{text}</p>
         <p className="font-bold text-slate-300">
           T.C. Sağlık Bakanlığı Ruhsatlı Anlaşmalı Sağlık Kuruluşları &amp; Uluslararası Hasta Koordinasyonu

@@ -48,108 +48,108 @@ export default function CompetitorBenchmarkFeatures() {
   }[lang as Lang] || 'Autologous PRP application combined with targeted mesotherapy to support tissue recovery and early graft nourishment.';
 
   return (
-    <section id="medical-standards" className="py-20 bg-slate-900/60 text-white border-b border-white/[0.08] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <section id="medical-standards" className="py-14 sm:py-18 bg-white border-b border-slate-200/80 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-950/80 border border-blue-800/60 text-blue-300 text-xs font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5" />
+        <div className="text-center max-w-3xl mx-auto space-y-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>{lang === 'tr' ? 'Cerrahi Standartlar' : 'Clinical Standards'}</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-white tracking-tight">{title}</h2>
-          <p className="text-xs sm:text-sm text-slate-400 font-normal max-w-2xl mx-auto">{subtitle}</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">{title}</h2>
+          <p className="text-xs sm:text-sm text-slate-600 font-normal max-w-2xl mx-auto">{subtitle}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
           
-          {/* CARD 1: NEEDLE-FREE ANESTHESIA */}
-          <div className="md:col-span-2 bg-slate-900 text-white rounded-3xl p-8 border border-slate-800 shadow-xl flex flex-col justify-between relative overflow-hidden card-hover">
-            <div className="space-y-4 relative z-10">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-950/80 border border-blue-700/60 text-blue-300 text-xs font-bold">
-                <ShieldCheck className="w-4 h-4 text-blue-400" />
+          {/* CARD 1: NEEDLE-FREE ANESTHESIA (2 cols — Emerald Gradient Card) */}
+          <div className="md:col-span-2 bg-emerald-luxury text-white rounded-3xl p-7 shadow-lg flex flex-col justify-between relative overflow-hidden card-hover-soft border border-emerald-500/30">
+            <div className="space-y-3 relative z-10">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-400/40 text-emerald-300 text-xs font-bold">
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
                 <span>{lang === 'tr' ? 'Konfor Protokolü' : 'Comfort Protocol'}</span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-heading font-bold text-white leading-snug">
+              <h3 className="text-xl font-heading font-bold text-white leading-snug">
                 {bento1Title}
               </h3>
 
-              <p className="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed max-w-xl">
+              <p className="text-xs text-emerald-100/90 font-normal leading-relaxed max-w-xl">
                 {bento1Desc}
               </p>
             </div>
 
-            <div className="pt-6 mt-6 border-t border-slate-800 flex items-center justify-between text-xs font-bold text-slate-300 relative z-10">
+            <div className="pt-4 mt-4 border-t border-emerald-600/30 flex items-center justify-between text-xs font-bold text-emerald-200 relative z-10">
               <span>{lang === 'tr' ? 'Lokal Anestezi Standardı' : 'Local Anesthesia Standard'}</span>
-              <span className="text-blue-400 font-extrabold">
-                {lang === 'tr' ? 'Basınçlı Konfor Uygulaması' : 'Pressure-Spray Protocol'}
+              <span className="text-emerald-300 font-extrabold">
+                {lang === 'tr' ? 'Basınçlı Püskürtme Teknolojisi' : 'Pressure-Spray Protocol'}
               </span>
             </div>
           </div>
 
           {/* CARD 2: ATP HYPOTHERMOSOL */}
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-7 shadow-xl flex flex-col justify-between space-y-4 card-hover">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-2xl bg-blue-600/20 text-blue-400 flex items-center justify-center border border-blue-500/30">
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-xs flex flex-col justify-between space-y-3 card-hover-soft">
+            <div className="space-y-2.5">
+              <div className="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center border border-emerald-200/80">
                 <FlaskConical className="w-5 h-5" />
               </div>
-              <h3 className="text-base font-heading font-bold text-white leading-tight">
+              <h3 className="text-sm font-heading font-bold text-slate-900 leading-tight">
                 {bento2Title}
               </h3>
-              <p className="text-xs text-slate-400 font-normal leading-relaxed">
+              <p className="text-xs text-slate-600 font-normal leading-relaxed">
                 {bento2Desc}
               </p>
             </div>
 
-            <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-[11px] font-bold text-slate-300">
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-600">
               <span>{lang === 'tr' ? 'Greft Canlılığı' : 'Graft Viability'}</span>
-              <span className="text-blue-400 font-extrabold">ATP Preservation</span>
+              <span className="text-emerald-700 font-extrabold">ATP Preservation</span>
             </div>
           </div>
 
           {/* CARD 3: SINGLE-USE CHOI PEN KIT */}
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-7 shadow-xl flex flex-col justify-between space-y-4 card-hover">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-2xl bg-blue-600/20 text-blue-400 flex items-center justify-center border border-blue-500/30">
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-xs flex flex-col justify-between space-y-3 card-hover-soft">
+            <div className="space-y-2.5">
+              <div className="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center border border-emerald-200/80">
                 <Sparkles className="w-5 h-5" />
               </div>
-              <h3 className="text-base font-heading font-bold text-white leading-tight">
+              <h3 className="text-sm font-heading font-bold text-slate-900 leading-tight">
                 {bento3Title}
               </h3>
-              <p className="text-xs text-slate-400 font-normal leading-relaxed">
+              <p className="text-xs text-slate-600 font-normal leading-relaxed">
                 {bento3Desc}
               </p>
             </div>
 
-            <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-[11px] font-bold text-slate-300">
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-600">
               <span>{lang === 'tr' ? 'Sterilite Standardı' : 'Sterility Standard'}</span>
-              <span className="text-blue-400 font-extrabold">100% Single-Use</span>
+              <span className="text-emerald-700 font-extrabold">100% Single-Use</span>
             </div>
           </div>
 
-          {/* CARD 4: PRP AFTERCARE */}
-          <div className="md:col-span-2 bg-slate-900 text-white rounded-3xl p-8 border border-slate-800 shadow-xl flex flex-col justify-between relative overflow-hidden card-hover">
-            <div className="space-y-4">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-950/80 border border-blue-700/60 text-blue-300 text-xs font-bold">
-                <HeartHandshake className="w-4 h-4 text-blue-400" />
+          {/* CARD 4: PRP AFTERCARE (2 cols) */}
+          <div className="md:col-span-2 bg-slate-900 text-white rounded-3xl p-7 shadow-lg flex flex-col justify-between relative overflow-hidden card-hover-soft border border-slate-800">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-emerald-400 text-xs font-bold">
+                <HeartHandshake className="w-4 h-4" />
                 <span>PRP &amp; Mesotherapy</span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-heading font-bold text-white leading-snug">
+              <h3 className="text-xl font-heading font-bold text-white leading-snug">
                 {bento4Title}
               </h3>
 
-              <p className="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed max-w-xl">
+              <p className="text-xs text-slate-300 font-normal leading-relaxed max-w-xl">
                 {bento4Desc}
               </p>
             </div>
 
-            <div className="pt-6 mt-6 border-t border-slate-800 flex items-center justify-between text-xs font-bold text-slate-300">
+            <div className="pt-4 mt-4 border-t border-slate-800 flex items-center justify-between text-xs font-bold text-slate-300">
               <span>{lang === 'tr' ? 'Ameliyat Sonrası Bakım' : 'Post-Op Follow-up'}</span>
               <span className="text-emerald-400 font-extrabold flex items-center gap-1">
                 <Check className="w-4 h-4" />
-                <span>{lang === 'tr' ? '12 Ay Medikal Takip' : '12-Month Medical Follow-up'}</span>
+                <span>{lang === 'tr' ? '12 Ay Medikal Takip' : '12-Month Care'}</span>
               </span>
             </div>
           </div>

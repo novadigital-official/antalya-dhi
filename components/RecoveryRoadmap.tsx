@@ -83,19 +83,19 @@ export default function RecoveryRoadmap() {
   ];
 
   return (
-    <section id="recovery-roadmap" className="py-20 bg-slate-950 text-white border-b border-white/[0.08] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <section id="recovery-roadmap" className="py-14 sm:py-18 bg-[#F8FAFC] border-b border-slate-200/80 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-950/80 border border-blue-800/60 text-blue-300 text-xs font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5" />
+        <div className="text-center max-w-3xl mx-auto space-y-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>{lang === 'tr' ? '12 Aylık İyileşme Takvimi' : '12-Month Care Protocol'}</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
             {title}
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 font-normal max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm text-slate-600 font-normal max-w-2xl mx-auto">
             {subtitle}
           </p>
         </div>
@@ -109,44 +109,44 @@ export default function RecoveryRoadmap() {
             return (
               <div
                 key={idx}
-                className={`bg-slate-900 border rounded-3xl p-6 shadow-xl flex flex-col justify-between space-y-5 card-hover backdrop-blur-md ${
+                className={`bg-white border rounded-3xl p-5 shadow-xs flex flex-col justify-between space-y-4 card-hover-soft ${
                   isLast
-                    ? 'border-blue-500 bg-gradient-to-b from-slate-900 to-blue-950/40 ring-1 ring-blue-500/50'
-                    : 'border-slate-800 hover:border-slate-700'
+                    ? 'border-emerald-400 bg-emerald-50/40 ring-1 ring-emerald-300'
+                    : 'border-slate-200'
                 }`}
               >
                 <div>
                   {/* Header: Time Badge & Icon */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className={`text-[11px] font-bold px-3 py-1 rounded-xl ${
+                  <div className="flex items-center justify-between mb-3">
+                    <span className={`text-[11px] font-bold px-2.5 py-1 rounded-lg ${
                       isLast 
-                        ? 'bg-blue-600 text-white shadow-md shadow-blue-500/30' 
-                        : 'bg-slate-800 text-slate-300'
+                        ? 'bg-emerald-600 text-white shadow-2xs' 
+                        : 'bg-slate-100 text-slate-700'
                     }`}>
                       {phase.time[lang as Lang] || phase.time['en']}
                     </span>
-                    <div className={`w-9 h-9 rounded-2xl flex items-center justify-center ${
-                      isLast ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30' : 'bg-slate-800 text-slate-400'
+                    <div className={`w-8 h-8 rounded-xl flex items-center justify-center ${
+                      isLast ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-600'
                     }`}>
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-heading font-bold text-sm text-white mb-1.5 leading-snug">
+                  <h3 className="font-heading font-bold text-xs sm:text-sm text-slate-900 mb-1 leading-snug">
                     {phase.title[lang as Lang] || phase.title['en']}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-xs text-slate-400 leading-relaxed font-normal">
+                  <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed font-normal">
                     {phase.desc[lang as Lang] || phase.desc['en']}
                   </p>
                 </div>
 
                 {/* Status Footer Tag */}
-                <div className="pt-3.5 border-t border-slate-800 flex items-center justify-between text-[11px] font-bold">
-                  <span className="text-slate-500">Phase {phase.step}</span>
-                  <span className={isLast ? 'text-blue-400 font-extrabold' : 'text-slate-300'}>
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] font-bold">
+                  <span className="text-slate-400">Step {phase.step}</span>
+                  <span className={isLast ? 'text-emerald-700 font-extrabold' : 'text-slate-600'}>
                     {phase.status[lang as Lang] || phase.status['en']}
                   </span>
                 </div>
