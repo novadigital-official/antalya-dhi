@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Playfair_Display, Plus_Jakarta_Sans, Inter } from "next/font/google";
 import JsonLd from '@/components/JsonLd';
 import { SiteProvider } from '@/lib/context';
 import "./globals.css";
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-serif',
+  display: 'swap',
+});
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -19,9 +26,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Antalya DHI Hair Transplant | VIP Patient Coordination Turkey",
-  description: "All-inclusive DHI hair transplant coordination in Antalya. Licensed partner clinics, board-certified surgeons, VIP Mercedes transfer, and transparent packages.",
-  keywords: "Antalya DHI hair transplant, DHI hair transplant Turkey, Antalya hair transplant consultation, DHI vs FUE, hair restoration Turkey",
+  title: "Antalya DHI Hair Restoration | Luxury Patient Concierge & Coordination",
+  description: "Surgeon-guided DHI hair restoration in Antalya, Turkey. Bespoke Mediterranean medical concierge, licensed partner surgical facilities, and all-inclusive transparent packages.",
+  keywords: "Antalya DHI hair transplant, Luxury hair restoration Turkey, Choi pen hair transplant Antalya, Harley street alternative hair transplant",
   metadataBase: new URL('https://antalyadhi.com'),
   alternates: {
     canonical: 'https://antalyadhi.com',
@@ -37,10 +44,10 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Antalya DHI Hair Transplant | VIP Patient Coordination Turkey',
-    description: 'All-inclusive DHI hair transplant packages from £1,550. T.C. Ministry of Health licensed partner facilities. VIP Mercedes transfers, luxury hotel stay, 12-month post-op care.',
+    title: 'Antalya DHI Hair Restoration | Luxury Patient Concierge',
+    description: 'Surgeon-guided DHI hair transplant in Antalya. All-inclusive luxury stay, VIP Mercedes transfers, and 12-month post-op care.',
     url: 'https://antalyadhi.com',
-    siteName: 'Antalya DHI Patient Coordination',
+    siteName: 'Antalya DHI Luxury Concierge',
     locale: 'en_GB',
     type: 'website',
     images: [
@@ -48,14 +55,14 @@ export const metadata: Metadata = {
         url: 'https://antalyadhi.com/favicon.svg',
         width: 1200,
         height: 630,
-        alt: 'Antalya DHI Hair Transplant Coordination Portal',
+        alt: 'Antalya DHI Hair Restoration',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Antalya DHI Hair Transplant | VIP Patient Coordination Turkey',
-    description: 'Personalized DHI hair transplantation in Antalya. Licensed partner clinics, transparent rates, VIP health tourism.',
+    title: 'Antalya DHI Hair Restoration | Luxury Patient Concierge',
+    description: 'Bespoke DHI hair restoration in Antalya. Licensed partner surgical facilities, transparent rates, VIP concierge.',
   },
   robots: {
     index: true,
@@ -76,8 +83,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
-      <body className="font-sans antialiased bg-slate-50 text-slate-900" suppressHydrationWarning>
+    <html lang="en" className={`${playfair.variable} ${plusJakartaSans.variable} ${inter.variable}`} suppressHydrationWarning>
+      <body className="font-sans antialiased bg-[#FBF9F5] text-[#1C1917]" suppressHydrationWarning>
         <SiteProvider>
           <JsonLd />
           {children}
