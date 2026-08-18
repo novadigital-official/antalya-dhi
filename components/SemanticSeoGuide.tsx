@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useSiteContext } from '@/lib/context';
+import { Sparkles, ArrowRight, BookOpen } from 'lucide-react';
 
 export default function SemanticSeoGuide() {
   const { lang } = useSiteContext();
@@ -10,7 +11,7 @@ export default function SemanticSeoGuide() {
     {
       slug: 'antalya-dhi-sac-ekimi-fiyatlari-2026',
       title: lang === 'tr' ? 'Antalya DHI Saç Ekimi Fiyatları 2026 Rehberi' : 'Antalya DHI Hair Transplant Pricing Guide 2026',
-      desc: lang === 'tr' ? '2026 güncel Standart ve VIP Her Şey Dahil paket fiyatları ve maliyet analizi.' : 'Transparent 2026 Standard vs VIP All-Inclusive pricing and cost comparison.',
+      desc: lang === 'tr' ? '2026 güncel Standart ve VIP Her Şey Dahil paket fiyatları ve detaylı maliyet analizi.' : 'Transparent 2026 Standard vs VIP All-Inclusive pricing and cost comparison.',
       tag: 'Pricing & Cost'
     },
     {
@@ -34,49 +35,59 @@ export default function SemanticSeoGuide() {
   ];
 
   return (
-    <div id="seo-guides" className="w-full space-y-8">
-      <div className="text-center max-w-3xl mx-auto space-y-2">
-        <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
-          {lang === 'tr' ? "Hasta Bilgilendirme & Klinik Rehberler" : "Patient Guides & Clinical Information"}
-        </h2>
-        <p className="text-xs sm:text-sm text-slate-600 font-medium">
-          {lang === 'tr' ? "DHI tekniği, greft hesaplama ve seyahat planlaması hakkında detaylı makaleler." : "In-depth articles on DHI techniques, graft estimation, and medical travel coordination."}
-        </p>
-      </div>
+    <section id="seo-guides" className="py-20 bg-slate-950 text-white border-b border-white/[0.08] relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-950/80 border border-blue-800/60 text-blue-300 text-xs font-bold uppercase tracking-wider">
+            <BookOpen className="w-3.5 h-3.5" />
+            <span>{lang === 'tr' ? 'Klinik Rehberler' : 'Clinical Knowledge Base'}</span>
+          </div>
+          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-white tracking-tight">
+            {lang === 'tr' ? "Hasta Bilgilendirme & Klinik Rehberler" : "Patient Guides & Clinical Information"}
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-400 font-normal max-w-2xl mx-auto">
+            {lang === 'tr' ? "DHI tekniği, greft hesaplama ve seyahat planlaması hakkında detaylı uzman makaleleri." : "In-depth articles on Choi Pen DHI techniques, graft estimation, and medical travel coordination."}
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-        {guides.map((g, idx) => (
-          <div
-            key={idx}
-            className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4 hover:border-slate-300 transition-all"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full">
-                  {g.tag}
-                </span>
-                <span className="text-[11px] font-medium text-slate-400">Clinical Article</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {guides.map((g, idx) => (
+            <div
+              key={idx}
+              className="bg-slate-900 border border-slate-800 rounded-3xl p-7 shadow-xl flex flex-col justify-between space-y-4 card-hover"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-3.5">
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-blue-300 bg-blue-950/80 border border-blue-800/60 px-3 py-1 rounded-full">
+                    {g.tag}
+                  </span>
+                  <span className="text-[11px] font-medium text-slate-400">Clinical Article</span>
+                </div>
+
+                <h3 className="text-base sm:text-lg font-heading font-bold text-white mb-2 leading-snug">
+                  {g.title}
+                </h3>
+                <p className="text-xs text-slate-400 leading-relaxed font-normal">
+                  {g.desc}
+                </p>
               </div>
 
-              <h3 className="text-base font-black text-slate-900 mb-2 leading-snug">
-                {g.title}
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                {g.desc}
-              </p>
+              <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
+                <Link
+                  href={`/blog/${g.slug}`}
+                  className="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors"
+                >
+                  <span>{lang === 'tr' ? 'Rehberi Oku' : 'Read Full Guide'}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
             </div>
+          ))}
+        </div>
 
-            <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-              <Link
-                href={`/blog/${g.slug}`}
-                className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1"
-              >
-                {lang === 'tr' ? 'Rehberi Oku →' : 'Read Full Guide →'}
-              </Link>
-            </div>
-          </div>
-        ))}
       </div>
-    </div>
+    </section>
   );
 }

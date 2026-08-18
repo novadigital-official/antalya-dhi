@@ -1,162 +1,104 @@
 @import "tailwindcss";
 
 :root {
-  --stone: #EFE7D8;
-  --stone-deep: #E4D9C4;
-  --ink: #17231C;
-  --ink-soft: #4A5A4D;
-  --bronze: #A9662F;
-  --bronze-light: #D89A5D;
-  --sage: #6E7F63;
-  --card: #FBF8F1;
-  --line: rgba(23, 35, 28, 0.12);
-  --white: #FFFFFF;
-
-  --font-fraunces: var(--font-fraunces);
-  --font-work-sans: var(--font-work-sans);
-  --font-ibm-mono: var(--font-ibm-mono);
+  --bg-deep: #070B14;
+  --bg-dark: #0B1120;
+  --bg-card-dark: #111827;
+  --bg-light: #F8FAFC;
+  --bg-card-light: #FFFFFF;
+  
+  --primary-blue: #2563EB;
+  --primary-blue-glow: rgba(37, 99, 235, 0.15);
+  --accent-gold: #F59E0B;
+  --accent-emerald: #10B981;
+  
+  --border-dark: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(15, 23, 42, 0.08);
+  
+  --font-heading: var(--font-heading);
+  --font-sans: var(--font-sans);
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--stone);
+  background-color: var(--bg-deep);
 }
 
 body {
-  background: var(--stone);
-  color: var(--ink);
-  font-family: var(--font-work-sans), sans-serif;
+  background-color: var(--bg-deep);
+  color: #F1F5F9;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Headings with Fraunces */
-h1, h2, h3, .font-serif, .logo {
-  font-family: var(--font-fraunces), serif;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--ink);
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading), var(--font-sans), sans-serif;
+  letter-spacing: -0.025em;
 }
 
-/* Monospace with IBM Plex Mono */
-.mono, .eyebrow, .price-tag, .plan-tag, .testi-route, .testi-graft, .font-mono {
-  font-family: var(--font-ibm-mono), monospace;
+/* Glassmorphism Classes */
+.glass-dark {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.wrap {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 24px;
+.glass-light {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(15, 23, 42, 0.06);
 }
 
-/* Signature Eyebrow with leading rule */
-.eyebrow {
-  font-family: var(--font-ibm-mono), monospace;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--bronze);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+/* High-Ticket Glow Utilities */
+.glow-blue {
+  box-shadow: 0 0 40px -10px rgba(37, 99, 235, 0.35);
 }
 
-.eyebrow::before {
-  content: '';
-  width: 14px;
-  height: 1px;
-  background: var(--bronze);
-  display: inline-block;
+.glow-gold {
+  box-shadow: 0 0 35px -10px rgba(245, 158, 11, 0.3);
 }
 
-/* Custom Buttons matching HTML */
-.btn-stone-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 16px 28px;
-  border-radius: 2px;
-  font-weight: 600;
-  font-size: 15px;
-  cursor: pointer;
-  background: var(--ink);
-  color: var(--stone);
-  border: 1px solid var(--ink);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.btn-stone-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(23, 35, 28, 0.25);
-}
-
-.btn-stone-ghost {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 16px 28px;
-  border-radius: 2px;
-  font-weight: 600;
-  font-size: 15px;
-  cursor: pointer;
-  background: transparent;
-  color: var(--ink);
-  border: 1px solid var(--line);
-  transition: border-color .2s ease, transform .2s ease;
-}
-
-.btn-stone-ghost:hover {
-  border-color: var(--ink);
-  transform: translateY(-1px);
-}
-
-.btn-bronze {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 16px 28px;
-  border-radius: 2px;
-  font-weight: 600;
-  font-size: 15px;
-  cursor: pointer;
-  background: var(--bronze);
-  color: var(--ink);
-  border: 1px solid var(--bronze);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.btn-bronze:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(169, 102, 47, 0.35);
-}
-
-/* Micro-interaction Card Polish */
-.card-hover-lift {
+/* Micro-Interaction Hover Lift */
+.card-hover {
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
 }
 
-.card-hover-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px -6px rgba(23, 35, 28, 0.1);
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.4), 0 0 25px -5px rgba(37, 99, 235, 0.15);
+  border-color: rgba(37, 99, 235, 0.4);
 }
 
-/* Slim Scrollbar */
+/* Gradients */
+.gradient-text-blue {
+  background: linear-gradient(135deg, #FFFFFF 0%, #93C5FD 50%, #3B82F6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #D97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Slim Medical Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--stone);
+  background: #070B14;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--stone-deep);
+  background: #1E293B;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--ink-soft);
+  background: #334155;
 }

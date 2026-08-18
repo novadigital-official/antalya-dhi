@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useSiteContext } from '@/lib/context';
+import { Sparkles, ChevronDown } from 'lucide-react';
 
 export default function FaqSection() {
   const { lang } = useSiteContext();
@@ -73,45 +74,49 @@ export default function FaqSection() {
   ];
 
   return (
-    <div id="faq" className="w-full space-y-8">
-      <div className="text-center max-w-3xl mx-auto space-y-2">
-        <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
-          {lang === 'tr' ? "Sıkça Sorulan Sorular" : lang === 'fr' ? "Foire Aux Questions" : "Frequently Asked Questions"}
-        </h2>
-        <p className="text-xs sm:text-sm text-slate-600 font-medium">
-          {lang === 'tr' ? "Antalya DHI saç ekimi ve hasta koordinasyon süreci hakkında merak edilenler." : "Essential information regarding DHI procedures and patient coordination in Antalya."}
-        </p>
-      </div>
-
-      <div className="max-w-4xl mx-auto space-y-3">
-        {faqs.map((faq, idx) => (
-          <div
-            key={idx}
-            className="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all shadow-sm"
-          >
-            <button
-              onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-              className="w-full p-5 text-left font-bold text-sm text-slate-900 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50 min-h-[52px]"
-            >
-              <span>{faq.q}</span>
-              <svg 
-                className={`w-4 h-4 text-slate-500 transition-transform shrink-0 ${openIndex === idx ? 'rotate-180 text-blue-600' : ''}`}
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-
-            {openIndex === idx && (
-              <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium border-t border-slate-100 bg-slate-50/50">
-                {faq.a}
-              </div>
-            )}
+    <section id="faq" className="py-20 bg-slate-950 text-white border-b border-white/[0.08] relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-950/80 border border-blue-800/60 text-blue-300 text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>FAQ</span>
           </div>
-        ))}
+          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-white tracking-tight">
+            {lang === 'tr' ? "Sıkça Sorulan Sorular" : lang === 'fr' ? "Foire Aux Questions" : "Frequently Asked Questions"}
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-400 font-normal max-w-2xl mx-auto">
+            {lang === 'tr' ? "Antalya DHI saç ekimi ve hasta koordinasyon süreci hakkında merak edilen tüm soruların yanıtları." : "Essential clinical and travel details regarding DHI hair restoration in Antalya."}
+          </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto space-y-3">
+          {faqs.map((faq, idx) => (
+            <div
+              key={idx}
+              className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden transition-all shadow-md"
+            >
+              <button
+                onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+                className="w-full p-5 sm:p-6 text-left font-heading font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-800/60 min-h-[56px]"
+              >
+                <span>{faq.q}</span>
+                <ChevronDown 
+                  className={`w-5 h-5 text-slate-400 transition-transform shrink-0 ${openIndex === idx ? 'rotate-180 text-blue-400' : ''}`}
+                />
+              </button>
+
+              {openIndex === idx && (
+                <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed font-normal border-t border-slate-800 bg-slate-950/40">
+                  {faq.a}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
       </div>
-    </div>
+    </section>
   );
 }

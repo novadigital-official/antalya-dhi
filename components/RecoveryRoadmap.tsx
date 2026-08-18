@@ -83,70 +83,79 @@ export default function RecoveryRoadmap() {
   ];
 
   return (
-    <div id="recovery-roadmap" className="w-full space-y-8">
-      <div className="text-center max-w-3xl mx-auto space-y-2">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
-          {title}
-        </h2>
-        <p className="text-xs sm:text-sm text-slate-600 font-medium max-w-2xl mx-auto">
-          {subtitle}
-        </p>
-      </div>
+    <section id="recovery-roadmap" className="py-20 bg-slate-950 text-white border-b border-white/[0.08] relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-950/80 border border-blue-800/60 text-blue-300 text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>{lang === 'tr' ? '12 Aylık İyileşme Takvimi' : '12-Month Care Protocol'}</span>
+          </div>
+          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-white tracking-tight">
+            {title}
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-400 font-normal max-w-2xl mx-auto">
+            {subtitle}
+          </p>
+        </div>
 
-      {/* 5-Phase Compact Timeline Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 max-w-7xl mx-auto">
-        {phases.map((phase, idx) => {
-          const Icon = phase.icon;
-          const isLast = idx === phases.length - 1;
+        {/* 5-Phase Timeline Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 max-w-7xl mx-auto">
+          {phases.map((phase, idx) => {
+            const Icon = phase.icon;
+            const isLast = idx === phases.length - 1;
 
-          return (
-            <div
-              key={idx}
-              className={`bg-white border rounded-2xl p-5 shadow-xs flex flex-col justify-between space-y-4 card-hover-lift ${
-                isLast
-                  ? 'border-blue-300 bg-gradient-to-b from-white to-blue-50/40 ring-1 ring-blue-200'
-                  : 'border-slate-200'
-              }`}
-            >
-              <div>
-                {/* Header: Time Badge & Icon */}
-                <div className="flex items-center justify-between mb-3">
-                  <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-md ${
-                    isLast 
-                      ? 'bg-blue-600 text-white' 
-                      : 'bg-slate-100 text-slate-700'
-                  }`}>
-                    {phase.time[lang as Lang] || phase.time['en']}
-                  </span>
-                  <div className={`w-8 h-8 rounded-xl flex items-center justify-center ${
-                    isLast ? 'bg-blue-100 text-blue-700' : 'bg-slate-50 text-slate-600'
-                  }`}>
-                    <Icon className="w-4 h-4" />
+            return (
+              <div
+                key={idx}
+                className={`bg-slate-900 border rounded-3xl p-6 shadow-xl flex flex-col justify-between space-y-5 card-hover backdrop-blur-md ${
+                  isLast
+                    ? 'border-blue-500 bg-gradient-to-b from-slate-900 to-blue-950/40 ring-1 ring-blue-500/50'
+                    : 'border-slate-800 hover:border-slate-700'
+                }`}
+              >
+                <div>
+                  {/* Header: Time Badge & Icon */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={`text-[11px] font-bold px-3 py-1 rounded-xl ${
+                      isLast 
+                        ? 'bg-blue-600 text-white shadow-md shadow-blue-500/30' 
+                        : 'bg-slate-800 text-slate-300'
+                    }`}>
+                      {phase.time[lang as Lang] || phase.time['en']}
+                    </span>
+                    <div className={`w-9 h-9 rounded-2xl flex items-center justify-center ${
+                      isLast ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30' : 'bg-slate-800 text-slate-400'
+                    }`}>
+                      <Icon className="w-4 h-4" />
+                    </div>
                   </div>
+
+                  {/* Title */}
+                  <h3 className="font-heading font-bold text-sm text-white mb-1.5 leading-snug">
+                    {phase.title[lang as Lang] || phase.title['en']}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-xs text-slate-400 leading-relaxed font-normal">
+                    {phase.desc[lang as Lang] || phase.desc['en']}
+                  </p>
                 </div>
 
-                {/* Title */}
-                <h3 className="font-bold text-sm text-slate-900 mb-1 leading-snug">
-                  {phase.title[lang as Lang] || phase.title['en']}
-                </h3>
-
-                {/* Description */}
-                <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                  {phase.desc[lang as Lang] || phase.desc['en']}
-                </p>
+                {/* Status Footer Tag */}
+                <div className="pt-3.5 border-t border-slate-800 flex items-center justify-between text-[11px] font-bold">
+                  <span className="text-slate-500">Phase {phase.step}</span>
+                  <span className={isLast ? 'text-blue-400 font-extrabold' : 'text-slate-300'}>
+                    {phase.status[lang as Lang] || phase.status['en']}
+                  </span>
+                </div>
               </div>
+            );
+          })}
+        </div>
 
-              {/* Status Footer Tag */}
-              <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] font-bold">
-                <span className="text-slate-400">Step {phase.step}</span>
-                <span className={isLast ? 'text-blue-600 font-extrabold' : 'text-slate-600'}>
-                  {phase.status[lang as Lang] || phase.status['en']}
-                </span>
-              </div>
-            </div>
-          );
-        })}
       </div>
-    </div>
+    </section>
   );
 }

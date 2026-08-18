@@ -2,70 +2,74 @@
 
 import { useSiteContext } from '@/lib/context';
 import { t, Lang } from '@/lib/i18n';
+import { Sparkles, Check, ArrowRight } from 'lucide-react';
 
 export default function PatientJourney() {
   const { lang } = useSiteContext();
 
   const eyebrow = {
     tr: 'Hasta Deneyimi & Klinik Atmosferi',
-    en: 'Patient Experience & Clinical Setting',
+    en: 'Patient Experience & Clinical Atmosphere',
     fr: 'Expérience Patient & Cadre Clinique',
   }[lang as Lang] || 'Patient Experience';
 
   const heading = {
-    tr: 'Antalya\'daki 3 Günlük Tedavi Yolculuğunuz',
-    en: 'Your 3-Day Clinical Journey in Antalya',
-    fr: 'Votre Séjour Clinique de 3 Jours à Antalya',
-  }[lang as Lang] || 'Your 3-Day Clinical Journey in Antalya';
+    tr: 'Antalya\'daki 3 Günlük VIP Tedavi Yolculuğunuz',
+    en: 'Your 3-Day VIP Medical Journey in Antalya',
+    fr: 'Votre Séjour Médical VIP de 3 Jours à Antalya',
+  }[lang as Lang] || 'Your 3-Day VIP Medical Journey in Antalya';
 
   const subtitle = {
-    tr: 'Havalimanı VIP karşılamasından steril ameliyathaneye ve medikal yıkamaya kadar gerçek fotoğraflarla sürecimiz.',
-    en: 'Real photographic documentation of our door-to-door medical coordination in Antalya.',
-    fr: 'Documentation photographique réelle de votre prise en charge médicale à Antalya.',
+    tr: 'Havalimanı VIP karşılamasından steril ameliyathaneye ve medikal yıkamaya kadar gerçek fotoğraflarla tedavi sürecimiz.',
+    en: 'Real photographic documentation of our door-to-door medical coordination and clinical care in Antalya.',
+    fr: 'Documentation photographique réelle de votre prise en charge médicale intégrale à Antalya.',
   }[lang as Lang] || 'Real photographic documentation of our medical coordination.';
 
   const journeySteps = [
     {
       step: '01',
-      title: t(lang as Lang, 'journey.step1.title') || 'VIP Havalimanı Karşılama',
-      desc: t(lang as Lang, 'journey.step1.desc') || 'Özel şoförünüz Antalya Havalimanı\'nda sizi Mercedes Vito ile karşılar ve otelinize transfer eder.',
+      title: t(lang as Lang, 'journey.step1.title') || 'VIP Airport Arrival',
+      desc: t(lang as Lang, 'journey.step1.desc') || 'Private driver meets you at Antalya Airport with Mercedes Vito and takes you directly to your luxury hotel room.',
       img: '/images/vip-transfer.jpg',
-      spec: lang === 'tr' ? 'Mercedes Vito VIP Transfer' : 'Private Mercedes Transfer'
+      spec: lang === 'tr' ? 'Mercedes Vito VIP Transfer' : 'Private Mercedes Vito Transfer'
     },
     {
       step: '02',
-      title: t(lang as Lang, 'journey.step2.title') || 'Birebir Hekim Muayenesi',
-      desc: t(lang as Lang, 'journey.step2.desc') || 'Anlaşmalı kliniğimizde doktor muayenesi, ön saç çizgisi çizimi ve kan tahlilleri.',
+      title: t(lang as Lang, 'journey.step2.title') || 'Surgeon Hairline Design',
+      desc: t(lang as Lang, 'journey.step2.desc') || 'In-person consultation, microscopic follicle density mapping, and natural hairline design at our partner clinic.',
       img: '/images/clinic-consultation.jpg',
-      spec: lang === 'tr' ? 'Ön Çizgi Planlama' : 'Surgeon Hairline Design'
+      spec: lang === 'tr' ? 'Birebir Hekim Muayenesi' : 'Surgeon In-Person Consultation'
     },
     {
       step: '03',
-      title: t(lang as Lang, 'journey.step3.title') || 'Choi Pen DHI Ameliyathanesi',
-      desc: t(lang as Lang, 'journey.step3.desc') || 'Steril hastane ortamında ağrısız Choi Pen teknolojisi ile konforlu DHI ekim operasyonu.',
+      title: t(lang as Lang, 'journey.step3.title') || 'Sterile Choi Pen DHI Suite',
+      desc: t(lang as Lang, 'journey.step3.desc') || 'Comfortable needle-free anesthesia, graft preservation in ATP nutrient solution, and direct Choi Pen implantation.',
       img: '/images/operation-room.jpg',
-      spec: lang === 'tr' ? 'Steril Ameliyathane' : 'Sterile Surgical Suite'
+      spec: lang === 'tr' ? 'Steril Ameliyathane' : 'Sterile Hospital Surgery Suite'
     },
     {
       step: '04',
-      title: t(lang as Lang, 'journey.step4.title') || 'Medikal Yıkama & Uğurlama',
-      desc: t(lang as Lang, 'journey.step4.desc') || 'Klinikte medikal saç yıkama eğitimi, bakım kiti teslimi ve havalimanına dönüş transferi.',
+      title: t(lang as Lang, 'journey.step4.title') || 'Clinical Wash & Departure',
+      desc: t(lang as Lang, 'journey.step4.desc') || 'Specialist first hair wash training, handover of 12-month aftercare kit, and VIP return transfer to airport.',
       img: '/images/aftercare-wash.jpg',
-      spec: lang === 'tr' ? 'Medikal Bakım Kiti' : 'Aftercare Kit & Training'
+      spec: lang === 'tr' ? 'Medikal Bakım Kiti & Uğurlama' : '12-Month Care Kit Handover'
     }
   ];
 
   return (
-    <section id="results" className="py-20 bg-[#EFE7D8]">
-      <div className="wrap">
+    <section id="results" className="py-20 bg-slate-900/60 text-white border-b border-white/[0.08] relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
-        {/* Section Head */}
-        <div className="max-w-xl mb-12">
-          <div className="eyebrow">{eyebrow}</div>
-          <h2 className="text-3xl sm:text-4xl font-serif font-semibold text-[#17231C] mt-3.5 tracking-tight leading-snug">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-950/80 border border-blue-800/60 text-blue-300 text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>{eyebrow}</span>
+          </div>
+          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-white tracking-tight">
             {heading}
           </h2>
-          <p className="text-[#4A5A4D] text-base mt-3.5 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-400 font-normal max-w-2xl mx-auto">
             {subtitle}
           </p>
         </div>
@@ -75,33 +79,41 @@ export default function PatientJourney() {
           {journeySteps.map((item, idx) => (
             <div
               key={idx}
-              className="bg-[#FBF8F1] border border-[rgba(23,35,28,0.12)] rounded-[4px] overflow-hidden shadow-xs flex flex-col justify-between card-hover-lift group"
+              className="bg-slate-900 border border-slate-800 hover:border-blue-500/50 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between card-hover group"
             >
               <div>
-                <div className="relative h-52 w-full overflow-hidden bg-[#17231C]">
+                {/* Photo Frame */}
+                <div className="relative h-56 w-full overflow-hidden bg-slate-950">
                   <img
                     src={item.img}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500 opacity-95"
+                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 opacity-90"
                   />
-                  <div className="absolute top-3 left-3 bg-[#17231C]/85 backdrop-blur-md text-[#EFE7D8] font-mono text-xs px-2.5 py-1 rounded-[2px] border border-[rgba(239,231,216,0.2)]">
-                    {item.step}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent" />
+                  
+                  {/* Step Number Tag */}
+                  <div className="absolute top-3.5 left-3.5 bg-blue-600/90 backdrop-blur-md text-white font-extrabold text-xs px-3 py-1 rounded-xl shadow-lg border border-blue-400/30">
+                    Step {item.step}
                   </div>
                 </div>
 
-                <div className="p-5 space-y-2">
-                  <h3 className="font-serif font-semibold text-base text-[#17231C] leading-snug">
+                {/* Content */}
+                <div className="p-6 space-y-2">
+                  <h3 className="font-heading font-bold text-base text-white leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-[#4A5A4D] leading-relaxed">
+                  <p className="text-xs text-slate-400 leading-relaxed font-normal">
                     {item.desc}
                   </p>
                 </div>
               </div>
 
-              <div className="px-5 pb-5 pt-3 flex items-center justify-between text-[11px] font-mono font-medium text-[#A9662F] border-t border-[rgba(23,35,28,0.1)]">
+              {/* Bottom Tag */}
+              <div className="px-6 pb-6 pt-3 flex items-center justify-between text-[11px] font-bold text-blue-400 border-t border-slate-800/80">
                 <span>{item.spec}</span>
-                <span className="text-[#6E7F63] font-semibold">✓</span>
+                <span className="text-emerald-400 font-extrabold flex items-center gap-1">
+                  <Check className="w-3.5 h-3.5" />
+                </span>
               </div>
             </div>
           ))}

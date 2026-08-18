@@ -1,34 +1,27 @@
 import type { Metadata } from "next";
-import { Fraunces, Work_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import JsonLd from '@/components/JsonLd';
 import { SiteProvider } from '@/lib/context';
 import "./globals.css";
 
-const fraunces = Fraunces({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-fraunces',
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-heading',
   display: 'swap',
 });
 
-const workSans = Work_Sans({
+const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-work-sans',
-  display: 'swap',
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-ibm-mono',
+  variable: '--font-sans',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "Antalya DHI Clinic — Doktor Kontrollü Saç Restorasyonu",
-  description: "Avrupa'dan gelen hastalar için VIP transfer, otel konaklaması ve medikal koordinasyonu tek pakette birleştiren, doktor kontrollü DHI programı.",
-  keywords: "Antalya DHI hair transplant, DHI hair restoration Turkey, Choi pen hair transplant Antalya",
+  title: "Antalya DHI Clinic — Surgeon-Guided DHI Hair Restoration Turkey",
+  description: "All-inclusive VIP DHI hair transplant in Antalya. T.C. Ministry of Health licensed partner facilities, private Mercedes Vito transfer, 5-star hotel stay, and transparent packages.",
+  keywords: "Antalya DHI hair transplant, DHI hair restoration Turkey, Choi pen hair transplant Antalya, VIP hair transplant Antalya",
   metadataBase: new URL('https://antalyadhi.com'),
   alternates: {
     canonical: 'https://antalyadhi.com',
@@ -44,11 +37,11 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Antalya DHI Clinic — Doktor Kontrollü Saç Restorasyonu',
-    description: 'Şeffaf paket fiyatları, 5 yıldızlı otel konaklaması ve VIP transfer ile doktor kontrollü DHI saç ekimi koordinasyonu.',
+    title: 'Antalya DHI Clinic — Surgeon-Guided DHI Hair Restoration',
+    description: 'All-inclusive VIP DHI hair transplant in Antalya. Licensed partner surgical facilities, 5-star hotel stay, and transparent pricing.',
     url: 'https://antalyadhi.com',
     siteName: 'Antalya DHI Clinic',
-    locale: 'tr_TR',
+    locale: 'en_GB',
     type: 'website',
     images: [
       {
@@ -67,8 +60,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className={`${fraunces.variable} ${workSans.variable} ${ibmPlexMono.variable}`} suppressHydrationWarning>
-      <body className="antialiased bg-[#EFE7D8] text-[#17231C] font-sans selection:bg-[#A9662F] selection:text-[#EFE7D8]" suppressHydrationWarning>
+    <html lang="en" className={`${plusJakartaSans.variable} ${inter.variable}`} suppressHydrationWarning>
+      <body className="font-sans antialiased bg-slate-950 text-slate-100 selection:bg-blue-600 selection:text-white" suppressHydrationWarning>
         <SiteProvider>
           <JsonLd />
           {children}

@@ -48,106 +48,114 @@ export default function CompetitorBenchmarkFeatures() {
   }[lang as Lang] || 'Autologous PRP application combined with targeted mesotherapy to support tissue recovery and early graft nourishment.';
 
   return (
-    <div id="medical-standards" className="w-full space-y-8">
-      <div className="text-center max-w-3xl mx-auto space-y-2">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">{title}</h2>
-        <p className="text-xs sm:text-sm text-slate-600 font-medium">{subtitle}</p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-7xl mx-auto">
+    <section id="medical-standards" className="py-20 bg-slate-900/60 text-white border-b border-white/[0.08] relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
-        {/* CARD 1: NEEDLE-FREE ANESTHESIA */}
-        <div className="md:col-span-2 bg-slate-950 text-white rounded-2xl p-7 border border-slate-800 shadow-xl flex flex-col justify-between relative overflow-hidden card-hover-lift">
-          <div className="space-y-3 relative z-10">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-900/50 border border-blue-700/50 text-blue-300 text-xs font-bold">
-              <ShieldCheck className="w-4 h-4" />
-              <span>{lang === 'tr' ? 'Konfor Protokolü' : 'Comfort Protocol'}</span>
-            </div>
-
-            <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug">
-              {bento1Title}
-            </h3>
-
-            <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed max-w-xl">
-              {bento1Desc}
-            </p>
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-950/80 border border-blue-800/60 text-blue-300 text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>{lang === 'tr' ? 'Cerrahi Standartlar' : 'Clinical Standards'}</span>
           </div>
-
-          <div className="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-slate-300 relative z-10">
-            <span>{lang === 'tr' ? 'Lokal Anestezi Standartı' : 'Local Anesthesia Standard'}</span>
-            <span className="text-blue-400 font-bold">
-              {lang === 'tr' ? 'Konforlu Uygulama' : 'Pressure-Spray Protocol'}
-            </span>
-          </div>
+          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-white tracking-tight">{title}</h2>
+          <p className="text-xs sm:text-sm text-slate-400 font-normal max-w-2xl mx-auto">{subtitle}</p>
         </div>
 
-        {/* CARD 2: ATP HYPOTHERMOSOL */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs flex flex-col justify-between space-y-4 card-hover-lift">
-          <div className="space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100/80">
-              <FlaskConical className="w-5 h-5" />
-            </div>
-            <h3 className="text-base font-bold text-slate-900 leading-tight">
-              {bento2Title}
-            </h3>
-            <p className="text-xs text-slate-600 font-medium leading-relaxed">
-              {bento2Desc}
-            </p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          
+          {/* CARD 1: NEEDLE-FREE ANESTHESIA */}
+          <div className="md:col-span-2 bg-slate-900 text-white rounded-3xl p-8 border border-slate-800 shadow-xl flex flex-col justify-between relative overflow-hidden card-hover">
+            <div className="space-y-4 relative z-10">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-950/80 border border-blue-700/60 text-blue-300 text-xs font-bold">
+                <ShieldCheck className="w-4 h-4 text-blue-400" />
+                <span>{lang === 'tr' ? 'Konfor Protokolü' : 'Comfort Protocol'}</span>
+              </div>
 
-          <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-700">
-            <span>{lang === 'tr' ? 'Greft Canlılığı' : 'Graft Viability'}</span>
-            <span className="text-blue-600">ATP Preservation</span>
-          </div>
-        </div>
+              <h3 className="text-xl sm:text-2xl font-heading font-bold text-white leading-snug">
+                {bento1Title}
+              </h3>
 
-        {/* CARD 3: SINGLE-USE CHOI PEN KIT */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs flex flex-col justify-between space-y-4 card-hover-lift">
-          <div className="space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100/80">
-              <Sparkles className="w-5 h-5" />
-            </div>
-            <h3 className="text-base font-bold text-slate-900 leading-tight">
-              {bento3Title}
-            </h3>
-            <p className="text-xs text-slate-600 font-medium leading-relaxed">
-              {bento3Desc}
-            </p>
-          </div>
-
-          <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-700">
-            <span>{lang === 'tr' ? 'Sterilite Standardı' : 'Sterility Standard'}</span>
-            <span className="text-blue-600">100% Single-Use</span>
-          </div>
-        </div>
-
-        {/* CARD 4: PRP AFTERCARE */}
-        <div className="md:col-span-2 bg-slate-900 text-white rounded-2xl p-7 border border-slate-800 shadow-xl flex flex-col justify-between relative overflow-hidden card-hover-lift">
-          <div className="space-y-3">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-950/80 border border-blue-800/80 text-blue-300 text-xs font-bold">
-              <HeartHandshake className="w-4 h-4" />
-              <span>PRP &amp; Mesotherapy</span>
+              <p className="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed max-w-xl">
+                {bento1Desc}
+              </p>
             </div>
 
-            <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug">
-              {bento4Title}
-            </h3>
-
-            <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed max-w-xl">
-              {bento4Desc}
-            </p>
+            <div className="pt-6 mt-6 border-t border-slate-800 flex items-center justify-between text-xs font-bold text-slate-300 relative z-10">
+              <span>{lang === 'tr' ? 'Lokal Anestezi Standardı' : 'Local Anesthesia Standard'}</span>
+              <span className="text-blue-400 font-extrabold">
+                {lang === 'tr' ? 'Basınçlı Konfor Uygulaması' : 'Pressure-Spray Protocol'}
+              </span>
+            </div>
           </div>
 
-          <div className="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-slate-300">
-            <span>{lang === 'tr' ? 'Ameliyat Sonrası Bakım' : 'Post-Op Follow-up'}</span>
-            <span className="text-emerald-400 font-bold flex items-center gap-1">
-              <Check className="w-4 h-4" />
-              <span>{lang === 'tr' ? '12 Ay Medikal Takip' : '12-Month Medical Follow-up'}</span>
-            </span>
+          {/* CARD 2: ATP HYPOTHERMOSOL */}
+          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-7 shadow-xl flex flex-col justify-between space-y-4 card-hover">
+            <div className="space-y-3">
+              <div className="w-10 h-10 rounded-2xl bg-blue-600/20 text-blue-400 flex items-center justify-center border border-blue-500/30">
+                <FlaskConical className="w-5 h-5" />
+              </div>
+              <h3 className="text-base font-heading font-bold text-white leading-tight">
+                {bento2Title}
+              </h3>
+              <p className="text-xs text-slate-400 font-normal leading-relaxed">
+                {bento2Desc}
+              </p>
+            </div>
+
+            <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-[11px] font-bold text-slate-300">
+              <span>{lang === 'tr' ? 'Greft Canlılığı' : 'Graft Viability'}</span>
+              <span className="text-blue-400 font-extrabold">ATP Preservation</span>
+            </div>
           </div>
+
+          {/* CARD 3: SINGLE-USE CHOI PEN KIT */}
+          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-7 shadow-xl flex flex-col justify-between space-y-4 card-hover">
+            <div className="space-y-3">
+              <div className="w-10 h-10 rounded-2xl bg-blue-600/20 text-blue-400 flex items-center justify-center border border-blue-500/30">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <h3 className="text-base font-heading font-bold text-white leading-tight">
+                {bento3Title}
+              </h3>
+              <p className="text-xs text-slate-400 font-normal leading-relaxed">
+                {bento3Desc}
+              </p>
+            </div>
+
+            <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-[11px] font-bold text-slate-300">
+              <span>{lang === 'tr' ? 'Sterilite Standardı' : 'Sterility Standard'}</span>
+              <span className="text-blue-400 font-extrabold">100% Single-Use</span>
+            </div>
+          </div>
+
+          {/* CARD 4: PRP AFTERCARE */}
+          <div className="md:col-span-2 bg-slate-900 text-white rounded-3xl p-8 border border-slate-800 shadow-xl flex flex-col justify-between relative overflow-hidden card-hover">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-950/80 border border-blue-700/60 text-blue-300 text-xs font-bold">
+                <HeartHandshake className="w-4 h-4 text-blue-400" />
+                <span>PRP &amp; Mesotherapy</span>
+              </div>
+
+              <h3 className="text-xl sm:text-2xl font-heading font-bold text-white leading-snug">
+                {bento4Title}
+              </h3>
+
+              <p className="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed max-w-xl">
+                {bento4Desc}
+              </p>
+            </div>
+
+            <div className="pt-6 mt-6 border-t border-slate-800 flex items-center justify-between text-xs font-bold text-slate-300">
+              <span>{lang === 'tr' ? 'Ameliyat Sonrası Bakım' : 'Post-Op Follow-up'}</span>
+              <span className="text-emerald-400 font-extrabold flex items-center gap-1">
+                <Check className="w-4 h-4" />
+                <span>{lang === 'tr' ? '12 Ay Medikal Takip' : '12-Month Medical Follow-up'}</span>
+              </span>
+            </div>
+          </div>
+
         </div>
-
       </div>
-    </div>
+    </section>
   );
 }
