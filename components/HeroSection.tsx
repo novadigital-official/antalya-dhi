@@ -50,11 +50,11 @@ export default function HeroSection() {
     fr: 'Forfaits Tout Compris dès:',
   }[lang as Lang] || 'All-Inclusive Packages from:';
 
-  const hotelTagText = {
-    tr: '5★ Otel & VIP Transfer Dahil',
-    en: '5★ Hotel & VIP Transfer Included',
-    fr: 'Hôtel 5★ & Transfert VIP Inclus',
-  }[lang as Lang] || '5★ Hotel & VIP Transfer Included';
+  const transferTagText = {
+    tr: 'VIP Mercedes Transfer Dahil',
+    en: 'VIP Mercedes Transfer Included',
+    fr: 'Transfert VIP Mercedes Inclus',
+  }[lang as Lang] || 'VIP Mercedes Transfer Included';
 
   const tag1Text = { tr: 'Tek Kullanımlık Choi', en: 'Single-Use Choi', fr: 'Stylo Choi Unique' }[lang as Lang] || 'Single-Use Choi';
   const tag2Text = { tr: 'VIP Mercedes Vito', en: 'VIP Mercedes Vito', fr: 'Transfert Mercedes' }[lang as Lang] || 'VIP Mercedes Vito';
@@ -100,8 +100,8 @@ export default function HeroSection() {
               <div className="bg-emerald-950/90 border border-emerald-500/40 px-3.5 py-2 rounded-2xl flex flex-wrap items-center gap-2.5 shadow-lg backdrop-blur-md">
                 <span className="text-xs text-emerald-200/80 font-medium">{pkgStartText}</span>
                 <span className="text-emerald-300 font-black text-base sm:text-lg">{priceFormatted}</span>
-                <span className="text-[11px] text-amber-300 bg-amber-950/80 border border-amber-500/40 px-2 py-0.5 rounded-lg font-extrabold">
-                  {hotelTagText}
+                <span className="text-[11px] text-amber-300 bg-amber-950/80 border border-amber-500/40 px-2.5 py-0.5 rounded-lg font-extrabold">
+                  {transferTagText}
                 </span>
               </div>
             </div>

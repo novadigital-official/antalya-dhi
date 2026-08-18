@@ -26,16 +26,16 @@ export default function PricingPackages() {
   };
 
   const title = {
-    tr: 'Şeffaf Paketler & 3 Günlük Cerrahi Yolculuk',
-    en: 'Transparent Packages & 3-Day Medical Journey',
-    fr: 'Forfaits Transparents & Séjour Médical de 3 Jours',
-  }[lang as Lang] || 'Transparent Packages & 3-Day Medical Journey';
+    tr: 'Şeffaf Paketler & Cerrahi Fiyatlandırma',
+    en: 'Transparent Packages & Clinical Pricing',
+    fr: 'Forfaits Transparents & Tarification Médicale',
+  }[lang as Lang] || 'Transparent Packages & Clinical Pricing';
 
   const subtitle = {
-    tr: 'Havalimanı VIP karşılamasından taburcu gününe kadar her detayın dahil olduğu şeffaf fiyatlandırma.',
-    en: 'From your airport VIP pickup to your final clinical wash, every step is fully coordinated with zero hidden costs.',
-    fr: 'De votre arrivée VIP à l\'aéroport jusqu\'aux soins finaux, chaque étape est incluse sans aucun frais caché.',
-  }[lang as Lang] || 'Fully coordinated with zero hidden costs.';
+    tr: 'Havalimanı VIP karşılamasından medikal bakıma kadar gizli hiçbir maliyet olmadan net paket seçeneklerimiz.',
+    en: 'From your airport VIP transfer to clinical aftercare, clear package options with zero hidden fees.',
+    fr: 'De votre transfert VIP à l\'aéroport jusqu\'aux soins post-opératoires, des forfaits clairs sans frais cachés.',
+  }[lang as Lang] || 'Clear package options with zero hidden fees.';
 
   const fixedRateText = {
     tr: 'Sabit Paket Ücreti',
@@ -54,6 +54,12 @@ export default function PricingPackages() {
     en: '(€2,200 / £1,900 / ₺110k)',
     fr: '(2 200€ / £1,900 / 110 000 ₺)',
   }[lang as Lang] || '(€2,200 / £1,900 / ₺110k)';
+
+  const standardDesc = {
+    tr: 'Cerrahi operasyon ve VIP Mercedes transferi dahil paket (Otel konaklamasını kendi ayarlayan hastalar için).',
+    en: 'Surgery + VIP Mercedes Vito transfers included (For patients arranging their own hotel stay).',
+    fr: 'Chirurgie DHI + Transferts VIP Mercedes inclus (Pour les patients organisant leur hébergement).',
+  }[lang as Lang] || 'Surgery + VIP Mercedes transfers included.';
 
   return (
     <section id="packages" className="py-14 sm:py-18 bg-white border-b border-slate-200/80 relative overflow-hidden">
@@ -76,18 +82,18 @@ export default function PricingPackages() {
         {/* 2 Package Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-5xl mx-auto items-stretch">
           
-          {/* PACKAGE 1: STANDARD DHI (5 cols — Clean White Card) */}
+          {/* PACKAGE 1: STANDARD DHI (5 cols — 90.000 TL / £1,550) */}
           <div className="lg:col-span-5 bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 shadow-xs flex flex-col justify-between space-y-5 card-hover-soft">
             <div className="space-y-4">
               <div>
                 <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
-                  {lang === 'tr' ? 'Standart Operasyon' : lang === 'fr' ? 'Intervention Seule' : 'Procedure-Focused Package'}
+                  {lang === 'tr' ? 'Cerrahi + VIP Transfer' : lang === 'fr' ? 'Chirurgie + Transfert VIP' : 'Surgery + VIP Transfer'}
                 </span>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mt-1">
                   Standard DHI
                 </h3>
                 <p className="text-xs text-slate-500 font-normal mt-1 leading-relaxed">
-                  {lang === 'tr' ? 'Kendi konaklama ve transferini ayarlayan hastalar için cerrahi paket.' : lang === 'fr' ? 'Forfait chirurgical pour les patients organisant eux-mêmes leur séjour.' : 'Surgery-focused clinical package for self-arranging patients.'}
+                  {standardDesc}
                 </p>
               </div>
 
@@ -114,11 +120,15 @@ export default function PricingPackages() {
                 </li>
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>{lang === 'tr' ? 'Operasyon Sonrası İlaç ve Özel Şampuan' : 'Post-Op Medication & Special Shampoo Kit'}</span>
+                  <span className="font-bold text-slate-900">{lang === 'tr' ? 'VIP Mercedes Vito Havalimanı & Klinik Transferleri Dahil' : 'VIP Mercedes Vito Airport & Clinic Transfers Included'}</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>{lang === 'tr' ? '12 Ay Uzaktan Medikal Takip' : '12-Month Remote Follow-Up Protocol'}</span>
+                  <span>{lang === 'tr' ? 'Operasyon Sonrası İlaç ve Özel Şampuan Kiti' : 'Post-Op Medication & Special Shampoo Kit'}</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <span>{lang === 'tr' ? '12 Ay Uzaktan Medikal Takip Protokolü' : '12-Month Remote Follow-Up Protocol'}</span>
                 </li>
               </ul>
             </div>
@@ -132,7 +142,7 @@ export default function PricingPackages() {
             </a>
           </div>
 
-          {/* PACKAGE 2: VIP ANTALYA EXPERIENCE (7 cols — Deep Emerald Luxury Gradient) */}
+          {/* PACKAGE 2: VIP ANTALYA EXPERIENCE (7 cols — 110.000 TL / £1,900 — Hotel Included) */}
           <div className="lg:col-span-7 bg-emerald-card text-white rounded-3xl p-6 sm:p-8 shadow-xl relative flex flex-col justify-between space-y-5 card-hover-soft border border-emerald-500/40">
             {/* VIP Popular Badge */}
             <div className="absolute -top-3.5 left-7 bg-amber-400 text-slate-950 font-extrabold text-[11px] px-3.5 py-1 rounded-full uppercase tracking-wider shadow-md flex items-center gap-1">
@@ -144,7 +154,7 @@ export default function PricingPackages() {
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 border-b border-emerald-600/30 pb-4">
                 <div>
                   <span className="text-xs font-bold text-emerald-300 uppercase tracking-wider block">
-                    {lang === 'tr' ? 'Tam Kapsamlı Sağlık Turizmi Deneyimi' : lang === 'fr' ? 'Expérience Médicale Complète Tout Inclus' : 'Complete Luxury Medical Experience'}
+                    {lang === 'tr' ? '5★ Otel + Cerrahi + VIP Transfer (Her Şey Dahil)' : lang === 'fr' ? 'Hôtel 5★ + Chirurgie + Transfert VIP (Tout Inclus)' : '5★ Hotel + Surgery + VIP Transfers (All-Inclusive)'}
                   </span>
                   <h3 className="text-2xl font-heading font-extrabold text-white mt-0.5">
                     VIP Antalya Experience
@@ -161,7 +171,7 @@ export default function PricingPackages() {
               {/* 3-Day Itinerary Steps */}
               <div className="space-y-2.5">
                 <div className="text-xs font-bold text-emerald-200 uppercase tracking-wider">
-                  {lang === 'tr' ? '3 Günlük Cerrahi Seyahat Planı:' : lang === 'fr' ? 'Votre Programme Médical de 3 Jours:' : 'Your 3-Day Medical Itinerary:'}
+                  {lang === 'tr' ? '3 Günlük VIP Seyahat & Otel Planı:' : lang === 'fr' ? 'Votre Programme Médical & Hôtel 5★ de 3 Jours:' : 'Your 3-Day Medical & 5★ Hotel Itinerary:'}
                 </div>
 
                 <div className="space-y-2">
@@ -172,10 +182,10 @@ export default function PricingPackages() {
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-white">
-                        {lang === 'tr' ? '1. Gün: Havalimanı Karşılama & 5★ Otele Yerleşme' : lang === 'fr' ? 'Jour 1: Arrivée VIP & Installation Hôtel 5★' : 'Day 1: VIP Airport Arrival & 5★ Hotel Stay'}
+                        {lang === 'tr' ? '1. Gün: Havalimanı Karşılama & 5★ Lüks Otele Yerleşme' : lang === 'fr' ? 'Jour 1: Arrivée VIP & Installation Hôtel 5★' : 'Day 1: VIP Airport Arrival & 5★ Hotel Stay'}
                       </h4>
                       <p className="text-[11px] text-emerald-200/80 font-normal">
-                        {lang === 'tr' ? 'Mercedes Vito ile özel transfer ve 5 yıldızlı otelde dinlenme.' : lang === 'fr' ? 'Transfert privé Mercedes Vito directement à votre hôtel.' : 'Private Mercedes Vito transfer directly to your luxury hotel.'}
+                        {lang === 'tr' ? 'Mercedes Vito ile özel transfer ve 5 yıldızlı sahil otelinde dinlenme.' : lang === 'fr' ? 'Transfert privé Mercedes Vito et séjour en hôtel 5 étoiles.' : 'Private Mercedes Vito transfer and luxury 5-star hotel stay included.'}
                       </p>
                     </div>
                   </div>
