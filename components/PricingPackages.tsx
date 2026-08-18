@@ -14,8 +14,8 @@ export default function PricingPackages() {
     setMounted(true);
   }, []);
 
-  const standardPrice = mounted ? formatPrice(PRICES.standard[currency], currency) : '£1,550';
-  const vipPrice = mounted ? formatPrice(PRICES.vip[currency], currency) : '£1,900';
+  const standardPrice = mounted ? formatPrice(PRICES.standard[currency], currency) : (lang === 'tr' ? '90.000 TL' : '£1,550');
+  const vipPrice = mounted ? formatPrice(PRICES.vip[currency], currency) : (lang === 'tr' ? '110.000 TL' : '£1,900');
 
   const scrollToWizard = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -37,8 +37,26 @@ export default function PricingPackages() {
     fr: 'De votre arrivée VIP à l\'aéroport jusqu\'aux soins finaux, chaque étape est incluse sans aucun frais caché.',
   }[lang as Lang] || 'Fully coordinated with zero hidden costs.';
 
+  const fixedRateText = {
+    tr: 'Sabit Paket Ücreti',
+    en: 'Total Fixed Rate',
+    fr: 'Tarif Forfaitaire Fixe',
+  }[lang as Lang] || 'Total Fixed Rate';
+
+  const standardSubtext = {
+    tr: '(€1.800 / £1.550 / 90.000 ₺)',
+    en: '(€1,800 / £1,550 / ₺90k)',
+    fr: '(1 800€ / £1,550 / 90 000 ₺)',
+  }[lang as Lang] || '(€1,800 / £1,550 / ₺90k)';
+
+  const vipSubtext = {
+    tr: '(€2.200 / £1.900 / 110.000 ₺)',
+    en: '(€2,200 / £1,900 / ₺110k)',
+    fr: '(2 200€ / £1,900 / 110 000 ₺)',
+  }[lang as Lang] || '(€2,200 / £1,900 / ₺110k)';
+
   return (
-    <section id="packages" className="py-14 sm:py-18 bg-white border-b border-slate-200/80 relative">
+    <section id="packages" className="py-14 sm:py-18 bg-white border-b border-slate-200/80 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Section Header */}
@@ -59,27 +77,27 @@ export default function PricingPackages() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-5xl mx-auto items-stretch">
           
           {/* PACKAGE 1: STANDARD DHI (5 cols — Clean White Card) */}
-          <div className="lg:col-span-5 bg-white border border-slate-200 rounded-3xl p-7 shadow-xs flex flex-col justify-between space-y-5 card-hover-soft">
+          <div className="lg:col-span-5 bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 shadow-xs flex flex-col justify-between space-y-5 card-hover-soft">
             <div className="space-y-4">
               <div>
                 <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block">
-                  {lang === 'tr' ? 'Standart Operasyon' : 'Procedure-Focused Package'}
+                  {lang === 'tr' ? 'Standart Operasyon' : lang === 'fr' ? 'Intervention Seule' : 'Procedure-Focused Package'}
                 </span>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mt-1">
                   Standard DHI
                 </h3>
                 <p className="text-xs text-slate-500 font-normal mt-1 leading-relaxed">
-                  {lang === 'tr' ? 'Kendi konaklama ve transferini ayarlayan hastalar için cerrahi paket.' : 'Surgery-focused clinical package for self-arranging patients.'}
+                  {lang === 'tr' ? 'Kendi konaklama ve transferini ayarlayan hastalar için cerrahi paket.' : lang === 'fr' ? 'Forfait chirurgical pour les patients organisant eux-mêmes leur séjour.' : 'Surgery-focused clinical package for self-arranging patients.'}
                 </p>
               </div>
 
               {/* Price Box */}
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-1">
-                <span className="text-[11px] text-slate-500 font-medium block">Total Fixed Rate</span>
+                <span className="text-[11px] text-slate-500 font-medium block">{fixedRateText}</span>
                 <div className="flex items-baseline gap-2 flex-wrap">
                   <span className="text-3xl font-extrabold text-slate-900 font-heading">{standardPrice}</span>
                   <span className="text-xs font-bold text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded-lg">
-                    (€1,800 / £1,550 / ₺90k)
+                    {standardSubtext}
                   </span>
                 </div>
               </div>
@@ -115,18 +133,18 @@ export default function PricingPackages() {
           </div>
 
           {/* PACKAGE 2: VIP ANTALYA EXPERIENCE (7 cols — Deep Emerald Luxury Gradient) */}
-          <div className="lg:col-span-7 bg-emerald-card text-white rounded-3xl p-7 sm:p-8 shadow-xl relative flex flex-col justify-between space-y-5 card-hover-soft border border-emerald-500/40">
+          <div className="lg:col-span-7 bg-emerald-card text-white rounded-3xl p-6 sm:p-8 shadow-xl relative flex flex-col justify-between space-y-5 card-hover-soft border border-emerald-500/40">
             {/* VIP Popular Badge */}
             <div className="absolute -top-3.5 left-7 bg-amber-400 text-slate-950 font-extrabold text-[11px] px-3.5 py-1 rounded-full uppercase tracking-wider shadow-md flex items-center gap-1">
               <Star className="w-3 h-3 fill-current text-slate-950" />
-              <span>{lang === 'tr' ? 'En Çok Tercih Edilen VIP Paket' : 'Most Requested VIP All-Inclusive'}</span>
+              <span>{lang === 'tr' ? 'En Çok Tercih Edilen VIP Paket' : lang === 'fr' ? 'Forfait VIP le Plus Demandé' : 'Most Requested VIP All-Inclusive'}</span>
             </div>
 
             <div className="space-y-5 pt-1">
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 border-b border-emerald-600/30 pb-4">
                 <div>
                   <span className="text-xs font-bold text-emerald-300 uppercase tracking-wider block">
-                    {lang === 'tr' ? 'Tam Kapsamlı Sağlık Turizmi Deneyimi' : 'Complete Luxury Medical Experience'}
+                    {lang === 'tr' ? 'Tam Kapsamlı Sağlık Turizmi Deneyimi' : lang === 'fr' ? 'Expérience Médicale Complète Tout Inclus' : 'Complete Luxury Medical Experience'}
                   </span>
                   <h3 className="text-2xl font-heading font-extrabold text-white mt-0.5">
                     VIP Antalya Experience
@@ -136,14 +154,14 @@ export default function PricingPackages() {
                 {/* Price */}
                 <div className="text-left sm:text-right">
                   <span className="text-3xl font-extrabold font-heading text-emerald-300">{vipPrice}</span>
-                  <span className="text-[11px] text-emerald-200/80 block font-semibold">(€2,200 / £1,900 / ₺110k)</span>
+                  <span className="text-[11px] text-emerald-200/80 block font-semibold">{vipSubtext}</span>
                 </div>
               </div>
 
               {/* 3-Day Itinerary Steps */}
               <div className="space-y-2.5">
                 <div className="text-xs font-bold text-emerald-200 uppercase tracking-wider">
-                  {lang === 'tr' ? '3 Günlük Cerrahi Seyahat Planı:' : 'Your 3-Day Medical Itinerary:'}
+                  {lang === 'tr' ? '3 Günlük Cerrahi Seyahat Planı:' : lang === 'fr' ? 'Votre Programme Médical de 3 Jours:' : 'Your 3-Day Medical Itinerary:'}
                 </div>
 
                 <div className="space-y-2">
@@ -154,10 +172,10 @@ export default function PricingPackages() {
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-white">
-                        {lang === 'tr' ? '1. Gün: Havalimanı Karşılama & 5★ Otele Yerleşme' : 'Day 1: VIP Airport Arrival & 5★ Hotel Stay'}
+                        {lang === 'tr' ? '1. Gün: Havalimanı Karşılama & 5★ Otele Yerleşme' : lang === 'fr' ? 'Jour 1: Arrivée VIP & Installation Hôtel 5★' : 'Day 1: VIP Airport Arrival & 5★ Hotel Stay'}
                       </h4>
                       <p className="text-[11px] text-emerald-200/80 font-normal">
-                        {lang === 'tr' ? 'Mercedes Vito ile özel transfer ve 5 yıldızlı otelde dinlenme.' : 'Private Mercedes Vito transfer directly to your luxury hotel.'}
+                        {lang === 'tr' ? 'Mercedes Vito ile özel transfer ve 5 yıldızlı otelde dinlenme.' : lang === 'fr' ? 'Transfert privé Mercedes Vito directement à votre hôtel.' : 'Private Mercedes Vito transfer directly to your luxury hotel.'}
                       </p>
                     </div>
                   </div>
@@ -169,10 +187,10 @@ export default function PricingPackages() {
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-white">
-                        {lang === 'tr' ? '2. Gün: Ameliyathane, Choi Pen DHI & PRP Seansı' : 'Day 2: Surgery Day, Choi Pen DHI & PRP Therapy'}
+                        {lang === 'tr' ? '2. Gün: Ameliyathane, Choi Pen DHI & PRP Seansı' : lang === 'fr' ? 'Jour 2: Intervention DHI Choi Pen & Séance PRP' : 'Day 2: Surgery Day, Choi Pen DHI & PRP Therapy'}
                       </h4>
                       <p className="text-[11px] text-emerald-200/80 font-normal">
-                        {lang === 'tr' ? 'Hekim ön çizgi planlaması, iğnesiz anestezi, maksimum greft DHI ve PRP.' : 'Surgeon hairline design, needle-free anesthesia, Choi Pen DHI & PRP.'}
+                        {lang === 'tr' ? 'Hekim ön çizgi planlaması, iğnesiz anestezi, maksimum greft DHI ve PRP.' : lang === 'fr' ? 'Dessin de ligne, anesthésie sans aiguille, greffe DHI et PRP.' : 'Surgeon hairline design, needle-free anesthesia, Choi Pen DHI & PRP.'}
                       </p>
                     </div>
                   </div>
@@ -184,10 +202,10 @@ export default function PricingPackages() {
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-white">
-                        {lang === 'tr' ? '3. Gün: Medikal Yıkama Eğitimi & VIP Uğurlama' : 'Day 3: Clinical Wash Training & VIP Departure'}
+                        {lang === 'tr' ? '3. Gün: Medikal Yıkama Eğitimi & VIP Uğurlama' : lang === 'fr' ? 'Jour 3: Formation au Lavage & Départ VIP' : 'Day 3: Clinical Wash Training & VIP Departure'}
                       </h4>
                       <p className="text-[11px] text-emerald-200/80 font-normal">
-                        {lang === 'tr' ? 'Uzman kontrolünde ilk yıkama, 12 aylık bakım kiti teslimi ve dönüş transferi.' : 'First hair wash, handover of 12-month aftercare kit, and return transfer.'}
+                        {lang === 'tr' ? 'Uzman kontrolünde ilk yıkama, 12 aylık bakım kiti teslimi ve dönüş transferi.' : lang === 'fr' ? 'Premier lavage, remise du kit 12 mois et transfert retour.' : 'First hair wash, handover of 12-month aftercare kit, and return transfer.'}
                       </p>
                     </div>
                   </div>

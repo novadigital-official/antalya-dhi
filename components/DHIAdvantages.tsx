@@ -34,8 +34,14 @@ export default function DHIAdvantages() {
     }
   ];
 
+  const standardBadge = {
+    tr: 'Choi Pen Standardı',
+    en: 'Choi Pen Standard',
+    fr: 'Standard Choi Pen',
+  }[lang as Lang] || 'Choi Pen Standard';
+
   return (
-    <section id="advantages" className="py-14 sm:py-18 bg-[#F8FAFC] border-b border-slate-200/80 relative">
+    <section id="advantages" className="py-14 sm:py-18 bg-[#F8FAFC] border-b border-slate-200/80 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Section Header */}
@@ -70,7 +76,7 @@ export default function DHIAdvantages() {
                 </div>
                 
                 <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-emerald-800">
-                  <span>Choi Pen Standard</span>
+                  <span>{standardBadge}</span>
                   <span className="text-emerald-600 font-extrabold flex items-center gap-1">
                     <Check className="w-3.5 h-3.5" />
                   </span>

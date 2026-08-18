@@ -12,6 +12,13 @@ export default function Footer() {
   const privacy = t(lang as Lang, 'footer.privacy') || 'Privacy Policy';
   const terms = t(lang as Lang, 'footer.terms') || 'Terms of Use';
 
+  const link1 = { tr: 'Karşılaştırma', en: 'Comparison', fr: 'Comparatif' }[lang as Lang] || 'Comparison';
+  const link2 = { tr: 'Hasta Yolculuğu', en: 'Patient Journey', fr: 'Parcours Patient' }[lang as Lang] || 'Patient Journey';
+  const link3 = { tr: 'Paketler', en: 'Packages', fr: 'Forfaits' }[lang as Lang] || 'Packages';
+  const link4 = { tr: 'İyileşme Takvimi', en: 'Recovery Timeline', fr: 'Suivi 12 Mois' }[lang as Lang] || 'Recovery Timeline';
+  const link5 = { tr: 'Greft Rehberi', en: 'Graft Guide', fr: 'Guide Greffons' }[lang as Lang] || 'Graft Guide';
+  const link6 = { tr: 'SSS', en: 'FAQ', fr: 'FAQ' }[lang as Lang] || 'FAQ';
+
   return (
     <footer className="bg-slate-950 text-slate-400 text-xs py-10 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
       <div className="max-w-7xl mx-auto space-y-6">
@@ -27,11 +34,12 @@ export default function Footer() {
 
           {/* Nav links */}
           <div className="flex flex-wrap items-center justify-center gap-6 font-semibold text-slate-300 text-xs">
-            <a href="#comparison" className="hover:text-emerald-400 transition-colors">Comparison</a>
-            <a href="#results" className="hover:text-emerald-400 transition-colors">Patient Journey</a>
-            <a href="#packages" className="hover:text-emerald-400 transition-colors">Packages</a>
-            <a href="#recovery-roadmap" className="hover:text-emerald-400 transition-colors">Recovery Timeline</a>
-            <a href="#faq" className="hover:text-emerald-400 transition-colors">FAQ</a>
+            <a href="#comparison" className="hover:text-emerald-400 transition-colors">{link1}</a>
+            <a href="#results" className="hover:text-emerald-400 transition-colors">{link2}</a>
+            <a href="#packages" className="hover:text-emerald-400 transition-colors">{link3}</a>
+            <a href="#graft-guide" className="hover:text-emerald-400 transition-colors">{link5}</a>
+            <a href="#recovery-roadmap" className="hover:text-emerald-400 transition-colors">{link4}</a>
+            <a href="#faq" className="hover:text-emerald-400 transition-colors">{link6}</a>
           </div>
 
           {/* Contact Direct */}

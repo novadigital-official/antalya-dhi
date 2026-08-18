@@ -47,8 +47,12 @@ export default function CompetitorBenchmarkFeatures() {
     tr: 'Operasyon sonrasında uygulanan konsantre PRP ve mezoterapi seansı ile saç köklerinin iyileşme süreci desteklenir.'
   }[lang as Lang] || 'Autologous PRP application combined with targeted mesotherapy to support tissue recovery and early graft nourishment.';
 
+  const atpTag = { tr: 'ATP Canlılık Koruması', en: 'ATP Preservation', fr: 'Conservation ATP' }[lang as Lang] || 'ATP Preservation';
+  const singleUseTag = { tr: '%100 Tek Kullanımlık', en: '100% Single-Use', fr: '100% Usage Unique' }[lang as Lang] || '100% Single-Use';
+  const careTag = { tr: '12 Ay Medikal Takip', en: '12-Month Care', fr: 'Suivi 12 Mois' }[lang as Lang] || '12-Month Care';
+
   return (
-    <section id="medical-standards" className="py-14 sm:py-18 bg-white border-b border-slate-200/80 relative">
+    <section id="medical-standards" className="py-14 sm:py-18 bg-white border-b border-slate-200/80 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Section Header */}
@@ -64,7 +68,7 @@ export default function CompetitorBenchmarkFeatures() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
           
           {/* CARD 1: NEEDLE-FREE ANESTHESIA (2 cols — Emerald Gradient Card) */}
-          <div className="md:col-span-2 bg-emerald-luxury text-white rounded-3xl p-7 shadow-lg flex flex-col justify-between relative overflow-hidden card-hover-soft border border-emerald-500/30">
+          <div className="md:col-span-2 bg-emerald-luxury text-white rounded-3xl p-6 sm:p-7 shadow-lg flex flex-col justify-between relative overflow-hidden card-hover-soft border border-emerald-500/30">
             <div className="space-y-3 relative z-10">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-400/40 text-emerald-300 text-xs font-bold">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
@@ -104,7 +108,7 @@ export default function CompetitorBenchmarkFeatures() {
 
             <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-600">
               <span>{lang === 'tr' ? 'Greft Canlılığı' : 'Graft Viability'}</span>
-              <span className="text-emerald-700 font-extrabold">ATP Preservation</span>
+              <span className="text-emerald-700 font-extrabold">{atpTag}</span>
             </div>
           </div>
 
@@ -124,12 +128,12 @@ export default function CompetitorBenchmarkFeatures() {
 
             <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-600">
               <span>{lang === 'tr' ? 'Sterilite Standardı' : 'Sterility Standard'}</span>
-              <span className="text-emerald-700 font-extrabold">100% Single-Use</span>
+              <span className="text-emerald-700 font-extrabold">{singleUseTag}</span>
             </div>
           </div>
 
           {/* CARD 4: PRP AFTERCARE (2 cols) */}
-          <div className="md:col-span-2 bg-slate-900 text-white rounded-3xl p-7 shadow-lg flex flex-col justify-between relative overflow-hidden card-hover-soft border border-slate-800">
+          <div className="md:col-span-2 bg-slate-900 text-white rounded-3xl p-6 sm:p-7 shadow-lg flex flex-col justify-between relative overflow-hidden card-hover-soft border border-slate-800">
             <div className="space-y-3">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-emerald-400 text-xs font-bold">
                 <HeartHandshake className="w-4 h-4" />
@@ -149,7 +153,7 @@ export default function CompetitorBenchmarkFeatures() {
               <span>{lang === 'tr' ? 'Ameliyat Sonrası Bakım' : 'Post-Op Follow-up'}</span>
               <span className="text-emerald-400 font-extrabold flex items-center gap-1">
                 <Check className="w-4 h-4" />
-                <span>{lang === 'tr' ? '12 Ay Medikal Takip' : '12-Month Care'}</span>
+                <span>{careTag}</span>
               </span>
             </div>
           </div>

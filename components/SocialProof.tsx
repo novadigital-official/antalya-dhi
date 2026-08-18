@@ -19,10 +19,15 @@ export default function SocialProof() {
     tr: 'Antalya\'daki anlaşmalı sağlık kuruluşlarımızda DHI tedavisi olan Avrupalı hastalarımızın deneyimleri.',
   }[lang as Lang] || 'Verified testimonials from European patients.';
 
+  const flight1 = { tr: '4s 10dk direkt uçuş', en: '4h 10m direct', fr: '4h 10m direct' }[lang as Lang] || '4h 10m direct';
+  const flight2 = { tr: '3s 45dk direkt uçuş', en: '3h 45m direct', fr: '3h 45m direct' }[lang as Lang] || '3h 45m direct';
+  const flight3 = { tr: '3s 25dk direkt uçuş', en: '3h 25m direct', fr: '3h 25m direct' }[lang as Lang] || '3h 25m direct';
+  const verifiedBadge = { tr: 'Doğrulanmış Tedavi', en: 'Verified Stay', fr: 'Séjour Vérifié' }[lang as Lang] || 'Verified Stay';
+
   const reviews = [
     {
       route: 'London (LHR) ➔ Antalya (AYT)',
-      flight: '4h 10m direct',
+      flight: flight1,
       patient: { en: 'Patient, 41 · Tech Consultant (UK)', fr: 'Patient, 41 ans · Consultant (UK)', tr: 'Hasta, 41 · Danışman (İngiltere)' },
       rating: 5,
       text: {
@@ -30,11 +35,11 @@ export default function SocialProof() {
         fr: '"J\'étais réticent à voyager à l\'étranger pour cette intervention, mais la prise en charge de la prise de contact jusqu\'à l\'hôtel était irréprochable. Huit mois après l\'opération, la densité et la ligne frontale sont parfaites."',
         tr: '"Yurt dışında böyle bir işlem için seyahat etmek konusunda endişeliydim, ancak ilk temastan otele yerleşime kadar koordinasyon kusursuzdu. 8. ayda saç çizgim ve yoğunluk tamamen doğal görünüyor."',
       },
-      grafts: '3,800 Grafts · VIP Experience'
+      grafts: { tr: '3.800 Greft · VIP Paket', en: '3,800 Grafts · VIP Experience', fr: '3 800 Greffons · Forfait VIP' }
     },
     {
       route: 'Paris (CDG) ➔ Antalya (AYT)',
-      flight: '3h 45m direct',
+      flight: flight2,
       patient: { en: 'Patient, 36 · Architect (France)', fr: 'Patient, 36 ans · Architecte (France)', tr: 'Hasta, 36 · Mimar (Fransa)' },
       rating: 5,
       text: {
@@ -42,11 +47,11 @@ export default function SocialProof() {
         fr: '"J\'ai comparé des cliniques à travers l\'Europe pendant des mois. La différence de prix pour le DHI à Antalya est significative, mais ce qui m\'a convaincu c\'est la qualité clinique — stylos Choi à usage unique et suivi de 12 mois."',
         tr: '"Aylarca Avrupa\'daki klinikleri karşılaştırdım. Antalya\'da DHI için fiyat avantajı çok büyük, ancak beni ikna eden klinik kaliteydi — tek kullanımlık Choi kalemleri ve 12 aylık takip protokolü."',
       },
-      grafts: '4,200 Grafts · VIP Experience'
+      grafts: { tr: '4.200 Greft · VIP Paket', en: '4,200 Grafts · VIP Experience', fr: '4 200 Greffons · Forfait VIP' }
     },
     {
       route: 'Frankfurt (FRA) ➔ Antalya (AYT)',
-      flight: '3h 25m direct',
+      flight: flight3,
       patient: { en: 'Patient, 44 · Executive (Germany)', fr: 'Patient, 44 ans · Cadre (Allemagne)', tr: 'Hasta, 44 · Yönetici (Almanya)' },
       rating: 5,
       text: {
@@ -54,12 +59,12 @@ export default function SocialProof() {
         fr: '"L\'option DHI sans rasage était essentielle professionnellement. L\'anesthésie par jet-injection était indolore et j\'ai repris le travail à Francfort en quatre jours. Établissement agréé et soins de premier ordre."',
         tr: '"Traşsız DHI seçeneği benim için iş hayatım açısından önemliydi. Basınçlı anestezi gerçekten konforluydu ve 4 gün sonra işimin başındaydım. Tertemiz hastane ve üst düzey ilgi."',
       },
-      grafts: '3,200 Grafts · Standard Package'
+      grafts: { tr: '3.200 Greft · Standart Paket', en: '3,200 Grafts · Standard Package', fr: '3 200 Greffons · Forfait Standard' }
     }
   ];
 
   return (
-    <section id="reviews" className="py-14 sm:py-18 bg-[#FAFBFC] border-b border-slate-200/80 relative">
+    <section id="reviews" className="py-14 sm:py-18 bg-[#FAFBFC] border-b border-slate-200/80 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Section Header */}
@@ -99,7 +104,7 @@ export default function SocialProof() {
                     <div className="text-xs sm:text-sm font-bold text-slate-900">{r.patient[lang as Lang] || r.patient['en']}</div>
                     <div className="text-[11px] text-emerald-600 flex items-center gap-1 mt-0.5 font-medium">
                       <CheckCircle2 className="w-3 h-3" />
-                      <span>Verified Stay</span>
+                      <span>{verifiedBadge}</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-0.5 text-amber-400">
@@ -118,7 +123,7 @@ export default function SocialProof() {
               {/* Grafts tag */}
               <div className="pt-3 border-t border-slate-100">
                 <div className="text-[11px] font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-xl text-center">
-                  {r.grafts}
+                  {r.grafts[lang as Lang] || r.grafts['en']}
                 </div>
               </div>
             </div>
@@ -130,7 +135,7 @@ export default function SocialProof() {
           <div className="space-y-0.5">
             <div className="font-heading font-black text-2xl sm:text-3xl text-amber-300">4.9 / 5.0</div>
             <div className="text-xs text-emerald-200/80 font-medium">
-              {lang === 'tr' ? 'Ortalama Hasta Puanı' : 'Average Verified Rating'}
+              {lang === 'tr' ? 'Ortalama Hasta Puanı' : lang === 'fr' ? 'Note Moyenne Vérifiée' : 'Average Verified Rating'}
             </div>
           </div>
 
@@ -139,16 +144,16 @@ export default function SocialProof() {
           <div className="space-y-0.5">
             <div className="font-heading font-black text-2xl sm:text-3xl text-white">5,000+</div>
             <div className="text-xs text-emerald-200/80 font-medium">
-              {lang === 'tr' ? 'Tamamlanan DHI Operasyonu' : 'Completed DHI Procedures'}
+              {lang === 'tr' ? 'Tamamlanan DHI Operasyonu' : lang === 'fr' ? 'Greffes DHI Réalisées' : 'Completed DHI Procedures'}
             </div>
           </div>
 
           <div className="hidden sm:block w-px h-8 bg-emerald-700/50" />
 
           <div className="space-y-0.5">
-            <div className="font-heading font-black text-2xl sm:text-3xl text-emerald-300">35+ Countries</div>
+            <div className="font-heading font-black text-2xl sm:text-3xl text-emerald-300">35+ {lang === 'tr' ? 'Ülke' : lang === 'fr' ? 'Pays' : 'Countries'}</div>
             <div className="text-xs text-emerald-200/80 font-medium">
-              {lang === 'tr' ? 'Uluslararası Hasta Portföyü' : 'International Patients'}
+              {lang === 'tr' ? 'Uluslararası Hasta Portföyü' : lang === 'fr' ? 'Patients Internationaux' : 'International Patients'}
             </div>
           </div>
         </div>
