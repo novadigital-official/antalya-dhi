@@ -7,39 +7,39 @@ export default function VIPPackageDetails() {
   const { lang } = useSiteContext();
 
   const title = {
-    en: 'Your VIP Journey — From Airport to Recovery',
-    fr: 'Votre Parcours VIP — De l\'Aéroport à la Récupération',
-    tr: 'VIP Yolculuğunuz — Havaalanından İyileşmeye',
-  }[lang as Lang] || 'Your VIP Journey — From Airport to Recovery';
+    en: 'Your VIP Journey — From Arrival to Recovery',
+    fr: 'Votre Parcours VIP — De l\'Arrivée à la Récupération',
+    tr: 'VIP Yolculuğunuz — Karşılamadan İyileşmeye',
+  }[lang as Lang] || 'Your VIP Journey — From Arrival to Recovery';
 
   const steps = {
     en: [
-      { title: 'Airport VIP Pickup', desc: 'Mercedes Vito private transfer from Antalya Airport' },
-      { title: 'Luxury Hotel Check-In', desc: '4/5-Star hotel with breakfast included' },
-      { title: 'Clinic Consultation', desc: 'Detailed hair analysis and custom DHI plan with your surgeon' },
-      { title: 'DHI Procedure Day', desc: 'Full DHI operation with multilingual coordinator present' },
-      { title: 'Recovery & City Tour', desc: 'Post-op care instructions, medications, and complimentary Antalya city tour' },
+      { title: 'Airport VIP Pickup', desc: 'Mercedes Vito private transfer from Antalya Airport directly to your hotel' },
+      { title: 'Luxury Hotel Stay', desc: 'Comfortable accommodation with breakfast included' },
+      { title: 'Hospital Consultation', desc: 'Detailed scalp analysis, hairline design, and doctor consultation at licensed clinic' },
+      { title: 'DHI Procedure Day', desc: 'Full DHI operation by certified surgical team with personal multilingual coordinator' },
+      { title: 'Post-Op Care & Recovery', desc: 'First hair wash demonstration, medical aftercare kit, and relaxation in Antalya' },
     ],
     fr: [
-      { title: 'Accueil VIP à l\'Aéroport', desc: 'Transfert privé en Mercedes Vito depuis l\'aéroport d\'Antalya' },
-      { title: 'Arrivée à l\'Hôtel de Luxe', desc: 'Hôtel 4/5 étoiles avec petit-déjeuner inclus' },
-      { title: 'Consultation à la Clinique', desc: 'Analyse capillaire détaillée et plan DHI personnalisé avec votre chirurgien' },
-      { title: 'Jour de l\'Intervention DHI', desc: 'Opération DHI complète avec coordinateur multilingue présent' },
-      { title: 'Récupération et Visite de la Ville', desc: 'Instructions post-opératoires, médicaments et visite guidée offerte d\'Antalya' },
+      { title: 'Accueil VIP à l\'Aéroport', desc: 'Transfert privé en Mercedes Vito depuis l\'aéroport d\'Antalya jusqu\'à l\'hôtel' },
+      { title: 'Séjour en Hôtel de Luxe', desc: 'Hébergement confortable avec petit-déjeuner inclus' },
+      { title: 'Consultation Hospitalière', desc: 'Analyse capillaire détaillée et dessin de la ligne frontale avec le médecin' },
+      { title: 'Jour de l\'Intervention DHI', desc: 'Opération DHI complète par l\'équipe chirurgicale avec coordinateur dédié' },
+      { title: 'Soins Post-Opératoires & Repos', desc: 'Démonstration du premier lavage, kit médical et temps de repos à Antalya' },
     ],
     tr: [
-      { title: 'Havaalanı VIP Karşılama', desc: 'Antalya Havaalanı\'ndan Mercedes Vito ile özel transfer' },
-      { title: 'Lüks Otel Girişi', desc: 'Kahvaltı dahil 4/5 Yıldızlı otel konaklaması' },
-      { title: 'Klinik Muayenesi', desc: 'Doktorunuzla detaylı saç analizi ve özel DHI planlaması' },
-      { title: 'DHI Operasyon Günü', desc: 'Çok dilli koordinatör eşliğinde tam DHI operasyonu' },
-      { title: 'İyileşme ve Şehir Turu', desc: 'Operasyon sonrası bakım talimatları, ilaçlar ve ücretsiz Antalya şehir turu' },
+      { title: 'Havaalanı VIP Karşılama', desc: 'Antalya Havalimanı\'ndan Mercedes Vito ile otele konforlu transfer' },
+      { title: 'Otel Konaklaması', desc: 'Kahvaltı dahil konforlu otel konaklaması' },
+      { title: 'Hastane & Hekim Muayenesi', desc: 'Anlaşmalı hastanede doktorla detaylı saç analizi ve ön çizgi planlaması' },
+      { title: 'DHI Operasyon Günü', desc: 'Uzman cerrahi kadro ve çok dilli koordinatör eşliğinde DHI operasyonu' },
+      { title: 'Operasyon Sonrası Bakım & Dinlenme', desc: 'İlk medikal yıkama eğitimi, bakım kiti teslimi ve dinlenme süreci' },
     ],
   }[lang as Lang] || [
-    { title: 'Airport VIP Pickup', desc: 'Mercedes Vito private transfer from Antalya Airport' },
-    { title: 'Luxury Hotel Check-In', desc: '4/5-Star hotel with breakfast included' },
-    { title: 'Clinic Consultation', desc: 'Detailed hair analysis and custom DHI plan with your surgeon' },
-    { title: 'DHI Procedure Day', desc: 'Full DHI operation with multilingual coordinator present' },
-    { title: 'Recovery & City Tour', desc: 'Post-op care instructions, medications, and complimentary Antalya city tour' },
+    { title: 'Airport VIP Pickup', desc: 'Mercedes Vito private transfer from Antalya Airport directly to your hotel' },
+    { title: 'Luxury Hotel Stay', desc: 'Comfortable accommodation with breakfast included' },
+    { title: 'Hospital Consultation', desc: 'Detailed scalp analysis, hairline design, and doctor consultation at licensed clinic' },
+    { title: 'DHI Procedure Day', desc: 'Full DHI operation by certified surgical team with personal multilingual coordinator' },
+    { title: 'Post-Op Care & Recovery', desc: 'First hair wash demonstration, medical aftercare kit, and relaxation in Antalya' },
   ];
 
   return (
@@ -58,7 +58,7 @@ export default function VIPPackageDetails() {
                 </div>
                 <div>
                   <h3 className="font-black text-sm text-slate-900">{step.title}</h3>
-                  <p className="text-xs text-slate-600 mt-1">{step.desc}</p>
+                  <p className="text-xs text-slate-500 font-medium mt-0.5">{step.desc}</p>
                 </div>
               </div>
             ))}
