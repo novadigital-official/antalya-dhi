@@ -1,86 +1,162 @@
 @import "tailwindcss";
 
 :root {
-  --font-serif: var(--font-serif);
-  --font-heading: var(--font-heading);
-  --font-sans: var(--font-sans);
+  --stone: #EFE7D8;
+  --stone-deep: #E4D9C4;
+  --ink: #17231C;
+  --ink-soft: #4A5A4D;
+  --bronze: #A9662F;
+  --bronze-light: #D89A5D;
+  --sage: #6E7F63;
+  --card: #FBF8F1;
+  --line: rgba(23, 35, 28, 0.12);
+  --white: #FFFFFF;
 
-  /* Mediterranean Travertine & Warm Copper Luxury Palette */
-  --color-travertine-ivory: #FBF9F5;
-  --color-travertine-stone: #F3EFEA;
-  --color-travertine-border: #E6DFD5;
-  
-  --color-obsidian-charcoal: #161412;
-  --color-obsidian-card: #211E1B;
-  --color-obsidian-border: #332E2A;
-  
-  --color-copper: #C28251;
-  --color-copper-dark: #A36538;
-  --color-copper-light: #E8C5A8;
-  
-  --color-emerald-action: #059669;
+  --font-fraunces: var(--font-fraunces);
+  --font-work-sans: var(--font-work-sans);
+  --font-ibm-mono: var(--font-ibm-mono);
 }
 
 html {
   scroll-behavior: smooth;
-  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #FBF9F5;
+  background-color: var(--stone);
 }
 
 body {
-  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #FBF9F5;
-  color: #1C1917;
+  background: var(--stone);
+  color: var(--ink);
+  font-family: var(--font-work-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
 }
 
-/* Editorial Serif Headings */
-h1, h2, h3, .font-editorial {
-  font-family: var(--font-serif), Georgia, Cambria, serif;
-  letter-spacing: -0.02em;
+/* Headings with Fraunces */
+h1, h2, h3, .font-serif, .logo {
+  font-family: var(--font-fraunces), serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
 }
 
-/* Subtle Shimmer for Copper Elements */
-.copper-gradient {
-  background: linear-gradient(135deg, #C28251 0%, #D49A70 50%, #A36538 100%);
+/* Monospace with IBM Plex Mono */
+.mono, .eyebrow, .price-tag, .plan-tag, .testi-route, .testi-graft, .font-mono {
+  font-family: var(--font-ibm-mono), monospace;
 }
 
-.copper-text-gradient {
-  background: linear-gradient(135deg, #D49A70 0%, #C28251 50%, #A36538 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Signature Eyebrow with leading rule */
+.eyebrow {
+  font-family: var(--font-ibm-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 14px;
+  height: 1px;
+  background: var(--bronze);
+  display: inline-block;
+}
+
+/* Custom Buttons matching HTML */
+.btn-stone-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 28px;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  background: var(--ink);
+  color: var(--stone);
+  border: 1px solid var(--ink);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.btn-stone-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(23, 35, 28, 0.25);
+}
+
+.btn-stone-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 28px;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  transition: border-color .2s ease, transform .2s ease;
+}
+
+.btn-stone-ghost:hover {
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.btn-bronze {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 28px;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  background: var(--bronze);
+  color: var(--ink);
+  border: 1px solid var(--bronze);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.btn-bronze:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(169, 102, 47, 0.35);
 }
 
 /* Micro-interaction Card Polish */
 .card-hover-lift {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
 }
 
 .card-hover-lift:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 32px -8px rgba(22, 20, 18, 0.08), 0 4px 12px -2px rgba(22, 20, 18, 0.04);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -6px rgba(23, 35, 28, 0.1);
 }
 
-::selection {
-  background-color: #C28251;
-  color: #FFFFFF;
-}
-
-/* Slim Travertine Scrollbar */
+/* Slim Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F3EFEA;
+  background: var(--stone);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4C9BC;
+  background: var(--stone-deep);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B8A896;
+  background: var(--ink-soft);
 }

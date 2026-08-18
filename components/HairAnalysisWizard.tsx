@@ -99,254 +99,237 @@ export default function HairAnalysisWizard() {
   };
 
   return (
-    <div id="analysis-wizard" className="w-full max-w-4xl mx-auto bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl min-h-[520px] flex flex-col justify-between">
-      <div>
-        {/* Step Progress Bar */}
-        <div className="flex items-center justify-between mb-8 pb-6 border-b border-slate-100">
-          <div>
-            <span className="text-[11px] font-black text-blue-600 uppercase tracking-widest block mb-1">
-              {t(lang as Lang, 'calculator.step_label')} {step} {t(lang as Lang, 'calculator.of')} 3
-            </span>
-            <h3 className="text-xl sm:text-2xl font-black text-slate-900">
-              {t(lang as Lang, 'calculator.title')}
-            </h3>
-          </div>
-
-          <div className="flex items-center gap-2">
-            {[1, 2, 3].map((s) => (
-              <div
-                key={s}
-                className={`w-8 h-8 rounded-full flex items-center justify-center font-black text-xs transition-all ${
-                  step === s
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : step > s
-                    ? 'bg-emerald-600 text-white'
-                    : 'bg-slate-100 text-slate-400'
-                }`}
-              >
-                {step > s ? '✓' : s}
-              </div>
-            ))}
-          </div>
+    <section id="analysis-wizard" className="py-20 bg-[#EFE7D8]">
+      <div className="wrap">
+        
+        {/* Section Head */}
+        <div className="max-w-xl mb-10">
+          <div className="eyebrow">{lang === 'tr' ? 'Ön Analiz' : 'Pre-Analysis'}</div>
+          <h2 className="text-3xl sm:text-4xl font-serif font-semibold text-[#17231C] mt-3.5 tracking-tight leading-snug">
+            {t(lang as Lang, 'calculator.title')}
+          </h2>
+          <p className="text-[#4A5A4D] text-base mt-3.5 leading-relaxed">
+            {t(lang as Lang, 'calculator.step3_title')}
+          </p>
         </div>
 
-        {/* STEP 1: NORWOOD HAIR LOSS STAGE */}
-        {step === 1 && (
-          <div className="space-y-6 animate-fadeIn">
-            <div>
-              <h4 className="text-sm font-black text-slate-900 uppercase tracking-wider mb-1">
-                1. {t(lang as Lang, 'calculator.step1')}
-              </h4>
-              <p className="text-xs text-slate-500 font-medium">
-                {t(lang as Lang, 'calculator.step1_desc')}
-              </p>
+        {/* Wizard Main Card */}
+        <div className="bg-[#FBF8F1] border border-[rgba(23,35,28,0.12)] rounded-[4px] p-6 sm:p-10 shadow-xs max-w-4xl">
+          
+          {/* Progress Header */}
+          <div className="flex items-center justify-between border-b border-[rgba(23,35,28,0.12)] pb-4 mb-8">
+            <div className="font-mono text-xs text-[#A9662F] font-semibold tracking-wider uppercase">
+              {t(lang as Lang, 'calculator.step_label')} {step} {t(lang as Lang, 'calculator.of')} 3
             </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {NORWOOD_LEVELS.map((n) => (
-                <button
-                  key={n.level}
-                  type="button"
-                  onClick={() => setSelectedNorwood(n.level)}
-                  className={`p-4 rounded-2xl border text-left transition-all cursor-pointer min-h-[90px] flex flex-col justify-between ${
-                    selectedNorwood === n.level
-                      ? 'border-blue-600 bg-blue-50/70 shadow-sm ring-2 ring-blue-600/20'
-                      : 'border-slate-200 bg-slate-50/50 hover:border-slate-300'
+            <div className="flex gap-1.5">
+              {[1, 2, 3].map((s) => (
+                <div
+                  key={s}
+                  className={`h-1.5 rounded-full transition-all ${
+                    s === step
+                      ? 'w-8 bg-[#A9662F]'
+                      : s < step
+                      ? 'w-4 bg-[#17231C]'
+                      : 'w-4 bg-[rgba(23,35,28,0.12)]'
                   }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-black text-sm text-slate-900">
-                      {n.title[lang as Lang] || n.title['en']}
-                    </span>
-                    {selectedNorwood === n.level && (
-                      <span className="w-4 h-4 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-black">✓</span>
-                    )}
-                  </div>
-                  <div>
-                    <span className="text-[11px] text-slate-500 font-medium block">
-                      {n.desc[lang as Lang] || n.desc['en']}
-                    </span>
-                    <span className="text-xs font-black text-blue-700 block mt-1">{n.grafts}</span>
-                  </div>
-                </button>
+                />
               ))}
             </div>
-
-            <div className="pt-4 flex justify-end">
-              <button
-                type="button"
-                onClick={() => setStep(2)}
-                className="min-h-[48px] px-8 bg-blue-600 hover:bg-blue-500 text-white font-black text-sm rounded-xl shadow-md transition-all cursor-pointer"
-              >
-                {t(lang as Lang, 'calculator.next')}
-              </button>
-            </div>
           </div>
-        )}
 
-        {/* STEP 2: PACKAGE PREFERENCE */}
-        {step === 2 && (
-          <div className="space-y-6 animate-fadeIn">
-            <div>
-              <h4 className="text-sm font-black text-slate-900 uppercase tracking-wider mb-1">
-                2. {t(lang as Lang, 'calculator.step2')}
-              </h4>
-              <p className="text-xs text-slate-500 font-medium">
-                {t(lang as Lang, 'calculator.step2_desc')}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Standard Package */}
-              <button
-                type="button"
-                onClick={() => setSelectedPackage('Standard DHI')}
-                className={`p-6 rounded-2xl border text-left transition-all cursor-pointer flex flex-col justify-between space-y-3 ${
-                  selectedPackage === 'Standard DHI'
-                    ? 'border-blue-600 bg-blue-50/70 shadow-sm ring-2 ring-blue-600/20'
-                    : 'border-slate-200 bg-slate-50/50 hover:border-slate-300'
-                }`}
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-black text-base text-slate-900">{t(lang as Lang, 'packages.standard_name')}</span>
-                  <span className="text-xs font-black text-slate-700">£1,550 (€1,800)</span>
-                </div>
-                <p className="text-xs text-slate-600 font-medium">
-                  {t(lang as Lang, 'packages.standard_desc')}
-                </p>
-              </button>
-
-              {/* VIP Experience */}
-              <button
-                type="button"
-                onClick={() => setSelectedPackage('VIP DHI Experience')}
-                className={`p-6 rounded-2xl border text-left transition-all cursor-pointer flex flex-col justify-between space-y-3 ${
-                  selectedPackage === 'VIP DHI Experience'
-                    ? 'border-blue-600 bg-slate-950 text-white shadow-md ring-2 ring-blue-500/40'
-                    : 'border-slate-200 bg-slate-50/50 hover:border-slate-300'
-                }`}
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-black text-base text-blue-400">{t(lang as Lang, 'packages.vip_name')}</span>
-                  <span className="text-xs font-black text-blue-400">£1,900 (€2,200)</span>
-                </div>
-                <p className="text-xs text-slate-300 font-medium">
-                  {t(lang as Lang, 'packages.vip_desc')}
-                </p>
-              </button>
-            </div>
-
-            <div className="pt-4 flex items-center justify-between">
-              <button
-                type="button"
-                onClick={() => setStep(1)}
-                className="min-h-[48px] px-6 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition-all cursor-pointer"
-              >
-                {t(lang as Lang, 'calculator.back')}
-              </button>
-              <button
-                type="button"
-                onClick={() => setStep(3)}
-                className="min-h-[48px] px-8 bg-blue-600 hover:bg-blue-500 text-white font-black text-sm rounded-xl shadow-md transition-all cursor-pointer"
-              >
-                {t(lang as Lang, 'calculator.next')}
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* STEP 3: CONTACT & WHATSAPP ANALYSIS */}
-        {step === 3 && (
-          <form onSubmit={handleSubmit} className="space-y-6 animate-fadeIn">
-            <div>
-              <h4 className="text-sm font-black text-slate-900 uppercase tracking-wider mb-1">
-                3. {t(lang as Lang, 'calculator.step3')}
-              </h4>
-              <p className="text-xs text-slate-500 font-medium">
-                {t(lang as Lang, 'calculator.step3_title')}
-              </p>
-            </div>
-
-            <div className="space-y-4">
+          {/* STEP 1: NORWOOD LEVEL SELECTION */}
+          {step === 1 && (
+            <div className="space-y-6">
               <div>
-                <label className="block text-xs font-bold text-slate-600 mb-1.5">
-                  {t(lang as Lang, 'calculator.name_label')}
-                </label>
-                <input
-                  type="text"
-                  placeholder={t(lang as Lang, 'calculator.name_placeholder')}
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  className="w-full bg-slate-50 border border-slate-200 text-slate-900 min-h-[48px] px-4 rounded-xl text-xs outline-none focus:border-blue-600 font-semibold"
-                />
+                <h3 className="font-serif text-xl font-semibold text-[#17231C]">
+                  {t(lang as Lang, 'calculator.step1')}
+                </h3>
+                <p className="text-xs text-[#4A5A4D] mt-1">
+                  {t(lang as Lang, 'calculator.step1_desc')}
+                </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div>
-                  <label className="block text-xs font-bold text-slate-600 mb-1.5">
-                    {t(lang as Lang, 'calculator.country_label')}
-                  </label>
-                  <select
-                    value={countryCode}
-                    onChange={handleCountryChange}
-                    className="w-full bg-slate-50 border border-slate-200 text-slate-900 min-h-[48px] px-3 rounded-xl text-xs outline-none focus:border-blue-600 font-bold"
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                {NORWOOD_LEVELS.map((nl) => (
+                  <button
+                    key={nl.level}
+                    type="button"
+                    onClick={() => setSelectedNorwood(nl.level)}
+                    className={`p-4 rounded-[4px] text-left transition-all cursor-pointer border ${
+                      selectedNorwood === nl.level
+                        ? 'border-[#A9662F] bg-[rgba(169,102,47,0.08)] shadow-xs'
+                        : 'border-[rgba(23,35,28,0.12)] bg-white hover:border-[#17231C]/40'
+                    }`}
                   >
-                    {COUNTRIES.map((c) => (
-                      <option key={c.code} value={c.code}>
-                        {c.name} ({c.code})
-                      </option>
-                    ))}
-                  </select>
+                    <div className="font-mono text-xs font-semibold text-[#A9662F]">
+                      {nl.title[lang as Lang] || nl.title['en']}
+                    </div>
+                    <div className="font-semibold text-sm text-[#17231C] mt-1">
+                      {nl.desc[lang as Lang] || nl.desc['en']}
+                    </div>
+                    <div className="font-mono text-[11px] text-[#6E7F63] font-medium mt-2">
+                      {nl.grafts}
+                    </div>
+                  </button>
+                ))}
+              </div>
+
+              <div className="pt-4 flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => setStep(2)}
+                  className="btn-stone-primary text-sm font-semibold px-8 py-3.5"
+                >
+                  <span>{t(lang as Lang, 'calculator.next')}</span>
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* STEP 2: PACKAGE PREFERENCE */}
+          {step === 2 && (
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-serif text-xl font-semibold text-[#17231C]">
+                  {t(lang as Lang, 'calculator.step2')}
+                </h3>
+                <p className="text-xs text-[#4A5A4D] mt-1">
+                  {t(lang as Lang, 'calculator.step2_desc')}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Standard */}
+                <div
+                  onClick={() => setSelectedPackage('Standard DHI')}
+                  className={`p-6 rounded-[4px] cursor-pointer border transition-all ${
+                    selectedPackage === 'Standard DHI'
+                      ? 'border-[#A9662F] bg-[rgba(169,102,47,0.08)] shadow-xs'
+                      : 'border-[rgba(23,35,28,0.12)] bg-white hover:border-[#17231C]/40'
+                  }`}
+                >
+                  <div className="font-mono text-xs text-[#A9662F] uppercase">Standard</div>
+                  <h4 className="font-serif font-semibold text-lg text-[#17231C] mt-1">Standard DHI</h4>
+                  <p className="text-xs text-[#4A5A4D] mt-1">
+                    {lang === 'tr' ? 'Yalnızca cerrahi operasyon ve medikal bakım.' : 'Surgery-focused clinical package in licensed hospital.'}
+                  </p>
                 </div>
 
-                <div className="sm:col-span-2">
-                  <label className="block text-xs font-bold text-slate-600 mb-1.5">
+                {/* VIP */}
+                <div
+                  onClick={() => setSelectedPackage('VIP DHI Experience')}
+                  className={`p-6 rounded-[4px] cursor-pointer border transition-all ${
+                    selectedPackage === 'VIP DHI Experience'
+                      ? 'border-[#A9662F] bg-[#17231C] text-[#EFE7D8] shadow-lg'
+                      : 'border-[rgba(23,35,28,0.12)] bg-[#17231C]/90 text-[#EFE7D8] opacity-80 hover:opacity-100'
+                  }`}
+                >
+                  <div className="font-mono text-xs text-[#D89A5D] uppercase">VIP Experience</div>
+                  <h4 className="font-serif font-semibold text-lg text-[#EFE7D8] mt-1">VIP Antalya All-Inclusive</h4>
+                  <p className="text-xs text-[#EFE7D8]/60 mt-1">
+                    {lang === 'tr' ? '5★ Otel konaklaması, Mercedes Vito VIP transferleri dahil.' : '5★ Luxury hotel stay and private Mercedes Vito transfers included.'}
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-4 flex justify-between">
+                <button
+                  type="button"
+                  onClick={() => setStep(1)}
+                  className="btn-stone-ghost text-xs font-semibold px-6 py-3"
+                >
+                  <span>{t(lang as Lang, 'calculator.back')}</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setStep(3)}
+                  className="btn-stone-primary text-sm font-semibold px-8 py-3.5"
+                >
+                  <span>{t(lang as Lang, 'calculator.next')}</span>
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* STEP 3: CONTACT FORM */}
+          {step === 3 && (
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <h3 className="font-serif text-xl font-semibold text-[#17231C]">
+                  {t(lang as Lang, 'calculator.step3')}
+                </h3>
+                <p className="text-xs text-[#4A5A4D] mt-1">
+                  {t(lang as Lang, 'calculator.step3_title')}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold text-[#17231C] mb-1.5">
+                    {t(lang as Lang, 'calculator.name_label')}
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder={t(lang as Lang, 'calculator.name_placeholder')}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full bg-white border border-[rgba(23,35,28,0.18)] text-[#17231C] min-h-[46px] px-4 rounded-[2px] text-xs outline-none focus:border-[#A9662F] font-medium"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-[#17231C] mb-1.5">
                     {t(lang as Lang, 'calculator.phone_label')}
                   </label>
-                  <div className="flex items-center gap-2">
-                    <span className="min-h-[48px] px-3 bg-slate-100 border border-slate-200 rounded-xl text-xs font-black text-slate-700 flex items-center justify-center">
-                      {countryCode}
-                    </span>
+                  <div className="flex gap-2">
+                    <select
+                      value={countryCode}
+                      onChange={handleCountryChange}
+                      className="bg-white border border-[rgba(23,35,28,0.18)] text-[#17231C] min-h-[46px] px-3 rounded-[2px] text-xs outline-none focus:border-[#A9662F] font-mono"
+                    >
+                      {COUNTRIES.map(c => (
+                        <option key={c.code} value={c.code}>{c.code} {c.name}</option>
+                      ))}
+                    </select>
                     <input
                       type="tel"
+                      required
                       placeholder={t(lang as Lang, 'calculator.phone_placeholder')}
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      required
-                      className="w-full bg-slate-50 border border-slate-200 text-slate-900 min-h-[48px] px-4 rounded-xl text-xs outline-none focus:border-blue-600 font-semibold"
+                      className="flex-1 bg-white border border-[rgba(23,35,28,0.18)] text-[#17231C] min-h-[46px] px-4 rounded-[2px] text-xs outline-none focus:border-[#A9662F] font-mono"
                     />
                   </div>
                 </div>
               </div>
 
-              <div className="bg-slate-50 border border-slate-200 p-3.5 rounded-2xl text-xs text-slate-700 font-medium flex items-center gap-2.5">
-                <svg className="w-4 h-4 text-slate-500 shrink-0 fill-current" viewBox="0 0 24 24">
-                  <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-                </svg>
-                <span>{t(lang as Lang, 'calculator.wa_info')}</span>
+              <div className="p-3.5 bg-[rgba(169,102,47,0.06)] border border-[rgba(169,102,47,0.2)] rounded-[2px] text-xs text-[#17231C]">
+                {t(lang as Lang, 'calculator.wa_info')}
               </div>
-            </div>
 
-            <div className="pt-2 flex items-center justify-between">
-              <button
-                type="button"
-                onClick={() => setStep(2)}
-                className="min-h-[48px] px-6 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition-all cursor-pointer"
-              >
-                {t(lang as Lang, 'calculator.back')}
-              </button>
-              <button
-                type="submit"
-                disabled={isPending}
-                className="min-h-[48px] px-8 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm rounded-xl shadow-md transition-all cursor-pointer flex items-center gap-2 active:scale-98"
-              >
-                <span>{t(lang as Lang, 'calculator.submit')}</span>
-              </button>
-            </div>
-          </form>
-        )}
+              <div className="pt-4 flex justify-between">
+                <button
+                  type="button"
+                  onClick={() => setStep(2)}
+                  className="btn-stone-ghost text-xs font-semibold px-6 py-3"
+                >
+                  <span>{t(lang as Lang, 'calculator.back')}</span>
+                </button>
+                <button
+                  type="submit"
+                  disabled={isPending || !name || !phone}
+                  className="btn-bronze text-sm font-semibold px-8 py-3.5 !text-[#17231C] disabled:opacity-50"
+                >
+                  <span>{t(lang as Lang, 'calculator.submit')}</span>
+                </button>
+              </div>
+            </form>
+          )}
+
+        </div>
+
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,69 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { useSiteContext } from '@/lib/context';
-import { t, Lang } from '@/lib/i18n';
-
-// Clean SVG Flags for Ultra-Minimal Display
-const FLAGS: { lang: Lang; label: string; flagSvg: React.ReactNode }[] = [
-  {
-    lang: 'en',
-    label: 'English',
-    flagSvg: (
-      <svg className="w-5 h-3.5 rounded-xs shadow-xs object-cover" viewBox="0 0 60 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <clipPath id="uk-clip-nav"><rect width="60" height="30" rx="2"/></clipPath>
-        <g clipPath="url(#uk-clip-nav)">
-          <rect width="60" height="30" fill="#012169"/>
-          <path d="M0 0L60 30M60 0L0 30" stroke="#FFFFFF" strokeWidth="6"/>
-          <path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" strokeWidth="4"/>
-          <path d="M30 0V30M0 15H60" stroke="#FFFFFF" strokeWidth="10"/>
-          <path d="M30 0V30M0 15H60" stroke="#C8102E" strokeWidth="6"/>
-        </g>
-      </svg>
-    )
-  },
-  {
-    lang: 'fr',
-    label: 'Français',
-    flagSvg: (
-      <svg className="w-5 h-3.5 rounded-xs shadow-xs object-cover" viewBox="0 0 3 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1" height="2" fill="#002395"/>
-        <rect x="1" width="1" height="2" fill="#FFFFFF"/>
-        <rect x="2" width="1" height="2" fill="#ED2939"/>
-      </svg>
-    )
-  },
-  {
-    lang: 'tr',
-    label: 'Türkçe',
-    flagSvg: (
-      <svg className="w-5 h-3.5 rounded-xs shadow-xs object-cover" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1200" height="800" fill="#E30A17"/>
-        <circle cx="425" cy="400" r="200" fill="#FFFFFF"/>
-        <circle cx="475" cy="400" r="160" fill="#E30A17"/>
-        <polygon points="587.5,400 706.7,438.7 633 337.3 633,462.7 706.7,361.3" fill="#FFFFFF"/>
-      </svg>
-    )
-  }
-];
+import { Lang } from '@/lib/i18n';
+import Link from 'next/link';
 
 export default function Navbar() {
   const { lang, setLang } = useSiteContext();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const nav = {
-    home: t(lang as Lang, 'nav.home'),
-    packages: t(lang as Lang, 'nav.packages'),
-    process: t(lang as Lang, 'nav.process'),
-    results: t(lang as Lang, 'nav.results'),
-    freeConsultation: t(lang as Lang, 'nav.freeConsultation'),
-  };
 
   const scrollToWizard = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -73,129 +15,54 @@ export default function Navbar() {
     }
   };
 
-  if (!mounted) {
-    return <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800/80 h-[73px]"></nav>;
-  }
+  const btnText = {
+    tr: 'Fotoğrafını Gönder',
+    en: 'Send Photos',
+    fr: 'Envoyer Photos',
+  }[lang as Lang] || 'Send Photos';
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800/80" suppressHydrationWarning>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+    <header className="sticky top-0 z-50 bg-[#EFE7D8]/90 backdrop-blur-md border-b border-[rgba(23,35,28,0.12)]">
+      <div className="max-w-[1180px] mx-auto px-6 py-4 flex items-center justify-between">
+        
+        {/* Logo */}
+        <Link href="/" className="font-serif font-semibold text-xl tracking-tight text-[#17231C] flex items-center gap-1.5">
+          <span>ANTALYA</span>
+          <span className="text-[#A9662F]">DHI</span>
+        </Link>
+
+        {/* Right Actions: Lang Switcher + Consultation CTA */}
+        <div className="flex items-center gap-4">
           
-          {/* Left: Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white font-black shadow-md border border-blue-500/30 group-hover:scale-105 transition-transform">
-                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 2C9 6 6 10 6 14C6 17.3137 8.68629 20 12 20C15.3137 20 18 17.3137 18 14C18 10 15 6 12 2Z" fill="white"/>
-                  <path d="M12 7V16M9 13L12 16L15 13" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-base sm:text-lg font-black text-white leading-none tracking-tight">ANTALYA</span>
-                <span className="text-[10px] font-extrabold text-blue-400 tracking-widest leading-none mt-0.5">DHI CLINIC</span>
-              </div>
-            </Link>
+          {/* Language Switcher */}
+          <div className="flex items-center gap-1 font-mono text-xs text-[#4A5A4D]">
+            {(['tr', 'en', 'fr'] as Lang[]).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-2 py-1 rounded-[2px] transition-colors cursor-pointer uppercase ${
+                  lang === l
+                    ? 'bg-[#17231C] text-[#EFE7D8] font-semibold'
+                    : 'hover:text-[#17231C] hover:bg-[#E4D9C4]/60'
+                }`}
+              >
+                {l}
+              </button>
+            ))}
           </div>
 
-          {/* Center: Desktop Nav Links */}
-          <div className="hidden md:flex space-x-8 text-sm">
-            <Link href="/" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.home}</Link>
-            <Link href="#results" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.results}</Link>
-            <Link href="#packages" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.packages}</Link>
-            <Link href="#process" className="text-slate-300 hover:text-white font-semibold transition-colors">{nav.process}</Link>
-          </div>
+          {/* Primary Navbar CTA */}
+          <a
+            href="#analysis-wizard"
+            onClick={scrollToWizard}
+            className="btn-stone-ghost !py-2.5 !px-4 !text-xs !font-semibold hidden sm:inline-flex"
+          >
+            <span>{btnText}</span>
+          </a>
 
-          {/* Right Section: Desktop Ultra-Minimal SVG Flag Selector (NO CURRENCY TEXT) */}
-          <div className="hidden md:flex items-center space-x-4">
-            
-            <div className="flex bg-slate-900 border border-slate-800 p-1.5 rounded-2xl gap-1.5">
-              {FLAGS.map((f) => (
-                <button
-                  key={f.lang}
-                  onClick={() => setLang(f.lang)}
-                  title={f.label}
-                  className={`w-9 h-8 rounded-xl transition-all flex items-center justify-center cursor-pointer ${
-                    lang === f.lang
-                      ? 'bg-blue-600 shadow-md ring-2 ring-blue-400/40 scale-105'
-                      : 'opacity-50 hover:opacity-100 hover:bg-slate-800'
-                  }`}
-                >
-                  {f.flagSvg}
-                </button>
-              ))}
-            </div>
-
-            {/* CTA Button */}
-            <a
-              href="#analysis-wizard"
-              onClick={scrollToWizard}
-              className="min-h-[44px] inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-xs font-black text-white bg-emerald-600 hover:bg-emerald-500 transition-all shadow-md active:scale-95 cursor-pointer"
-            >
-              {nav.freeConsultation}
-            </a>
-          </div>
-
-          {/* Mobile Right Section: DIRECT ULTRA-MINIMAL SVG FLAG SELECTOR + Hamburger */}
-          <div className="flex items-center space-x-2 md:hidden">
-            <div className="flex bg-slate-900 border border-slate-800 p-1 rounded-xl gap-1">
-              {FLAGS.map((f) => (
-                <button
-                  key={f.lang}
-                  onClick={() => setLang(f.lang)}
-                  title={f.label}
-                  className={`w-7 h-7 rounded-lg transition-all flex items-center justify-center ${
-                    lang === f.lang
-                      ? 'bg-blue-600 shadow-xs'
-                      : 'opacity-40 hover:opacity-100'
-                  }`}
-                >
-                  {f.flagSvg}
-                </button>
-              ))}
-            </div>
-
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="min-h-[44px] p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900 focus:outline-none"
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {isMobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
         </div>
+
       </div>
-
-      {/* Mobile Menu Drawer */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-slate-950 border-t border-slate-800/80 px-4 pt-3 pb-6 space-y-4">
-          <div className="flex flex-col space-y-2 text-sm font-semibold">
-            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-white bg-slate-900">{nav.home}</Link>
-            <Link href="#results" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900">{nav.results}</Link>
-            <Link href="#packages" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900">{nav.packages}</Link>
-            <Link href="#process" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-900">{nav.process}</Link>
-          </div>
-          
-          <div className="pt-4 border-t border-slate-800">
-            <a
-              href="#analysis-wizard"
-              onClick={(e) => {
-                setIsMobileMenuOpen(false);
-                scrollToWizard(e);
-              }}
-              className="min-h-[48px] w-full inline-flex items-center justify-center px-4 py-3 rounded-xl text-xs font-black text-white bg-emerald-600 hover:bg-emerald-500 shadow-md"
-            >
-              {nav.freeConsultation}
-            </a>
-          </div>
-        </div>
-      )}
-    </nav>
+    </header>
   );
 }

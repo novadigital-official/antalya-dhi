@@ -1,34 +1,34 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Fraunces, Work_Sans, IBM_Plex_Mono } from "next/font/google";
 import JsonLd from '@/components/JsonLd';
 import { SiteProvider } from '@/lib/context';
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-serif',
-  display: 'swap',
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['500', '600', '700', '800'],
-  variable: '--font-heading',
-  display: 'swap',
-});
-
-const inter = Inter({
+const fraunces = Fraunces({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-sans',
+  variable: '--font-fraunces',
+  display: 'swap',
+});
+
+const workSans = Work_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-work-sans',
+  display: 'swap',
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-ibm-mono',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "Antalya DHI Hair Restoration | Luxury Patient Concierge & Coordination",
-  description: "Surgeon-guided DHI hair restoration in Antalya, Turkey. Bespoke Mediterranean medical concierge, licensed partner surgical facilities, and all-inclusive transparent packages.",
-  keywords: "Antalya DHI hair transplant, Luxury hair restoration Turkey, Choi pen hair transplant Antalya, Harley street alternative hair transplant",
+  title: "Antalya DHI Clinic — Doktor Kontrollü Saç Restorasyonu",
+  description: "Avrupa'dan gelen hastalar için VIP transfer, otel konaklaması ve medikal koordinasyonu tek pakette birleştiren, doktor kontrollü DHI programı.",
+  keywords: "Antalya DHI hair transplant, DHI hair restoration Turkey, Choi pen hair transplant Antalya",
   metadataBase: new URL('https://antalyadhi.com'),
   alternates: {
     canonical: 'https://antalyadhi.com',
@@ -44,36 +44,20 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Antalya DHI Hair Restoration | Luxury Patient Concierge',
-    description: 'Surgeon-guided DHI hair transplant in Antalya. All-inclusive luxury stay, VIP Mercedes transfers, and 12-month post-op care.',
+    title: 'Antalya DHI Clinic — Doktor Kontrollü Saç Restorasyonu',
+    description: 'Şeffaf paket fiyatları, 5 yıldızlı otel konaklaması ve VIP transfer ile doktor kontrollü DHI saç ekimi koordinasyonu.',
     url: 'https://antalyadhi.com',
-    siteName: 'Antalya DHI Luxury Concierge',
-    locale: 'en_GB',
+    siteName: 'Antalya DHI Clinic',
+    locale: 'tr_TR',
     type: 'website',
     images: [
       {
         url: 'https://antalyadhi.com/favicon.svg',
         width: 1200,
         height: 630,
-        alt: 'Antalya DHI Hair Restoration',
+        alt: 'Antalya DHI Clinic',
       },
     ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Antalya DHI Hair Restoration | Luxury Patient Concierge',
-    description: 'Bespoke DHI hair restoration in Antalya. Licensed partner surgical facilities, transparent rates, VIP concierge.',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
 };
 
@@ -83,8 +67,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${plusJakartaSans.variable} ${inter.variable}`} suppressHydrationWarning>
-      <body className="font-sans antialiased bg-[#FBF9F5] text-[#1C1917]" suppressHydrationWarning>
+    <html lang="tr" className={`${fraunces.variable} ${workSans.variable} ${ibmPlexMono.variable}`} suppressHydrationWarning>
+      <body className="antialiased bg-[#EFE7D8] text-[#17231C] font-sans selection:bg-[#A9662F] selection:text-[#EFE7D8]" suppressHydrationWarning>
         <SiteProvider>
           <JsonLd />
           {children}

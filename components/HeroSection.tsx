@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useSiteContext } from '@/lib/context';
 import { t, Lang } from '@/lib/i18n';
 import { PRICES, formatPrice } from '@/lib/currency';
-import { ArrowRight, MessageSquare, ShieldCheck, Check } from 'lucide-react';
+import DensityField from './DensityField';
 
 export default function HeroSection() {
   const { lang, currency } = useSiteContext();
@@ -14,7 +14,7 @@ export default function HeroSection() {
     setMounted(true);
   }, []);
 
-  const priceFormatted = mounted ? formatPrice(PRICES.standard[currency], currency) : '£1,550';
+  const priceFormatted = mounted ? formatPrice(PRICES.standard[currency], currency) : '₺90.000';
 
   const scrollToWizard = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -32,106 +32,103 @@ export default function HeroSection() {
       : 'Hello, I am contacting you via your official Antalya DHI Clinic website. I would like to get a free scalp analysis and doctor evaluation.'
   )}`;
 
+  const eyebrowText = {
+    tr: 'T.C. Sağlık Bakanlığı Ruhsatlı Anlaşmalı Klinikler · 12+ Yıl Cerrahi Deneyim',
+    en: 'T.C. Ministry of Health Licensed Facilities · 12+ Years Surgical Practice',
+    fr: 'Établissements Agréés par le Ministère de la Santé · 12+ Ans de Pratique',
+  }[lang as Lang] || 'T.C. Ministry of Health Licensed Facilities · 12+ Years Experience';
+
+  const priceLabel = {
+    tr: 'Şeffaf paket fiyatı — gizli maliyet yok',
+    en: 'Transparent all-inclusive rate — zero hidden costs',
+    fr: 'Tarif forfaitaire transparent — aucun frais caché',
+  }[lang as Lang] || 'Transparent all-inclusive rate — zero hidden costs';
+
+  const ctaPrimary = {
+    tr: 'Saç Analizini Başlat →',
+    en: 'Start Hair Analysis →',
+    fr: 'Démarrer l\'Analyse →',
+  }[lang as Lang] || 'Start Hair Analysis →';
+
+  const ctaSecondary = {
+    tr: 'WhatsApp ile Ön Değerlendirme',
+    en: 'WhatsApp Evaluation',
+    fr: 'Évaluation via WhatsApp',
+  }[lang as Lang] || 'WhatsApp Evaluation';
+
+  const cred1 = { tr: 'Uluslararası hasta koordinasyonu', en: 'International patient coordination', fr: 'Coordination patient internationale' }[lang as Lang] || 'International coordination';
+  const cred2 = { tr: 'İngilizce & Fransızca destek', en: 'Native English & French support', fr: 'Support en Français & Anglais' }[lang as Lang] || 'English & French support';
+  const cred3 = { tr: 'Sertifikalı DHI cerrahi ekibi', en: 'Certified DHI surgical team', fr: 'Équipe chirurgicale DHI certifiée' }[lang as Lang] || 'Certified surgical team';
+
   return (
-    <section className="relative w-full bg-[#161412] text-white pt-28 pb-16 md:pt-36 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-[#332E2A]">
-      {/* Subtle Travertine & Warm Light Gradients */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#161412] via-[#161412] to-[#1F1C19] pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#C28251]/10 blur-[130px] rounded-full pointer-events-none" />
-
-      <div className="relative max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section className="pt-16 pb-10 sm:pt-20 sm:pb-14 relative overflow-hidden bg-[#EFE7D8]">
+      <div className="wrap">
         
-        {/* Left Column: Editorial Luxury Headline & Single High-Authority Signal */}
-        <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-          
-          {/* Single Understated Authority Signal — zero badge inflation */}
-          <div className="inline-flex items-center gap-2 text-xs font-medium text-[#D49A70] tracking-wider uppercase border-b border-[#C28251]/30 pb-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C28251]" />
-            <span>{lang === 'tr' ? '12+ Yıl Cerrahi Uzmanlık · 5.000+ Başarılı DHI Operasyonu' : '12+ Years Surgical Excellence · 5,000+ Completed DHI Procedures'}</span>
-          </div>
-
-          {/* H1: Editorial Serif Headline */}
-          <h1 className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-editorial font-normal tracking-tight text-white leading-[1.12]">
-            {lang === 'fr' ? (
-              <>L&apos;Art de la Greffe DHI <span className="italic text-[#D49A70]">sous Contrôle Médical</span> à Antalya</>
-            ) : lang === 'tr' ? (
-              <>Antalya&apos;da <span className="italic text-[#D49A70]">Doktor Kontrollü</span> Lüks DHI Saç Restorasyonu</>
-            ) : (
-              <>The Art of Natural Hair Restoration <span className="italic text-[#D49A70]">in Antalya</span></>
-            )}
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-stone-300 text-base sm:text-lg leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
-            {t(lang as Lang, 'hero.subtitle')}
-          </p>
-
-          {/* Single Transparent Price Anchor */}
-          {mounted && (
-            <div className="pt-1">
-              <div className="inline-flex items-center gap-2 text-xs text-stone-400 font-medium">
-                <span>{lang === 'tr' ? 'Şeffaf Paket Başlangıcı:' : lang === 'fr' ? 'Forfait Tout Compris dès:' : 'All-Inclusive Packages from:'}</span>
-                <span className="text-[#E8C5A8] font-bold text-sm tracking-tight">{priceFormatted}</span>
-                <span className="text-stone-500">· {lang === 'tr' ? 'Otel ve VIP Transfer Dahil' : 'VIP Transfer & 5-Star Stay Included'}</span>
-              </div>
-            </div>
-          )}
-
-          {/* Primary High-Ticket Consultation Action (Warm Copper CTA) */}
-          <div className="pt-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 max-w-lg mx-auto lg:mx-0">
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto min-h-[52px] px-8 py-3.5 bg-[#C28251] hover:bg-[#A36538] text-white font-bold text-sm rounded-xl shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer active:scale-98"
-            >
-              <MessageSquare className="w-4 h-4" />
-              <span>{t(lang as Lang, 'hero.cta_whatsapp')}</span>
-            </a>
-
-            <a
-              href="#analysis-wizard"
-              onClick={scrollToWizard}
-              className="w-full sm:w-auto min-h-[52px] px-6 py-3.5 border border-[#4D453E] hover:border-[#C28251] text-stone-200 hover:text-white font-medium text-xs rounded-xl transition-all flex items-center justify-center gap-2"
-            >
-              <span>{t(lang as Lang, 'hero.cta_analysis')}</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#D49A70]" />
-            </a>
-          </div>
-
+        {/* Eyebrow with leading rule */}
+        <div className="eyebrow mb-6">
+          {eyebrowText}
         </div>
 
-        {/* Right Column: Clean Visual Trust Photo */}
-        <div className="lg:col-span-5 space-y-4">
-          <div className="relative rounded-3xl overflow-hidden border border-[#332E2A] shadow-2xl bg-[#211E1B] group">
-            <img
-              src="/images/clinic-consultation.jpg"
-              alt="Antalya DHI Medical Consultation"
-              className="w-full h-[360px] sm:h-[420px] object-cover group-hover:scale-103 transition-transform duration-700 opacity-90"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#161412] via-[#161412]/30 to-transparent flex flex-col justify-end p-6">
-              <h3 className="font-editorial text-lg sm:text-xl text-white leading-tight">
-                {lang === 'tr' ? 'Birebir Hekim Muayenesi & Ön Saç Çizgisi Tasarımı' : 'In-Person Surgeon Consultation & Hairline Artistry'}
-              </h3>
-              <p className="text-xs text-stone-300 font-normal mt-1">
-                {lang === 'tr' ? 'T.C. Sağlık Bakanlığı ruhsatlı anlaşmalı sağlık kuruluşlarında steril operasyon.' : 'Procedures performed in licensed healthcare facilities in Antalya, Turkey.'}
-              </p>
-            </div>
-          </div>
+        {/* Main H1 Headline with Fraunces & Italic Bronze */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-semibold text-[#17231C] leading-[1.06] max-w-3xl tracking-tight">
+          {lang === 'fr' ? (
+            <>Restaurez la densité de vos cheveux de manière <em className="italic text-[#A9662F]">mesurable</em>.</>
+          ) : lang === 'tr' ? (
+            <>Saçının yoğunluğunu<br /><em className="italic text-[#A9662F]">ölçülebilir</em> şekilde geri kazan.</>
+          ) : (
+            <>Restore your hair density with <em className="italic text-[#A9662F]">measurable</em> precision.</>
+          )}
+        </h1>
 
-          {/* 3 Minimalist Provenance Tags */}
-          <div className="grid grid-cols-3 gap-2 text-[11px] font-medium text-stone-300">
-            <div className="bg-[#211E1B] border border-[#332E2A] p-2.5 rounded-xl text-center">
-              <span className="text-[#D49A70] block font-bold">100%</span>
-              <span className="text-[10px] text-stone-400">Choi Pen DHI</span>
-            </div>
-            <div className="bg-[#211E1B] border border-[#332E2A] p-2.5 rounded-xl text-center">
-              <span className="text-[#D49A70] block font-bold">VIP</span>
-              <span className="text-[10px] text-stone-400">Mercedes Transfer</span>
-            </div>
-            <div className="bg-[#211E1B] border border-[#332E2A] p-2.5 rounded-xl text-center">
-              <span className="text-[#D49A70] block font-bold">12 Mo.</span>
-              <span className="text-[10px] text-stone-400">Medical Follow-up</span>
-            </div>
+        {/* Lead Subtitle */}
+        <p className="mt-5 text-base sm:text-lg text-[#4A5A4D] max-w-xl leading-relaxed">
+          {t(lang as Lang, 'hero.subtitle')}
+        </p>
+
+        {/* Actions */}
+        <div className="mt-8 flex flex-wrap items-center gap-3.5">
+          <a
+            href="#analysis-wizard"
+            onClick={scrollToWizard}
+            className="btn-stone-primary text-sm sm:text-base font-semibold px-7 py-4"
+          >
+            <span>{ctaPrimary}</span>
+          </a>
+
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-stone-ghost text-sm sm:text-base font-semibold px-7 py-4"
+          >
+            <span>{ctaSecondary}</span>
+          </a>
+        </div>
+
+        {/* Monospace Price Tag */}
+        {mounted && (
+          <div className="mt-7 flex items-baseline gap-2.5 font-mono">
+            <span className="text-xl sm:text-2xl font-semibold text-[#17231C]">{priceFormatted}&apos;den</span>
+            <span className="text-xs text-[#4A5A4D] uppercase tracking-wider">{priceLabel}</span>
+          </div>
+        )}
+
+        {/* 48x16 Follicle Density Field */}
+        <DensityField />
+
+        {/* Credential Strip with Sage Badges */}
+        <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-[#4A5A4D] font-medium">
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6E7F63]" />
+            <span>{cred1}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6E7F63]" />
+            <span>{cred2}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6E7F63]" />
+            <span>{cred3}</span>
           </div>
         </div>
 
