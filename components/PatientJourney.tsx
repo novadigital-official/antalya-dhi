@@ -12,28 +12,28 @@ export default function PatientJourney() {
       title: t(lang as Lang, 'journey.step1.title'),
       desc: t(lang as Lang, 'journey.step1.desc'),
       img: '/images/vip-transfer.jpg',
-      spec: '30 Min Airport Pickup'
+      spec: lang === 'tr' ? 'VIP Karşılama' : 'Private Airport Transfer'
     },
     {
       step: '02',
       title: t(lang as Lang, 'journey.step2.title'),
       desc: t(lang as Lang, 'journey.step2.desc'),
       img: '/images/clinic-consultation.jpg',
-      spec: 'Sterile Hairline Analysis'
+      spec: lang === 'tr' ? 'Ön Çizgi Planlama' : 'Surgeon Hairline Design'
     },
     {
       step: '03',
       title: t(lang as Lang, 'journey.step3.title'),
       desc: t(lang as Lang, 'journey.step3.desc'),
       img: '/images/operation-room.jpg',
-      spec: 'Single-Use Choi Pen Kit'
+      spec: lang === 'tr' ? 'Steril Ameliyathane' : 'Sterile Surgical Suite'
     },
     {
       step: '04',
       title: t(lang as Lang, 'journey.step4.title'),
       desc: t(lang as Lang, 'journey.step4.desc'),
       img: '/images/aftercare-wash.jpg',
-      spec: 'Specialist Wash & Care Kit'
+      spec: lang === 'tr' ? 'Medikal Bakım Kiti' : 'Aftercare Kit & Training'
     }
   ];
 
@@ -52,7 +52,7 @@ export default function PatientJourney() {
         {journeySteps.map((item, idx) => (
           <div
             key={idx}
-            className="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between hover:border-blue-500 hover:shadow-md transition-all group"
+            className="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all group"
           >
             <div>
               <div className="relative h-48 w-full overflow-hidden bg-slate-900">
@@ -61,7 +61,7 @@ export default function PatientJourney() {
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-white w-8 h-8 rounded-xl flex items-center justify-center font-black text-xs border border-slate-700">
+                <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-white w-8 h-8 rounded-xl flex items-center justify-center font-bold text-xs border border-slate-700">
                   {item.step}
                 </div>
               </div>
@@ -76,9 +76,9 @@ export default function PatientJourney() {
               </div>
             </div>
 
-            <div className="px-5 pb-5 pt-2 flex items-center justify-between text-[11px] font-extrabold text-slate-500 border-t border-slate-100">
+            <div className="px-5 pb-5 pt-3 flex items-center justify-between text-[11px] font-semibold text-slate-500 border-t border-slate-100">
               <span>{item.spec}</span>
-              <span className="text-blue-600 font-black">✓ Medical Care</span>
+              <span className="text-blue-600 font-bold">&#10003; {lang === 'tr' ? 'Klinik Standart' : 'Clinical Standard'}</span>
             </div>
           </div>
         ))}

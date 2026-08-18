@@ -320,8 +320,10 @@ export default function HairAnalysisWizard() {
                 </div>
               </div>
 
-              <div className="bg-emerald-50 border border-emerald-200 p-3.5 rounded-2xl text-xs text-emerald-800 font-semibold flex items-center gap-2">
-                <span className="text-emerald-600 font-black text-base">💬</span>
+              <div className="bg-slate-50 border border-slate-200 p-3.5 rounded-2xl text-xs text-slate-700 font-medium flex items-center gap-2.5">
+                <svg className="w-4 h-4 text-slate-500 shrink-0 fill-current" viewBox="0 0 24 24">
+                  <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                </svg>
                 <span>{t(lang as Lang, 'calculator.wa_info')}</span>
               </div>
             </div>

@@ -9,80 +9,77 @@ export default function FaqSection() {
 
   const faqs = lang === 'tr' ? [
     {
-      q: "Antalya'da DHI saç ekimi fiyatları ne kadar?",
-      a: "Antalya'da DHI saç ekimi paket fiyatları 90.000 TL (Standart DHI) ile 110.000 TL (VIP Antalya Experience) arasında değişmektedir. Paketlerimize DHI ameliyatı, ağrısız anestezi, ilaç seti, VIP Mercedes transfer ve otel konaklaması dahildir."
+      q: "Antalya'da DHI saç ekimi paket fiyatları ne kadar?",
+      a: "Antalya'da DHI saç ekimi paket fiyatları 90.000 TL (Standart DHI) ile 110.000 TL (VIP Her Şey Dahil) arasında değişmektedir. Paketlerimize DHI ameliyatı, konforlu anestezi, ilaç ve bakım kiti, VIP havalimanı transferi ve otel konaklaması dahildir."
     },
     {
-      q: "DHI ve FUE saç ekimi arasındaki fark nedir?",
-      a: "DHI (Direct Hair Implantation) yönteminde Choi Implanter Pen kullanılarak kanal açma ve greft yerleştirme aşamaları aynı anda yapılır. FUE'de ise önce neşter veya safirle kanallar açılır. DHI daha sık ekim, doğal açı kontrolü ve tıraşsız uygulama olanağı sağlar."
+      q: "DHI ve Klasik FUE saç ekimi arasındaki temel fark nedir?",
+      a: "DHI (Direct Hair Implantation) yönteminde Choi Implanter Pen kullanılarak kanal açma ve greft yerleştirme adımları eşzamanlı gerçekleştirilir. Klasik FUE'de ise önce kanallar açılır. DHI daha sık ekim, doğal açı kontrolü ve tıraşsız uygulama imkânı sunar."
     },
     {
       q: "DHI saç ekiminde ekim yapılacak alanın tıraş edilmesi zorunlu mu?",
-      a: "Hayır. DHI Choi Pen kalem teknolojisi sayesinde ekim yapılacak alandaki mevcut saçlar tıraş edilmeden aralara doğrudan ekim yapılabilir."
+      a: "Hayır. DHI Choi Pen implanter teknolojisi sayesinde mevcut saçların arasına doğrudan giriş yapılabildiğinden alıcı alanın tamamen tıraş edilmesine gerek kalmaz."
     },
     {
-      q: "VIP Antalya Experience paketine neler dahildir?",
-      a: "VIP paketimizde maksimum greft DHI saç ekim operasyonu, Antalya Havalimanı & klinik VIP Mercedes Vito transferleri, 1 gece otel konaklaması, çok dilli hasta koordinatörü (EN/FR/TR), PRP & mezoterapi seansı ve aktif WhatsApp destek hattı yer almaktadır."
+      q: "VIP Her Şey Dahil paketine neler dahildir?",
+      a: "VIP paketimizde maksimum greft DHI saç ekim operasyonu, Antalya Havalimanı & klinik Mercedes Vito transferleri, otel konaklaması, çok dilli hasta koordinatörü (EN/FR/TR) ve 12 aylık medikal takip yer almaktadır."
     },
     {
-      q: "DHI saç ekimi sonrası iyileşme süresi kaç gündür?",
-      a: "DHI yönteminde neşter veya kesi yapılmadığı için doku tahribatı minimumdur. Kabuklanma 7-10 gün içinde dökülür ve hastalar 3-5 gün içinde normal günlük ve iş hayatlarına dönebilirler."
+      q: "DHI saç ekimi sonrası iyileşme süreci nasıldır?",
+      a: "DHI yönteminde mikroskobik uçlar kullanıldığı için doku hassasiyeti asgari düzeydedir. Mikro kabuklanmalar 7–10 gün içinde dökülür ve hastalar genellikle 3–5 gün içinde normal rutinlerine dönebilirler."
     }
   ] : lang === 'fr' ? [
     {
-      q: "Quel est le prix d'une greffe de cheveux DHI à Antalya ?",
-      a: "Les prix des forfaits DHI à Antalya varient de 1 800€ (£1,550) pour le forfait Standard à 2 200€ (£1,900) pour l'expérience VIP All-Inclusive avec séjour en hôtel, transferts VIP en Mercedes et ligne WhatsApp active."
+      q: "Quel est le tarif d'une greffe de cheveux DHI à Antalya ?",
+      a: "Les forfaits DHI à Antalya s'échelonnent de 1 800€ (£1,550) pour le forfait Standard à 2 200€ (£1,900) pour l'expérience VIP All-Inclusive incluant séjour à l'hôtel, transferts privés en Mercedes Vito et coordination multilingue."
     },
     {
-      q: "Quelle est la différence entre la méthode DHI et FUE ?",
-      a: "La technique DHI utilise le Choi Implanter Pen pour implanter directement les greffons sans créer au préalable d'incisions. La méthode FUE nécessite une ouverture préalable des canaux. La DHI offre une plus grande densité et une récupération plus rapide."
+      q: "Quelle est la différence entre la méthode DHI et la FUE classique ?",
+      a: "La technique DHI utilise le stylo d'implantation Choi pour insérer directement les greffons sans incision préalable. Elle offre une densité accrue et une convalescence plus rapide."
     },
     {
       q: "Le rasage est-il obligatoire pour une greffe DHI ?",
-      a: "Non, la technique DHI permet d'implanter les greffons entre vos cheveux existants sans raser l'ensemble du cuir chevelu."
+      a: "Non, la technique DHI permet d'implanter les greffons entre vos cheveux existants sans raser l'ensemble de la zone receveuse."
     },
     {
-      q: "Que comprend le forfait VIP Antalya Experience ?",
-      a: "Le forfait VIP comprend l'opération DHI avec greffons maximaux, les transferts VIP en Mercedes Vito, 1 nuit d'hôtel, un coordinateur multilingue et une ligne WhatsApp active pour vos questions."
+      q: "Que comprend le forfait VIP All-Inclusive ?",
+      a: "Le forfait VIP comprend l'intervention DHI, les transferts privés en Mercedes Vito, l'hébergement hôtelier, un coordinateur multilingue et le protocole de suivi post-opératoire sur 12 mois."
     },
     {
-      q: "Quel est le temps de récupération après une greffe DHI ?",
-      a: "Grâce à l'absence de scalpel, la cicatrisation est très rapide. Vous pouvez reprendre vos activités normales en 3 à 5 jours."
+      q: "Quel est le délai de récupération après une intervention DHI ?",
+      a: "Grâce aux micro-aiguilles Choi, la cicatrisation est rapide. Les croûtes disparaissent en 7 à 10 jours et la reprise des activités est possible en 3 à 5 jours."
     }
   ] : [
     {
       q: "How much does a DHI hair transplant cost in Antalya, Turkey?",
-      a: "DHI hair transplant packages in Antalya range from £1,550 (€1,800) for Standard DHI to £1,900 (€2,200) for the VIP Antalya Experience. The VIP package includes hotel accommodation, VIP Mercedes Vito transfers, and an active WhatsApp support line."
+      a: "DHI hair transplant packages in Antalya range from £1,550 (€1,800) for Standard DHI to £1,900 (€2,200) for the VIP All-Inclusive package, which includes hotel stay, private Mercedes Vito transfers, and dedicated patient coordination."
     },
     {
-      q: "What is the difference between DHI and FUE hair transplant?",
-      a: "DHI (Direct Hair Implantation) uses a specialized Choi Implanter Pen to extract and insert hair follicles simultaneously without making prior channel incisions. FUE requires separate channel incisions before placement. DHI allows higher density and faster healing."
+      q: "What is the key difference between DHI and traditional FUE?",
+      a: "DHI (Direct Hair Implantation) utilizes specialized Choi Implanter Pens to place follicles directly without pre-cutting channel incisions, allowing higher density, precise angle placement, and faster scalp recovery."
     },
     {
-      q: "Is it necessary to shave my head for a DHI procedure?",
-      a: "No. DHI Choi Pen technology allows direct implantation between existing hair follicles without completely shaving the recipient area."
+      q: "Is it required to shave my entire head for a DHI procedure?",
+      a: "No. The Choi Pen technique enables direct placement between existing hairs without completely shaving the recipient area."
     },
     {
-      q: "What is included in the VIP Antalya Experience package?",
-      a: "The VIP package includes maximum graft DHI surgery, private Mercedes Vito airport & clinic transfers, 1-night hotel accommodation, a multilingual patient coordinator (EN/FR/TR), and an active WhatsApp support line for any questions."
+      q: "What is included in the VIP All-Inclusive package?",
+      a: "The VIP package covers maximum-graft DHI surgery in a licensed hospital, private Mercedes Vito airport and hotel transfers, comfortable hotel accommodation, multilingual patient coordination, and 12-month post-op care."
     },
     {
-      q: "How long is the recovery time after DHI hair transplant?",
-      a: "Because DHI involves no scalpels or stitches, micro-wounds heal rapidly. Scabs fall off within 7-10 days, and patients return to normal daily routines in 3-5 days."
+      q: "What is the typical recovery timeline after DHI?",
+      a: "Because Choi pens minimize epidermal trauma, micro-scabs naturally detach within 7–10 days, allowing most patients to resume normal daily activities within 3–5 days."
     }
   ];
 
   return (
     <div id="faq" className="w-full space-y-8">
       <div className="text-center max-w-3xl mx-auto space-y-2">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 uppercase tracking-wider">
-          AI SEARCH & PATIENT Q&A
-        </span>
         <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
-          {lang === 'tr' ? "Sıkça Sorulan Sorular & DHI Rehberi" : lang === 'fr' ? "Foire Aux Questions & Guide DHI" : "Frequently Asked Questions & DHI Guide"}
+          {lang === 'tr' ? "Sıkça Sorulan Sorular" : lang === 'fr' ? "Foire Aux Questions" : "Frequently Asked Questions"}
         </h2>
         <p className="text-xs sm:text-sm text-slate-600 font-medium">
-          {lang === 'tr' ? "Antalya DHI saç ekimi ve sağlık turizmi süreci hakkında merak edilen tüm sorular." : "Everything you need to know about DHI hair restoration and medical stay in Antalya."}
+          {lang === 'tr' ? "Antalya DHI saç ekimi ve hasta koordinasyon süreci hakkında merak edilenler." : "Essential information regarding DHI procedures and patient coordination in Antalya."}
         </p>
       </div>
 
@@ -94,12 +91,17 @@ export default function FaqSection() {
           >
             <button
               onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-              className="w-full p-5 text-left font-black text-sm text-slate-900 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50 min-h-[52px]"
+              className="w-full p-5 text-left font-bold text-sm text-slate-900 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50 min-h-[52px]"
             >
               <span>{faq.q}</span>
-              <span className="text-blue-600 font-black text-lg transition-transform" style={{ transform: openIndex === idx ? 'rotate(180deg)' : 'none' }}>
-                ▼
-              </span>
+              <svg 
+                className={`w-4 h-4 text-slate-500 transition-transform shrink-0 ${openIndex === idx ? 'rotate-180 text-blue-600' : ''}`}
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </button>
 
             {openIndex === idx && (

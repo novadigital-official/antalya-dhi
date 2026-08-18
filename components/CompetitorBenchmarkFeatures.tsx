@@ -3,48 +3,73 @@
 import { useSiteContext } from '@/lib/context';
 import { Lang } from '@/lib/i18n';
 
+// Clean SVG clinical icons
+const ShieldCheckIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+  </svg>
+);
+
+const BeakerIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23.693l-1.57-.393m15.6 0A2.25 2.25 0 0 1 21 17.25v2.25a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 19.5v-2.25a2.25 2.25 0 0 1 1.2-1.95" />
+  </svg>
+);
+
+const SparklesIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+  </svg>
+);
+
+const HeartPulseIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+  </svg>
+);
+
 export default function CompetitorBenchmarkFeatures() {
   const { lang } = useSiteContext();
 
   const title = {
-    en: 'Gold Medical Standards & Technology',
+    en: 'Clinical Standards & Technology',
     fr: 'Normes Médicales et Technologie de Pointe',
-    tr: 'Gold Medikal Standartlarımız ve Teknolojimiz',
-  }[lang as Lang] || 'Gold Medical Standards & Technology';
+    tr: 'Klinik Standartlarımız ve Teknolojimiz',
+  }[lang as Lang] || 'Clinical Standards & Technology';
 
   const subtitle = {
-    en: 'Why DHI Choi Implanter technology delivers 3x natural density and zero scarring.',
-    fr: 'Pourquoi la technologie DHI Choi offre une densité 3x supérieure sans cicatrice.',
-    tr: 'Neden Choi Pen DHI tekniği 3 kat fazla doğal yoğunluk ve dikişsiz hızlı iyileşme sağlar.',
-  }[lang as Lang] || 'Why DHI Choi Implanter technology delivers 3x natural density and zero scarring.';
+    en: 'Precision Choi Implanter protocols ensuring natural hair density and minimal scalp trauma.',
+    fr: 'Protocoles Choi Implanter de précision garantissant une densité naturelle et un traumatisme minimal.',
+    tr: 'Choi Pen DHI tekniği ile yüksek greft tutunma oranı ve hızlı iyileşme süreci.',
+  }[lang as Lang] || 'Precision Choi Implanter protocols ensuring natural hair density and minimal scalp trauma.';
 
-  const bento1Title = { en: 'Needle-Free & Painless Comfort Anesthesia', fr: 'Anesthésie Sans Aiguille et Sans Douleur', tr: 'İğnesiz ve Ağrısız Anestezi Altyapısı' }[lang as Lang] || 'Needle-Free & Painless Comfort Anesthesia';
+  const bento1Title = { en: 'Needle-Free Comfort Anesthesia', fr: 'Anesthésie Sans Aiguille', tr: 'İğnesiz Konforlu Anestezi Altyapısı' }[lang as Lang] || 'Needle-Free Comfort Anesthesia';
   const bento1Desc = {
-    en: 'Advanced pressure-spray jet injection delivers local anesthetic without traditional needles, eliminating discomfort completely.',
-    fr: 'Technologie d\'injection sous pression sans aiguille traditionnelle, éliminant totalement l\'inconfort.',
-    tr: 'Basınçlı püskürtme teknolojisi ile iğne kullanılmadan kafa derisine anestezi sıvıları enjekte edilir. Tüm acı hissi sıfırlanır.'
-  }[lang as Lang] || 'Advanced pressure-spray jet injection delivers local anesthetic without traditional needles, eliminating discomfort completely.';
+    en: 'Advanced pressure-spray jet injection administers local anesthesia without standard needles, significantly enhancing patient comfort before surgery.',
+    fr: 'Technologie d\'injection sous pression sans aiguille traditionnelle, réduisant significativement l\'inconfort pré-opératoire.',
+    tr: 'Basınçlı püskürtme teknolojisi ile geleneksel iğneler kullanılmadan lokal anestezi uygulanır, operasyon öncesi konfor maksimum seviyeye çıkarılır.'
+  }[lang as Lang] || 'Advanced pressure-spray jet injection administers local anesthesia without standard needles, significantly enhancing patient comfort before surgery.';
 
   const bento2Title = { en: 'ATP HypoThermosol Preservation', fr: 'Conservation ATP HypoThermosol', tr: 'ATP Canlılık Solüsyonu' }[lang as Lang] || 'ATP HypoThermosol Preservation';
   const bento2Desc = {
-    en: 'Extracted follicles are stored in chilled ATP nutrient solution to maintain 98%+ graft survival.',
-    fr: 'Les greffons sont conservés dans une solution ATP réfrigérée pour maintenir 98%+ de survie.',
-    tr: 'Toplanan saç kökleri özel soğutulmuş ATP solüsyonunda bekletilerek %98+ canlılık oranı korunur.'
-  }[lang as Lang] || 'Extracted follicles are stored in chilled ATP nutrient solution to maintain 98%+ graft survival.';
+    en: 'Harvested follicular units are kept in temperature-controlled ATP nutrient preservation solution to protect viability prior to implantation.',
+    fr: 'Les greffons prélevés sont conservés dans une solution nutritive ATP thermorégulée.',
+    tr: 'Toplanan saç kökleri özel soğutulmuş ATP solüsyonunda bekletilerek canlılıkları korunur.'
+  }[lang as Lang] || 'Harvested follicular units are kept in temperature-controlled ATP nutrient preservation solution to protect viability prior to implantation.';
 
   const bento3Title = { en: 'Single-Use Choi Implanter Pens', fr: 'Stylos d\'Implantation Choi à Usage Unique', tr: 'Tek Kullanımlık Choi Pen Kit' }[lang as Lang] || 'Single-Use Choi Implanter Pens';
   const bento3Desc = {
-    en: '100% sterile, individually sealed Choi pen cartridges for maximum hygienic precision.',
-    fr: 'Cartouches Choi 100% stériles et scellées individuellement pour une précision hygiénique maximale.',
-    tr: 'Her hastaya özel sıfır paketinden açılan Choi implanter kalemleri ile mikroskobik hassasiyet.'
-  }[lang as Lang] || '100% sterile, individually sealed Choi pen cartridges for maximum hygienic precision.';
+    en: 'Individually packaged, sterile Choi implanter cartridges ensuring microscopic angle alignment.',
+    fr: 'Cartouches Choi stériles et scellées individuellement pour un alignement précis.',
+    tr: 'Her hastaya özel steril paketinden açılan Choi implanter kalemleri ile mikroskobik açı kontrolü.'
+  }[lang as Lang] || 'Individually packaged, sterile Choi implanter cartridges ensuring microscopic angle alignment.';
 
-  const bento4Title = { en: 'PRP & Mesotherapy Treatment', fr: 'Traitement PRP & Mésothérapie', tr: 'PRP ve Mezoterapi' }[lang as Lang] || 'PRP & Mesotherapy Treatment';
+  const bento4Title = { en: 'PRP & Mesotherapy Protocol', fr: 'Protocole PRP & Mésothérapie', tr: 'PRP ve Mezoterapi Protokolü' }[lang as Lang] || 'PRP & Mesotherapy Protocol';
   const bento4Desc = {
-    en: 'Concentrated autologous PRP combined with mesotherapy session accelerates follicle recovery and scalp regeneration.',
-    fr: 'PRP autologue concentré associé à une séance de mésothérapie accélérant la récupération folliculaire.',
-    tr: 'Operasyon sonrasında uygulanan konsantre PRP ve mezoterapi seansı ile saç köklerinin iyileşme süreci hızlandırılır.'
-  }[lang as Lang] || 'Concentrated autologous PRP combined with hyperbaric oxygen session doubles cell repair velocity post-surgery.';
+    en: 'Autologous PRP application combined with targeted mesotherapy to support tissue recovery and early graft nourishment.',
+    fr: 'Application de PRP autologue associée à une mésothérapie ciblée pour soutenir la régénération.',
+    tr: 'Operasyon sonrasında uygulanan konsantre PRP ve mezoterapi seansı ile saç köklerinin iyileşme süreci desteklenir.'
+  }[lang as Lang] || 'Autologous PRP application combined with targeted mesotherapy to support tissue recovery and early graft nourishment.';
 
   return (
     <div id="medical-standards" className="w-full space-y-8">
@@ -53,16 +78,14 @@ export default function CompetitorBenchmarkFeatures() {
         <p className="text-xs sm:text-sm text-slate-600 font-medium">{subtitle}</p>
       </div>
 
-      {/* 2026 BENTO-GRID LAYOUT */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         
-        {/* BENTO CARD 1 (LARGE SPAN 2): PAINLESS NEEDLE-FREE ANESTHESIA */}
-        <div className="md:col-span-2 bg-slate-950 text-white rounded-3xl p-8 border border-slate-800 shadow-xl flex flex-col justify-between relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[90px] rounded-full pointer-events-none" />
-          
+        {/* CARD 1: NEEDLE-FREE ANESTHESIA */}
+        <div className="md:col-span-2 bg-slate-950 text-white rounded-3xl p-8 border border-slate-800 shadow-xl flex flex-col justify-between relative overflow-hidden">
           <div className="space-y-4 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-900/60 border border-blue-700/60 text-blue-300 text-xs font-black">
-              <span>💉 Painless Comfort Infiltration</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-900/40 border border-blue-700/40 text-blue-300 text-xs font-bold">
+              <ShieldCheckIcon />
+              <span>{lang === 'tr' ? 'Konfor Protokolü' : 'Comfort Protocol'}</span>
             </div>
 
             <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight">
@@ -74,22 +97,19 @@ export default function CompetitorBenchmarkFeatures() {
             </p>
           </div>
 
-          <div className="pt-6 mt-6 border-t border-slate-800 flex items-center justify-between text-xs font-extrabold text-slate-300 relative z-10">
-            <span className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-              {lang === 'tr' ? '%100 Konfor Garantisi' : lang === 'fr' ? 'Garantie Confort 100%' : '100% Comfort Guarantee'}
-            </span>
-            <span className="text-blue-400 font-black">
-              {lang === 'tr' ? '0 İğne Acısı →' : lang === 'fr' ? '0 Douleur Aiguille →' : '0 Needle Pain →'}
+          <div className="pt-6 mt-6 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-300 relative z-10">
+            <span>{lang === 'tr' ? 'Lokal Anestezi Standartı' : 'Local Anesthesia Standard'}</span>
+            <span className="text-blue-400 font-bold">
+              {lang === 'tr' ? 'Konforlu Uygulama' : 'Pressure-Spray Protocol'}
             </span>
           </div>
         </div>
 
-        {/* BENTO CARD 2: ATP HYPOTHERMOSOL GRAFT PRESERVATION */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4 hover:border-blue-500 transition-all">
+        {/* CARD 2: ATP HYPOTHERMOSOL */}
+        <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4 hover:border-slate-300 transition-all">
           <div className="space-y-3">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 font-black text-xl flex items-center justify-center border border-emerald-100">
-              🧪
+            <div className="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100">
+              <BeakerIcon />
             </div>
             <h3 className="text-lg font-black text-slate-900 leading-tight">
               {bento2Title}
@@ -99,17 +119,17 @@ export default function CompetitorBenchmarkFeatures() {
             </p>
           </div>
 
-          <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-black text-emerald-700">
-            <span>{lang === 'tr' ? 'Tutunma Oranı' : lang === 'fr' ? 'Taux de Prise' : 'Retention Rate'}</span>
-            <span>%98+ Active</span>
+          <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-700">
+            <span>{lang === 'tr' ? 'Greft Canlılığı' : 'Graft Viability'}</span>
+            <span className="text-blue-600">ATP Preservation</span>
           </div>
         </div>
 
-        {/* BENTO CARD 3: SINGLE-USE SAPPHIRE & CHOI PEN KIT */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4 hover:border-blue-500 transition-all">
+        {/* CARD 3: SINGLE-USE CHOI PEN KIT */}
+        <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4 hover:border-slate-300 transition-all">
           <div className="space-y-3">
-            <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 font-black text-xl flex items-center justify-center border border-blue-100">
-              🖊️
+            <div className="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100">
+              <SparklesIcon />
             </div>
             <h3 className="text-lg font-black text-slate-900 leading-tight">
               {bento3Title}
@@ -119,17 +139,18 @@ export default function CompetitorBenchmarkFeatures() {
             </p>
           </div>
 
-          <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-black text-blue-700">
-            <span>{lang === 'tr' ? 'Sterilite Standardı' : lang === 'fr' ? 'Norme de Stérilité' : 'Sterility Standard'}</span>
-            <span>100% Single-Use</span>
+          <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-700">
+            <span>{lang === 'tr' ? 'Sterilite Standardı' : 'Sterility Standard'}</span>
+            <span className="text-blue-600">100% Single-Use</span>
           </div>
         </div>
 
-        {/* BENTO CARD 4 (SPAN 2): HYPERBARIC OXYGEN & PRP AFTERCARE */}
-        <div className="md:col-span-2 bg-gradient-to-r from-blue-900 to-slate-950 text-white rounded-3xl p-8 border border-blue-800/80 shadow-xl flex flex-col justify-between relative overflow-hidden">
+        {/* CARD 4: PRP AFTERCARE */}
+        <div className="md:col-span-2 bg-slate-900 text-white rounded-3xl p-8 border border-slate-800 shadow-xl flex flex-col justify-between relative overflow-hidden">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-800/60 border border-blue-600/60 text-blue-200 text-xs font-black">
-              <span>🩸 PRP & Mesotherapy</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-950/80 border border-blue-800/80 text-blue-300 text-xs font-bold">
+              <HeartPulseIcon />
+              <span>PRP &amp; Mesotherapy</span>
             </div>
 
             <h3 className="text-2xl font-black text-white leading-tight">
@@ -141,10 +162,10 @@ export default function CompetitorBenchmarkFeatures() {
             </p>
           </div>
 
-          <div className="pt-6 mt-6 border-t border-blue-800/60 flex items-center justify-between text-xs font-extrabold text-slate-300">
-            <span>{lang === 'tr' ? 'Hızlı İyileşme Protokolü' : lang === 'fr' ? 'Protocole Récupération Rapide' : 'Fast Recovery Protocol'}</span>
-            <span className="text-emerald-400 font-black">
-              {lang === 'tr' ? '✓ Aktif WhatsApp Destek Hattı' : lang === 'fr' ? '✓ Ligne WhatsApp Active' : '✓ Active WhatsApp Support Line'}
+          <div className="pt-6 mt-6 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-300">
+            <span>{lang === 'tr' ? 'Ameliyat Sonrası Bakım' : 'Post-Op Follow-up'}</span>
+            <span className="text-emerald-400 font-bold">
+              {lang === 'tr' ? '12 Ay Medikal Takip' : '12-Month Medical Follow-up'}
             </span>
           </div>
         </div>

@@ -32,9 +32,6 @@ export default function ProcessTimeline() {
   return (
     <div id="process" className="w-full space-y-10">
       <div className="text-center max-w-3xl mx-auto space-y-2">
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 uppercase tracking-wider">
-          TRANSPARENT STEPS
-        </span>
         <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
           {t(lang as Lang, 'process.title')}
         </h2>
@@ -47,10 +44,10 @@ export default function ProcessTimeline() {
         {steps.map((step, idx) => (
           <div
             key={idx}
-            className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm hover:border-blue-500 hover:shadow-md transition-all flex flex-col justify-between"
+            className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm hover:border-slate-300 transition-all flex flex-col justify-between"
           >
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-blue-600 text-white font-black text-lg flex items-center justify-center mb-4 shadow-sm">
+              <div className="w-10 h-10 rounded-2xl bg-slate-900 text-white font-black text-sm flex items-center justify-center mb-4">
                 {step.num}
               </div>
               <h3 className="text-base font-black text-slate-900 mb-2 leading-tight">
@@ -61,9 +58,9 @@ export default function ProcessTimeline() {
               </p>
             </div>
             
-            <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-400">
+            <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-semibold text-slate-400">
               <span>Step {idx + 1} of 4</span>
-              <span className="text-blue-600 font-black">✓</span>
+              <span className="text-blue-600 font-bold">&#10003;</span>
             </div>
           </div>
         ))}

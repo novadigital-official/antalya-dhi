@@ -9,52 +9,49 @@ export default function DHIVsFueComparison() {
     {
       feature: lang === 'tr' ? 'İmplantasyon Aracı' : 'Implantation Tool',
       dhi: 'Choi Implanter Pen (0.6mm - 0.8mm)',
-      fue: 'Scalpel / Forceps (Classic Punch)'
+      fue: 'Micro-blade / Forceps'
     },
     {
       feature: lang === 'tr' ? 'Kanal Açma İşlemi' : 'Channel Incisions',
-      dhi: lang === 'tr' ? 'Gerekmiyor (Doğrudan Ekim)' : 'Not Required (Direct Placement)',
-      fue: lang === 'tr' ? 'Önceden Kesili Kanallar Açılır' : 'Pre-cut Channel Incisions Required'
+      dhi: lang === 'tr' ? 'Doğrudan İmplantasyon' : 'Direct Implantation',
+      fue: lang === 'tr' ? 'Önceden Kanal Açımı Gerekir' : 'Pre-cut Channel Incisions'
     },
     {
       feature: lang === 'tr' ? 'Tıraşsız Ekim Seçeneği' : 'No-Shave Recipient Area',
-      dhi: lang === 'tr' ? '✓ Evet (Tıraşsız Ekim İmkânı)' : '✓ Yes (No Shaving Needed)',
-      fue: lang === 'tr' ? '✕ Hayır (Tüm Baş Tıraş Edilir)' : '✕ No (Full Head Shaved)'
+      dhi: lang === 'tr' ? 'Uygun (Tıraşsız Seçenek Mevcut)' : 'Available (No-Shave Protocol)',
+      fue: lang === 'tr' ? 'Genellikle Tüm Saç Tıraş Edilir' : 'Full Shave Typically Required'
     },
     {
-      feature: lang === 'tr' ? 'Graft Yoğunluğu (cm²)' : 'Graft Density per cm²',
-      dhi: '60 - 80 Grafts / cm²',
-      fue: '40 - 50 Grafts / cm²'
+      feature: lang === 'tr' ? 'Maksimum Yoğunluk (cm²)' : 'Maximum Density per cm²',
+      dhi: 'Up to 60–80 Grafts / cm²',
+      fue: '40–50 Grafts / cm²'
     },
     {
-      feature: lang === 'tr' ? 'Doğal Açı Kontrolü' : 'Angle & Direction Precision',
-      dhi: lang === 'tr' ? '100% Tam Doğal Açı Kontrolü' : '100% Precise Angle Control',
-      fue: lang === 'tr' ? 'Kısıtlı Yön Açısı' : 'Limited Angle Customization'
+      feature: lang === 'tr' ? 'Açı ve Yön Kontrolü' : 'Angle & Direction Precision',
+      dhi: lang === 'tr' ? 'Yüksek Hassasiyetli Doğal Açı' : 'High Precision Natural Alignment',
+      fue: lang === 'tr' ? 'Standart Açı Kontrolü' : 'Standard Alignment'
     },
     {
-      feature: lang === 'tr' ? 'İyileşme Süreci' : 'Recovery Time',
-      dhi: '3 - 5 Days',
-      fue: '10 - 14 Days'
+      feature: lang === 'tr' ? 'İlk İyileşme Süresi' : 'Initial Recovery Window',
+      dhi: '3–5 Days',
+      fue: '7–10 Days'
     }
   ];
 
   return (
     <div id="dhi-vs-fue" className="w-full space-y-8">
       <div className="text-center max-w-3xl mx-auto space-y-2">
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 uppercase tracking-wider">
-          MEDICAL COMPARISON
-        </span>
         <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
-          {lang === 'tr' ? "DHI ile Klasik FUE Arasındaki Farklar" : "DHI vs Traditional FUE Hair Transplant"}
+          {lang === 'tr' ? "DHI ile Klasik FUE Karşılaştırması" : "DHI vs Traditional FUE Comparison"}
         </h2>
         <p className="text-xs sm:text-sm text-slate-600 font-medium">
-          {lang === 'tr' ? "Neden Choi Pen DHI teknolojisinin daha doğal ve hızlı sonuçlar verdiğini görün." : "Compare why Choi Implanter Pen DHI yields higher graft density and natural angles."}
+          {lang === 'tr' ? "Choi Pen DHI teknolojisi ile klasik teknikler arasındaki klinik farklar." : "Clinical comparison between Choi Implanter DHI and standard FUE procedures."}
         </p>
       </div>
 
       <div className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm">
         <div className="grid grid-cols-3 bg-slate-950 text-white p-4 sm:p-5 text-xs sm:text-sm font-black border-b border-slate-800">
-          <div>{lang === 'tr' ? 'Parametre' : 'Medical Parameter'}</div>
+          <div>{lang === 'tr' ? 'Klinik Parametre' : 'Clinical Parameter'}</div>
           <div className="text-blue-400 text-center">DHI Technique</div>
           <div className="text-slate-400 text-center">Classic FUE</div>
         </div>
@@ -63,7 +60,7 @@ export default function DHIVsFueComparison() {
           {comparisonData.map((row, idx) => (
             <div key={idx} className="grid grid-cols-3 p-4 sm:p-5 items-center hover:bg-slate-50">
               <div className="text-slate-900 font-bold">{row.feature}</div>
-              <div className="text-center text-blue-700 font-black bg-blue-50/80 p-2 rounded-xl border border-blue-100">{row.dhi}</div>
+              <div className="text-center text-blue-700 font-bold bg-blue-50/80 p-2 rounded-xl border border-blue-100">{row.dhi}</div>
               <div className="text-center text-slate-500 font-medium">{row.fue}</div>
             </div>
           ))}

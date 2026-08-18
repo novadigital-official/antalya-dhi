@@ -44,10 +44,10 @@ export default function PricingPackages() {
         <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-6">
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-black text-slate-500 uppercase tracking-wider">
-                BASIC OPTION
+              <span className="text-xs font-bold text-slate-500">
+                {lang === 'tr' ? 'Standart Operasyon' : 'Clinical Procedure'}
               </span>
-              <span className="text-xs font-bold text-slate-400">Surgery Only</span>
+              <span className="text-xs font-medium text-slate-400">Surgery Only</span>
             </div>
 
             <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-1">
@@ -58,19 +58,19 @@ export default function PricingPackages() {
             </p>
 
             <div className="mb-6 pb-6 border-b border-slate-100 space-y-1">
-              <span className="text-xs text-slate-400 font-bold block">Total Package Rate</span>
+              <span className="text-xs text-slate-400 font-medium block">Total Package Rate</span>
               <div className="flex items-baseline gap-2 flex-wrap">
                 <span className="text-3xl sm:text-4xl font-black text-slate-900">{standardMain}</span>
-                <span className="text-xs font-extrabold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">
+                <span className="text-xs font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">
                   (€1,800 / £1,550 / ₺90.000)
                 </span>
               </div>
             </div>
 
-            <ul className="space-y-3 text-xs text-slate-700 font-semibold">
+            <ul className="space-y-3 text-xs text-slate-700 font-medium">
               {standardIncludes.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-2.5">
-                  <span className="w-5 h-5 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-black shrink-0">✓</span>
+                  <span className="w-5 h-5 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center text-xs font-bold shrink-0">&#10003;</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -80,25 +80,25 @@ export default function PricingPackages() {
           <a
             href="#analysis-wizard"
             onClick={scrollToWizard}
-            className="w-full min-h-[48px] bg-slate-900 hover:bg-slate-800 text-white font-black text-xs rounded-xl flex items-center justify-center transition-all cursor-pointer shadow-md"
+            className="w-full min-h-[48px] bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl flex items-center justify-center transition-all cursor-pointer shadow-sm"
           >
             <span>{t(lang as Lang, 'packages.book_cta')}</span>
           </a>
         </div>
 
-        {/* PACKAGE 2: VIP ANTALYA EXPERIENCE (GLASSMORPHISM BACKDROP-FILTER) */}
-        <div className="bg-slate-950/95 backdrop-blur-xl text-white border-2 border-blue-600 rounded-3xl p-6 sm:p-8 shadow-2xl relative flex flex-col justify-between space-y-6 transform md:-translate-y-2">
-          {/* MOST RECOMMENDED BADGE */}
-          <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white font-black text-xs px-4 py-1 rounded-full uppercase tracking-wider shadow-md">
+        {/* PACKAGE 2: VIP ANTALYA EXPERIENCE */}
+        <div className="bg-slate-950 text-white border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl relative flex flex-col justify-between space-y-6">
+          {/* VIP BADGE */}
+          <div className="absolute -top-3 left-6 bg-blue-600 text-white font-bold text-[11px] px-3.5 py-1 rounded-full shadow-sm">
             {t(lang as Lang, 'packages.vip_popular')}
           </div>
 
           <div>
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-black text-blue-400 uppercase tracking-wider">
-                ALL-INCLUSIVE MEDICAL TOURISM
+            <div className="flex items-center justify-between mb-2 pt-1">
+              <span className="text-xs font-bold text-blue-400">
+                {lang === 'tr' ? 'Tam Kapsamlı Paket' : 'All-Inclusive Package'}
               </span>
-              <span className="text-xs font-bold text-slate-300">Hotel & Transfer Included</span>
+              <span className="text-xs font-medium text-slate-400">Hotel &amp; VIP Transfer</span>
             </div>
 
             <h3 className="text-xl sm:text-2xl font-black text-white mb-1">
@@ -109,19 +109,19 @@ export default function PricingPackages() {
             </p>
 
             <div className="mb-6 pb-6 border-b border-slate-800 space-y-1">
-              <span className="text-xs text-slate-400 font-bold block">Total All-Inclusive Rate</span>
+              <span className="text-xs text-slate-400 font-medium block">Total All-Inclusive Rate</span>
               <div className="flex items-baseline gap-2 flex-wrap">
                 <span className="text-3xl sm:text-4xl font-black text-blue-400">{vipMain}</span>
-                <span className="text-xs font-extrabold text-blue-200 bg-blue-900/60 border border-blue-700/60 px-2.5 py-1 rounded-md">
+                <span className="text-xs font-bold text-blue-200 bg-blue-950 border border-blue-800 px-2.5 py-1 rounded-md">
                   (€2,200 / £1,900 / ₺110.000)
                 </span>
               </div>
             </div>
 
-            <ul className="space-y-3 text-xs text-slate-100 font-semibold">
+            <ul className="space-y-3 text-xs text-slate-200 font-medium">
               {vipIncludes.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-2.5">
-                  <span className="w-5 h-5 rounded-full bg-blue-600/30 text-blue-400 border border-blue-500/30 flex items-center justify-center text-xs font-black shrink-0">✓</span>
+                  <span className="w-5 h-5 rounded-full bg-blue-900/60 text-blue-300 border border-blue-700/60 flex items-center justify-center text-xs font-bold shrink-0">&#10003;</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -131,7 +131,7 @@ export default function PricingPackages() {
           <a
             href="#analysis-wizard"
             onClick={scrollToWizard}
-            className="w-full min-h-[48px] bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs rounded-xl flex items-center justify-center transition-all cursor-pointer shadow-lg active:scale-98"
+            className="w-full min-h-[48px] bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl flex items-center justify-center transition-all cursor-pointer shadow-md active:scale-98"
           >
             <span>{t(lang as Lang, 'packages.book_cta')}</span>
           </a>

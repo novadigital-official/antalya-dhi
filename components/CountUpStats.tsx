@@ -17,8 +17,8 @@ const STATS: StatItem[] = [
     target: 3600,
     prefix: '',
     suffix: { en: '+', fr: '+', tr: '+' },
-    label: { en: 'Avg. Grafts Implanted', fr: 'Greffons Moyens', tr: 'Ort. Greft Kapasitesi' },
-    sub: { en: 'Maximum Donor Density', fr: 'Densité Donneur Maximale', tr: 'Maksimum Donör Yoğunluğu' }
+    label: { en: 'Avg. Grafts Implanted', fr: 'Greffons Moyens', tr: 'Ortalama Greft Kapasitesi' },
+    sub: { en: 'Single Session Coverage', fr: 'Couverture Session Unique', tr: 'Tek Seans Kapasitesi' }
   },
   {
     target: 98,
@@ -30,15 +30,15 @@ const STATS: StatItem[] = [
   {
     target: 12,
     prefix: '',
-    suffix: { en: ' Months', fr: ' Mois', tr: ' Ay Garanti' },
-    label: { en: 'Medical Guarantee', fr: 'Garantie Médicale', tr: 'Ay Tıbbi Takip Garanti' },
-    sub: { en: 'Comprehensive Aftercare', fr: 'Suivi Post-Opératoire Complete', tr: 'Kapsamlı Operasyon Sonrası Takip' }
+    suffix: { en: ' Mo.', fr: ' Mois', tr: ' Ay' },
+    label: { en: 'Clinical Follow-up', fr: 'Suivi Médical', tr: 'Medikal Takip & Destek' },
+    sub: { en: 'Post-Op Care Protocol', fr: 'Protocole de Soins', tr: 'İyileşme ve Bakım Protokolü' }
   },
   {
     target: 5000,
     prefix: '',
     suffix: { en: '+', fr: '+', tr: '+' },
-    label: { en: 'International Patients', fr: 'Patients Internationaux', tr: 'Uluslararası Başarılı Hasta' },
+    label: { en: 'International Patients', fr: 'Patients Internationaux', tr: 'Uluslararası Hasta' },
     sub: { en: 'UK, France & Europe', fr: 'UK, France & Europe', tr: 'İngiltere, Fransa & Avrupa' }
   }
 ];
@@ -95,9 +95,9 @@ export default function CountUpStats() {
             <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight flex items-center justify-center gap-0.5">
               <span className="text-blue-400">{stat.prefix}</span>
               <span>{counts[idx].toLocaleString()}</span>
-              <span className="text-emerald-400">{stat.suffix[lang as Lang] || stat.suffix['en']}</span>
+              <span className="text-emerald-400 text-2xl sm:text-3xl">{stat.suffix[lang as Lang] || stat.suffix['en']}</span>
             </div>
-            <div className="text-xs sm:text-sm font-extrabold text-slate-200">
+            <div className="text-xs sm:text-sm font-bold text-slate-200">
               {stat.label[lang as Lang] || stat.label['en']}
             </div>
             <div className="text-[11px] font-medium text-slate-400">

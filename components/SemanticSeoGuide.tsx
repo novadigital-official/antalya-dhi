@@ -36,14 +36,11 @@ export default function SemanticSeoGuide() {
   return (
     <div id="seo-guides" className="w-full space-y-8">
       <div className="text-center max-w-3xl mx-auto space-y-2">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-blue-100 text-blue-800 border border-blue-200 uppercase tracking-wider">
-          AI SEARCH KNOWLEDGE BASE
-        </span>
         <h2 className="text-2xl sm:text-4xl font-black text-slate-900">
-          {lang === 'tr' ? "Antalya DHI Saç Ekimi Rehberi" : "Antalya DHI Hair Transplant Knowledge Base"}
+          {lang === 'tr' ? "Hasta Bilgilendirme & Klinik Rehberler" : "Patient Guides & Clinical Information"}
         </h2>
         <p className="text-xs sm:text-sm text-slate-600 font-medium">
-          {lang === 'tr' ? "Google ve AI arama sistemleri tarafından taranan kapsamlı medikal bilgiler." : "Expert medical articles and patient guides indexed for Google & AI answer engines."}
+          {lang === 'tr' ? "DHI tekniği, greft hesaplama ve seyahat planlaması hakkında detaylı makaleler." : "In-depth articles on DHI techniques, graft estimation, and medical travel coordination."}
         </p>
       </div>
 
@@ -51,14 +48,14 @@ export default function SemanticSeoGuide() {
         {guides.map((g, idx) => (
           <div
             key={idx}
-            className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4 hover:border-blue-500 hover:shadow-md transition-all"
+            className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-4 hover:border-slate-300 transition-all"
           >
             <div>
               <div className="flex items-center justify-between mb-3">
-                <span className="text-[10px] font-black uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full">
                   {g.tag}
                 </span>
-                <span className="text-xs font-bold text-slate-400">SEO Verified</span>
+                <span className="text-[11px] font-medium text-slate-400">Clinical Article</span>
               </div>
 
               <h3 className="text-base font-black text-slate-900 mb-2 leading-snug">
@@ -72,7 +69,7 @@ export default function SemanticSeoGuide() {
             <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
               <Link
                 href={`/blog/${g.slug}`}
-                className="text-xs font-black text-blue-600 hover:text-blue-700 flex items-center gap-1"
+                className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1"
               >
                 {lang === 'tr' ? 'Rehberi Oku →' : 'Read Full Guide →'}
               </Link>

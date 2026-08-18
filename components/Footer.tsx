@@ -14,7 +14,7 @@ export default function Footer() {
   }[lang as Lang] || 'VIP DHI hair transplant consultation & coordination portal in Antalya, Turkey.';
 
   const quickLinksTitle = { en: 'Quick Links', fr: 'Liens Rapides', tr: 'Hızlı Bağlantılar' }[lang as Lang] || 'Quick Links';
-  const contactTitle = { en: 'Contact Info', fr: 'Informations de Contact', tr: 'İletişim Bilgileri' }[lang as Lang] || 'Contact Info';
+  const contactTitle = { en: 'Contact', fr: 'Contact', tr: 'İletişim' }[lang as Lang] || 'Contact';
 
   const links = {
     home: t(lang as Lang, 'nav.home') || 'Home',
@@ -72,7 +72,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-emerald-400 font-black hover:text-emerald-300 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 flex items-center gap-1.5"
                 >
-                  <span>💬 +90 507 087 17 89</span>
+                  +90 507 087 17 89
                 </a>
               </li>
               <li>
@@ -94,9 +94,8 @@ export default function Footer() {
             <span>|</span>
             <Link href="/terms" className="hover:text-white transition-colors">{links.terms}</Link>
           </div>
-          <div className="flex items-center gap-2 text-slate-400 text-[11px]">
-            <span>T.C. Sağlık Bakanlığı Yetkili Klinik | Ref: AK-84920</span>
-            <Link href="/admin/login" className="text-slate-700 hover:text-slate-500 ml-2">Admin</Link>
+          <div className="text-slate-600 text-[11px]">
+            T.C. Sağlık Bakanlığı Yetkili Anlaşmalı Klinik
           </div>
         </div>
       </div>
