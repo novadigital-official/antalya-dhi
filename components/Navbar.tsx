@@ -3,6 +3,7 @@
 import { useSiteContext } from '@/lib/context';
 import { Lang } from '@/lib/i18n';
 import Link from 'next/link';
+import BrandLogo from './BrandLogo';
 
 export default function Navbar() {
   const { lang, setLang } = useSiteContext();
@@ -29,14 +30,11 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-2xs w-full max-w-full overflow-hidden">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-2">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-2.5 flex items-center justify-between gap-2">
         
-        {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2 font-heading font-extrabold text-base sm:text-xl tracking-tight text-slate-900 shrink-0">
-          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-gradient-to-tr from-emerald-700 to-emerald-500 flex items-center justify-center text-white text-[11px] sm:text-xs font-black shadow-md shadow-emerald-600/20">
-            DHI
-          </div>
-          <span className="text-slate-900 font-extrabold tracking-tight">ANTALYA <span className="text-emerald-600">DHI</span></span>
+        {/* Brand Logo with Custom Vector SVG Crest */}
+        <Link href="/" className="shrink-0">
+          <BrandLogo variant="dark" size="md" />
         </Link>
 
         {/* Center Nav Links (Desktop Only) */}
@@ -55,6 +53,9 @@ export default function Navbar() {
           </a>
           <a href="#care-guide" className="hover:text-emerald-600 transition-colors">
             {lang === 'tr' ? 'Bakım Rehberi' : lang === 'fr' ? 'Guide Soins' : 'Care Guide'}
+          </a>
+          <a href="#location-protocol" className="hover:text-emerald-600 transition-colors">
+            {lang === 'tr' ? 'Lokasyon' : lang === 'fr' ? 'Localisation' : 'Location'}
           </a>
           <a href="#faq" className="hover:text-emerald-600 transition-colors">FAQ</a>
         </nav>
@@ -81,16 +82,16 @@ export default function Navbar() {
                   <span className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full overflow-hidden flex items-center justify-center shrink-0 border border-black/10">
                     {item.code === 'en' && (
                       <svg className="w-full h-full object-cover" viewBox="0 0 60 30">
-                        <clipPath id="s">
+                        <clipPath id="s_nav">
                           <path d="M0,0 v30 h60 v-30 z"/>
                         </clipPath>
-                        <clipPath id="t">
+                        <clipPath id="t_nav">
                           <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/>
                         </clipPath>
-                        <g clipPath="url(#s)">
+                        <g clipPath="url(#s_nav)">
                           <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
                           <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6"/>
-                          <path d="M0,0 L60,30 M60,0 L0,30" clipPath="url(#t)" stroke="#C8102E" strokeWidth="4"/>
+                          <path d="M0,0 L60,30 M60,0 L0,30" clipPath="url(#t_nav)" stroke="#C8102E" strokeWidth="4"/>
                           <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10"/>
                           <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6"/>
                         </g>

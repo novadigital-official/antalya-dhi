@@ -8,6 +8,7 @@ import PricingPackages from '@/components/PricingPackages';
 import GraftCalculatorGuide from '@/components/GraftCalculatorGuide';
 import PrePostCareGuide from '@/components/PrePostCareGuide';
 import WhyAntalyaVsIstanbul from '@/components/WhyAntalyaVsIstanbul';
+import LocationProtocol from '@/components/LocationProtocol';
 import SocialProof from '@/components/SocialProof';
 import HairAnalysisWizard from '@/components/HairAnalysisWizard';
 import CompetitorBenchmarkFeatures from '@/components/CompetitorBenchmarkFeatures';
@@ -22,7 +23,7 @@ import Footer from '@/components/Footer';
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#FAFBFC] text-slate-900 font-sans relative selection:bg-emerald-600 selection:text-white overflow-x-hidden w-full max-w-full">
-      {/* 1. STICKY LUMINOUS WHITE NAVBAR WITH COMPACT FLAGS */}
+      {/* 1. STICKY LUMINOUS WHITE NAVBAR WITH BESPOKE VECTOR SVG LOGO & COMPACT FLAGS */}
       <Navbar />
 
       {/* 2. HERO — MULTI-LAYER MESH EMERALD GRADIENT WITH REAL CLINIC PHOTO */}
@@ -46,31 +47,34 @@ export default function HomePage() {
       {/* 8. WHY BOUTIQUE ANTALYA VS MASS CLINICS IN ISTANBUL */}
       <WhyAntalyaVsIstanbul />
 
-      {/* 9. INTERNATIONAL PATIENT EXPERIENCES & EMERALD TRUST BAR */}
+      {/* 9. ANTALYA MEDICAL LOCATION & VIP LOGISTICS PROTOCOL */}
+      <LocationProtocol />
+
+      {/* 10. INTERNATIONAL PATIENT EXPERIENCES & EMERALD TRUST BAR */}
       <SocialProof />
 
-      {/* 10. 3-STEP INTERACTIVE HAIR ANALYSIS WIZARD */}
+      {/* 11. 3-STEP INTERACTIVE HAIR ANALYSIS WIZARD */}
       <HairAnalysisWizard />
 
-      {/* 11. CLINICAL STANDARDS & TECHNOLOGY (BENTO GRID) */}
+      {/* 12. CLINICAL STANDARDS & TECHNOLOGY (BENTO GRID) */}
       <CompetitorBenchmarkFeatures />
 
-      {/* 12. DHI VS CLASSIC FUE COMPARISON */}
+      {/* 13. DHI VS CLASSIC FUE COMPARISON */}
       <DHIVsFueComparison />
 
-      {/* 13. CLINICAL GUIDES & ARTICLES */}
+      {/* 14. CLINICAL GUIDES & ARTICLES */}
       <SemanticSeoGuide />
 
-      {/* 14. EXPANDED FAQ SECTION (8 COMPREHENSIVE QUESTIONS) */}
+      {/* 15. EXPANDED FAQ SECTION (8 COMPREHENSIVE QUESTIONS) */}
       <FaqSection />
 
-      {/* 15. LEGAL DISCLAIMER */}
+      {/* 16. LEGAL DISCLAIMER */}
       <MedicalDisclaimer />
 
-      {/* 16. FOOTER */}
+      {/* 17. FOOTER */}
       <Footer />
 
-      {/* 17. FIXED WHATSAPP BUTTON */}
+      {/* 18. FIXED WHATSAPP BUTTON */}
       <WhatsAppWidget />
     </main>
   );
