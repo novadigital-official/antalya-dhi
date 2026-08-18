@@ -4,9 +4,9 @@ import { SiteProvider } from '@/lib/context';
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Antalya DHI Hair Transplant | Premium Hair Restoration Turkey",
-  description: "Antalya'da DHI saç ekimi çözümleri. Kişisel analiz, VIP sağlık turizmi desteği ve Antalya operasyon deneyimi. Sağlık Bakanlığı onaylı yetkili klinik.",
-  keywords: "Antalya DHI hair transplant, DHI hair transplant Turkey, Antalya hair transplant clinic, saç ekimi Antalya, DHI vs FUE, hair restoration Turkey",
+  title: "Antalya DHI Hair Transplant | VIP Patient Coordination Turkey",
+  description: "All-inclusive DHI hair transplant coordination in Antalya. Licensed partner clinics, board-certified surgeons, VIP Mercedes transfer, and transparent packages.",
+  keywords: "Antalya DHI hair transplant, DHI hair transplant Turkey, Antalya hair transplant consultation, DHI vs FUE, hair restoration Turkey",
   metadataBase: new URL('https://antalyadhi.com'),
   alternates: {
     canonical: 'https://antalyadhi.com',
@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Antalya DHI Hair Transplant | Premium Hair Restoration Turkey',
-    description: 'All-inclusive DHI hair transplant packages from £1,550. T.C. Ministry of Health authorized partner clinic. VIP Mercedes transfers, luxury hotel stay, lifetime warranty.',
+    title: 'Antalya DHI Hair Transplant | VIP Patient Coordination Turkey',
+    description: 'All-inclusive DHI hair transplant packages from £1,550. T.C. Ministry of Health licensed partner facilities. VIP Mercedes transfers, luxury hotel stay, lifetime warranty.',
     url: 'https://antalyadhi.com',
-    siteName: 'Antalya DHI Aesthetic',
+    siteName: 'Antalya DHI Patient Coordination',
     locale: 'en_GB',
     type: 'website',
     images: [
@@ -33,14 +33,14 @@ export const metadata: Metadata = {
         url: 'https://antalyadhi.com/favicon.svg',
         width: 1200,
         height: 630,
-        alt: 'Antalya DHI Hair Transplant Portal',
+        alt: 'Antalya DHI Hair Transplant Coordination Portal',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Antalya DHI Hair Transplant | Premium Hair Restoration Turkey',
-    description: 'Personalized DHI hair transplantation in Antalya. Certified clinic, transparent rates, VIP health tourism.',
+    title: 'Antalya DHI Hair Transplant | VIP Patient Coordination Turkey',
+    description: 'Personalized DHI hair transplantation in Antalya. Licensed partner clinics, transparent rates, VIP health tourism.',
   },
   robots: {
     index: true,

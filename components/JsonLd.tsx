@@ -3,19 +3,16 @@ export default function JsonLd() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': ['MedicalClinic', 'LocalBusiness'],
-        '@id': 'https://antalyadhi.com/#clinic',
-        'name': 'Antalya DHI Hair Transplant & Medical Tourism Portal',
+        '@type': 'ProfessionalService',
+        '@id': 'https://antalyadhi.com/#service',
+        'name': 'Antalya DHI Hair Restoration & Patient Coordination Portal',
         'image': 'https://antalyadhi.com/favicon.svg',
         'url': 'https://antalyadhi.com',
-        'telephone': '+905551234567',
-        'priceRange': '£1550 - £2050',
+        'priceRange': '£1550 - £1900',
         'address': {
           '@type': 'PostalAddress',
-          'streetAddress': 'Muratpaşa Sağlık Turizmi Bölgesi',
           'addressLocality': 'Antalya',
           'addressRegion': 'Antalya',
-          'postalCode': '07100',
           'addressCountry': 'TR',
         },
         'geo': {
@@ -23,8 +20,7 @@ export default function JsonLd() {
           'latitude': 36.8848,
           'longitude': 30.7056,
         },
-        'medicalSpecialty': 'Dermatology & Hair Restoration',
-        'healthPlanNetworkId': 'T.C. Ministry of Health Authorization Ref: AK-84920',
+        'description': 'International patient consultation and coordination portal for VIP DHI hair transplantation in Antalya, partnering exclusively with licensed healthcare facilities.',
       },
       {
         '@type': 'MedicalProcedure',
@@ -33,7 +29,7 @@ export default function JsonLd() {
         'procedureType': 'SurgicalProcedure',
         'bodyLocation': 'Scalp',
         'description': 'Direct Hair Implantation using Choi Implanter Pen for maximum density and natural hair direction without shaving the recipient area.',
-        'howItIsPerformed': 'Single graft extraction followed by immediate direct implantation using 0.6mm-0.8mm Choi Pens.',
+        'howItIsPerformed': 'Single graft extraction followed by immediate direct implantation using 0.6mm-0.8mm Choi Pens in licensed medical facilities.',
       },
       {
         '@type': 'FAQPage',
