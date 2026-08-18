@@ -1,7 +1,22 @@
 import type { Metadata } from "next";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import JsonLd from '@/components/JsonLd';
 import { SiteProvider } from '@/lib/context';
 import "./globals.css";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['500', '600', '700', '800'],
+  variable: '--font-heading',
+  display: 'swap',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-sans',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "Antalya DHI Hair Transplant | VIP Patient Coordination Turkey",
@@ -23,7 +38,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Antalya DHI Hair Transplant | VIP Patient Coordination Turkey',
-    description: 'All-inclusive DHI hair transplant packages from £1,550. T.C. Ministry of Health licensed partner facilities. VIP Mercedes transfers, luxury hotel stay, lifetime warranty.',
+    description: 'All-inclusive DHI hair transplant packages from £1,550. T.C. Ministry of Health licensed partner facilities. VIP Mercedes transfers, luxury hotel stay, 12-month post-op care.',
     url: 'https://antalyadhi.com',
     siteName: 'Antalya DHI Patient Coordination',
     locale: 'en_GB',
@@ -61,8 +76,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`} suppressHydrationWarning>
+      <body className="font-sans antialiased bg-slate-50 text-slate-900" suppressHydrationWarning>
         <SiteProvider>
           <JsonLd />
           {children}

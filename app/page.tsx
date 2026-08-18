@@ -9,6 +9,7 @@ import PricingPackages from '@/components/PricingPackages';
 import SocialProof from '@/components/SocialProof';
 import HairAnalysisWizard from '@/components/HairAnalysisWizard';
 import PatientJourney from '@/components/PatientJourney';
+import RecoveryRoadmap from '@/components/RecoveryRoadmap';
 import MedicalTeam from '@/components/MedicalTeam';
 import CompetitorBenchmarkFeatures from '@/components/CompetitorBenchmarkFeatures';
 import ProcessTimeline from '@/components/ProcessTimeline';
@@ -34,75 +35,78 @@ export default function HomePage() {
       <LegalTrustBand />
 
       {/* 4. WHY ANTALYA FOR HAIR TRANSPLANT? */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-10 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <WhyAntalya />
-        
-        {/* STATS */}
         <CountUpStats />
       </section>
 
       {/* 5. TRANSPARENT PRICING PACKAGES */}
-      <section id="packages" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      <section id="packages" className="py-10 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/80">
         <PricingPackages />
       </section>
 
       {/* 6. PATIENT EXPERIENCES */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      <section className="py-10 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/80">
         <SocialProof />
       </section>
 
       {/* 7. INTERACTIVE HAIR ANALYSIS WIZARD */}
-      <section id="analysis-wizard" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      <section id="analysis-wizard" className="py-10 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/80">
         <HairAnalysisWizard />
       </section>
 
-      {/* 8. PATIENT EXPERIENCE & CLINIC ATMOSPHERE */}
-      <section id="results" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      {/* 8. PATIENT EXPERIENCE & CLINICAL ATMOSPHERE */}
+      <section id="results" className="py-10 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/80">
         <PatientJourney />
       </section>
 
-      {/* 9. MEDICAL STANDARDS & TECHNOLOGY */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      {/* 9. 12-MONTH POST-OP RECOVERY & GROWTH ROADMAP (NEW COMPONENT) */}
+      <section className="py-10 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/80">
+        <RecoveryRoadmap />
+      </section>
+
+      {/* 10. CLINICAL STANDARDS & TECHNOLOGY */}
+      <section className="py-10 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/80">
         <CompetitorBenchmarkFeatures />
       </section>
 
-      {/* 10. MEDICAL & PATIENT COORDINATION TEAM */}
-      <section id="team" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      {/* 11. MEDICAL & PATIENT COORDINATION TEAM */}
+      <section id="team" className="py-10 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/80">
         <MedicalTeam />
       </section>
 
-      {/* 11. DHI CHOI PEN ADVANTAGES */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      {/* 12. DHI CHOI PEN ADVANTAGES */}
+      <section className="py-10 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/80">
         <DHIAdvantages />
       </section>
 
-      {/* 12. 4-STEP TRANSPARENT PROCESS TIMELINE */}
-      <section id="process" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      {/* 13. 4-STEP TRANSPARENT PROCESS TIMELINE */}
+      <section id="process" className="py-10 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/80">
         <ProcessTimeline />
       </section>
 
-      {/* 13. DHI VS FUE COMPARISON TABLE */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      {/* 14. DHI VS FUE COMPARISON TABLE */}
+      <section className="py-10 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/80">
         <DHIVsFueComparison />
       </section>
 
-      {/* 14. PATIENT GUIDES & ARTICLES */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      {/* 15. PATIENT GUIDES & ARTICLES */}
+      <section className="py-10 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/80">
         <SemanticSeoGuide />
       </section>
 
-      {/* 15. FAQ SECTION */}
-      <section id="faq-section" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+      {/* 16. FAQ SECTION */}
+      <section id="faq-section" className="py-10 md:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/80">
         <FaqSection />
       </section>
 
-      {/* 16. LEGAL DISCLAIMER */}
+      {/* 17. LEGAL DISCLAIMER */}
       <MedicalDisclaimer />
 
-      {/* 17. FOOTER */}
+      {/* 18. FOOTER */}
       <Footer />
 
-      {/* 18. FIXED FLOATING WHATSAPP BUTTON */}
+      {/* 19. FIXED FLOATING WHATSAPP BUTTON */}
       <WhatsAppWidget />
     </main>
   );
