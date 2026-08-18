@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useSiteContext } from '@/lib/context';
 import { Sparkles, ChevronDown } from 'lucide-react';
+import { Lang } from '@/lib/i18n';
 
 export default function FaqSection() {
   const { lang } = useSiteContext();
@@ -10,71 +11,107 @@ export default function FaqSection() {
 
   const faqs = lang === 'tr' ? [
     {
-      q: "Antalya'da DHI saç ekimi paket fiyatları ne kadar?",
-      a: "Antalya'da DHI saç ekimi paket fiyatları 90.000 TL (Standart DHI) ile 110.000 TL (VIP Her Şey Dahil) arasında değişmektedir. Paketlerimize DHI ameliyatı, konforlu anestezi, ilaç ve bakım kiti, VIP havalimanı transferi ve otel konaklaması dahildir."
+      q: "Antalya'da DHI saç ekimi paket fiyatları ne kadar ve neler dahildir?",
+      a: "Antalya DHI saç ekimi paketlerimiz 90.000 TL (Standart DHI) ile 110.000 TL (VIP Her Şey Dahil) arasındadır. VIP paketimizde steril hastanede maksimum greft DHI ameliyatı, iğnesiz konforlu anestezi, 5 yıldızlı otel konaklaması, havalimanı ve klinik Mercedes Vito VIP transferleri, PRP seansı, ilaç ve özel medikal bakım seti ile 12 aylık doktor takibi eksiksiz dahildir."
     },
     {
-      q: "DHI ve Klasik FUE saç ekimi arasındaki temel fark nedir?",
-      a: "DHI (Direct Hair Implantation) yönteminde Choi Implanter Pen kullanılarak kanal açma ve greft yerleştirme adımları eşzamanlı gerçekleştirilir. Klasik FUE'de ise önce kanallar açılır. DHI daha sık ekim, doğal açı kontrolü ve tıraşsız uygulama imkânı sunar."
+      q: "DHI (Choi Pen) ve Klasik FUE arasındaki temel klinik fark nedir?",
+      a: "DHI tekniğinde Choi Implanter Pen kullanılarak kanal açma ve saç kökü yerleştirme işlemi eşzamanlı olarak tek bir mikroskobik hamlede gerçekleştirilir. Klasik FUE'de ise önce neşterle kanallar açılır. DHI yöntemi doku travmasını sıfıra indirir, cm² başına daha sık saç ekimine imkân tanır ve 360 derece doğal çıkış açısı kontrolü sağlar."
     },
     {
-      q: "DHI saç ekiminde ekim yapılacak alanın tıraş edilmesi zorunlu mu?",
-      a: "Hayır. DHI Choi Pen implanter teknolojisi sayesinde mevcut saçların arasına doğrudan giriş yapılabildiğinden alıcı alanın tamamen tıraş edilmesine gerek kalmaz."
+      q: "DHI saç ekiminde saçlarımı tamamen tıraş ettirmem gerekir mi?",
+      a: "Hayır. DHI Choi Pen implanter teknolojisi sayesinde saç kökleri mevcut saç tellerinizin arasına doğrudan yerleştirilebilir. Bu sayede özellikle ön çizgi ve tepe bölgesinde mevcut saçlarınızı kesmeden tıraşsız saç ekimi yaptırabilirsiniz."
     },
     {
-      q: "VIP Her Şey Dahil paketine neler dahildir?",
-      a: "VIP paketimizde maksimum greft DHI saç ekim operasyonu, Antalya Havalimanı & klinik Mercedes Vito transferleri, otel konaklaması, çok dilli hasta koordinatörü (EN/FR/TR) ve 12 aylık medikal takip yer almaktadır."
+      q: "Operasyon sırasında veya anestezi aşamasında ağrı/acı hissedilir mi?",
+      a: "Hayır. Operasyon öncesinde iğnesiz yüksek basınçlı püskürtme anestezi (ComfortIn) uygulanır. Geleneksel iğneli anestezinin yarattığı batma hissi yaşanmaz ve işlem tamamen konforlu şekilde tamamlanır."
     },
     {
-      q: "DHI saç ekimi sonrası iyileşme süreci nasıldır?",
-      a: "DHI yönteminde mikroskobik uçlar kullanıldığı için doku hassasiyeti asgari düzeydedir. Mikro kabuklanmalar 7–10 gün içinde dökülür ve hastalar genellikle 3–5 gün içinde normal rutinlerine dönebilirler."
+      q: "Tek bir seansta en fazla kaç greft saç ekilebilir?",
+      a: "Hastanın ense donör bölgesinin saç sıklığı ve kök kalitesine bağlı olarak tek bir DHI seansında güvenle 3.500 ila 4.800+ greft (yaklaşık 8.000 - 11.000 saç teli) transfer edilebilmektedir."
+    },
+    {
+      q: "Şok dökülme evresi nedir ve yeni saçlarım ne zaman uzamaya başlar?",
+      a: "Operasyondan sonraki 1. ve 2. aylar arasında ekilen saç tellerinin geçici olarak dökülmesi 'şok dökülme' olarak adlandırılır ve tamamen sağlıklı, doğal bir evredir. Canlı kökler deri altında sağlam kalır. 4. aydan itibaren kalıcı saçlar gözle görülür şekilde uzar, 6-8. ayda yoğunlaşır ve 12. ayda nihai saç yoğunluğuna ulaşılır."
+    },
+    {
+      q: "Operasyondan kaç gün sonra uçağa binebilir ve işime dönebilirim?",
+      a: "DHI yönteminde kesi veya dikiş olmadığı için iyileşme son derece hızlıdır. 3. gün klinikte yapılan ilk uzman saç yıkaması ve kontrolün ardından hastalarımız güvenle uçak yolculuğu yapabilir ve 3–5 gün içinde masa başı işlerine dönebilirler."
+    },
+    {
+      q: "12 Aylık medikal takip ve garanti süreci nasıl işler?",
+      a: "Operasyon tamamlandıktan sonra hastalarımıza ömür boyu kök tutunma sertifikası verilir. 1, 3, 6 ve 12. aylarda WhatsApp üzerinden uzman medikal ekibimiz tarafından saç gelişiminiz düzenli olarak değerlendirilir ve desteklenir."
     }
   ] : lang === 'fr' ? [
     {
-      q: "Quel est le tarif d'une greffe de cheveux DHI à Antalya ?",
-      a: "Les forfaits DHI à Antalya s'échelonnent de 1 800€ (£1,550) pour le forfait Standard à 2 200€ (£1,900) pour l'expérience VIP All-Inclusive incluant séjour à l'hôtel, transferts privés en Mercedes Vito et coordination multilingue."
+      q: "Quel est le tarif d'une greffe DHI à Antalya et que comprend le forfait ?",
+      a: "Nos forfaits DHI à Antalya s'échelonnent de 1 800€ (Standard) à 2 200€ (VIP Tout Compris). Le forfait VIP comprend l'intervention DHI avec nombre maximum de greffons en hôpital agréé, l'anesthésie sans aiguille, l'hébergement en hôtel 5 étoiles, tous les transferts privés en Mercedes Vito, la séance de PRP, le kit de soins médicaux et le suivi post-opératoire sur 12 mois."
     },
     {
-      q: "Quelle est la différence entre la méthode DHI et la FUE classique ?",
-      a: "La technique DHI utilise le stylo d'implantation Choi pour insérer directement les greffons sans incision préalable. Elle offre une densité accrue et une convalescence plus rapide."
+      q: "Quelle est la différence entre la méthode DHI Choi Pen et la FUE classique ?",
+      a: "La technique DHI utilise le stylo d'implantation Choi pour implanter directement les greffons sans incision préalable. Elle permet une densité supérieure (jusqu'à 75 greffons/cm²), un contrôle parfait de l'angle naturel et une cicatrisation deux fois plus rapide que la FUE classique."
     },
     {
-      q: "Le rasage est-il obligatoire pour une greffe DHI ?",
-      a: "Non, la technique DHI permet d'implanter les greffons entre vos cheveux existants sans raser l'ensemble de la zone receveuse."
+      q: "Le rasage complet de la tête est-il obligatoire pour une greffe DHI ?",
+      a: "Non. Grâce à la finesse du stylo Choi, l'implantation peut être réalisée entre vos cheveux existants sans raser l'ensemble de la zone receveuse."
     },
     {
-      q: "Que comprend le forfait VIP All-Inclusive ?",
-      a: "Le forfait VIP comprend l'intervention DHI, les transferts privés en Mercedes Vito, l'hébergement hôtelier, un coordinateur multilingue et le protocole de suivi post-opératoire sur 12 mois."
+      q: "L'intervention est-elle douloureuse ?",
+      a: "Non. Nous utilisons une technologie d'anesthésie locale par jet sous pression sans aiguille traditionnelle, rendant la procédure entièrement indolore et confortable."
     },
     {
-      q: "Quel est le délai de récupération après une intervention DHI ?",
-      a: "Grâce aux micro-aiguilles Choi, la cicatrisation est rapide. Les croûtes disparaissent en 7 à 10 jours et la reprise des activités est possible en 3 à 5 jours."
+      q: "Combien de greffons peuvent être implantés en une seule séance ?",
+      a: "Selon la densité de votre zone donneuse, nous implantons en toute sécurité entre 3 500 et 4 800+ greffons (soit environ 8 000 à 11 000 cheveux) lors d'une seule session DHI."
+    },
+    {
+      q: "Qu'est-ce que la perte transitoire (shock loss) et quand poussent les cheveux finaux ?",
+      a: "Entre le 1er et le 2ème mois, les tiges capillaires greffées tombent temporairement; les racines restent fermement ancrées. La repousse active commence dès le 4ème mois et le résultat dense et définitif est atteint au 12ème mois."
+    },
+    {
+      q: "Quand puis-je reprendre l'avion et mes activités professionnelles ?",
+      a: "Dès le 3ème jour, après le premier lavage médical clinique et le contrôle médical, vous pouvez reprendre l'avion en toute sécurité et retourner au travail sous 3 à 5 jours."
+    },
+    {
+      q: "Comment fonctionne le suivi médical sur 12 mois ?",
+      a: "Nous assurons un suivi mensuel personnalisé par WhatsApp aux 1er, 3ème, 6ème et 12ème mois avec notre équipe médicale pour garantir le résultat parfait de votre greffe."
     }
   ] : [
     {
-      q: "How much does a DHI hair transplant cost in Antalya, Turkey?",
-      a: "DHI hair transplant packages in Antalya range from £1,550 (€1,800) for Standard DHI to £1,900 (€2,200) for the VIP All-Inclusive package, which includes hotel stay, private Mercedes Vito transfers, and dedicated patient coordination."
+      q: "How much does a DHI hair transplant cost in Antalya, and what is included?",
+      a: "Our DHI hair transplant packages in Antalya range from £1,550 (€1,800) for Standard DHI to £1,900 (€2,200) for the VIP All-Inclusive experience. The VIP package includes maximum-graft DHI surgery in a licensed hospital, needle-free anesthesia, 5-star hotel accommodation, private Mercedes Vito transfers, PRP therapy, medical care kit, and 12-month post-op follow-up."
     },
     {
-      q: "What is the key difference between DHI and traditional FUE?",
-      a: "DHI (Direct Hair Implantation) utilizes specialized Choi Implanter Pens to place follicles directly without pre-cutting channel incisions, allowing higher density, precise angle placement, and faster scalp recovery."
+      q: "What is the key clinical difference between DHI Choi Pen and traditional FUE?",
+      a: "DHI uses specialized Choi Implanter Pens to extract and place follicles directly in a single microscopic step without pre-cutting channel incisions. This minimizes scalp trauma, allows higher density placement (up to 75 grafts/cm²), and ensures 360-degree natural angle precision."
     },
     {
-      q: "Is it required to shave my entire head for a DHI procedure?",
-      a: "No. The Choi Pen technique enables direct placement between existing hairs without completely shaving the recipient area."
+      q: "Is shaving my whole head mandatory for a DHI procedure?",
+      a: "No. The Choi Pen technique enables precision placement between existing hairs, allowing completely unshaven or partially shaved options."
     },
     {
-      q: "What is included in the VIP All-Inclusive package?",
-      a: "The VIP package covers maximum-graft DHI surgery in a licensed hospital, private Mercedes Vito airport and hotel transfers, comfortable hotel accommodation, multilingual patient coordination, and 12-month post-op care."
+      q: "Is the DHI procedure or anesthesia painful?",
+      a: "No. We administer needle-free pressure-spray jet anesthesia (ComfortIn) prior to extraction, eliminating standard needle pinch discomfort and ensuring a pain-free experience."
     },
     {
-      q: "What is the typical recovery timeline after DHI?",
-      a: "Because Choi pens minimize epidermal trauma, micro-scabs naturally detach within 7–10 days, allowing most patients to resume normal daily activities within 3–5 days."
+      q: "How many grafts can be transplanted in a single DHI session?",
+      a: "Depending on your donor area density and hair characteristics, we safely transplant between 3,500 and 4,800+ grafts (approximately 8,000 to 11,000 hairs) in a single comprehensive session."
+    },
+    {
+      q: "What is shock loss, and when do permanent hair results appear?",
+      a: "Shock loss is the natural shedding of transplanted hair shafts between weeks 4 to 8 while living roots remain firmly anchored beneath the scalp. Permanent active regrowth begins in month 4, thickens noticeably by months 6–8, and reaches 100% full maturity at month 12."
+    },
+    {
+      q: "How soon after surgery can I fly back home and return to work?",
+      a: "On Day 3, following your clinical hair wash and surgeon sign-off, you can safely board your return flight and resume regular desk work within 3 to 5 days."
+    },
+    {
+      q: "How does the 12-month post-op follow-up and guarantee work?",
+      a: "Every patient receives a lifetime graft retention certificate. Our medical team conducts scheduled photo reviews at months 1, 3, 6, and 12 via WhatsApp to ensure optimal density and growth."
     }
   ];
 
   return (
-    <section id="faq" className="py-14 sm:py-18 bg-white border-b border-slate-200/80 relative">
+    <section id="faq" className="py-14 sm:py-18 bg-white border-b border-slate-200/80 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Section Header */}
@@ -87,7 +124,7 @@ export default function FaqSection() {
             {lang === 'tr' ? "Sıkça Sorulan Sorular" : lang === 'fr' ? "Foire Aux Questions" : "Frequently Asked Questions"}
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 font-normal max-w-2xl mx-auto">
-            {lang === 'tr' ? "Antalya DHI saç ekimi ve hasta koordinasyon süreci hakkında merak edilen tüm soruların yanıtları." : "Essential clinical and travel details regarding DHI hair restoration in Antalya."}
+            {lang === 'tr' ? "Antalya DHI saç ekimi, fiyatlar, iyileşme süreci ve VIP seyahat hakkında merak edilen tüm sorular." : "Essential clinical and travel details regarding DHI hair restoration in Antalya."}
           </p>
         </div>
 
@@ -99,7 +136,7 @@ export default function FaqSection() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                className="w-full p-4 sm:p-5 text-left font-heading font-bold text-xs sm:text-sm text-slate-900 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50 min-h-[52px]"
+                className="w-full p-4 sm:p-5 text-left font-heading font-bold text-xs sm:text-sm text-slate-900 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50 min-h-[50px]"
               >
                 <span>{faq.q}</span>
                 <ChevronDown 
@@ -108,7 +145,7 @@ export default function FaqSection() {
               </button>
 
               {openIndex === idx && (
-                <div className="px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal border-t border-slate-100 bg-slate-50/50">
+                <div className="px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal border-t border-slate-100 bg-slate-50/40">
                   {faq.a}
                 </div>
               )}

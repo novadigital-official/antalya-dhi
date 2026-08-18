@@ -10,9 +10,7 @@ import PrePostCareGuide from '@/components/PrePostCareGuide';
 import WhyAntalyaVsIstanbul from '@/components/WhyAntalyaVsIstanbul';
 import SocialProof from '@/components/SocialProof';
 import HairAnalysisWizard from '@/components/HairAnalysisWizard';
-import RecoveryRoadmap from '@/components/RecoveryRoadmap';
 import CompetitorBenchmarkFeatures from '@/components/CompetitorBenchmarkFeatures';
-import DHIAdvantages from '@/components/DHIAdvantages';
 import DHIVsFueComparison from '@/components/DHIVsFueComparison';
 import SemanticSeoGuide from '@/components/SemanticSeoGuide';
 import FaqSection from '@/components/FaqSection';
@@ -24,7 +22,7 @@ import Footer from '@/components/Footer';
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#FAFBFC] text-slate-900 font-sans relative selection:bg-emerald-600 selection:text-white overflow-x-hidden w-full max-w-full">
-      {/* 1. STICKY LUMINOUS WHITE NAVBAR WITH CIRCULAR FLAGS */}
+      {/* 1. STICKY LUMINOUS WHITE NAVBAR WITH COMPACT FLAGS */}
       <Navbar />
 
       {/* 2. HERO — MULTI-LAYER MESH EMERALD GRADIENT WITH REAL CLINIC PHOTO */}
@@ -39,7 +37,7 @@ export default function HomePage() {
       {/* 5. 3-DAY ITINERARY & TRANSPARENT PRICING PLANS */}
       <PricingPackages />
 
-      {/* 6. GRAFT & HAIR DENSITY ESTIMATION GUIDE (COMPETITOR BENCHMARK FEATURE) */}
+      {/* 6. GRAFT & HAIR DENSITY ESTIMATION GUIDE */}
       <GraftCalculatorGuide />
 
       {/* 7. PRE-OP & POST-OP PATIENT CARE PROTOCOL */}
@@ -54,31 +52,25 @@ export default function HomePage() {
       {/* 10. 3-STEP INTERACTIVE HAIR ANALYSIS WIZARD */}
       <HairAnalysisWizard />
 
-      {/* 11. 12-MONTH POST-OP RECOVERY TIMELINE */}
-      <RecoveryRoadmap />
-
-      {/* 12. CLINICAL STANDARDS & TECHNOLOGY (BENTO GRID) */}
+      {/* 11. CLINICAL STANDARDS & TECHNOLOGY (BENTO GRID) */}
       <CompetitorBenchmarkFeatures />
 
-      {/* 13. CHOI PEN DHI ADVANTAGES */}
-      <DHIAdvantages />
-
-      {/* 14. DHI VS CLASSIC FUE COMPARISON */}
+      {/* 12. DHI VS CLASSIC FUE COMPARISON */}
       <DHIVsFueComparison />
 
-      {/* 15. CLINICAL GUIDES & ARTICLES */}
+      {/* 13. CLINICAL GUIDES & ARTICLES */}
       <SemanticSeoGuide />
 
-      {/* 16. FAQ SECTION */}
+      {/* 14. EXPANDED FAQ SECTION (8 COMPREHENSIVE QUESTIONS) */}
       <FaqSection />
 
-      {/* 17. LEGAL DISCLAIMER */}
+      {/* 15. LEGAL DISCLAIMER */}
       <MedicalDisclaimer />
 
-      {/* 18. FOOTER */}
+      {/* 16. FOOTER */}
       <Footer />
 
-      {/* 19. FIXED WHATSAPP BUTTON */}
+      {/* 17. FIXED WHATSAPP BUTTON */}
       <WhatsAppWidget />
     </main>
   );

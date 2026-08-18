@@ -3,7 +3,6 @@
 import { useSiteContext } from '@/lib/context';
 import { Lang } from '@/lib/i18n';
 import Link from 'next/link';
-import { MessageSquare } from 'lucide-react';
 
 export default function Navbar() {
   const { lang, setLang } = useSiteContext();
@@ -17,10 +16,10 @@ export default function Navbar() {
   };
 
   const ctaText = {
-    tr: 'Ücretsiz Analiz Al',
-    en: 'Free Scalp Analysis',
+    tr: 'Ücretsiz Analiz',
+    en: 'Free Analysis',
     fr: 'Analyse Gratuite',
-  }[lang as Lang] || 'Free Scalp Analysis';
+  }[lang as Lang] || 'Free Analysis';
 
   const languages: { code: Lang; label: string; name: string }[] = [
     { code: 'en', label: 'EN', name: 'English' },
@@ -29,19 +28,19 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-2xs transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-2xs w-full max-w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-2">
         
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2.5 font-heading font-extrabold text-xl tracking-tight text-slate-900 group">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-700 to-emerald-500 flex items-center justify-center text-white text-xs font-black shadow-md shadow-emerald-600/20 group-hover:scale-105 transition-transform">
+        <Link href="/" className="flex items-center gap-2 font-heading font-extrabold text-base sm:text-xl tracking-tight text-slate-900 shrink-0">
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-gradient-to-tr from-emerald-700 to-emerald-500 flex items-center justify-center text-white text-[11px] sm:text-xs font-black shadow-md shadow-emerald-600/20">
             DHI
           </div>
           <span className="text-slate-900 font-extrabold tracking-tight">ANTALYA <span className="text-emerald-600">DHI</span></span>
         </Link>
 
-        {/* Center Nav Links */}
-        <nav className="hidden lg:flex items-center gap-7 text-xs font-bold text-slate-600">
+        {/* Center Nav Links (Desktop Only) */}
+        <nav className="hidden lg:flex items-center gap-6 text-xs font-bold text-slate-600">
           <a href="#comparison" className="hover:text-emerald-600 transition-colors">
             {lang === 'tr' ? 'Karşılaştırma' : lang === 'fr' ? 'Comparatif' : 'Comparison'}
           </a>
@@ -51,17 +50,20 @@ export default function Navbar() {
           <a href="#packages" className="hover:text-emerald-600 transition-colors">
             {lang === 'tr' ? 'Şeffaf Paketler' : lang === 'fr' ? 'Forfaits' : 'Packages'}
           </a>
-          <a href="#recovery-roadmap" className="hover:text-emerald-600 transition-colors">
-            {lang === 'tr' ? '12 Ay Takvim' : lang === 'fr' ? 'Suivi 12 Mois' : '12-Mo Timeline'}
+          <a href="#graft-guide" className="hover:text-emerald-600 transition-colors">
+            {lang === 'tr' ? 'Greft Rehberi' : lang === 'fr' ? 'Guide Greffons' : 'Graft Guide'}
+          </a>
+          <a href="#care-guide" className="hover:text-emerald-600 transition-colors">
+            {lang === 'tr' ? 'Bakım Rehberi' : lang === 'fr' ? 'Guide Soins' : 'Care Guide'}
           </a>
           <a href="#faq" className="hover:text-emerald-600 transition-colors">FAQ</a>
         </nav>
 
-        {/* Right Controls: Modern Circular Flag Selector & Primary CTA */}
-        <div className="flex items-center gap-3">
+        {/* Right Controls: Circular Flag Selector & Primary CTA */}
+        <div className="flex items-center gap-2 shrink-0">
           
           {/* Circular Flags Language Selector */}
-          <div className="flex items-center bg-slate-100/90 border border-slate-200/90 rounded-full p-1 gap-1 shadow-2xs">
+          <div className="flex items-center bg-slate-100 border border-slate-200/90 rounded-full p-0.5 sm:p-1 gap-0.5 sm:gap-1 shadow-2xs">
             {languages.map((item) => {
               const isActive = lang === item.code;
               return (
@@ -69,14 +71,14 @@ export default function Navbar() {
                   key={item.code}
                   onClick={() => setLang(item.code)}
                   title={item.name}
-                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full transition-all cursor-pointer text-xs font-bold ${
+                  className={`flex items-center gap-1 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full transition-all cursor-pointer text-[10px] sm:text-xs font-bold ${
                     isActive
                       ? 'bg-white text-emerald-800 shadow-xs ring-1 ring-emerald-500/30'
-                      : 'text-slate-500 hover:text-slate-900 hover:bg-slate-200/60'
+                      : 'text-slate-500 hover:text-slate-900'
                   }`}
                 >
                   {/* Round Flag Icon */}
-                  <span className="w-4 h-4 rounded-full overflow-hidden flex items-center justify-center shrink-0 shadow-2xs border border-black/10">
+                  <span className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full overflow-hidden flex items-center justify-center shrink-0 border border-black/10">
                     {item.code === 'en' && (
                       <svg className="w-full h-full object-cover" viewBox="0 0 60 30">
                         <clipPath id="s">
@@ -110,7 +112,7 @@ export default function Navbar() {
                       </svg>
                     )}
                   </span>
-                  <span className="text-[11px] font-extrabold uppercase">{item.label}</span>
+                  <span className="text-[10px] sm:text-[11px] font-extrabold uppercase">{item.label}</span>
                 </button>
               );
             })}
@@ -120,7 +122,7 @@ export default function Navbar() {
           <a
             href="#analysis-wizard"
             onClick={scrollToWizard}
-            className="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold px-4 py-2.5 rounded-xl shadow-md shadow-emerald-600/20 transition-all hover:scale-102 active:scale-98 cursor-pointer hidden sm:flex items-center gap-1.5"
+            className="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold px-3.5 py-2 rounded-xl shadow-md shadow-emerald-600/20 transition-all hover:scale-102 active:scale-98 cursor-pointer hidden md:flex items-center gap-1.5"
           >
             <span>{ctaText}</span>
           </a>
