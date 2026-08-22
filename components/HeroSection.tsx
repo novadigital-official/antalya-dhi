@@ -72,10 +72,16 @@ export default function HeroSection() {
         {/* Left Column: Value Proposition & Copy (7 cols) */}
         <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
           
-          {/* Authority Trust Tag */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-400/30 text-emerald-300 text-xs font-bold backdrop-blur-md shadow-sm max-w-full">
-            <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span className="truncate">{lang === 'tr' ? 'T.C. Sağlık Bakanlığı Ruhsatlı Klinikler · 12+ Yıl Deneyim' : 'T.C. Ministry of Health Licensed Partner Clinics'}</span>
+          {/* Authority Trust Tag & Zero Deposit Guarantee */}
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 max-w-full">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-400/40 text-emerald-300 text-xs font-bold backdrop-blur-md shadow-sm">
+              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span>{lang === 'tr' ? 'T.C. Sağlık Bakanlığı Ruhsatlı Anlaşmalı Klinikler' : 'Licensed Partner Healthcare Facilities in Antalya'}</span>
+            </div>
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-950/80 border border-amber-500/50 text-amber-300 text-xs font-extrabold backdrop-blur-md shadow-sm animate-pulse">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span>{lang === 'tr' ? '£0 Ön Ödeme · Ücreti Muayene Sonrası Klinikte Ödeyin' : '£0 Upfront Deposit · Pay at Clinic After Consultation'}</span>
+            </div>
           </div>
 
           {/* Main H1 Headline */}
@@ -85,13 +91,17 @@ export default function HeroSection() {
             ) : lang === 'tr' ? (
               <>Antalya&apos;da <span className="text-emerald-300">Doktor Kontrollü</span> Lüks DHI Saç Restorasyonu</>
             ) : (
-              <>Surgeon-Guided <span className="text-emerald-300">DHI Hair Restoration</span> in Antalya</>
+              <>Doctor-Supervised <span className="text-emerald-300">DHI Hair Restoration</span> in Antalya</>
             )}
           </h1>
 
           {/* Subtitle */}
           <p className="text-emerald-100/90 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
-            {t(lang as Lang, 'hero.subtitle')}
+            {lang === 'tr'
+              ? 'Tek kullanımlık Choi implanter kalemleri, 5 yıldızlı sahil oteli, VIP Mercedes transferi ve 12 aylık medikal takip. Ön kapora yok, tüm ödeme klinikte.'
+              : lang === 'fr'
+              ? 'Stylos implanteurs Choi à usage unique, hôtel 5 étoiles, transferts VIP Mercedes et suivi médical sur 12 mois. Zéro acompte, paiement sur place à la clinique.'
+              : 'Single-use Choi Implanter Pens, 5-Star beachfront hotel accommodation, private VIP Mercedes transfers, and 12-month clinical follow-up. £0 deposit — pay safely at the clinic in Antalya.'}
           </p>
 
           {/* Transparent Price Anchor Pill */}
@@ -102,6 +112,9 @@ export default function HeroSection() {
                 <span className="text-emerald-300 font-black text-base sm:text-lg">{priceFormatted}</span>
                 <span className="text-[11px] text-amber-300 bg-amber-950/80 border border-amber-500/40 px-2.5 py-0.5 rounded-lg font-extrabold">
                   {transferTagText}
+                </span>
+                <span className="text-[11px] text-emerald-300 bg-emerald-900/80 border border-emerald-400/40 px-2 py-0.5 rounded-lg font-bold">
+                  {lang === 'tr' ? 'Klinikte Öde' : 'Pay on Arrival'}
                 </span>
               </div>
             </div>
@@ -129,15 +142,15 @@ export default function HeroSection() {
             </a>
           </div>
 
-          {/* Social Proof Line */}
-          <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-emerald-200/80 font-semibold">
-            <div className="flex items-center gap-1.5 text-amber-300 font-extrabold">
-              <Star className="w-4 h-4 fill-current shrink-0" />
-              <span>{reviewsText}</span>
+          {/* Social Proof Line (Trustpilot 4.9⭐ + WhatClinic) */}
+          <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs font-semibold">
+            <div className="flex items-center gap-1.5 bg-emerald-950/80 border border-emerald-500/30 px-3 py-1.5 rounded-xl text-amber-300 font-extrabold shadow-sm">
+              <Star className="w-4 h-4 fill-current shrink-0 text-amber-400" />
+              <span>Trustpilot 4.9★ (1,700+ UK Reviews)</span>
             </div>
-            <div className="flex items-center gap-1.5 text-white">
-              <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>{followUpText}</span>
+            <div className="flex items-center gap-1.5 bg-emerald-950/80 border border-emerald-500/30 px-3 py-1.5 rounded-xl text-emerald-300 font-bold shadow-sm">
+              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span>WhatClinic: Excellent Service</span>
             </div>
           </div>
 

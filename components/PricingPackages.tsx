@@ -44,22 +44,22 @@ export default function PricingPackages() {
   }[lang as Lang] || 'Total Fixed Rate';
 
   const standardSubtext = {
-    tr: '(€1.800 / £1.550 / 90.000 ₺)',
-    en: '(€1,800 / £1,550 / ₺90k)',
-    fr: '(1 800€ / £1,550 / 90 000 ₺)',
-  }[lang as Lang] || '(€1,800 / £1,550 / ₺90k)';
+    tr: '(€2.150 / £1.850 / 95.000 ₺)',
+    en: '(€2,150 / £1,850 / ₺95k)',
+    fr: '(2 150€ / £1,850 / 95 000 ₺)',
+  }[lang as Lang] || '(€2,150 / £1,850 / ₺95k)';
 
   const vipSubtext = {
-    tr: '(€2.200 / £1.900 / 110.000 ₺)',
-    en: '(€2,200 / £1,900 / ₺110k)',
-    fr: '(2 200€ / £1,900 / 110 000 ₺)',
-  }[lang as Lang] || '(€2,200 / £1,900 / ₺110k)';
+    tr: '(€2.550 / £2.200 / 115.000 ₺)',
+    en: '(€2,550 / £2,200 / ₺115k)',
+    fr: '(2 550€ / £2,200 / 115 000 ₺)',
+  }[lang as Lang] || '(€2,550 / £2,200 / ₺115k)';
 
   const standardDesc = {
-    tr: 'Cerrahi operasyon ve VIP Mercedes transferi dahil paket (Otel konaklamasını kendi ayarlayan hastalar için).',
-    en: 'Surgery + VIP Mercedes Vito transfers included (For patients arranging their own hotel stay).',
-    fr: 'Chirurgie DHI + Transferts VIP Mercedes inclus (Pour les patients organisant leur hébergement).',
-  }[lang as Lang] || 'Surgery + VIP Mercedes transfers included.';
+    tr: 'Cerrahi DHI operasyonu ve VIP Mercedes Vito transferi dahil paket. £0 ön ödeme — ücret klinikte muayene sonrası ödenir.',
+    en: 'DHI surgery + VIP Mercedes Vito transfers included. £0 upfront deposit — pay at the clinic in Antalya.',
+    fr: 'Chirurgie DHI + Transferts VIP Mercedes inclus. Zéro acompte — paiement sur place à la clinique.',
+  }[lang as Lang] || 'DHI surgery + VIP Mercedes Vito transfers included. £0 upfront deposit.';
 
   return (
     <section id="packages" className="py-14 sm:py-18 bg-white border-b border-slate-200/80 relative overflow-hidden">

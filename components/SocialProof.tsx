@@ -79,6 +79,24 @@ export default function SocialProof() {
           <p className="text-xs sm:text-sm text-slate-600 font-normal max-w-2xl mx-auto">
             {subtitle}
           </p>
+
+          {/* Trustpilot & WhatClinic Live Verified Ratings */}
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-3">
+            <div className="flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-2xl shadow-xs">
+              <div className="flex text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-current" />
+                ))}
+              </div>
+              <span className="text-xs font-black text-slate-900">4.9 / 5.0</span>
+              <span className="text-[11px] font-bold text-[#00b67a] bg-emerald-50 px-2 py-0.5 rounded-md">★ Trustpilot</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-2xl shadow-xs">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <span className="text-xs font-black text-slate-900">WhatClinic</span>
+              <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Excellent Service 2026</span>
+            </div>
+          </div>
         </div>
 
         {/* Testimonials 3-Card Grid */}

@@ -9,16 +9,16 @@ export const currencySymbols: Record<Currency, string> = {
 
 export const PRICES = {
   standard: {
-    GBP: 1550,
-    EUR: 1800,
-    USD: 2000,
-    TRY: 90000
+    GBP: 1850,
+    EUR: 2150,
+    USD: 2350,
+    TRY: 95000
   },
   vip: {
-    GBP: 1900,
-    EUR: 2200,
-    USD: 2400,
-    TRY: 110000
+    GBP: 2200,
+    EUR: 2550,
+    USD: 2800,
+    TRY: 115000
   }
 };
 
