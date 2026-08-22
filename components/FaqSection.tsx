@@ -12,7 +12,7 @@ export default function FaqSection() {
   const faqs = lang === 'tr' ? [
     {
       q: "Antalya'da DHI saç ekimi paket fiyatları ne kadar ve neler dahildir?",
-      a: "Antalya DHI saç ekimi paketlerimiz 90.000 TL (Standart DHI) ile 110.000 TL (VIP Her Şey Dahil) arasındadır. VIP paketimizde steril hastanede maksimum greft DHI ameliyatı, iğnesiz konforlu anestezi, 5 yıldızlı otel konaklaması, havalimanı ve klinik Mercedes Vito VIP transferleri, PRP seansı, ilaç ve özel medikal bakım seti ile 12 aylık doktor takibi eksiksiz dahildir."
+      a: "Antalya DHI saç ekimi paketlerimiz 95.000 TL (Standart DHI) ile 115.000 TL (VIP Her Şey Dahil / £2,200) arasındadır. Paketlerimizde £0 ön ödeme güvencesi vardır; tüm ödemeyi klinikte doktor muayenesi ve kan tahlilleriniz sonrasında yaparsınız. VIP paketimizde steril hastanede maksimum greft DHI ameliyatı, iğnesiz konforlu anestezi, 5 yıldızlı otel konaklaması, havalimanı ve klinik Mercedes Vito VIP transferleri, PRP seansı, ilaç ve özel medikal bakım seti ile 12 aylık doktor takibi eksiksiz dahildir."
     },
     {
       q: "DHI (Choi Pen) ve Klasik FUE arasındaki temel klinik fark nedir?",
@@ -78,7 +78,7 @@ export default function FaqSection() {
   ] : [
     {
       q: "How much does a DHI hair transplant cost in Antalya, and what is included?",
-      a: "Our DHI hair transplant packages in Antalya range from £1,550 (€1,800) for Standard DHI to £1,900 (€2,200) for the VIP All-Inclusive experience. The VIP package includes maximum-graft DHI surgery in a licensed hospital, needle-free anesthesia, 5-star hotel accommodation, private Mercedes Vito transfers, PRP therapy, medical care kit, and 12-month post-op follow-up."
+      a: "Our DHI hair transplant packages in Antalya range from £1,850 (€2,150) for Standard DHI to £2,200 (€2,550) for the VIP All-Inclusive experience. We operate on a £0 upfront deposit policy — you only pay at the clinic in Antalya after your surgeon consultation and blood tests. The VIP package includes maximum-graft DHI surgery in a licensed hospital, needle-free anesthesia, 5-star hotel accommodation, private Mercedes Vito transfers, PRP therapy, medical care kit, and 12-month post-op follow-up."
     },
     {
       q: "What is the key clinical difference between DHI Choi Pen and traditional FUE?",

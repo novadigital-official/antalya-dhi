@@ -23,7 +23,7 @@ export default function ComparativeMatrix() {
     {
       label: { en: 'All-Inclusive Procedure Cost', fr: 'Coût Total Tout Compris', tr: 'Toplam Paket Maliyeti' },
       uk: { en: '£6,500 – £9,500 (€7,500+)', fr: '7 500€ – 10 500€', tr: '£6.500 – £9.500 (€7.500+)' },
-      antalya: { en: '£1,550 – £1,900 (€1,800 – €2,200)', fr: '1 800€ – 2 200€ (£1,550 – £1,900)', tr: '90.000 ₺ – 110.000 ₺ (£1,550 – £1,900)' },
+      antalya: { en: '£1,850 – £2,200 (€2,150 – €2,550)', fr: '2 150€ – 2 550€ (£1,850 – £2,200)', tr: '95.000 ₺ – 115.000 ₺ (£1,850 – £2,200)' },
       note: { en: 'Save up to 70% with zero compromise on medical standards', fr: 'Économisez jusqu\'à 70% sans compromis médical', tr: '%70 maliyet avantajı ile dünya standartlarında cerrahi kalite' },
       icon: Award
     },
