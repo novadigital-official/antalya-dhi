@@ -55,18 +55,18 @@ export default function BlogDetailPage({ params }: { params: Promise<{ slug: str
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
                 <Link
-                  href="/#analysis-wizard"
-                  className="w-full sm:w-auto min-h-[48px] px-8 bg-blue-600 hover:bg-blue-500 text-white font-black text-xs rounded-xl flex items-center justify-center shadow-md"
+                  href="/#packages"
+                  className="w-full sm:w-auto min-h-[48px] px-8 bg-[#022C22] hover:bg-[#064E3B] text-white font-bold text-xs rounded-xl flex items-center justify-center shadow-md transition-colors"
                 >
-                  Ücretsiz Saç Analizi Al
+                  View Transparent Packages
                 </Link>
                 <a
-                  href="https://wa.me/905551234567?text=Hello,%20I%20read%20your%20blog%20article%20and%20would%20like%20a%20free%20hair%20analysis."
+                  href="https://wa.me/905070871789?text=Hello,%20I%20read%20your%20blog%20article%20and%20would%20like%20a%20free%20hair%20analysis."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto min-h-[48px] px-8 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs rounded-xl flex items-center justify-center shadow-md"
+                  className="w-full sm:w-auto min-h-[48px] px-8 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl flex items-center justify-center shadow-md transition-colors"
                 >
-                  💬 WhatsApp Consultation
+                  WhatsApp Consultation
                 </a>
               </div>
             </div>

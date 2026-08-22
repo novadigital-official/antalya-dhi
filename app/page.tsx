@@ -6,75 +6,46 @@ import ComparativeMatrix from '@/components/ComparativeMatrix';
 import PatientJourney from '@/components/PatientJourney';
 import PricingPackages from '@/components/PricingPackages';
 import GraftCalculatorGuide from '@/components/GraftCalculatorGuide';
-import PrePostCareGuide from '@/components/PrePostCareGuide';
-import WhyAntalyaVsIstanbul from '@/components/WhyAntalyaVsIstanbul';
-import LocationProtocol from '@/components/LocationProtocol';
-import SocialProof from '@/components/SocialProof';
-import HairAnalysisWizard from '@/components/HairAnalysisWizard';
 import CompetitorBenchmarkFeatures from '@/components/CompetitorBenchmarkFeatures';
-import DHIVsFueComparison from '@/components/DHIVsFueComparison';
-import SemanticSeoGuide from '@/components/SemanticSeoGuide';
 import FaqSection from '@/components/FaqSection';
 import MedicalDisclaimer from '@/components/MedicalDisclaimer';
-
 import WhatsAppWidget from '@/components/WhatsAppWidget';
 import Footer from '@/components/Footer';
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#FAFBFC] text-slate-900 font-sans relative selection:bg-emerald-600 selection:text-white overflow-x-hidden w-full max-w-full">
-      {/* 1. STICKY LUMINOUS WHITE NAVBAR WITH BESPOKE VECTOR SVG LOGO & COMPACT FLAGS */}
+      {/* 1. STICKY HEADER */}
       <Navbar />
 
-      {/* 2. HERO — MULTI-LAYER MESH EMERALD GRADIENT WITH REAL CLINIC PHOTO */}
+      {/* 2. HERO SECTION */}
       <HeroSection />
 
-      {/* 3. COMPARATIVE BENCHMARK (LONDON/PARIS/BERLIN VS ANTALYA DHI) */}
+      {/* 3. CLINICAL BENCHMARK (UK/EU VS ANTALYA DHI) */}
       <ComparativeMatrix />
 
-      {/* 4. 4 HIGH-RESOLUTION PHOTOGRAPHIC PATIENT JOURNEY CARDS */}
+      {/* 4. PHOTOGRAPHIC 4-STEP PATIENT JOURNEY */}
       <PatientJourney />
 
-      {/* 5. 3-DAY ITINERARY & TRANSPARENT PRICING PLANS */}
+      {/* 5. TRANSPARENT PRICING & ALL-INCLUSIVE PACKAGES */}
       <PricingPackages />
 
-      {/* 6. GRAFT & HAIR DENSITY ESTIMATION GUIDE */}
+      {/* 6. GRAFT DENSITY & NORWOOD ESTIMATION GUIDE */}
       <GraftCalculatorGuide />
 
-      {/* 7. PRE-OP & POST-OP PATIENT CARE PROTOCOL */}
-      <PrePostCareGuide />
-
-      {/* 8. WHY BOUTIQUE ANTALYA VS MASS CLINICS IN ISTANBUL */}
-      <WhyAntalyaVsIstanbul />
-
-      {/* 9. ANTALYA MEDICAL LOCATION & VIP LOGISTICS PROTOCOL */}
-      <LocationProtocol />
-
-      {/* 10. INTERNATIONAL PATIENT EXPERIENCES & EMERALD TRUST BAR */}
-      <SocialProof />
-
-      {/* 11. 3-STEP INTERACTIVE HAIR ANALYSIS WIZARD */}
-      <HairAnalysisWizard />
-
-      {/* 12. CLINICAL STANDARDS & TECHNOLOGY (BENTO GRID) */}
+      {/* 7. CLINICAL STANDARDS & TECHNOLOGY (CHOI PEN & ATP PRESERVATION) */}
       <CompetitorBenchmarkFeatures />
 
-      {/* 13. DHI VS CLASSIC FUE COMPARISON */}
-      <DHIVsFueComparison />
-
-      {/* 14. CLINICAL GUIDES & ARTICLES */}
-      <SemanticSeoGuide />
-
-      {/* 15. EXPANDED FAQ SECTION (8 COMPREHENSIVE QUESTIONS) */}
+      {/* 8. FREQUENTLY ASKED QUESTIONS */}
       <FaqSection />
 
-      {/* 16. LEGAL DISCLAIMER */}
+      {/* 9. LEGAL MEDICAL FACILITATOR DISCLAIMER */}
       <MedicalDisclaimer />
 
-      {/* 17. FOOTER */}
+      {/* 10. INSTITUTIONAL FOOTER */}
       <Footer />
 
-      {/* 18. FIXED WHATSAPP BUTTON */}
+      {/* 11. PERSISTENT WHATSAPP ASSISTANCE WIDGET */}
       <WhatsAppWidget />
     </main>
   );
